@@ -1,0 +1,103 @@
+/*****************************************************************************/
+/*                                                                           */
+/*                           FleetStreet script                              */
+/*                                                                           */
+/*                              FileFind.Frx                                 */
+/*                      starten von WTPMFF im Edit-Modus                     */
+/*****************************************************************************/
+
+/****************************************************************************/
+/*  Added by Michael Hohner:                                                */
+/*                                                                          */
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+/*****************************************************************************/
+/* look for INI-Files                                                        */
+/*****************************************************************************/
+
+call RxFuncAdd 'SysLoadFuncs', 'RexxUtil', 'SysLoadFuncs'
+call SysLoadFuncs
+
+INIFILE    = 'USER'
+CCHMAXPATH = 260
+
+FFPATH = SysIni( INIFILE, 'WagoTEC PM BBS FileFinder', 'Path' )
+if FFPATH \= 'ERROR:' then do
+   FFPATH = strip( FFPATH,, '00'x )
+/*
+   FFINI  = FFPATH || 'FileFind.INI'
+   SetupData = SysIni( FFINI, 'WagoTEC PM BBS FileFinder', 'Setup' )
+*/
+   FFOUT = SysIni( INIFILE, 'WagoTEC PM BBS FileFinder', 'OutputName' )
+   FFOUT = strip( FFOUT,, '00'x )
+   FFCMD = FFPATH || 'WTPMFF.exe'
+
+   /**************************************************************************/
+   /* start FileFind                                                         */
+   /**************************************************************************/
+
+   address cmd FFCMD
+
+   errtxt.0 = 4
+   errtxt.1 = "FileFind: AusfÅhrung fehlerhaft"
+   errtxt.2 = "FileFind: Ausgabe wurde in Clipboard aufgenommen"
+   errtxt.3 = "FileFind: Ausgabe wurde gesichert"
+   errtxt.4 = "FileFind: Es wurde keine Ausgabe vorgenommen"
+
+   if rc <> 3 then do
+      if rc > 0 & rc <= errtxt.0 then do
+         say errtxt.rc
+      end
+      else do
+         say "Unerwarteter Fehler" rc "!"
+      end
+
+      say "Weiter --> <Return> Taste drÅcken . . ."
+      parse pull dummy
+
+      exit rc
+   end
+
+
+   /**************************************************************************/
+   /* read results only when editing a message                               */
+   /**************************************************************************/
+   if word(FleetStatus.Mode, 1) = "Edit" then do
+      FFOUT = stream( FFOUT, 'C', 'QUERY EXISTS' )
+      if FFOUT <> '' then do
+         i=0
+         do while lines( FFOUT )
+            i=i+1
+            foundline.i = linein( FFOUT )
+         end
+         foundline.0 = i
+
+         /***********************************************************************/
+         /* insert results at cursor position                                   */
+         /***********************************************************************/
+         do i = FleetMsg.Text.0 to word( FleetStatus.Cursor, 1 ) +1 by -1
+            j = i+foundline.0
+            FleetMsg.Text.j = FleetMsg.Text.i
+         end
+
+         j = word( FleetStatus.Cursor, 1 )
+         do i = 1 to foundline.0
+            z = j + i
+            FleetMsg.Text.z = foundline.i
+         end
+
+         FleetMsg.Text.0 = FleetMsg.Text.0 + foundline.0
+
+         /***********************************************************************/
+         /* Display new text                                                    */
+         /***********************************************************************/
+         call FSSetText 'FleetMsg.Text'
+
+      end
+   end
+end
+
+exit 0

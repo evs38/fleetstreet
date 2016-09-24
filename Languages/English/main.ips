@@ -1,0 +1,624 @@
+.im languages\help.names
+.***************************************************************************
+.***************************************************************************
+.*    FLTSTRT.IPS, Helpfile fuer Fleet Street                              *
+.***************************************************************************
+.***************************************************************************
+:userdoc.
+:docprof toc=1234.
+
+.***************************************************************************
+.* Help-Panels des Hauptfensters                                           *
+.***************************************************************************
+
+:h1 res=&PANEL_MAIN..FleetStreet
+:p.
+:lines align=center.
+Welcome to
+
+:font facename='Tms Rmn' size=24x18.:color fc=red.
+FleetStreet 1.27.1
+:font facename=default size=0x0.:color fc=default.
+:elines.
+:p.
+FleetStreet is a FTS compatible message editor for OS/2 2.x PM. FleetStreet
+can handle *.MSG, Squish and JAM type message areas.
+:p.
+Topics&colon.
+:ul.
+:li.:link reftype=launch object='view.exe' data='FLTSTRT.INF'.User's guide:elink.
+:eul.
+:i1 id=squish.Squish(tm)
+
+.****************************************************************
+.* Hilfe fuer Tasten
+.****************************************************************
+
+:h1 res=&PANEL_KEYS..Help for keys
+:p.You can use different key combinations depending on if you're reading
+or editing messages.
+:ul.
+:li.:link reftype=hd refid=genkeys.Keys generally available:elink.
+:li.:link reftype=hd refid=readkeys.Keys only available when reading messages:elink.
+:li.:link reftype=hd refid=editkeys.Keys only available when editing messages:elink.
+:eul.
+
+:h2 id=genkeys.Keys generally available
+:p.The following keys are generally available&colon.
+:parml compact tsize=20 break=none.
+:pt.Alt-X
+:pd.Exit FleetStreet
+:pt.F1
+:pd.Help
+:pt.Ctrl-F1
+:pd.Help for keys
+:pt.Ctrl-D
+:pd.Change default name and address
+:pt.Ctrl-W
+:pd.Open nodelist browser
+:pt.Ctrl-K
+:pd.Show kludge lines
+:eparml.
+
+:h2 id=readkeys.Keys only available when reading
+:p.The following keys are available when you're reading messages&colon.
+:parml compact tsize=20 break=none.
+:pt.Ctrl-R
+:pd.Reply to sender
+:pt.Ctrl-Shift-R
+:pd.Reply to sender, don't join lines
+:pt.Ctrl-N
+:pd.Reply to sender, place reply in different area
+:pt.Ctrl-Shift-N
+:pd.Reply to sender, place reply in different area, don't join lines
+:pt.Ctrl-E
+:pd.Change a message
+:pt.Ctrl-A
+:pd.Select message area
+:pt.Ctrl-B
+:pd.Open bookmarks window
+:pt.Ctrl-L
+:pd.List of messages
+:pt.Shift-PrintScr
+:pd.Print message
+:pt.Ctrl-T
+:pd.List of threads
+:pt.Ctrl-M
+:pd.Move message
+:pt.Ctrl-C
+:pd.Copy message
+:pt.Ctrl-F
+:pd.Forward message
+:pt.Ctrl-Q
+:pd.Request files
+:pt.Ctrl-X
+:pd.Export message
+:pt.Ins
+:pd.Write new message
+:pt.Del
+:pd.Delete message
+:pt.Ctrl-I
+:pd.Find message
+:pt.Ctrl-O
+:pd.Add sender of current message to your list of nicknames
+:pt.Ctrl-Z
+:pd.Add sender of current message to one of your carbon copy lists
+:pt.Cursor left
+:pd.Go to previous message
+:pt.Cursor right
+:pd.Go to next message
+:pt.Ctrl-Cursor left
+:pd.Go to previous reply
+:pt.Ctrl-Cursor right
+:pd.Go to next reply
+:pt.Ctrl-Home
+:pd.Go to first message
+:pt.Ctrl-End
+:pd.Go to last message
+:pt.Shift-Home
+:pd.Go to the old lastread
+:pt.Shift-Right
+:pd.Go to the next area that is already scanned and contains new messages
+:pt.SPACE
+:pd.Mark/Unmark current message
+:pt.Ctrl-P
+:pd.Mark all messages as "read"
+:pt.Ctrl-J
+:pd.Toggle primary and alternative font
+:pt.Ctrl-H
+:pd.Toggle highlighting
+:eparml.
+
+:h2 id=editkeys.Keys only available when editing
+:p.The following keys are available when you're editing messages&colon.
+:parml compact tsize=20 break=none.
+:pt.Ctrl-Y, Ctrl-Backspace
+:pd.Delete the current line
+:pt.Alt-Backspace
+:pd.Undo last changes
+:pt.Ctrl-S
+:pd.Save message
+:pt.Ctrl-I
+:pd.Import file
+:pt.Ctrl-X
+:pd.Crosspost message
+:pt.Ctrl-C
+:pd.Carbon copy
+:pt.F2...F12
+:pd.Insert keyboard macro
+:pt.Esc
+:pd.Discard message
+:pt.Ctrl-A, Ctrl-Shift-F
+:pd.Change attributes of message
+:pt.Ctrl-Shift-K
+:pd.Toggle the "Kill/Sent" message attribute
+:pt.Ctrl-Shift-C
+:pd.Toggle the "Crash" message attribute
+:pt.Ctrl-Shift-A
+:pd.Toggle the "File attached" message attribute
+:pt.Ctrl-Shift-R
+:pd.Toggle the "File request" message attribute
+:pt.Ctrl-Shift-P
+:pd.Toggle the "Private" message attribute
+:pt.Ctrl-Shift-H
+:pd.Toggle the "Hold" message attribute
+:pt.Ctrl-Shift-D
+:pd.Toggle the "Direct" message attribute
+:pt.Ctrl-J
+:pd.Toggle primary and alternative font
+:eparml.
+
+.***************************************************************************
+.* Help-Panels des Menues                                                  *
+.***************************************************************************
+
+.im languages\english\menu.ips
+
+.***************************************************************************
+.* Setup                                                                   *
+.***************************************************************************
+
+.im languages\english\setup.ips
+.im languages\english\psetup.ips
+
+.im languages\english\echoman.ips
+
+.***************************************************************************
+.* Template-Setup                                                          *
+.***************************************************************************
+
+.im languages\english\template.ips
+
+.***************************************************************************
+.* Carbon-Copy-Listen                                                      *
+.***************************************************************************
+
+.im languages\english\ccopy.ips
+
+.***************************************************************************
+.* Help-Panels der Dialoge                                                 *
+.***************************************************************************
+
+:h1.Dialogs
+
+.***************************************************************************
+.* Message-Attribute                                                       *
+.***************************************************************************
+
+:h2 id=attrib res=&PANEL_ATTRIB..Attributes
+:p.Set the attributes for this message.
+:p.:hp8.Note&colon.:ehp8. Different area formats have different sets of
+attributes, so not all attributes may be available.
+:p.Message attributes explained in detail&colon.
+:parml.
+:pt.:hp2.Private:ehp2.
+:pd.Set this flag if your message is of private nature, i.e. only the
+addressee of the message should see it. Note: This flag is only useful for
+netmail. In most echomail conferences private messages are not allowed. If
+you use the private flag in such a conference, everybody will still be able
+to read the message.
+:pt.:hp2.Crash:ehp2.
+:pd.The message will go directly to the addressed system, i.e. it will not be
+routed over your uplink. Your mailer will dial out when possible and will try
+to deliver the mail.
+:pt.:hp2.Received:ehp2.
+:pd.The message is a personal message and has already been read by you.
+:pt.:hp2.Sent:ehp2.
+:pd.The message has been sent to your uplink.
+:pt.:hp2.File Attached:ehp2.
+:pd.The subject line specifies the name of a file that is to be sent to the
+addressee together with the message. Always combine this message attribute
+with the "Crash" attribute! Most systems will not route an attached
+file.
+:pt.:hp2.In Transit:ehp2.
+:pd.The message is not addressed for your system and is not originating
+from your system. It will be passed to another system. It's best to
+leave this untouched.
+:pt.:hp2.Orphan:ehp2.
+:pd.The destination address is unknown or the destination system is marked
+as "Hold" or "Down" in the current nodelist. It's best to leave this untouched.
+:pt.:hp2.Kill/Sent:ehp2.
+:pd.The message will be deleted by the tosser after it is packed for your
+uplink.
+:pt.:hp2.Local:ehp2.
+:pd.The message has been entered locally, i.e. by you.
+:pt.:hp2.Hold For Pickup:ehp2.
+:pd.The message will not be sent
+:pt.:hp2.File Request:ehp2.
+:pd.The subject line consists of file names and magic names of files that
+will be requested from the addressed system. The tosser will generate the
+request file when packing your mail. Use this attribute in netmail areas only.
+:pt.:hp2.Return Receipt Request:ehp2.
+:pd.Indicates that you like the receiver of the message to reply to it
+and at least confirm that he has received your message.
+:pt.:hp2.Is Return Receipt:ehp2.
+:pd.The message is such a reply.
+:pt.:hp2.Audit Request:ehp2.
+:pd.This one is used by SEAdog. It's best to leave it untouched.
+:pt.:hp2.File Update Request:ehp2.
+:pd.Same as a file request, but the files will be transferred only if they
+are newer than the ones you already have.
+:pt.:hp2.Archive/Sent:ehp2.
+:pd.The message will be moved to a different area by the tosser after it is
+packed for your uplink.
+:pt.:hp2.Direct:ehp2.
+:pd.The message is sent directly to the recipient (not routed).
+:pt.:hp2.Truncate file:ehp2.
+:pd.Attached files are truncated (length set to 0) after being sent.
+:pt.:hp2.Kill file:ehp2.
+:pd.Attached files are deleted after being sent.
+:pt.:hp2.Immediate:ehp2.
+:pd.The message is sent directly to the recipient (not routed). It's sent
+as soon as possible.
+:pt.:hp2.Gate route:ehp2.
+:pd.The message is routed over a gateway node.
+:pt.:hp2.Force pickup:ehp2.
+:pd.Force pickup
+:pt.:hp2.Hub route:ehp2.
+:pd.The message is routed over your hub node.
+:pt.:hp2.Keep:ehp2.
+:pd.The message is not deleted when packing the area. :hp2.Warning&colon.:ehp2.
+Doesn't work with SqPack!
+:pt.:hp2.Monospaced:ehp2.
+:pd.Message is to be displayed with a non-proportional font.
+:eparml.
+:i1 id=message.Message
+:i2 refid=message.Attributes
+
+:h2 res=&PANEL_REPLY..Reply
+:p.You may either reply to the sender of the message or to the receipient
+(which often is described as "followup reply").
+:parml.
+:pt.:hp2.Reply to FROM:ehp2.
+:pd.Reply to the sender of the message
+:pt.:hp2.Reply to TO:ehp2.
+:pd.Reply to the addressee of the message
+:pt.:hp2.Reply to original sender:ehp2.
+:pd.Reply to the original sender of a forwarded message. This option is only
+available for forwarded messages.
+:pt.:hp2.Don't join lines:ehp2.
+:pd.Quoted lines are not joined. This is useful when quoting wide tables or
+enumerations, or when it's important that lines that are already quoted
+are not joined.
+:pt.:hp2.Place reply in different area:ehp2.
+:pd.Place the new message in a different area, e.g. a Netmail area.
+:pt.:hp2.Don't quote message:ehp2.
+:pd.Don't include any quoted text in the new message.
+:eparml.
+
+.* ***************************** Find ***************************************
+
+.im languages\english\find.ips
+
+.im languages\english\area.ips
+
+.* ****************************** Message liste ******************************
+:h2 id=msglist res=&PANEL_MSGLIST..Message list
+:p.
+The message list displays all messages in an area. The messages are displayed
+in the same order as they are stored in the message base.
+:p.
+Your own name is displayed in a different color. Read and unread messages are displayed
+with a message number with a different color. The colors used for these fields
+can be chosen in the settings notebook of the message list.
+:p.
+You can select more than one message using the mouse and manipulate them.
+The following actions can be performed on selected messages&colon.
+:ul compact.
+:li.Delete
+:li.Copy
+:li.Move
+:li.Print
+:li.Export
+:eul.
+
+:h3 hide nosearch res=&PANEL_MLISTSETT..Ooops
+:p.Empty panel, should not happen. Please tell us!
+
+:h3 res=&PANEL_MLS_COLORS..Colors
+:p.You can select different colors for different fields.
+:p.Select the base color by using the color wheel. The current color is
+marked with crosshairs.
+:p.Adjust the brightness of the color by using the slider to the right
+of the color wheel.
+
+
+:h2 res=&PANEL_ABOUTDLG..About FleetStreet
+:p.FleetStreet was developed by Harry Herrmannsd”rfer and Michael Hohner.
+
+
+:h2 res=&PANEL_FILEDLG..File Dialog
+:p.Select a file an press :hp2.OK:ehp2..
+
+
+:h2 res=&PANEL_KLUDGEINFO..Additional message info
+:p.This window contains all the kludge lines and SEEN-BYs of the current
+message. You can copy its contents to the clipboard.
+:p.Press :hp2.Close:ehp2. to close the window.
+:p.Press :hp2.Copy:ehp2. to copy the marked text to the clipboard. If no text is
+marked, the whole content of the window is copied to the clipboard.
+:p.You may leave the window open while reading. It is automatically
+updated when you switch to other messages.
+:p.Check :hp2.Keep in front:ehp2. to keep this window above the FleetStreet
+main window.
+
+.im languages\english\request.ips
+
+:h2 res=&PANEL_REPLYLIST..Reply list
+:p.There is more than one reply to this message. The replies are listed
+with their message number and the name of the sender. Select the message
+that you like to read and press :hp2.OK:ehp2.. Press :hp2.CANCEL:ehp2. if you don't want to read
+any of these messages.
+
+:h2 hide res=&PANEL_ERRORINIFILE..Error reading profile
+:p.An error occured while reading the profile. This might be caused by
+a general disk access error, i.e. read only medium, no access rights or the like.
+:p.FleetStreet will continue with default values, i.e. with no setup.
+
+:h2 hide res=&PANEL_NOINIFILE..No profile
+:p.The saved profile could not be found or the profile is not valid. The
+file FLTSTRT.INI must reside in the same directory as FLTSTRT.EXE.
+:p.If you've startet FleetStreet for the first time, continue with
+configuring FleetStreet. The settings will be saved when you leave FleetStreet.
+
+:h2 hide res=&PANEL_OLDINIFILE..Old profile
+:p.The profile was saved by an older version of FleetStreet. The settings
+stored in FLTSTRT.INI can not be used with this version. A new file will be
+generated when you leave FleetStreet.
+:p.Press :hp2.Cancel:ehp2. to leave FleetStreet without making any changes.
+
+:h2 hide res=&PANEL_DELETE..Delete Message
+:p.You are about to delete the current message. Deleted messages are
+not recoverable.
+:p.Press :hp2.YES:ehp2. to delete the message, press :hp2.NO:ehp2. if you like
+to keep it.
+
+:h2 hide res=&PANEL_BEENSENT..Edit Message
+:p.The message has already been processed by the tosser and has been sent to the
+destination address. The sent message might not be affected by the changes you
+make. Refer to the tosser's documentation about performing a rescan of the area.
+:p.If the message is not local, your downlinks may get changed messages, which is
+not desireable in most cases.
+:p.Press :hp2.YES:ehp2. if you want to edit the message anyway, press :hp2.NO:ehp2. if you
+don't want to edit the message.
+
+:h2 hide res=&PANEL_DISCARD..Discard Message
+:p.If you press :hp2.YES:ehp2. the message you have written will not be saved and
+therefore will not be sent. The message text will be lost.
+:p.Press :hp2.NO:ehp2. if you want to continue editing.
+
+:h2 hide res=&PANEL_EXITNOSAVE..Discard Message
+:p.You've requested to leave FleetStreet, but you have not saved the message
+you are currently writing. If you leave FleetStreet your message will not
+be saved and therefore will not be sent. The message text will be lost.
+:p.Press :hp2.NO:ehp2. if you want to continue editing.
+:p.Press :hp2.YES:ehp2. if you want to leave FleetStreet.
+
+:h2 hide res=&PANEL_INFOMISSING..Message info missing
+:p.Your message must have
+:ul.
+:li.name and address of the receipient
+:li.text in the subject line
+:eul.
+:p.If one of these is missing, the message can not be saved.
+
+:h2 hide res=&PANEL_TOOLONG..Message text too long
+:p.The message is longer than the split limit. It's not possible to split
+a message again when changing a message.
+
+:h2 hide res=&PANEL_ERRORMSGSAVE..Error saving message
+:p.An error occured while saving the message. This is usually caused by disk
+access errors like write protected disks, not enough disk space or no access
+rights.
+:p.You may try to solve the problem and try again. If you can't, cancel editing.
+
+:h2 res=&PANEL_CURRENTNAME..Current Name/Address
+:p.Select a name and/or address and press :hp2.OK:ehp2.. The current address is displayed
+in the lower right corner of the main window.
+:p.If you like to have more names and addresses, go to the setup and add more names
+and addresses.
+:p.If you like to change the default name and address for a specific area, go
+to the area list, click on the area using the right mouse button, click on
+"Settings...", select a different name and/or address and close the
+settings notebook.
+
+.im languages\english\thlist.ips
+
+
+:h2 hide res=&PANEL_INVALIDFILE..Unable to load file
+:p.FleetStreet can not load the file specified because of one of the following
+reasons&colon.
+:ul.
+:li.The file does not exist
+:li.The user does not have access rights to the file
+:li.The file name specifies a directory or a device, but not a file.
+:eul.
+
+:h2 hide res=&PANEL_ERRORLOAD..Error loading the file
+:p.A disk read error occured while loading the file. The file was not imported.
+
+:h2 res=&PANEL_EXPORTFILE..Export File
+:p.Select the destination drive and path of the file and type in a file name.
+:parml.
+:pt.:hp2.with header:ehp2.
+:pd.Select this item to save the header, too. If you deselect this item, only the
+message body will be saved.
+:pt.:hp2.separator line:ehp2.
+:pd.Select this item to add a separator line after each exported message.
+:pt.:hp2.append to file:ehp2.
+:pd.Append the message to the file if it already exists.
+:pt.:hp2.overwrite file:ehp2.
+:pd.Overwrite the existing file.
+:eparml.
+
+:h2 hide res=&PANEL_ERRORSAVE..Error saving
+:p.FleetStreet could not write to the file because of one of the following
+reasons&colon.
+:ul.
+:li.The drive or path does not exist
+:li.The user does not have access rights to the file or directory
+:eul.
+
+:h2 hide res=&PANEL_INVALIDFILENAME..Invalid file name
+:p.FleetStreet could not write to the file because of one of the following
+reasons&colon.
+:ul.
+:li.The file name contains characters that are not allowed in file names
+:li.The file name is reserved
+:eul.
+
+:h2 hide res=&PANEL_RESEND..Resend message
+:p.The message you have edited has already been sent before. Press :hp2.YES:ehp2.
+if you want to send the changed message again. Press :hp2.NO:ehp2. if you don't
+want to send the message.
+
+.***************************************************************************
+.* Nodelist-Lookup                                                         *
+.***************************************************************************
+
+:h2 hide res=&PANEL_LOOKUPMEM..Not enough memory
+:p.The nodelist lookup could not be performed because there is not enough
+memory to complete the operation.
+:p.Strange error though!
+
+:h2 hide res=&PANEL_IDXOPENERR..Error opening index file
+:p.The nodelist index file could not be opened. This is usually caused by one
+of the following reasons&colon.
+:ul.
+:li.the index file doesn't exist
+:li.the path/filename is not correct
+:li.you don't have access rights for the file
+:li.another process is using the file exclusively
+:eul.
+:p.Correct the error and try again.
+
+:h2 hide res=&PANEL_DATOPENERR..Error opening data file
+:p.The nodelist data file could not be opened. This is usually caused by one
+of the following reasons&colon.
+:ul.
+:li.the data file doesn't exist
+:li.the path/filename is not correct
+:li.you don't have access rights for the file
+:li.another process is using the file exclusively
+:eul.
+:p.Correct the error and try again.
+
+:h2 hide res=&PANEL_IDXREADERR..Error reading index file
+:p.An error occured while reading the index file. This is usually caused by one
+of the following reasons&colon.
+:ul.
+:li.another process is using the parts of the file exclusively
+:li.the file is corrupt
+:eul.
+:p.Correct the error and try again.
+
+:h2 hide res=&PANEL_DATREADERR..Error reading data file
+:p.An error occured while reading the nodelist data file. This is usually caused by one
+of the following reasons&colon.
+:ul.
+:li.another process is using the parts of the file exclusively
+:li.the file is corrupt
+:eul.
+:p.Correct the error and try again.
+
+:h2 hide res=&PANEL_LOOKUPHANDLE..Invalid handle
+:p.The handle that is used for nodelist lookups is not valid. Strange error!
+:p.Please check the following&colon.
+:ul.
+:li.Which version of FLTV7.DLL is installed? (old one?)
+:li.Are other processes acessing the nodelist files?
+:li.Is FleetStreet set up correctly?
+:eul.
+
+:h2 res=&PANEL_LOOKUP..Nodelist lookup
+:p.More than one address was found for the addressed user. Select one of the
+addresses shown in the list.
+:p.By default, a brief summary of the found entries is shown. You can view
+the full nodelist entries by unchecking :hp2.Brief:ehp2..
+
+.im languages\english\browser.ips
+
+:h2 res=&PANEL_ATTACHSTAT..Attached Files
+:p.The Files that you've attached to the message are displayed. For each file
+the file name and file size is displayed.
+:p.If a file doesn't exist, a "* not found *" is displayed in the status field.
+Correct the file name in the subject line then.
+
+:h2 hide res=&PANEL_NEXTAREA..Go to next area
+:p.If you like to enter the next area which contains unread messages, press
+:hp2.Yes:ehp2.. Press :hp2.No:ehp2. to stay in the current area.
+
+:h2 hide res=&PANEL_NONEXTAREA..No next area
+:p.FleetStreet didn't find an area which is scanned and contains unread
+messages. You might try do rescan the areas.
+
+:h2 hide res=&PANEL_WORKERROR..Error while&dot.&dot.&dot.
+:p.While FleetStreet was working on messages that you selected in the message list
+or thread list, an error occured. This can have various reasons&colon.
+:ul compact.
+:li.The message was not found in the message base. Another process might
+have deleted it before.
+:li.The message base is corrupt.
+:li.A disk read or write error occured.
+:li.A disk write was not possible, because the file or medium is read-only.
+:eul.
+:p.
+Press :hp2.Abort:ehp2. to stop processing of the marked messages.
+:p.
+Press :hp2.Retry:ehp2. to retry the last action. This may not help in every situation!
+:p.
+Press :hp2.Ignore:ehp2. to ignore the error and continue with the next message.
+
+:h2 hide res=&PANEL_LOCKERROR..Can't perform action
+:p.The action that you've selected can't be performed with the selected area
+at this time, because the area is currently in use. You can't renumber an area or
+change settings of an area, when it is currently open. Switch to a different area
+first, then try again.
+
+:h2 hide res=&PANEL_BCDELERROR..Broadcast delete error
+:p.The message necessary for a broadcast-delete could not be created. Check
+your message base and retry.
+
+:h2 hide res=&PANEL_ETOSSERROR..Error writing Echotoss.Log
+:p.An error occured while writing the Echotoss.Log file. This can have various reasons&colon.
+:ul compact.
+:li.The file or disk is write protected.
+:li.Another application is using the file exclusively.
+:li.The file name contains characters that are illegal for the file system.
+:li.You have specified a non-existing drive or directory.
+:li.You have specified a directory name only instead of a full path and file name.
+:li.The disk is full.
+:eul.
+:p.Check your disks and the FleetStreet setup, then try again.
+
+:h2 hide res=&PANEL_INITERROR..Error reading configuration file
+:p.An error occured while reading the tosser configuration file.
+:p.If the message is displayed during startup and you continue anyway,
+some data may be lost (e.g. area settings). Therefor it's recommended
+that you stop FleetStreet by pressing the :hp2.Cancel:ehp2. button. Correct
+the error and restart FleetStreet. If you can't solve the problem
+immediately, make a backup copy of FleetStreet's INI files first.
+
+.im languages\english\rexx.ips
+
+:euserdoc.

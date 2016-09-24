@@ -1,0 +1,10 @@
+LIBRARY FLTCF_XX INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet xx CFG'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+  ReadxxCfg @3
+  QueryFormatID   @1
+  QueryFormatName @2
+  QueryVer        @4
+

@@ -1,0 +1,63 @@
+LIBRARY FLTHMSG INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet Message base adapter'
+CODE LOADONCALL EXECUTEONLY
+DATA LOADONCALL READWRITE MULTIPLE NONSHARED
+PROTMODE
+EXPORTS
+     MSG_OpenApi                   @1
+     MSG_IsApiOpen                 @2
+     MSG_CloseApi                  @3
+     MSG_OpenArea                  @4
+     MSG_CloseArea                 @5
+     MSG_LockArea                  @6
+     MSG_UnlockArea                @7
+     MSG_ReadAct                   @8
+     MSG_ReadNum                   @9
+     MSG_ReadHeader                @10
+     MSG_LinkMessages              @11
+     MSG_ReadNext                  @12
+     MSG_ReadPrev                  @13
+     MSG_AddMessage                @14
+     MSG_ChangeMessage             @15
+     MSG_NewMessage                @16
+     MSG_NewMessageStep2           @17
+     MSG_CopyMessage               @18
+     MSG_MoveMessage               @19
+     MSG_ForwardMessage            @20
+     MSG_ForwardMessageStep2       @21
+     MSG_KillMessage               @22
+     MSG_QuoteMessage              @23
+     MSG_QuoteMessageStep2         @24
+     MSG_RequestFiles              @25
+     MSG_RequestDirect             @26
+     MSG_UidToMsgn                 @27
+     MSG_MsgnToUid                 @28
+     MSG_MarkRead                  @29
+     MSG_ReadSquishParams          @30
+     MSG_WriteSquishParams         @31
+     MSG_RenumberArea              @32
+     MSG_QueryHomeMsg              @33
+     MSG_BroadcastDelete           @34
+     MSG_BroadcastModify           @35
+     MSG_RemapDrive                @36
+     MSG_RemapArea                 @37
+     MSG_MatchAddress              @38
+     StampToString                 @42
+     TplCCopy                      @43
+     TplXPost                      @44
+     TplSetIntl                    @45
+     MSG_SetKludge                 @46
+     MSG_FindKludge                @47
+     MSG_RemoveKludge              @48
+     MSG_QueryKludgeName           @49
+     MSG_CalcKludgeBufferSize      @50
+     MSG_KludgesToBuffer           @51
+     MSG_BufferToKludges           @52
+     MSG_SetKludgeFromBuffer       @53
+     MSG_ClearMessage              @54
+     MSG_AttribToText              @55
+     MSG_QueryAttribCaps           @56
+     M_FindTemplate                @57
+     MSG_SetCPInfo                 @58
+     FlagsToAttrib                 @59
+     AttribToFlags                 @60

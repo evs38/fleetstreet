@@ -1,0 +1,18 @@
+LIBRARY FLTAMAN INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet area manager'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+    AM_FindArea          @1
+    AM_AddArea           @2
+    AM_DeleteArea        @3
+    AM_DeleteAreaDirect  @4
+    AM_DeleteAllAreas    @5
+    AM_MergeAreas        @6
+
+    FM_AddFolder             @20
+    FM_FindFolder            @21
+    FM_DeleteFolder          @22
+    FM_DeleteFolderDirect    @23
+    FM_FindFolderWithParent  @24
+

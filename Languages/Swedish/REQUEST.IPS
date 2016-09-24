@@ -1,0 +1,90 @@
+.***************************************************************************
+.* REQUEST.IPS - Filbeg„ran
+.* 1996-07-22
+
+:h2 res=&PANEL_REQUESTER..Beg„r filer
+:p.Antingen visas det aktuella meddelandet eller en fillista. Du kan
+beg„ra filer ur denna lista.
+:p.
+Markera raderna med filerna som Du vill beg„ra. N„r Du trycker p†
+:hp2.OK:ehp2. kommer en beg„ran skapas f”r dessa filer.
+:p.
+:hp2.Anv„ndning av fillistor:ehp2.
+:p.
+De flesta noder st„ller till f”rfogande en textfil inneh†lles alla de filer,
+vilka kan beg„ra fr†n den noden. Du kan l„sa in dessa fillistor i FleetStreet,
+visa dem, och beg„ra filer ur dem. Med :hp2.Infoga:ehp2. l„gger Du in en ny
+fillista i dialogrutan. Med :hp2.Ta bort:ehp2. kan Du ta bort en post
+igen. Genom att dubbelklicka p† en lista kommer denna att laddas och visas.
+:p.
+:hp2.Val av filer:ehp2.
+:p.
+I fillistan kan Du v„lja de filer som ska beg„ras. Klicka helt enkelt p† den
+rad p† vilken filnamnet st†r (eller tryck p† mellanslagstangenten). Med
+:hp2.Alla:ehp2. kommer alla rader att markeras, och med :hp2.Ingen:ehp2.
+†terst„lls markeringen till att inte innefatta n†gon fil.
+:p.
+Med :hp2.S”k:ehp2. kan Du s”ka efter valfri text i listan. Om texten hittas
+kommer den visas som f”rsta rad i listan.
+:p.
+:hp2.Infogning av filer, l”senord:ehp2.
+:p.
+Vissa filer som kan beg„ras finns inte med i fillistorna, exempelvis
+magiska filnamn. Dessa kan Du l„gga till i den visade listan genom att
+trycka p† :hp2.Infoga:ehp2.. Dessa filer visas i slutet p† listan.
+:p.
+Vissa filer kan endast beg„ras vid angivande av ett l”senrod. Vid manuella
+infogning av filer kan man ange detta l”senord direkt. Žven f”r de andra
+filerna kan man ange ett l”senord. F”r att g”ra det st„ller man mark”ren
+i listan p† den ”nskade filern och trycker p† :hp2.L”senord:ehp2.. Det
+angivna l”senordet kommer att anv„ndas som l”senord f”r denna fil.
+:p.
+:hp2.Ytterligare inst„llningar:ehp2.
+:parml.
+:pt.:hp2.Beg„r fr†n:ehp2.
+:pd.Adress till den nod fr†n vilken filerna ska beg„ras.
+:pt.:hp2.M”te:ehp2.
+:pd.M”te i vilket filbeg„ranmeddelandet ska skapas. Endast icke-lokala
+netmailm”ten kommer att kunna v„ljas.
+:pt.:hp2.direkt:ehp2.
+:pd.Inget beg„ranmeddelande kommer att skapas, utan en REQ-fil kommer att
+skapas direkt i din utg†ende postkatalog.
+:pt.:hp2.Attribut:ehp2.
+:pd.St„ller in de meddelandeattribut som filbeg„ranmeddelandet ska ha.
+Av f”rklarliga orsaker ska "Beg„r fil"-attributet ("File Request") alltid
+vara satt.
+:eparml.
+
+:h3 res=&PANEL_REQ_ADDLIST..Infoga fillista
+:p.Ange data f”r den nya fillistan. Det som kr„vs „r&colon.
+:parml.
+:pt.:hp2.Filnamn:ehp2.
+:pd.Filnamnet f”r fillistan (inkl. s”kv„g). Du kan „ven anv„nda knappen
+:hp2.S”k:ehp2. f”r att v„lja filen i en dialogruta.
+:pt.:hp2.Nodnummer:ehp2.
+:pd.Nodnummer f”r den nod som filerna i den h„r listan g†r att beg„ra fr†n.
+:pt.:hp2.Kommentar:ehp2.
+:pd.En kommentar till listan, exempelvis namn p† sysopen, eller p† BBS&colon.en.
+Denna kommentar kommer att visas i vallistan.
+:eparml.
+
+:h3 res=&PANEL_REQ_DELLIST..Ta bort fillista
+:p.Tryck p† :hp2.Ja:ehp2. om Du vill ta bort listan. Tryck p† :hp2.Nej:ehp2.
+f”r att beh†lla listan.
+:p.:hp8.Observera&colon.:ehp8. Fillistan kommer inte att tas bort fr†n
+disken, utan bara pekaren till denna.
+
+:h3 res=&PANEL_REQ_ADDFILE..Infoga fil
+:p.Skriv in namnet p† den fil som som Du dessutom ”nskar beg„ra. Detta kan
+„ven vara ett s.k. magiskt namn.
+:p.Du kan „ven ange ett valfritt l”senord f”r filen.
+:p.Genom att trycka p† :hp2.OK:ehp2. kommer filen att l„ggas in i slutet p†
+listan i filvalsf”nstret.
+
+:h3 res=&PANEL_REQ_SETPASS..V„lj l”senord
+:p.Ange l”senordet f”r beg„ran av filen. Om inmatningsf„ltet „r tomt kommer
+inget l”senord att anv„ndas vid beg„ran.
+
+:h3 hide res=&PANEL_REQ_ERROR..Felaktig fillista
+:p.Vid l„sning av fillistan uppstod ett fel. R„tta till felet och f”rs”k
+igen.

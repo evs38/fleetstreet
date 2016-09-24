@@ -1,0 +1,43 @@
+.* ****************************** Threadlist *********************************
+:h2 id=threadlist res=&PANEL_THREADLIST..Thread list
+:p.
+The message threads in the current area are displayed. Read messages and
+unread messages are displayed with different colors.
+
+:h2 res=&PANEL_THRLISTSETTINGS..Thread list settings
+:p.
+Choose one of the following topics&colon.
+:ul compact.
+:li.:link refid=defview reftype=hd.Default view:elink.
+:li.:link refid=thcolors reftype=hd.Colors:elink.
+:eul.
+
+:h3 id=defview res=&PANEL_SU_THREADS..Default view
+:p.The thread list can be displayed in various modes&colon.
+:parml.
+:pt.:hp2.All Threads:ehp2.
+:pd.All message threads containing all messages in the current area are displayed.
+:pt.:hp2.Threads with unread messages:ehp2.
+:pd.Only those threads, that contain at least one unread message, are displayed.
+:pt.:hp2.Unread messages only:ehp2.
+:pd.Only unread messages are displayed. Message threads begin with the first unread
+message in the thread and end with the last unread message. If a thread of unread
+messages is interrupted by a read message, two threads will be displayed.
+:eparml.
+:p.In addition, you may specify whether the name of the sender of the message should be
+displayed or not.
+:p.By checking :hp2."Compact display":ehp2. all threads having the same subject
+line are combined to a pseudo-thread.
+
+:h3 id=thcolors res=&PANEL_THRLISTCOLORS..Colors
+:p.You can select different colors for different messages types.
+:p.Select the base color by using the color wheel. The current color is
+marked with crosshairs.
+:p.Adjust the brightness of the color by using the slider to the right
+of the color wheel.
+
+:h3 hide res=&PANEL_DOINGWORK..Work in process
+:p.A message thread is currently in work. During that time you can't start
+work on another message thread. Please wait until the work in progress
+has finished.
+

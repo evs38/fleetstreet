@@ -1,0 +1,201 @@
+.***************************************************************************
+.* Template-Setup - Meddelandemallar
+.* 1996-07-20
+
+:h1 res=&PANEL_TEMPLATE..Meddelandemallar
+:p.Var god v„lj en sida&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_TE_QUOTE..Citat:elink.
+:li.:link reftype=hd res=&PANEL_TE_HEADER..Huvudtext:elink.
+:li.:link reftype=hd res=&PANEL_TE_FOOTER..Fottext:elink.
+:li.:link reftype=hd res=&PANEL_TE_REPLY..Svarstext:elink.
+:li.:link reftype=hd res=&PANEL_TE_DAREA..Svar i annat m”te:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARD..Vidarebefordran:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARDFOOTER..Vidarebefordran, fot:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARDORDER..Ordning:elink.
+:li.:link reftype=hd res=&PANEL_TE_XPOST..Korspostning:elink.
+:li.:link reftype=hd res=&PANEL_TE_CCOPY..S„ndlistetext:elink.
+:li.:link reftype=hd res=&PANEL_TE_ORIGIN..Origin:elink.
+:esl.
+
+:h1 hide res=&PANEL_DELTEMPLATE..Ta bort mall
+:p.
+Klicka p† :hp2.Ja:ehp2. f”r att ta bort mallen. Alla m”ten som har
+tilldelats denna mall kommer p† nytt att anv„nda standardmallen.
+:p.
+Klicka p† :hp2.Nej:ehp2. f”r att beh†lla mallen.
+
+.***************************************************************************
+.* Template-Folder - Meddelandemallmapp
+.*
+:h1 res=&PANEL_TPLFOLDER..Meddelandemallar
+:p.
+Mallf”nstret inneh†ller samtliga meddelandemallar.
+:p.
+Det finns en speciell mall, standardmallen. Den har ett bl†tt
+:hp2."M":ehp2. p† sin ikon i.st.f ett r”tt :hp2."M":ehp2..
+:p.
+Standardmallen anv„nds&colon.
+:ul compact.
+:li.f”r nya m”ten (tills dess att en annan mall anvisas f”r m”tet)
+:li.f”r m”tet med en annan mall, n„r denna andra mall inte finns
+kvar.
+:eul.
+:p.
+Du kan tilldela ett m”te en mall p† tv† s„tt&colon.
+:ol compact.
+:li.™ppna inst„llningsf”nstret f”r m”tet och v„lj mall p† "Allm„nt"-sidan.
+:li.Dra mallikonen till m”teslistan och sl„pp den p† den ”nskade
+m”testiteln.
+:eol.
+:p.
+Anv„nd mallarnas till„gsmeny f”r att
+:ul compact.
+:li.”ppna de olika f„lten f”r redigering
+:li.skapa en ny mall
+:li.kopiera en mall
+:li.ta bort en mall (f”rutom standardmallen)
+:eul.
+:p.
+F”r att „ndra namnet p† mall h†ller du ned Alt-tangenten och klickar p†
+ikonen.
+:p.
+Du kan kopiera en mall genom att h†lla nere Ctrl-tangenten och sedan
+dra mallen ”ver mallf”nstret.
+
+:h2 res=&PANEL_TE_QUOTE..Citat
+:p.Citering av meddelanden styrs av f”ljande inst„llningar&colon.
+:parml.
+:pt.:hp2.Radl„ngd i citat:ehp2.
+:pd.L„ngd, i antal tecken, p† de rader som skapas n„r originalmeddelandet
+omvandlas till citat.
+:pt.:hp2.L„ngd f”r sammanfogning:ehp2.
+:pd.Radl„ngd fr†n vilken tv† p† varandra f”ljande rader ska sammanfogas
+d† citaten skapas.
+:pt.:hp2.Citeringstyp:ehp2.
+:pd.F”r att k„nneteckna de rader som „r citat kan du antingen anv„nda
+avs„ndarens initialer, f”ljt av ett ">", eller bara ett enkelt ">".
+:pt.:hp2.Citeringstecken:ehp2.
+:pd.H„r kan Du st„lla in vilket tecken som ska anv„ndas f”r att k„nneteckna
+citatrader.
+:eparml.
+
+:h2 res=&PANEL_TE_HEADER..Huvudtext
+:p.Huvudtexten infogas i b”rjan av varje meddelande.
+:p.Anv„ndbara :link reftype=hd refid=tokens.f”rkortningar:elink.&colon.
+:p.%T, %Z
+:p.:hp2.Synonym f”r "Alla":ehp2.
+:p.Om namnet p† mottagaren „r identisk med denna post, kommer namnet inte
+att infogas i mallen f”r huvudtexten.
+
+:h2 res=&PANEL_TE_FOOTER..Fottext
+:p.Fottexten infogas i sluten av meddelandet. Den anv„nds n„r Du skriver
+nya meddelanden, eller d† Du svarar p† meddelanden.
+:p.Anv„ndbara :link reftype=hd refid=tokens.f”rkortningar:elink.&colon.
+:p.%U, %I
+
+:h2 id=reptempl res=&PANEL_TE_REPLY..Svarstext
+:p.Svarstexten s„tts in i b”rjan av meddelandet, efter huvudtexten. Den
+anv„nds endast d† Du svarar p† ett meddelande.
+:p.Anv„ndbara :link reftype=hd refid=tokens.f”rkortningar:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %D, %M, %O, %P, %J, %R, %S, %E
+
+:h2 res=&PANEL_TE_DAREA..Svar i annat m”te
+:p.Svar-i-annat-m”te-texten infogas f”re huvudtexten. Den anv„nds endast d†
+Du svarar p† ett brev, och sparar svaret i ett annat m”te.
+:p.Anv„ndbara :link reftype=hd refid=tokens.f”rkortningar:elink.&colon.
+:p.%A, %E
+
+:h2 res=&PANEL_TE_FORWARD..Vidarebefordran
+:p.Vidarebefordringstexten infogas i b”rjan av meddelanden. Den anv„nds
+bara n„r Du vidarebefordrar ett meddelande.
+:p.Anv„ndbara :link reftype=hd refid=tokens.f”rkortningar:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %U, %I, %J, %R, %S, %E, %D, %M, %W
+
+:h2 res=&PANEL_TE_FORWARDFOOTER..Vidarebefordran, fot
+:p.Vidarebefordringsfottexten infogas efter originalbrevet. Den anv„nds
+bara n„r Du vidarebefordrar ett meddelande.
+:p.Anv„ndbara :link reftype=hd refid=tokens.f”rkortningar:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %U, %I
+
+:h2 res=&PANEL_TE_FORWARDORDER..Ordning
+:parml.
+:pt.:hp2.Informationstext f”rst:ehp2.
+:pd.Informationstexten om vidarebefordran av meddelandet s„tts in f”re den
+vidarebefordrade texten.
+:pt.:hp2.Vidarebefordrat meddelande f”rst:ehp2.
+:pd.Det vidarebefordrade meddelandet s„tts in f”re informationstexten.
+:eparml.
+
+:h2 res=&PANEL_TE_XPOST..Korspostning
+:p.Korspostningstexten infogas i b”rjan p† meddelandet. Den anv„nds d†
+Du korspostar ett meddelande i flera m”ten.
+:p.Anv„ndbara :link reftype=hd refid=tokens.f”rkortningar:elink.&colon.
+:p.%A, %E
+
+:h2 res=&PANEL_TE_CCOPY..S„ndlistetext
+:p.S„ndlistetexten infogas i b”rjan p† meddelandet. Den anv„nds d†
+Du anv„nder en s„ndlista f”r att skicka ett meddelande till mer „n en
+mottagare.
+:p.Anv„ndbara :link reftype=hd refid=tokens.f”rkortningar:elink.&colon.
+:p.%C
+
+:h2 res=&PANEL_TE_ORIGIN..Origin
+:p.Den angivna texten kommer att l„ggas in i meddelandenas Originrad.
+:p.
+:hp2.Slumpvald Origin&colon.:ehp2.
+:p.
+N„r alternativet :hp2."Slumpvald Origin":ehp2. „r aktivt kommer
+Origintexten att v„ljas slumpm„ssigt f”r varje nytt meddelande.
+Origintexten l„ses in fr†n en textfil. Den filen „r en vanlig textfil som
+inneh†ller en Origin per textrad.
+:p.
+Skriv in namnet p† filen med Originraderna, eller klicka p†
+:hp2."S”k":ehp2.-knappen f”r att v„lja ut filen.
+
+:h2 id=tokens hide.F”rkortningar
+:p.F”ljande f”rkortningar finns till ditt f”rfogande i
+meddelandemallarna&colon.
+:parml break=none.
+:pt.:hp2.%T:ehp2.
+:pd.Mottagarens namn (originalbrev).
+:pt.:hp2.%Z:ehp2.
+:pd.Mottagarens f”rnamn (originalbrev).
+:pt.:hp2.%R:ehp2.
+:pd.Mottagarens adress (originalbrev). Vid svar eller vidarebefordran av
+echomail ignoreras denna f”rkortning.
+:pt.:hp2.%O:ehp2.
+:pd.Mottagarens namn (nytt brev).
+:pt.:hp2.%P:ehp2.
+:pd.Mottagarens f”rnamn (nytt brev).
+:pt.:hp2.%F:ehp2.
+:pd.Avs„ndarens namn.
+:pt.:hp2.%G:ehp2.
+:pd.Avs„ndarens f”rnamn.
+:pt.:hp2.%J:ehp2.
+:pd.Avs„ndarens adress.
+:pt.:hp2.%A:ehp2.
+:pd.M”testag. Om ett meddelande korspostas „r detta destinationsm”tet. N„r Du
+svarar i ett annat m”te, eller om meddelandet vidarebefordras, „r detta
+ursprungsm”tet.
+:pt.:hp2.%E:ehp2.
+:pd.M”tesbeskrivning. Om ett meddelande kortspost „r detta destinationsm”tet.
+N„r Du svarar i ett annat m”te, eller om meddelandet vidarebefordras, „r detta
+ursprungsm”tet.
+:pt.:hp2.%U:ehp2.
+:pd.Ditt eget namn.
+:pt.:hp2.%I:ehp2.
+:pd.Ditt f”rnamn.
+:pt.:hp2.%W:ehp2.
+:pd.Din egen adress.
+:pt.:hp2.%C:ehp2.
+:pd.Namn p† personerna i s„ndlistan.
+:pt.:hp2.%D:ehp2.
+:pd.Datum f”r det meddelande p† vilket Du svarar.
+:pt.:hp2.%M:ehp2.
+:pd.Tid f”r det meddelande p† vilket Du svarar.
+:pt.:hp2.%S:ehp2.
+:pd.Žmne p† det meddelande p† vilket Du svarar.
+:pt.:hp2.%%:ehp2.
+:pd.Ett %-tecken
+:eparml.

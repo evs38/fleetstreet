@@ -1,0 +1,179 @@
+.***************************************************************************
+.* Find - S”k
+.* 1996-07-22
+
+:h2 id=findmsg res=&PANEL_FIND..S”k text
+:p.S”ker efter en best„md teckenf”ljd i meddelandebasen.
+:p.Du kan v„lja vilka m”ten i vilka texten ska s”kas, de delar av
+meddelandet som ska genoms”kas, samt den metod, med vilken det ska
+best„mmas om meddelandet passar.
+:p.
+Detaljer&colon.
+:ul compact.
+:li.:link reftype=hd refid=findwhat.Vad:elink.
+:li.:link reftype=hd refid=findwhere.Var:elink.
+:li.:link reftype=hd refid=findareas.Vilka m”ten:elink.
+:li.:link reftype=hd refid=findhow.Hur:elink.
+:eul.
+:p.
+Klicka p† :hp2.Starta:ehp2.-knappen f”r att inleda s”kningen.
+
+:h3 id=findwhat.Vad
+:p.
+Detta „r den text som ska efters”kas i meddelandebasen. Oavsett vilken
+s”kmetod som anv„nds kan detta vara normal text, eller med text jokertecken.
+Vid s”kning efter personliga brev kan ingen text anges.
+
+:h3 id=findwhere.Var
+:p.
+H„r v„ljer Du ut de delar av meddelandet i vilka texten ska s”kas. Vid
+s”kning p† personliga meddelanden kan ingen del anges.
+
+:h3 id=findareas.Vilka m”ten
+:p.
+H„r v„ljer Du ut de m”ten i vilka texten ska efters”kas.
+:parml.
+:pt.:hp2.Aktuellt m”te:ehp2.
+:pd.Endast det aktuella m”tet genoms”ks.
+:pt.:hp2.Alla m”ten:ehp2.
+:pd.Alla m”ten som FleetStreet k„nner till kommer att genoms”kas.
+:pt.:hp2.M”testyper:ehp2.
+:pd.M”ten av den/de vald/a typen/typerna kommer att genoms”kas.
+:pt.:hp2.Eget:ehp2.
+:pd.Ett eget urval av m”ten kommer att genoms”kas. Tryck p†
+:hp2.urval:ehp2.sknappen f”r att v„lja vilka m”ten det ska g„lla.
+:eparml.
+
+:h3 id=findhow.Hur
+:p.
+Det finns olika metoder f”r att best„mma om ett meddelande passar till
+texten som finns i "Vad"-f„ltet&colon.
+:parml.
+:pt.:hp2.Beakta skiftl„ge:ehp2.
+:pd.Texten i "Vad"-f„ltet m†ste finnas exakt som skrivet i meddelandet.
+:pt.:hp2.Ignorera skiftl„ge:ehp2.
+:pd.Som ovan, men skillnad i versaler/gemener i texten ignoreras.
+:pt.:hp2.Osk„rpa:ehp2.
+:pd.En oskarp s”kning kommer att genomf”ras, d.v.s. s”ktexten och meddelandet
+beh”ver inte vara exakt lika. "Niv†" anger ett k„nslighetsv„rde fr†n 0
+(exakt) till 5 (l„gsta m”jliga).
+:pt.:hp2.Jokertecken:ehp2.
+:pd.Texten i "Vad"-f„ltet inneh†ller vissa speciella :link reftype=hd
+refid=regex.jokertecken:elink..
+:pt.:hp2.Personliga brev:ehp2.
+:pd.FleetStreet s”ker efter personliga brev. Klicka p†
+:hp2.Alternativ:ehp2. f”r att st„lla in inst„llningar f”r s”kningen.
+:pt.:hp2.Os„nda meddelanden:ehp2.
+:pd.FleetStreet s”ker efter lokala meddelanden som inte „n har s„nts.
+:pt.:hp2.Endast ol„sta meddelanden:ehp2.
+:pd.Endast ol„sta meddelanden (de som saknar "read"-attributet) kommer att
+visas i s”kresultaten.
+:eparml.
+
+:h3 id=regex.Jokertecken
+:p.
+Jokertecken anv„nds vid beskrivning av textm”nster. Jokertecknen „r har
+speciella betydelser&colon.
+:parml.
+:pt.:hp2.*:ehp2.
+:pd.matcher valfri teckenf”ljd, oavsett l„ngd
+:pt.:hp2.?:ehp2.
+:pd.matcher ett valfritt tecken
+:pt.:hp2.[MŽNGD]:ehp2.
+:pd.matchar ett tecken i den angivna m„ngden
+:pt.:hp2.[!MŽNGD] or [^MŽNGD]:ehp2.
+:pd.matcher ett givet tecken som inte finns i den angivna m„ngden.
+:eparml.
+:p.
+En m„ngd kan inneh†lla tecken eller teckenomf†ng; ett teckenomf†ng skrivs
+med "tecken bindestreck tecken" (t.ex 0-9 eller A-Z). [0-9a-zA-Z_] „r det
+maximala antalet tecken som till†ts i en [..]-konstruktion.
+:p.
+F”r att undertrycka den speciella betydelsen hos tecknen
+:hp2.[]*?!^-\:ehp2. och s”ka „ven p† de skriver du Dit ett
+:hp2.\:ehp2.-tecken framf”r.
+:p.
+:hp2.Exempel:ehp2.
+:xmp.
+*FleetStreet 0.[89]0*
+:exmp.
+:p.
+matchar "FleetStreet 0.80" och "FleetStreet 0.90" p† valfri plats i texten.
+
+:h3 hide res=&PANEL_FINDNOPARTS..Du har inte markerat n†gon del av meddelandet
+:p.
+Du m†ste markera en eller flera delar att unders”ka i meddelandet.
+
+:h3 hide res=&PANEL_FINDNOAREAS..Du har inte valt n†gra m”ten
+:p.
+Du m†ste v„lja en m”testyp, eller ett urval av m”ten.
+
+:h3 hide res=&PANEL_FINDNOTEXT..Du har inte angett n†gon text
+:p.
+Du m†ste ange en text i "Vad"-f„ltet.
+
+:h2 res=&PANEL_PERSMAILOPT..Personliga meddelanden
+:p.
+F”ljande inst„llningar styr s”kningen av personliga meddelanden&colon.
+:parml.
+:pt.:hp2.S”k endast nya meddelanden:ehp2.
+:pd.Endast de meddelanden som kommer efter Lastread-pekaren genoms”ks.
+:pt.:hp2.S”k alla meddelanden:ehp2.
+:pd.Alla meddelanden i m”tet kommer att genoms”kas.
+:pt.:hp2.S”k efter alla namn:ehp2.
+:pd.FleetStreet j„mf”r inneh†llet i "Till"-f„ltet med alla dina namn.
+:pt.:hp2.S”k endast m”tets standardnamn:ehp2.
+:pd.FleetStreet j„mf”r endast inneh†llet i "Till"-f„ltet med det namn som
+du har angett som standardnamn f”r m”tet.
+:eparml.
+
+:h2 res=&PANEL_FINDRESULTS..Bokm„rken
+:p.Bokm„rkesf”nstret kan visa fyra olika typer av meddelanden&colon.
+:ul compact.
+:li.S”kresultat
+:li.Resultat av s”kning av personliga brev
+:li.Markerade meddelanden
+:li.Os„nda meddelanden
+:eul.
+:p.
+Anv„nd listans till„gsmeny f”r att v„xla mellan de fyra visningstyperna.
+:p.
+Om du v„ljer "Spara inneh†ll" i till„gsmenyn kommer inneh†llet i listan att
+sparas p† h†rddisken n„r Du avslutar FleetStreet. Den kommer att laddas in
+igen n„r du startar FleetStreet p† nytt n„sta g†ng.
+:p.
+Klicka p† ett meddelande, eller tryck p† :hp2.Till meddelande:ehp2.-knappen
+f”r att visa hela meddelandet.
+:p.
+Tryck p† knappen :hp2.Ta bort alla:ehp2. f”r att nollst„lla den aktuella
+visningen, d.v.s. alla meddelanden i den aktuella visningen tas bort ur
+listan.
+:p.
+Anv„nd till„gsmenyn hos ett meddelande f”r att
+:ul compact.
+:li.ta bort meddelandet
+:li.exportera meddelandet
+:li.skriva ut meddelandet
+:li.flytta meddelandet till ett annat m”te
+:li.kopiera meddelandet till ett annat m”te
+:li.ta bort meddelandet ur listan
+:eul.
+
+:h2 hide res=&PANEL_NOTTHERE..Meddelandet existerar inte l„ngre
+:p.
+Du har klickat p† ett meddelande i bokm„rkesf”nstret, men antingen
+meddelandet eller hela m”tet existerar inte l„ngre. D„rf”r han meddelandet
+inte visas. Detta kan ske om posterna i listan sparas undan, och
+meddelandet eller m”tet tas bort n„r FleetStreet inte „r ig†ng.
+:p.
+Ta bort meddelandet fr†n listan f”r att f”rhindra att f† detta meddelande
+igen.
+
+:h2 res=&PANEL_SEARCH..S”k
+:p.
+Skriv in den text som Du ”nskar s”ka efter. Aktiva :hp2.Beakta skiftl„ge:ehp2.,
+om du ”nskar att textens skiftl„ge (stora/sm† bokst„ver) ska beaktas i
+s”kningen.
+:p.
+Tryck p† :hp2.OK:ehp2. f”r att p†b”rja s”kningen.
+

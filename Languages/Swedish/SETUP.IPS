@@ -1,0 +1,471 @@
+.***************************************************************************
+.* Setup - Inst„llningar
+.* 1996-10-10
+
+:h1 res=&PANEL_SETUP..Allm„nna inst„llningar
+:p.Var god v„lj ett „mne&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_SU_USER..Anv„ndarnamn:elink.
+:li.:link reftype=hd res=&PANEL_SU_ADDRESSES..Adresser:elink.
+:li.:link reftype=hd res=&PANEL_SU_ORIGIN..Origin:elink.
+:li.:link reftype=hd res=&PANEL_SU_SQUISH..Tosser:elink.
+:li.:link reftype=hd res=&PANEL_SU_TOSSERPATHS..S”kv„gar:elink.
+:li.:link reftype=hd res=&PANEL_SU_MACROS..Tangentbordsmakron:elink.
+:li.:link reftype=hd res=&PANEL_SU_DOMAINS..Dom„ner:elink.
+:li.:link reftype=hd res=&PANEL_SU_MODEMTYPES..Modemtyper:elink.
+:li.:link reftype=hd res=&PANEL_SU_OPTIONS..Alternativ:elink.
+:li.:link reftype=hd res=&PANEL_SU_STARTUP..Startm”te:elink.
+:li.:link reftype=hd res=&PANEL_SU_EDITOROPT..Redigerare:elink.
+:li.:link reftype=hd res=&PANEL_SU_SAFETY..S„kerhet:elink.
+:li.:link reftype=hd res=&PANEL_SU_OPENWIN..F”nster:elink.
+:li.:link reftype=hd res=&PANEL_SU_DRIVEREMAP..Omdirigering:elink.
+:esl.
+
+:h2 res=&PANEL_SU_USER..Anv„ndarnamn
+:p.F”r att kunna anv„nda FleetStreet m†ste Du ha †tminstone ett
+anv„ndarnamn.
+:p.Dina namn visas i listan. F”r att :hp2.infoga:ehp2. ett nytt namn
+klickar Du p† :hp2.Infoga:ehp2.-knappen. Du kommer d† att efterfr†gas
+indata.
+:p.F”r att :hp2.ta bort:ehp2. ett namn markerar Du namnet i listan och
+klickar p† :hp2.Ta bort:ehp2.-knappen.
+:p.F”r att :hp2.„ndra:ehp2. ett namn markerar Du namnet i listan och
+klickar p† :hp2.ndra:ehp2.-knappen.
+:p.F”r att v„lja ett namn som standardnamn ska Du markera den ”nskade
+posten i listan och klicka p† :hp2.Standard:ehp2.-knappen. N„r Du sedan
+skapar nya m”ten resp. l„ser in m”teslistan fr†n din tossers
+konfigurationsfil, kommer det valda namnet att g„lla som standardnamn f”r
+m”tet.
+
+:h2 res=&PANEL_SU_ADDRESSES..Adresser
+:p.F”r att kunna anv„nda FleetStreet m†ste Du ha †tminstone en adress.
+:p.Dina adresser visas i listan. F”r att :hp2.infoga:ehp2. en ny adress
+klickar Du p† :hp2.Infoga:ehp2.-knappen. Du kommer d† att efterfr†gas
+indata.
+:p.F”r att :hp2.ta bort:ehp2. en adress markerar Du adressen i listan och
+klickar p† :hp2.Ta bort:ehp2.-knappen.
+:p.F”r att :hp2.„ndra:ehp2. en adress markerar Du adressen i listan och
+klickar p† :hp2.ndra:ehp2.-knappen.
+:p.F”r att v„lja en adress som standardadress ska Du markera den ”nskade
+posten i listan och klicka p† :hp2.Standard:ehp2.-knappen. N„r Du sedan
+skapar nya m”ten resp. l„ser in m”teslistan fr†n din tossers
+konfigurationsfil, kommer den valda adressen att g„lla som standardnamn f”r
+m”tet.
+
+:h2 res=&PANEL_SU_ORIGIN..Origin
+:p.Originraden „r valfri, men det „r oftast en bra id‚ att skriva n†got d„r.
+:p.Ange ”nskad text f”r Originraden.
+
+:h2 res=&PANEL_SU_SQUISH..Tosser
+:p.FleetStret kan l„sa in konfigurationsfilen fr†n ett antal olika tossers,
+vilket g”r det enklare att samordna hanteringen av meddelandebasen hos Din
+tosser och hos FleetStreet.
+:parml.
+:pt.:hp2.Extern konfigurationsfil:ehp2.
+:pd.Om du vill att FleetStreet vid start automatiskt ska l„sa en extern
+konfigurationsfil, aktiverar Du "l„s". Ange s”kv„g och filnamn till filen i
+inmatningsf„ltet d„runder, eller tryck p† "S”k"-knappen f”r att v„lja ut
+filen i en filvalsdialogruta.
+:p.
+Om det uppst†r ett fel n„r filen l„ses in kommer ett felmeddelande att ges,
+och ingenting f”rloras.
+:p.:hp8.Observera&colon.:ehp8. Du m†ste ha angett †tminstone ett
+anv„ndarnamn f”r att kunna l„sa in filen.
+:p.:hp8.Observera&colon.:ehp8. FleetStreet st”der f”r tillf„llet endast
+m”ten i :hp2.Squish:ehp2.-, :hp2.*.MSG:ehp2.- och :hp2.JAM:ehp2.-format. M”ten
+i andra format ignoreras.
+:eparml.
+:i2 refid=squish.Konfigurationsfil
+:i2 refid=squish.Lastreadpekare
+
+:h2 hide res=&PANEL_DUPAREAS..Redan definierade m”ten
+:p.
+En eller fler m”ten som l„sts in fr†n den externa konfigurationsfilen har
+redan definierats som ett privat m”te, d.v.s. de har samma m”testag. Varje
+m”testag f†r endast f”rekomma en g†ng.
+
+:p.G”r n†got av f”ljande f”r att l”sa problemet&colon.
+:ul.
+:li.ndra m”testagen i det privata m”tet.
+:li.Redigera den externa konfigurationsfilen.
+:eul.
+
+:h2 hide res=&PANEL_CFGDLLERROR..Fel vid inl„sning av tosserkonfigurationen
+:p.
+Ett fel uppstod d† den laddade DLL&colon.en f”rs”kte l„sa tosserns
+konfiguration. Detta kan bero p† n†got av f”ljande&colon.
+:ul.
+:li.Den kr„vda DLL&colon.en finns inte (l„ngre) tillg„nglig.
+:li.DLL&colon.en finns bara tillg„nglig i en felaktig version.
+:li.I DLL&colon.en saknas en eller flera funktioner, d.v.s DLL&colon.en „r
+defekt.
+:eul.
+:p.
+Problemet l†ter sig oftast r„ttas genom att installera om FleetStreet.
+:p.
+Tryck p† :hp2.OK:ehp2. f”r att ignorera felet och forts„tta.
+:p.:hp8.Observera&colon.:ehp8. Att ignorera det h„r felet kan leda till
+f”rlust av programinst„llningarna!
+:p.
+Tryck p† :hp2.Avbryt:ehp2., f”r att avbryta funktionen och f”rs”ka att r„tta
+till felet.
+
+
+:h2 res=&PANEL_SU_TOSSERPATHS..S”kv„gar
+:parml.
+:pt.:hp2.Standardkatalog f”r bifogade filer:ehp2.
+:pd.Denna katalog anv„nds n„r dialogen f”r val av bifogade filer ”ppnas.
+:pt.:hp2.Echotoss.Log:ehp2.
+:pd.Filen ECHOTOSS.LOG „r en ren ASCII-textfil i vilken samtliga de m”ten,
+vilka Du har skrivit nya meddelanden i, listas. Tossern och andra
+till„ggsprogram l„ser denna fil f”r att endast bearbeta dessa m”ten
+(vanligtvis bearbetar tossern samtliga m”ten, vilket tar betydligt l„ngre
+tid). FleetStreet skapar vid behov filen sj„lv, och skriver dit de
+passande m”tesnamnen.
+:p.Om detta val „r avst„ngt kommer inte FleetStreet att skriva denna fil.
+:pt.:hp2.S”kv. t. ECHOMAIL.JAM/NETMAIL.JAM:ehp2.
+:pd.H„r anger du s”kv„gen till den katalog d„r filerna ECHOMAIL.JAM och
+NETMAIL.JAM ska skapas. Om Du l„mnar detta f„lt tomt kommer filerna inte
+att skapas.
+:p.Om Du inte anv„nder n†gra JAM-m”ten eller om din tosser inte st”der
+dessa filer kan Du „ven d† l„mna inmatningsf„ltet tomt.
+:pt.:hp2.Lastread:ehp2.
+:pd.Detta „r offsetpekaren i Lastread-filen f”r varje meddelandem”te. H„r
+sparas numret p† det meddelande som senast l„stes i m”tet (exempelvis
+anv„nds *.SQL-filer f”r meddelandeareor av Squishtyp). Varje anv„ndare i
+BBS en har en egen offset, SysOpen har vanligtvis offset 0. Visa
+nyttoprogram kr„ver „ven egna offsetv„rden.
+:p.
+:hp8.Om du inte f”rst†r den h„r inst„llningen „r det enklast att l†ta den
+st† kvar p† 0.:ehp8.
+:p.F”r tillf„llet „r h”gsta till†tna inst„llning h„r 500. SysOpen har
+allts† tillg†ng till Lastreadpekarna f”r sina f”rsta 500 anv„ndare. Om du
+verkligen beh”ver mer, skriv d† ett v„nligt meddelande till f”rfattarna...
+:eparml.
+
+:h2 res=&PANEL_SU_NICKNAMES..Kortnamn
+:p.I FleetStreet „r det m”jligt att definiera kortnamn f”r de anv„ndare
+till vilka man skriver ofta.
+:p.
+F”r att anv„nda dessa kortnamn skriver du helt enkelt kortnamnet i
+mottagarf„ltet och trycker p† "Enter". Kortnamnet kommer d† automatiskt att
+ers„ttas med det riktiga namnet, och anv„ndarens adress kommer att matas in
+i adressf„ltet. Om Du har angett en „mnesrad f”r kortnamnet, kommer denna
+„ven att infogas i „mnesf„ltet.
+:p.:hp2.F”r att definiera ett kortnamn g”r Du f”ljande&colon.:ehp2.
+:ol compact.
+:li.Klicka p† "Infoga"-knappen,
+:li.Fyll i f„lten,
+:li.Tryck p† "Ok".
+:eol.
+:p.:hp2.F”r att „ndra ett kortnamn g”r Du f”ljande&colon.:ehp2.
+:ol compact.
+:li.Markera kortnamnet i listan,
+:li.Tryck p† "ndra"-knappen, eller dubbelklicka p† posten,
+:li.G”r ”nskade „ndringar,
+:li.Tryck p† "Ok".
+:eol.
+:p.:hp2.F”r att ta bort ett kortnamn g”r Du f”ljande&colon.:ehp2.
+:ol compact.
+:li.V„lj kortnamnet i listan,
+:li.Tryck p† "Ta bort"-knappen.
+:eol.
+
+:h3 res=&PANEL_NICKENTRY..Redigera kortnamn
+:p.Ange ett nytt kortnamn eller redigera ett redan existerande.
+:parml.
+:pt.:hp2.Kortnamn:ehp2.
+:pd.Det Du ”nskar anv„nda vid inmatning av kortnamnet.
+:pt.:hp2.Verkligt namn:ehp2.
+:pd.Namn p† den person som kortnamnet ska vara kopplat till.
+:pt.:hp2.Adress:ehp2.
+:pd.Adress till personen. Anv„nd en 3D- eller 4D-adress.
+:pt.:hp2.?:ehp2.
+:pd.Sl† upp adressen till personen i nodlistan.
+:pt.:hp2.mne:ehp2.
+:pd.F”rvald „mnesrad. Anv„ndbar f”r pseudoanv„ndare som Areamanager. L„mna
+detta f„lt tomt om Du inte ”nskar ha n†got f”rinst„llt „mne f”r detta
+kortnamn.
+:pt.:hp2.F”rsta rad:ehp2.
+:pd.F”rsta rad i meddelandetexten. Om denna rad inneh†ller ett
+:hp2.%?:ehp2., kan det anv„ndas f”r att ange ytterligare text i anslutning
+till kortnamnet.
+:p.Denna funktion „r t„nkt f”r att anv„ndas tillsammans med en
+UUCP-gateway. Ponera f”ljande exempel&colon.
+:p.
+Kortnamn&colon. :hp2.u:ehp2.
+.br
+Verkligt namn&colon. :hp2.UUCP:ehp2.
+.br
+Adress&colon. :hp2.2&colon.203/125:ehp2.
+.br
+mne&colon. :hp2.test:ehp2.
+.br
+F”rsta rad&colon. :hp2.TO: %?"Ange UUCP-adress":ehp2.
+:p.
+Du kan nu anv„nda kortnamnet "U" f”r att skriva till UUCP-gatewayen, och
+kan ange den fullst„ndiga adressen (FQDA) till den person du ”nskar skriva till.
+
+:p.
+Du kan anv„nda kortformerna :hp2.%?:ehp2. eller :hp2.%?"Prompttext":ehp2..
+:pt.:hp2.Anv„nd ej mall:ehp2.
+:pd.Om du anv„nder detta kortnamn kommer inte meddelandemallen att
+anv„ndas.
+:pt.:hp2.Attribut:ehp2.
+:pd.F”rinst„llda :link refid=attrib reftype=hd.meddelandeattribut:elink.. Dessa s„tts automatiskt om du anv„nder
+detta kortnamn.
+:eparml.
+:p.Klicka "OK" f”r att bekr„fta „ndringarna. Klicka "Avbryt" om du vill
+avbryta operationen.
+
+:h2 hide res=&PANEL_DELNICKNAME..Ta bort kortnamn
+:p.Tryck "Ja" om Du verkligen vill radera kortnamnet. Tryck p† "Nej" om Du
+vill beh†lla det.
+
+:h2 hide res=&PANEL_HAVENICKNAME..Kortnamnet existerar redan
+:p.
+Det finns redan en post med samma kortnamn. Varje kortnamn f†r endast
+f”rekomma en g†ng. ndra kortnamnet till n†got annat.
+
+:h2 hide res=&PANEL_REPLACENICK..Ers„tt kortnamn
+:p.Det finns redan en post med samma kortnamn.
+:p.Tryck :hp2.Ja:ehp2. f”r att ers„tta kortnamnets tidigare definition.
+:p.Tryck :hp2.Nej:ehp2. f”r att „ndra posten.
+
+:h2 res=&PANEL_SU_MACROS..Tangentbordsmakron
+:p.
+N„r du redigerar meddelandet och trycker p† F2 till F12 kommer den text,
+vilken definierats f”r den tangenten, att infogas i texten.
+:p.:hp8.Observera&colon.:ehp8. F1 „r reserverad f”r hj„lpfunktionen.
+:p.Ett makro kan maximalt vara 240 tecken l†ngt.
+
+:h2 res=&PANEL_SU_DOMAINS..Dom„ner
+:p.Dom„ner „r n”dv„ndiga f”r att FleetStreet ska veta var det kan hitta
+kompilerade nodlistor.
+:parml.
+:pt.:hp2.Dom„ner:ehp2.
+:pd.Lista ”ver de f”r tillf„llet definierade dom„nerna.
+:pt.:hp2.Infoga:ehp2.
+:pd.Infogar en ny dom„n i listan.
+:pt.:hp2.ndra:ehp2.
+:pd.ndrar information f”r dom„nen.
+:pt.:hp2.Ta bort:ehp2.
+:pd.Tar bort den valda dom„nen.
+:eparml.
+
+:h3 res=&PANEL_DOMAINENTRY..Dom„n
+:p.Varje dom„n har tre attribut&colon.
+:parml.
+:pt.:hp2.Dom„ntitel:ehp2.
+:pd.Dom„nens namn. Varje namn f†r endast f”rekomma en g†ng.
+:pt.:hp2.Sysopindexfil:ehp2.
+:pd.Indexfil f”r denna dom„ns kompilerade nodlista. Detta „r vanligen
+:hp2.SYSOP.NDX:ehp2. f”r Din prim„ra adress. Komplett s”kv„g och filnamn
+m†ste anges f”r filen.
+:pt.:hp2.Nodelistdatafil:ehp2.
+:pd.Datafil f”r denna dom„ns kompilerade nodlista. Detta „r vanligen
+:hp2.NODEX.DAT:ehp2. f”r Din prim„ra adress. Komplett s”kv„g och filnamn
+m†ste anges f”r filen.
+:eparml.
+:p.Namnet p† nodindexfilen „r samma som datafilen, f”rutom att filtypen
+&dot.NDX anv„nds. Detta filnamn beh”ver Du inte ange.
+
+:h2 hide res=&PANEL_HAVEDOMAIN..Domannamnet existerar redan
+:p.
+Du har redan definierat en dom„n med denna titel. Varje dom„nnamn f†r bara
+f”rekomma en g†ng.
+:p.
+Ange en entydig dom„ntitel och klicka p† :hp2.Ok:ehp2.
+
+:h2 hide res=&PANEL_DELDOMAIN..Ta bort dom„n
+:p.
+Du har valt att ta bort en dom„n.
+:p.
+Om Du klickar p† :hp2.Ja:ehp2. kommer dom„nen att tas bort, klickar Du
+:hp2.Nej:ehp2. beh†ller Du den.
+
+:h2 res=&PANEL_SU_MODEMTYPES..Modemtyper
+:p.Den kompilerade nodlistan inneh†ller information om varje nods modem.
+Denna information sparas undan i en enda byte.
+:p.N„r Du kompilerar nodlistan, s„tter nodlistekompilatorn bitarna i detta
+f„lt motsvarande de modemflaggor som finns i den distribuerade nodlistan.
+:p.
+Det finns tv† s„tt p† vilka detta modemflaggef„lt kan anv„ndas&colon.
+:parml.
+:pt.:hp2.Bittyper:ehp2.
+:pd.Till varje bit i modemf„ltet ordnas en modemtyp. P† detta s„tt kan varje
+nod ha upp till †tta modemtyper samtidigt. Dock kan inte fler „n †tta
+modemtyper definieras samtidigt.
+:pt.:hp2.Bytetyper:ehp2.
+:pd.Modemf„ltet tolkas som ett tal. P† detta s„tt kan 255 olika modemtyper
+definieras. Dock kan varje nod endast ha en modemtyp.
+:eparml.
+:p.
+St„ll in Din nodlistekompilator och FleetStreet s† att det f”r varje
+nod visas motsvarande modemtyp(er).
+
+
+:h2 res=&PANEL_SU_OPTIONS..Alternativ
+:p.Du kan st„lla in best„mda alternativ vilka styr hur FleetStreet arbetar.
+:parml break=all.
+.* @@
+:pt.:hp2.Monospaced font:ehp2.
+:pd.Always uses the alternative (monospaced) font.
+:pt.:hp2.Anv„nd ^aPID:ehp2.
+:pd.^aPID-raden kommer att anv„ndas i st„llet f”r den l†nga tear-raden.
+:pt.:hp2.Anv„nd tear-rad i netmail:ehp2.
+:pd.Tear-raden kommer „ven att anv„ndas i netmailm”ten. Om detta alternativ
+„r avslaget kommer tear-raden endast att anv„ndas i echomailm”ten.
+:pt.:hp2.Anv„nd Origin i netmail:ehp2.
+:pd.Originraden kommer „ven att anv„ndas i netmailm”ten. Om detta
+alternativ „r avslaget kommer Originraden endast att anv„ndas i
+echomailm”ten.
+:pt.:hp2.Automatisk avs”kning vid start:ehp2.
+:pd.M”tena kommer automatiskt att avs”kas efter nya meddelanden n„r
+FleetStreet startas.
+:pt.:hp2.Ljudsignal vid personlig post:ehp2.
+:pd.FleetStreet avger en ljudsignal n„r ett meddelande adresserat till Dig
+personligen visas.
+:pt.:hp2.Ingen betoning:ehp2.
+:pd.Som standard kommer ingen betoning (fetstil och understrykningar) att
+visas i texterna.
+:pt.:hp2.Anv„nd ^aFWDSUBJ:ehp2.
+:pd.Styr huruvida FWDSUBJ-kludgeraden genereras vid vidares„ndning av
+meddelanden eller inte.
+:eparml.
+
+:h2 res=&PANEL_SU_STARTUP..Startm”te
+:p.Anger om FleetStreet ska ”ppna ett speciellt m”te vid programstart, eller
+om det m”te ska ”ppnas, vilket var aktivt n„r Du senast anv„nde FleetStreet.
+
+:h2 res=&PANEL_SU_EDITOROPT..Redigerare
+:parml.
+:pt.:hp2.Citatf„rg:ehp2.
+:pt.:hp2.Tear-radsf„rg:ehp2.
+:pt.:hp2.Originf„rg:ehp2.
+:pd.V„lj en f„rg f”r ”nskad del av meddelande. :hp2.Observera&colon.:ehp2.
+Dessa f„rger anv„nds inte n„r Du skriver ett nytt meddelande.
+Bakgrundsf„rgen och den normala textf„rgen m†ste du st„lla in med hj„lp av
+F„rgpaletten.
+:pt.:hp2.Tabbsteg:ehp2.
+:pd.Antal tomtecken som ska infogas i meddelandetexten n„r du trycker p†
+Tabbtangenten under redigering.
+:pt.:hp2.Max. meddelandestorlek:ehp2.
+:pd.Maximal storlek f”r ett meddelande som sparas i meddelandebasen. L„ngre
+meddelanden sparas i flera delar.
+:eparml.
+
+:h2 res=&PANEL_SU_SAFETY..S„kerhet
+:parml.
+:pt.:hp2.Radering av meddelande:ehp2.
+:pd.Fr†ga efter bekr„ftelse vid radering av meddelande.
+:pt.:hp2.Tuggning av meddelande:ehp2.
+:pd.Fr†ga efter bekr„ftelse vid radering av meddelande genom att dra
+meddelandet till tuggen.
+:pt.:hp2.terh„mtning:ehp2.
+:pd.Fr†ga efter bekr„ftelse vid anv„ndning av †terh„mtningsfunktionen.
+:pt.:hp2.ndring av s„nda meddelanden:ehp2.
+:pd.Fr†ga efter bekr„ftelse vid redigering av meddelanden som redan har
+s„nts.
+:pt.:hp2.ndring av inst„llningar:ehp2.
+:pd.Fr†ga efter bekr„ftelse vid signifikanta f”r„ndringar av
+inst„llningarna.
+:pt.:hp2.Avbruten redigering:ehp2.
+:pd.Fr†ga efter bekr„ftelse vid avbrytning av redigering
+:eparml.
+
+:h2 res=&PANEL_SU_OPENWIN..F”nster
+:p.
+P† denna sida kan du st„lla in vilka f”nster som ska ”ppnas automatiskt d†
+FleetStreet startas upp.
+:p.
+De f”nster som har sina kryssrutor :hp2.avmarkerade:ehp2. kommer inte att
+”ppnas, de som har sin ruta :hp2.kryssmarkerad:ehp2. kommer att ”ppnas, medan
+de som „r :hp2.gr†f„rgade:ehp2. endast kommer att ”ppnas om det var ”ppet
+under din senaste FleetStreet-session.
+
+
+:h2 hide res=&PANEL_CATCHUP..terh„mta
+:p."terh„mta" betyder att alla meddelanden kommer att markeras som
+"l„sta", s† att de inte framh„vs i de olika listorna.
+:p.Tryck :hp2.Ja:ehp2. om Du vill utf”ra funktionen.
+:p.Tryck :hp2.Nej:ehp2. om Du inte vill utf”ra funktionen.
+
+:h2 res=&PANEL_SU_DRIVEREMAP..Omdirigering
+:p.
+Om meddelandebaserna befinner sig p† en annan dator i ett lokalt n„t „r den
+”nskv„rt att bara ha en tosserkonfigurationsfil p† den datorn att redigera.
+Om denna tosserkonfigurationsfil ska anv„ndas i FleetStreet, och
+n„tverksenheterna „r kopplade till andra enhetsbokst„ver p† de olika
+datorerna, kommer FleetStreet att anv„nda fel enhetsbokst„ver vid anrop
+till meddelandebaserna.
+:p.
+Enhetsomdirigeringen ger en l”sning till problemet. Du kan omdirigera
+n„tverkseneheterna till andra lokala enhetsbokst„ver. FleetStreet ers„tter
+d† enhetsbokst„verna f”r n„tverksenheterna med den angivna bokstaven innan
+meddelandebasen anropas.
+:p.
+Exempel&colon.
+:p.
+Meddelandebasen befinner sig p† dator A p† enhet D&colon.. FleetStreet k”rs
+p† dator B, d„r dator As enhet D&colon. befinner sig p† enhet E&colon..
+SQUISH.CFG befinner sig dock p† dator A, s† areafilnamnen „r angivna med
+D&colon. som enhetsbokstav.
+:p.
+Om FleetStreet „r s† installerat att enhet D&colon. ers„tts med enhet
+E&colon. kommer enhetsbokst„verna i areafilnamnen fr†n den SQUISH.CFG som
+l„ses fr†n dator A att „ndras till E&colon., och korrekta filnamn kommer
+att anv„ndas.
+:p.
+Observera&colon. Bara de filnamns enhetsbokst„ver som l„ses fr†n SQUISH.CFG
+kommer att omdirigeras. Om du skapar m”ten i FleetStreet m†ste du sj„lv
+ange korrekt enhet, FleetStreet omdirigerar inte dessa filnamn.
+
+:parml.
+:pt.:hp2.N„tverksenhet:ehp2.
+:pd.De enhetsbokst„ver som „r angivna i tosserns konfigurationsfil.
+
+:pt.:hp2.Lokal enhet:ehp2.
+:pd.De enhetsbokst„ver som FleetStreet ska anv„ndas vid anrop till
+meddelandebaserna.
+:eparml.
+
+:h2 hide res=&PANEL_SU_NEWUSER..Nytt anv„ndarnamn
+:p.Ange ett nytt namn eller „ndra det redan befintliga. Klicka p† "Ok" f”r
+att bekr„fta f”r„ndringarna. Klicka p† "Avbryt" om Du inte vill ange n†got
+nytt namn, eller om Du vill beh†lla det gamla namnet.
+
+:h2 hide res=&PANEL_DELUNAME..Ta bort namn
+:p.Om Du vill ta bort det markerade namnet klickar Du "Ja", om du klickar
+p† "Nej" kommer det att vara kvar.
+
+:h2 hide res=&PANEL_SU_NEWADDRESS..Ny adress
+:p.Ange en ny adress eller „ndra den redan befintliga. Klicka p† "Ok" f”r
+att bekr„fta f”r„ndringarna. Klicka p† "Avbryt" om Du inte vill ange n†gon
+ny adress, eller om Du vill beh†lla den gamla adressen.
+
+:h2 hide res=&PANEL_DELADDRESS..Ta bort adress
+:p.Om Du vill ta bort den markerade adressen klickar du "Ja", om du klickar
+"Nej" kommer den att vara kvar.
+
+:h1 res=&PANEL_TOOLBARCONFIG..Knapprad
+:p.I den v„nstra listan visas de knappar som kommer att anv„ndas i
+knapparaden. I den h”gra listan finns de kvarvarande knapparna.
+:p.Den speciella knappen :artwork name='separator.bmp' runin. ser till att
+det, i den horisontella framst„llningen, blir ett litet mellanrum mellan
+tv† knappar.
+:p.Du kan „ndra ordningen p† knapparna i den v„nstra listan genom att
+anv„nda drag and drop-funktionerna.
+:parml.
+:pt.:hp2.Infoga:ehp2.
+:pd.Infogar den valda knappen fr†n den h”gra listan till den v„nstra listan.
+Du kan „ven dra en knapp fr†n den h”gra listan till ”nskad position i den
+v„nstra listan med hj„lp av drag and drop.
+:pt.:hp2.Ta bort:ehp2.
+:pd.Tar bort den markerade knappen fr†n den v„nstra listan.
+:pt.:hp2.Standard:ehp2.
+:pd.terst„ller konfigurationen av knappraden till standardv„rdena.
+:eparml.
+:p.
+Tryck p† :hp2.OK:ehp2. f”r att g”ra f”r„ndringarna verksamma. Tryck p†
+:hp2.Avbryt:ehp2. f”r att avbryta f”r„ndringarna.

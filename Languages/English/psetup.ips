@@ -1,0 +1,41 @@
+.***************************************************************************
+.* Printer-Setup                                                           *
+.***************************************************************************
+
+:h1 res=&PANEL_PRINTSETUP..Printer setup
+:p.
+:p.Select a page&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_PS_LIST..Printer:elink.
+:li.:link reftype=hd res=&PANEL_PS_BORDERS..Margins:elink.
+:li.:link reftype=hd res=&PANEL_PS_FONTS..Fonts:elink.
+:li.:link reftype=hd res=&PANEL_PS_OUTPUT..Output:elink.
+:esl.
+
+:h2 res=&PANEL_PS_LIST..Printer
+:p.
+Select the printer from the list for printing with FleetStreet.
+:p.
+By double clicking on a printer or by pressing :hp2.Configure:ehp2. you can
+set additional options for print jobs.
+
+:h2 res=&PANEL_PS_BORDERS..Margins
+:p.
+Set the margins for printer output. You can set the distance from the left,
+right, top and bottom edge of the paper.
+
+:h2 res=&PANEL_PS_FONTS..Fonts
+:p.
+Select the fonts to be used for printing. You can select separate fonts for
+the message header and text.
+:p.
+You can select a new font by dragging a new font from the font palette to
+the font fields. By double clicking on a field you can select the font
+with the font dialog.
+
+:h2 res=&PANEL_PS_OUTPUT..Output
+:p.
+Select the parts of the message to be printed.
+:p.
+When selecting :hp2.Page numbers:ehp2. a small title and page number is
+printed on the second and following pages.

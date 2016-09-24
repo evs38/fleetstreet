@@ -1,0 +1,6 @@
+#define INCL_WIN
+#include <os2.h>
+#include "echoman_sq.h"
+
+RCINCLUDE "squish_cfg\dialog.dlg"
+

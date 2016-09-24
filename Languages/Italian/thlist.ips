@@ -1,0 +1,45 @@
+.* ****************************** Threadlist *********************************
+:h2 id=threadlist res=&PANEL_THREADLIST..Threadlist
+:p.
+Si visualizzano i threads dei messaggi nell'area attuale. Messaggi letti
+e non letti si visualizzano in colori diversi.
+
+:h2 res=&PANEL_THRLISTSETTINGS..Configurazione della list dei threads
+:p.
+Bisogna selezionare uno degli argomenti successivi&colon.
+:ul compact.
+:li.:link refid=defview reftype=hd.Visualizzazione della lista dei threads:elink.
+:li.:link refid=thcolors reftype=hd.Colori:elink.
+:eul.
+
+:h3 id=defview res=&PANEL_SU_THREADS..Visualizzazione della lista dei threads
+:p.La lista degli argomenti pu• essere visualizzata in diversi modi&colon.
+:parml.
+:pt.:hp2.Tutti gli argomenti:ehp2.
+:pd.Tutti gli argomenti con tutti i messaggi dell'area momentaneamente usata.
+:pt.:hp2.Argomenti con messaggi non letti:ehp2.
+:pd.Esclusivamente gli argomenti che contengono almeno un messaggio non letto..
+:pt.:hp2.Esclusivamente messaggi non letti:ehp2.
+:pd.Si visualizzano esclusivamente messaggi non letti. Gli argomenti iniziano
+con il primo messaggio non letto e finiscono con l'ultimo. Se un argomento di
+messaggi non letti viene interrotto da un messaggio letto, si visualizzano due
+argomenti.
+:eparml.
+:p.Ulteriormente si pu• indicare se si deve visualizzare il nome del mittente
+del messaggio.
+:p.Con l'impostazione :hp2."Visualizzazione compatta":ehp2. tutti i threads con 
+la stessa linea di soggetto vengono uniti ad uno pseudo-thread.
+
+:h3 id=thcolors res=&PANEL_THRLISTCOLORS..Colori
+:p.E' possibile  selezionare colori diversi per i tipi diversi di messaggi.
+:p.Bisogna selezionare il colore di base con il cerchio dei colori. Il colore
+attuale viene messo in evidenza con un mirino.
+:p.La luminosit… del colore viene stabilita con lo slider a destra del cerchio
+dei colori.
+
+:h3 hide res=&PANEL_DOINGWORK..Processo avviato
+:p.Viene gi… processato un thread. Durante questo periodo non si pu• avviare
+nessun altro processo per un thread: bisogna aspettare che il processo in
+questione sia finito.
+
+

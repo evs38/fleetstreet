@@ -1,0 +1,196 @@
+.***************************************************************************
+.* Template-Setup                                                          *
+.***************************************************************************
+
+:h1 res=&PANEL_TEMPLATE..Template
+:p.Seleziona una pagina&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_TE_QUOTE..Citazione:elink.
+:li.:link reftype=hd res=&PANEL_TE_HEADER..Header:elink.
+:li.:link reftype=hd res=&PANEL_TE_FOOTER..Footer:elink.
+:li.:link reftype=hd res=&PANEL_TE_REPLY..Testo di risposta:elink.
+:li.:link reftype=hd res=&PANEL_TE_DAREA..Risposta in un'altra area:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARD..Forward:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARDFOOTER..Forward, Footer:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARDORDER..Successione:elink.
+:li.:link reftype=hd res=&PANEL_TE_XPOST..Crosspost:elink.
+:li.:link reftype=hd res=&PANEL_TE_CCOPY..Testo carbon copy:elink.
+:li.:link reftype=hd res=&PANEL_TE_ORIGIN..Linea di origin:elink.
+:esl.
+
+
+:h1 hide res=&PANEL_DELTEMPLATE..Cancella template
+:p.
+Bisogna premere :hp2.S:ehp2. per canellare il template. Tutte le aree a cui era
+stato assegnato il template in questione riutilizzerano il template di default.
+:p.
+Bisogna premere :hp2.No:ehp2. per salvare il template.
+
+.* ****************************** Template-Folder *****************************
+:h1 res=&PANEL_TPLFOLDER..Template folder
+:p.
+Il template folder contiene tutti i template di messaggio.
+:p.
+Esiste un template speciale, il template di default che porta una :hp2."M":ehp2.
+blu sulla sua icona, al posto di una :hp2."M":ehp2. rossa.
+:p.
+Il template di default viene usato&colon.
+:ul compact.
+:li.per aree nuove (finch‚ non si assegna un template diverso all'area)
+:li.per aree con un template diverso se questo non esiste pi—.
+:eul.
+:p.
+Ci sono due modi per assegnare un template ad un'area di messaggi&colon.
+:ol compact.
+:li.Bisogna aprire il notebook di configurazione dell'area in questione e selezionare
+un template dalla pagina "Generale".
+:li.L'icona del template viene trascinato sulla lista delle aree e mollato sopra di essa.
+:eol.
+:p.
+Si usa il menu di contesto di un template per
+:ul compact.
+:li.aprirlo e per editarne i diversi campi
+:li.creare un template nuovo
+:li.copiare un template
+:li.cancellarlo (tranne il template di default)
+:eul.
+:p.
+Il nome del template viene modificato facendo click sull'icona tenendo premuto il
+tasto ALT.
+:p.
+E' possibile copiare un template tenendo premuto il tasto CTRL mentre il template
+si trascina sul folder dei template.
+
+
+:h2 res=&PANEL_TE_QUOTE..Citazione
+:p.La citazione da messaggi viene controllata dai settaggi successivi&colon.
+:parml.
+:pt.:hp2.Lunghezza di riga quando si cita:ehp2.
+:pd.Lunghezza di riga, misurata in caratteri, se il messaggio viene trasformato
+in testo citato.
+:pt.:hp2.Lunghezza per unione:ehp2.
+:pd.Lunghezza di riga, dalla quale in poi si uniscono due righe successive.
+:pt.:hp2.Stile di citazione:ehp2.
+:pd.Si usano o le iniziali del mittente e un ">" come segno delle righe citate,
+oppure semplicemente un ">".
+:pt.:hp2.Carattere citazione:ehp2.
+:pd.Bisogna impostare il carattere che serve per mettere in evidenza una citazione.
+:eparml.
+
+:h2 res=&PANEL_TE_HEADER..Header
+:p.Lo header viene inserito all'inizio del messaggio.
+:p.:link reftype=hd refid=tokens.Abbreviazione:elink. utilizzabili&colon.
+:p.%T, %Z
+:p.:hp2.Sinonimo per "Tutti":ehp2.
+:p.Se il nome del destinatario corrisponde all'inserzione in questione, il nome non
+viene inserito nel template dello header.
+
+:h2 res=&PANEL_TE_FOOTER..Footer
+:p.Il footer viene inserito alla fine di un messaggio. Viene usato quando si
+scrive un messaggio nuovo oppure quando si risponde ad un messaggio.
+:p.:link reftype=hd refid=tokens.Abbreviazione:elink. utilizzabili&colon.
+:p.%U, %I
+
+:h2 id=reptempl res=&PANEL_TE_REPLY..Testo di risposta
+:p.Il testo di risposta viene inserito all'inizio di un messaggio dopo lo header.
+Si usa esclusivamente quando si risponde ad un messaggio.
+:p.:link reftype=hd refid=tokens.Abbreviazione:elink. utilizzabili&colon.
+:p.%F, %G, %T, %Z, %A, %D, %M, %O, %P, %J, %R, %S, %E
+
+:h2 res=&PANEL_TE_DAREA..Risposta in un'altra area
+:p.Il testo di risposta in un'altra area viene inserito prima dello header. Viene
+usato quando si risponde ad un messaggio e se la risposta viene salvata in un'area
+diversa.
+:p.:link reftype=hd refid=tokens.Abbreviazione:elink. utilizzabili&colon.
+:p.%A, %E
+
+:h2 res=&PANEL_TE_FORWARD..Forward
+:p.Il testo di forward viene inserito all'inizio di un messaggio. Viene inserito
+esclusivamente nel caso si forwardi un messaggio.
+:p.:link reftype=hd refid=tokens.Abbreviazione:elink. utilizzabili&colon.
+:p.%F, %G, %T, %Z, %A, %U, %I, %J, %R, %S, %E, %D, %M, %W
+
+:h2 res=&PANEL_TE_FORWARDFOOTER..Forward, Footer
+:p.Il forward-footer viene inserito dopo il messaggio originale. Viene inserito
+esclusivamente nel caso si forwardi un messaggio.
+:p.:link reftype=hd refid=tokens.Abbreviazione:elink. utilizzabili&colon.
+:p.%F, %G, %T, %Z, %A, %U, %I
+
+:h2 res=&PANEL_TE_FORWARDORDER..Successione
+:parml.
+:pt.:hp2.Prima testo di accompagnamento:ehp2.
+:pd.Il testo di accompagnamento di un messaggio forwardato sta prima del messaggio
+forwardato.
+:pt.:hp2.Prima messaggio forwardato:ehp2.
+:pd.Il messaggio forwardato sta prima del testo di accompagnamento.
+:eparml.
+
+:h2 res=&PANEL_TE_XPOST..Crosspost
+:p.Il testo crosspost viene inserito all'inizio di un messaggio. Viene usato nel caso
+si desideri crosspostare un messaggio in aree diverse.
+:p.:link reftype=hd refid=tokens.Abbreviazione:elink. utilizzabili&colon.
+:p.%A, %E
+
+:h2 res=&PANEL_TE_CCOPY..Testo carbon copy
+:p.Il testo carbon copy viene inserito all'inizio di un messaggio. Viene usato nel
+caso si usi una lista di carbon copy per mandare un messaggio a destinatori diversi.
+:p.:link reftype=hd refid=tokens.Abbreviazione:elink. utilizzabili&colon.
+:p.%C
+
+:h2 res=&PANEL_TE_ORIGIN..Linea di origin
+:p.Il testo indicato viene inserito nella linea di origin dei messaggi.
+:p.
+:hp2.Seleziona linea di origin a caso&colon.:ehp2.
+:p.
+Con l'opzione :hp2."Seleziona linea di origin a caso":ehp2. il testo di origin
+viene selezionato a caso con ogni messaggio nuovo. I testi di origin vengono letti
+da un file. Quest'ultimo Š un file di testo semplice che contiene una origin in ogni riga.
+:p.
+Bisogna inseririe il nome del file con le linee di origin, oppure premere il pulsante
+:hp2."Cerca":ehp2. per selezionare il file in questione.
+
+:h2 id=tokens hide.Abbreviazioni
+:p.Le abbreviazioni successive sono disponibili nei message-template&colon.
+:parml break=none.
+:pt.:hp2.%T:ehp2.
+:pd.Nome del destinatario (messaggio originale)
+:pt.:hp2.%Z:ehp2.
+:pd.Cognome del destinatario (messaggio originale)
+:pt.:hp2.%R:ehp2.
+:pd.Indirizzo del destinatario (messaggio originale). Questa abbreviazione
+viene ignorata con risposte o echomail forwardato.
+:pt.:hp2.%O:ehp2.
+:pd.Nome del destinatario (messaggio nuovo)
+:pt.:hp2.%P:ehp2.
+:pd.Cognome del destinatario (messaggio nuovo)
+:pt.:hp2.%F:ehp2.
+:pd.Nome del mittente
+:pt.:hp2.%G:ehp2.
+:pd.Cognome del mittente
+:pt.:hp2.%J:ehp2.
+:pd.Indirizzo del mittente
+:pt.:hp2.%A:ehp2.
+:pd.Area-tag. Nel caso si crossposti un messaggio [che parola!], questa Š l'area
+di destinazione. Diventa l'area originale sei si risponde in un'area diversa
+oppure si forwarda un messaggio.
+:pt.:hp2.%E:ehp2.
+:pd.Descrizione dell'area. Nel caso si crossposti un messaggio, questa Š l'area
+di destinazione. Diventa l'area originale se si risponde in un'area diversa
+oppure si forwarda un messaggio.
+:pt.:hp2.%U:ehp2.
+:pd.Il tuo nome
+:pt.:hp2.%I:ehp2.
+:pd.Il tuo cognome
+:pt.:hp2.%W:ehp2.
+:pd.Il tuo indirizzo
+:pt.:hp2.%C:ehp2.
+:pd.Nome dell'utente in una lista di carbon copy
+:pt.:hp2.%D:ehp2.
+:pd.Data del messaggio a cui si risponde
+:pt.:hp2.%M:ehp2.
+:pd.Tempo del messaggio a cui si risponde
+:pt.:hp2.%S:ehp2.
+:pd.Soggetto del messaggio a cui si risponde
+:pt.:hp2.%%:ehp2.
+:pd.Un %
+:eparml.

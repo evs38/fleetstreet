@@ -1,0 +1,10 @@
+LIBRARY FLTCF_IM INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet IMail CFG'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+  QueryFormatID   @1
+  QueryFormatName @2
+  QueryVer        @4
+  ReadIMailCfg    @3
+

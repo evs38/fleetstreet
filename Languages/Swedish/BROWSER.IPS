@@ -1,0 +1,27 @@
+.***************************************************************************
+.* Nodelist browser - nodlistevisare
+.* 1996-07-22
+
+:h2 res=&PANEL_NLBROWSER..Nodlistevisare
+:p.
+Nodlistevisaren till†ter Dig att bl„ddra i de nodlistor du har st„llt in i
+de allm„nna inst„llningarna.
+:p.
+V„lj den nodlista som du ska visa fr†n listan.
+:p.
+Du kan s”ka p† antingen nodnummer eller sysopnamn&colon.
+:p.
+:hp2.Nodnummer:ehp2.
+:p.
+Om Du s”ker p† :hp2.nodnummer:ehp2. kommer nodlistan att delas upp i
+:hp2.zoner:ehp2. och :hp2.n„t:ehp2.. Zonerna och n„ten visas till v„nster i
+formen av ikoner. Om du klickar p† en n„tikon, kommer noderna i n„tet att
+visas p† den h”gra sidan.
+:p.
+:hp2.Sysopnamn:ehp2.
+:p.
+Om Du s”ker p† :hp2.sysopnamn:ehp2. kommer nodlistan att :hp2.sorteras
+alfabetiskt:ehp2.. Alfabetets bokst„ver visas till v„nster. Om det till en
+bokstav inte finns n†got namn i nodlistan, visas inte den bokstaven. N„r du
+klickar p† en bokstav kommer de nodlisteposter som b”rjar med den bokstaven
+att visas p† den h”gra sidan.

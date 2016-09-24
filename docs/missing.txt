@@ -1,0 +1,13 @@
+                What's missing compared to previous versions?
+
+- Registration dialogs, key checking, restrictions of unregistered version.
+
+- Some unfinished parts that were never included in a released version.
+
+- Documentation about the registration procedure
+
+- Support for IMail 1.85 and later. Andreas Klein denied permission to
+  include the structure definitions.
+
+- Support for GEcho. Gerard van der Land did not respond to my messages.
+

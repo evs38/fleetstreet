@@ -1,0 +1,146 @@
+.* ********************************* Find ***********************************
+
+:h2 id=findmsg res=&PANEL_FIND..Find
+:p.Find a text string in the message base.
+:p.You can select the areas in which to search for the text, the part of the
+message in which to search and the method of determining if a message matches.
+:p.
+Details&colon.
+:ul compact.
+:li.:link reftype=hd refid=findwhat.What:elink.
+:li.:link reftype=hd refid=findwhere.Where:elink.
+:li.:link reftype=hd refid=findareas.Which areas:elink.
+:li.:link reftype=hd refid=findhow.How:elink.
+:eul.
+:p.
+Press the :hp2.Start:ehp2. button to start searching.
+
+:h3 id=findwhat.What
+:p.
+This is the text that is searched for in the message base. Depending on the
+search method, it's a normal text string or regular expression. When performing
+a personal mail scan, no text can be entered.
+
+:h3 id=findwhere.Where
+:p.
+Select the parts of the message in which to search for the text string. When
+performing a personal mail scan, no part can be selected.
+
+:h3 id=findareas.Which areas
+:p.
+Select the areas in which to search for the text.
+:parml.
+:pt.:hp2.Current area:ehp2.
+:pd.Only the current area is scanned.
+:pt.:hp2.All areas:ehp2.
+:pd.All areas known to FleetStreet are scanned.
+:pt.:hp2.Area types:ehp2.
+:pd.Areas of the selected type(s) are scanned.
+:pt.:hp2.Custom:ehp2.
+:pd.A custom selection of areas is scanned. Press the :hp2.Select:ehp2. button
+to select the areas.
+:eparml.
+
+:h3 id=findhow.How
+:p.
+There are various methods to decide whether a message matches the text in the
+"What" field&colon.
+:parml.
+:pt.:hp2.Case sensitive:ehp2.
+:pd.The text in the "What" field must be contained in the message.
+:pt.:hp2.Ignore case:ehp2.
+:pd.Same as above, except that the capitalization of the text is ignored.
+:pt.:hp2.Fuzzy:ehp2.
+:pd.A fuzzy search is performed, i.e. search text and message need not match
+exactly. "Level" specifies a sensitivity value, ranging from 0 (exact) to
+5 (least exact).
+:pt.:hp2.Regular expression:ehp2.
+:pd.The text in the "What" field forms a :link reftype=hd refid=regex.regular expression:elink..
+:pt.:hp2.Personal Mail:ehp2.
+:pd.FleetStreet performs a personal mail scan. Press the :hp2.Configure:ehp2.
+button to set options for the personal mail scan.
+:pt.:hp2.Unsent messages:ehp2.
+:pd.FleetStreet searches for locally created messages that are not yet
+sent.
+:pt.:hp2.Record unread messages only:ehp2.
+:pd.Only unread messages ("read" attribute not set) are added to the
+bookmarks window.
+:eparml.
+
+:h3 id=regex.Regular expression
+:p.(Please read the User's Guide for more information)
+
+:h3 hide res=&PANEL_FINDNOPARTS..No parts selected
+:p.
+You must select one or more parts of the message.
+
+:h3 hide res=&PANEL_FINDNOAREAS..No areas selected
+:p.
+You must select an area type or a set of areas.
+
+:h3 hide res=&PANEL_FINDNOTEXT..No text entered
+:p.
+You must enter the text to search for in the "What" field.
+
+:h2 res=&PANEL_PERSMAILOPT..Personal Mail Scan
+:p.
+The following options control the personal mail scan&colon.
+:parml.
+:pt.:hp2.Scan new messages only:ehp2.
+:pd.Only messages after the lastread pointer are scanned.
+:pt.:hp2.Scan all messages:ehp2.
+:pd.All messages in the area are scanned.
+:pt.:hp2.Search for all names:ehp2.
+:pd.FleetStreet compares the contents of the "To" field with all your names.
+:pt.:hp2.Search for area default name only:ehp2.
+:pd.FleetStreet compares the contents of the "To" field only with the one name, that
+you've selected as the default name for the area.
+:eparml.
+
+:h2 res=&PANEL_FINDRESULTS..Bookmarks
+:p.The bookmarks window contains four types of messages&colon.
+:ul compact.
+:li.Results of a find operation
+:li.Results of a personal mail scan
+:li.Marked messages
+:li.Unsent messages
+:eul.
+:p.
+Use the context menu of the list to switch between the three views.
+:p.
+If you select "Save contents" in the context menu, the contents of the list
+are saved to disk when exiting FleetStreet. They are reloaded when re-starting
+FleetStreet.
+:p.
+Double click on a message or press the :hp2.Go to message:ehp2. button to
+display the whole message.
+:p.
+Press the :hp2.Clear:ehp2. button to clear the current view, i.e. all messages
+of the current view are removed from the list.
+:p.
+Use the context menu of a message to
+:ul compact.
+:li.Delete the message
+:li.Export the message
+:li.Print the message
+:li.Move the message to a different area
+:li.Copy the message to a different area
+:li.Remove the message from the current view
+:eul.
+
+:h2 hide res=&PANEL_NOTTHERE..Message does not exist
+:p.
+You've double clicked on a message in the bookmarks window. However, either the
+message or the whole area does no longer exist, so the message can't be
+displayed. This can happen if the entry in the list was saved to disk and the
+message or area was deleted when FleetStreet wasn't running.
+:p.
+Remove the message from the list to avoid this error message.
+
+:h2 res=&PANEL_SEARCH..Search
+:p.
+Enter the text to be searched for. Check :hp2.Case sensitive:ehp2. if the
+case of the text is relevant for the search.
+:p.
+Press :hp2.OK:ehp2. to start the search.
+

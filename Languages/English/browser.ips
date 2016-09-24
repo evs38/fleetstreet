@@ -1,0 +1,27 @@
+.* **********************************************************************
+.* Nodelist browser
+.* **********************************************************************
+
+:h2 res=&PANEL_NLBROWSER..Nodelist browser
+:p.
+The nodelist browser allows you to page through the nodelists that you've
+entered in the setup notebook.
+:p.
+Select the nodelist you want to browse through from the drop down list.
+:p.
+You can either browse by node number or by sysop name&colon.
+:p.
+:hp2.Node number:ehp2.
+:p.
+When browsing by :hp2.node number:ehp2., the nodelist is divided in :hp2.zones:ehp2. and :hp2.nets:ehp2.. 
+The zones and nets are displayed as icons on the left hand side. When double
+clicking on a net icon, the nodes in the net are displayed on the right hand side.
+:p.
+:hp2.Sysop name:ehp2.
+:p.
+When browsing by :hp2.sysop name:ehp2., the nodelist is :hp2.ordered alphabetically:ehp2.. The
+letters of the alphabet are displayed on the left hand side. When there's
+no name in the nodelist beginning with a letter, this letter does not appear.
+When double clicking on a letter, all nodelist entries beginning with this
+letter are displayed on the right hand side.
+

@@ -1,0 +1,353 @@
+                                  nderungen
+                                  ==========
+
+(* = Bugfix, + = neues Feature, # = nderung, - = nicht mehr vorhanden)
+
+Version 1.27.1:
+
+* Namensfeld und Nodenummernfeld im Header haben sich berlappt.
+
+
+Version 1.27:
+
+* Tastenkrzel haben nicht funktioniert.
+# Namen von requesteten Files k”nnen bis 50 Zeichen lang sein. Request-
+  Passw”rter k”nnen bis zu 20 Zeichen lang sein.
+* Aussehen des Headers etwas ge„ndert (wg. ital. Version).
+# Versuch, das Druckrand-Auswahl-Problem bei den neuesten Fixpacks zu umgehen.
+  IBM muá trotzdem das Spin Button Control wieder reparieren.
++ Untersttzung von LoraBBS 2.42
+
+
+Version 1.26:
+
+# Tastenbelegung ge„ndert (Probleme mit internationalen Tastaturen).
++ Untersttzung von BBToss 2.40 [Teile von Burkhard Buelte]
+* Jahreszahl >= 2000 in *.MSG-Base wurde evtl. falsch angezeigt, wenn eine
+  alte MSGAPI32.DLL verwendet wird. Ein Workaround sorgt dafr, daá auch
+  in diesem Fall die Jahreszahl korrekt angezeigt wird. (Der Fehler steckt
+  eigentlich in der MSGAPI32.DLL, nicht in FleetStreet)
+  Es wird eine neue MSGAPI32.DLL mit dieser Version geliefert.
+
+
+Version 1.25.1:
+
+* Wenn erste dargestellte Message das NPD-Flag gesetzt hatte, wurde die
+  Monospaced-Darstellung permanent aktiviert.
+
+
+Version 1.25:
+
++ Tastenkrzel zum Umschalten der Fonts und der Hervorhebungen.
+  [Alexander Batalov, 2:5015/88@FidoNet]
++ Global Option fr den alternativen (Monospaced) Font.
+  [Alexander Batalov, 2:5015/88@FidoNet]
++ Area-Option um fr die Area immer den alternativen (Monospaced) Font zu
+  verwenden. [Alexander Batalov, 2:5015/88@FidoNet]
++ Untersttzung von HPT [Alexander Batalov, 2:5015/88@FidoNet]
++ Zweifarbige Anzeige von Quotes. Jede zweite Quote-Ebene wird mit einer
+  anderen Farbe dargestellt. [Alexander Batalov, 2:5015/88@FidoNet]
++ Untersttzung von FMail-Versionen neuer als 1.02.
+  [Alexander Batalov, 2:5015/88@FidoNet]
+
+
+Version 1.24.1:
+
+* Fehlender Zeilenwechsel zwischen Tearline und Origin
+
+
+Version 1.24:
+
+* Messageliste wurde bei einer Gr”áenver„nderung evtl. nicht korrekt
+  gezeichnet.
+# Open-Source-Version. Alle Registrierungs-bezogenen Funktionen wurden
+  entfernt.
+
+
+Version 1.23:
+
+* W„hrend der Suche konnte das Merkerfenster geschlossen werden, was zu
+  seltsamem Verhalten fhrte.
+* L”schen einer Message in einer defekten Area konnte FleetStreet zum
+  Absturz bringen.
++ Im Fastecho-Konfigurationsfile werden Enviroment-Variablen in Pfaden
+  untersttzt.
+# Bis zu 100 Adressen m”glich
+
+
+Version 1.22:
+
+* Empfangsdatum wurde m”glicherweise in der Messageliste falsch angezeigt fr
+  selbstgeschriebene Messages in JAM-Areas.
+* Verwirrung, wenn zwischen monospaced und proportionaler Schrift umgeschaltet
+  wurde, w„hrend Message mit NPD-Attribut angezeigt wurde.
+# Vierstellige Jahreszahl wird beim Schablonen-Krzel %D eingefgt.
+* NPD-Attribut wurde in JAM-Areas nicht gespeichert
+* INTL-Kludge konnte in MSG-Netmail-Areas doppelt enthalten sein.
+* Kludges in *.MSG-Files l„nger als 2KB k”nnen einen H„nger verursacht haben.
+
+
+Version 1.21:
+
+* ShotgunBBS-DLL fehlte.
+* "Grunged date" in *.MSG- und Squish-Areas
+* *.DTP-File blieb nach dem Schlieáen des Nodelist-Browsers offen.
+* Erste Zeile in Verteilereintr„gen war zu kurz.
+* INTL-Kludge wurde beim Antworten nicht ge„ndert.
+# Leerzeichen zwischen Filename und Passwort bei nicht-direkten Filerequests
+  eingefgt. Das fehlende Leerzeichen war ein Workaround fr einige fehlerhafte
+  Tosser, die sonst das Passwort als n„chsten Filenamen behandelt haben. Ich
+  denke, daá inzwischen genug Zeit war, diese Fehler zu beheben.
+  Wenn Sie einen Binkley-Outbound verwenden, empfehle ich immer noch, die
+  "Direkt"-Option fr Requests zu verwenden.
+* Aktueller Thread wurde in der Threadliste nicht aufgeklappt, wenn die
+  kompakte Darstellung verwendet wurde.
+# Alle Unter-Seiten in Notebooks entfernt.
+# Monospaced-Einstellung bleibt beim Wechsel zwischen Lesen und Schreiben
+  erhalten; kann auch beim Schreiben ge„ndert werden.
++ Unterstzung des NPD-Flag (Non-Proportional Display). Wenn eine Message
+  dieses Flag enth„lt, so wird tempor„r auf Monospaced umgeschaltet.
+* Beim Antworten auf Echomail in eine Netmail-Area enthielt die Rexx-Variable
+  FleetMsg.Header.ToAddress 0:0/0.0 statt der richtigen Zieladresse.
+* Auffrischen der Anzeige durch Rexx-Funktion FSSetHeader was nicht korrekt.
+* Aufruf von FSSetText vor dem vollst„ndigen Verarbeiten der Schablone
+  konnte H„nger verursachen.
+# Unter Warp 4 wird wieder ein Rahmen um den Header herum gedruckt. Warp 4
+  weigert sich, den bisherigen Rahmen zu drucken. Das ist offenbar ein Bug im
+  GPI, der auch mit FP #4 noch nicht beseitigt wurde. Mit der neuen Methode
+  wird ein etwas h„álicherer Rahmen gedruckt.
+
+
+Version 1.20:
+
+# Kleine nderung in JAM-Untersttzung
+* Import in Verteilerliste schlug fr Zeilen fehl, die Leerzeichen am Ende
+  haben.
+* Gelesene Messages wurden in der Themenliste immer schwarz gezeichnet.
++ Untersttzung von Shotgun BBS
+* Meneintrag "Drucken" wurde beim Editieren nicht deaktiviert.
++ Untersttzt V7+-Nodelisten (teilweise). Verwenden Sie FastLst, um solche
+  Nodelisten zu erzeugen.
++ Man kann nun bei Verteilerlisteneintr„gen eine "erste Zeile" angeben.
+* Falscher Schablonenname wurde in den Area-Einstellungen angezeigt.
+* ENTER-Taste wurde ignoriert, wenn Liste in Request-Dialog den Fokus hatte.
+# Fokus-Reihenfolge in Request-Dialog ge„ndert.
+* *.JAM-Files wurden nicht geschrieben, wenn man Message „ndert.
+
+
+Version 1.19:
+
+* Absturz nach der Verwendung des Kontextmens in der Themenliste.
+* Es war m”glich, die rechteste Trennlinie in der Messageliste zu weit nach
+  links zu verschieben.
+* Doppelte Areas im Echomanager.
+* Titel der Arealiste wurde nicht erneuert, wenn der Ordner umbenannt wurde.
++ Untersttzung von IMail 1.85 (Beta!)
+# "Alle Areas scannen" im Kontextmen der Arealiste scannt nun wirklich alle
+  Areas.
+* Erweiterungs-DLL wurde nicht aufgerufen, wenn ein Echo gleichzeitig bestellt
+  und gescannt wurde.
+* Die Ordner der Areas gingen verloren, wenn die Tosser-Konfiguration im Setup
+  neu eingelesen wurde.
++ Untersttzung von NewsWave 0.99.5 (einschl. Mailinglisten)
+* Messageliste wurde geschlossen, wenn FleetStreet besch„ftigt war und ENTF
+  gedrckt wurde.
+# Ordner der Zielarea fr Kopieren, Verschieben und Weiterleiten wird
+  automatisch ge”ffnet.
+* Manche Nodes wurden in der V7-Nodeliste nicht gefunden.
+* Kopierte und verschobene Messages hatten eine falsche CHRS-Kludgeline.
++ Anzeige des MO-Flags fr V7-Nodelisten. Dieses Non-Standard-Flag muá vom
+  Nodelist-Compiler explizit gesetzt werden. Bei FastLst wird dies durch den
+  folgenden Eintrag (in FASTLST.CFG) erreicht:
+
+     FlagDef
+       MO    D
+     End
+
+* *.MSG-Areas in Wurzelverzeichnissen (z.B. D:\) wurden nicht korrekt behandelt.
+* Attribute "gel”scht" wurde nicht korrekt angezeigt.
+
+
+Version 1.18:
+
++ Attribut "Behalten" fr Message in JAM- und Squish-Areas eingefhrt. Bitte
+  den Abschnitt ber Squish-Areas in der Benutzeranleitung lesen!
++ Toolbar-Buttons fr "Merker-Fenster", "Hilfe", "Message kopieren",
+  "Message verschieben", "Message weiterleiten", "Kopieren", "Ausschneiden",
+  "Einfgen", "Kommandozeile", "Skripte-Ordner", "Nodelist-Browser",
+  "Requesten", "Aufholen"
+# Icon fr "Antworten" ge„ndert.
+- Kennzeichnung von "Eingeschlossen/Ausgeschlossen" beseitigt.
++ Area-Ordner eingefhrt. Details in der Benutzeranleitung.
+# Gelesene pers”nliche Messages werde nun mit der "normalen" Farbe in der
+  Threadliste dargestellt.
+# Der Echomanager erlaubt nun, eine Area gleichzeitig zu bestellen und zu
+  rescannen.
+# CTRL-TAB und ALT-TAB werden jetzt vom Editor ignoriert.
++ Datum und Zeit zur Messageliste hinzugefgt.
++ Default-Verzeichnis fr File-Attaches
+* Ungekehrte Funktion von "Zeilen nicht zusammenziehen" im Antworten-Dialog.
+* Fehlerhaftes Adreá-Matching, wenn nur die Point-Nummer eingegeben wird
+  (z.B. ".3")
++ Die System-Einstellung fr "Logos" wird verwendet.
+# Neue Notebooks mit Merlin
+* M”gliches Problem beim Lesen von NewsWave's Konfigurationsdatei ("falsche
+  Version").
+# Sichergestellt, daá Tosser-Konfigurations-DLLs immer aus dem Startverzeichnis
+  geladen werden.
+# Workaround f. OS/2-Bug: FS kann abstrzen, wenn die Default-Druckjob-
+  Einstellungen noch nicht eingestellt waren.
+# Erzeugung von FWDSUBJ optional.
+# Workaround f. 16-Bit-Limit von OS/2: Verwendung des Mens "Editieren/Kopieren"
+  am Ende von Messages >64K funktionierte nicht (es wurde nichts in die
+  Zwischenablage kopiert).
+* In der kompakten Ansicht der Themenliste wurde der oberste Eintrag nicht
+  entfernt, wenn alle Threads darin gel”scht wurden.
+# FleetStreet antwortet dem Forwarder einer Message.
+* Beim Kopieren oder Verschieben von Messages aus der Messageliste, Themenliste
+  oder aus dem Merkerfenster wurde immer die aktuelle Area als Ziel vorgegeben.
+* Absturz beim Quoten einer seltsamen Message.
+# Monospaced-Fonts werde nicht mehr simuliert. FleetStreet verwendet nun
+  einfach einen alternativen Font.
+* Absturz, wenn man Nodes vom Nodelist-Browser auf eine Adreá-Feld zieht.
+* Kopierte und verschobene Messages wurden nicht in ECHOMAIL.JAM/NETMAIL.JAM
+  verzeichnet.
+
+
+Version 1.17:
+
++ Neue Kludges FWDFROM, FWDTO, FWDORIG, FWDDEST, FWDSUBJ, FWDAREA und FWDMSGID.
+  Details siehe Benutzeranleitung.
+* Leerer Benutzername bei Verwendung des Squish-Tossers
+* m”glicher Absturz nach dem Start (vage? Nun, der Fehler ist schwieriger zu
+  beschreiben als zu beheben).
+* Falsche Fehlermeldung beim Wechseln des Tossers.
+* Kludge-Lines ohne Leerzeichen zwischen Kludge-Name und -Inhalt (bes. @AREA)
+  wurden nicht erkannt.
+# Algorithmus fr Hervorhebungen verfeinert.
+* Mit falscher Codepage gedruckt
+- NewsWave (die VIO-Version) wird nicht mehr untersttzt
++ Untersttzung von NewsWave PM 0.99
+# Erkennung der Area fr pers”nliche Mail von FMail
+* Workaround fr Darstellungsfehler mit kursivem Text. Dies wird durch einen
+  OS/2-Fehler verursacht.
+* Manche Attribute von Kurznamen wurden nicht richtig aus dem INI-File geladen.
+  Danke IBM fr diese kranken APIs!
++ Untersttzung von BBToss
+* Absturz bei berlanger (d.h. defekter) CHRS-Kludge.
+
+
+Version 1.15:
+
+# Max. L„nge von Tastaturmakros auf 1023 Zeichen erh”ht.
+* Sekund„re Fenster beachteten individuelle (nicht system-weite) Rahmenbreiten
+  nicht.
+* Falsche Fehlermeldung beim Start, wenn AREAS.INI leer ist.
++ Untersttzung der "Include"-Anweisung in der SQUISH.CFG. Untersttzt nun auch
+  ParToss.
+* Kurznamen-Dialog wurde geschlossen, nachdem der "?"-Button benutzt wurde.
+* Echomanager strzt bei sehr vielen Areas ab.
+* H„nger beim Kopieren von Messages aus der Themenliste.
+* M”gliches Problem mit dem Neuzeichnen der Messageliste in groáen Areas.
+# Alle AKAs aus der FMAIL.CFG werden gelesen.
+* Probleme mit seltsamen Zeichen in der Nodeliste beseitigt.
+# Performance des Nodelist-Browsers verbessert.
+* Fenster-Positions-Speicher-Bug endlich beseitigt (hoffentlich...)
+# Codepage-Untersttzung ge„ndert. Das wird sich in einer der n„chsten
+  Versionen nochmal „ndern.
++ Message-Anzeige untersttzt nun auch /kursiven/ text.
+
+
+Version 1.14:
+
+# Suchoptionen im Request-Dialog werden nun gespeichert.
++ Die DLLs zum Einlesen der Tosser-Konfigurationen werden nun dynamisch geladen
+     + Es wird nur eine DLL geladen, und nur wenn sie wirklich gebraucht wird
+     + Das Hinzufgen von neuen DLLs beschr„nkt sich auf das Kopieren in das
+       FleetStreet-Verzeichnis
+  FleetStreet sucht im Startverzeichnis nach den DLLs, diese mssen sich also
+  dort befinden!
+* FleetCom war nicht ordentlich gelinkt, was einen SYS0192 verursachte.
+# Der Fortschrittsanzeiger wird nun in der Statuszeile dargestellt. Sie k”nnen
+  die Hintergrundverarbeitung durch Drcken von ESC oder durch einen Doppel-
+  Klick auf den Fortschrittsanzeiger anhalten.
++ Der Area-Scan kann durch Drcken von ESC gestoppt werden.
+# Noch ein Workaround fr Bugs von IMail 1.75.
+# Es k”nnen alle Attribute fr einen Kurznamen ausgew„hlt werden
+# Es k”nnen alle Attribute fr eine Area ausgew„hlt werden
+# Der Skript-Ordner wird alphabetisch sortiert
+* 32000-Zeilen-Grenze fr Filelisten entfernt.
+* Umschalten des Absendernamens funktionierte nur in der konmpakten Darstellung.
+# Area-Beschreibungen werden aus der TerMail-Konfiguration gelesen.
++ Beim Drcken von ENTER in einem leeren TO-Feld ”ffnet sich die Kurznamenliste,
+  und man kann einen Kurznamen ausw„hlen.
+* High-Water-Markierung in Squish-Areas wurde beim ndern einer Message nicht
+  korrekt zurckgesetzt.
+* Neue Messages in JAM-Areas hatten falsche IDs.
+* Messages in JAM-Areas wurden mitunter nicht 100% gel”scht.
+# Editieren von Absender-Name und Adresse wieder aktiviert, was auch einen Bug
+  wieder aktiviert. Sie haben es so gewollt!
+* M”gliche Zeichen-Probleme, wenn hervorgehobener Abschnitt am Zeilenanfang
+  stand.
+* Speicherleck bei File-Request.
+* Datumsanzeige fr Jahre >= 2000 bereinigt.
+* Sekunden in Datum/Zeit waren falsch.
++ Zu ”ffnende Fenster k”nnen im Setup ausgew„hlt werden.
+# Neue MSGAPI32.DLL. Bitte lesen sie die Datei README.TXT.
+# Neuer Algorithmus fr die Hervorhebungen.
+* M”glicher Absturz nach dem L”schen eines Echos aus dem Echo-Manager.
+* Lange Echolisten (>64K) wurden nicht korrekt gespeichert. Dieser Fix verlangt,
+  daá fr alle Uplinks die Areas neu extrahiert werden.
+# Der Verteilerlisten-Ordner wird sortiert.
+# Neuer Algorithmus fr regul„re Ausdrcke im Suchdialog. Details in der
+  Bedienungsanleitung.
+* Probleme mit gespeicherten Kurznamen.
+# Andere Attribut-Auswahl fr direkte File-Requests.
+* Falsche Area-Adressen, wenn Fastecho verwendet wird und Lcken in der
+  AKA-Liste sind.
+
+
+Version 1.13:
+
+# Beim Kopieren oder Verschieben von Messages fragt FleetStreet nun nach, ob
+  die Kopien neu verschickt werden sollen.
++ Die aktuelle Ansicht wird im Merkerfenster angezeigt.
++ "Alle selektieren" und "Alle deselektieren" im Merkerfenster.
++ FleetStreet merkt sich im Suchdialog die letzten 10 Suchtexte.
+* M”glicher Absturz bei unscharfer Suche.
++ Untersttzung von IMail 1.75
++ Untersttzung von NewsWave
+* TerMail konnte als Tosser nicht ausgew„hlt werden.
++ M”glichkeit im Request-Dialog, die anderen Lines fr einen gegebenen Node
+  zu suchen.
+* Wildcards (*, ?) wurden nicht als gltige Filenamenszeichen erkannt.
+# Speicherbedarf bei der Anzeige von langen Filelisten reduziert.
+# "Alle Ausw„hlen"-Funktion im Request-Dialog beschleunigt.
+# L„ngenbeschr„nkung beim Suchen in Filelisten aufgehoben.
++ %E in Crosspost-Schablone verwendbar
+# Beim Quoten wird nur noch das Quote-Zeichen erkannt, das in der Schablone
+  ausgew„hlt ist. Das vermindert Fehl-Quotes, k”nnte aber dieses Feature weniger
+  ntzlich erscheinen lassen, wenn wechselnde Quote-Zeichen in einer Area
+  verwendet werden.
+* Einige Sonderzeichen wurden nicht als Quote-Initialen erkannt.
+# Leere Schablonenelemente fhren nicht mehr zu Leerzeilen im Text.
++ Hervorhebungen k”nnen tempor„r mit dem Kontextmen des Messagefensters
+  ein- und ausgeschaltet werden.
++ Man kann tempor„r auf eine Monospace-Version des aktuellen Fonts umschalten
+  (mit dem Kontextmen der Messagefensters).
+* ndern einer Message l„nger als 64 K nicht m”glich (MLE-Control schl„gt wieder
+  zu!)
+* M”glicher Absturz nach dem Entfernen eines Echos aus dem Echomanager.
+* Suchtext wurde ben”tigt, wenn man nach unversandten Messages suchte.
++ Kompakte Darstellung in der Themenliste, Threads mit der gleichen Themenzeile
+  werden zu Pseudo-Threads zusammengefaát.
++ Menpunkt "Toolbar konfigurieren" zum Hauptmenu hinzugefgt (wg. leichterem
+  Zugriff).
+# Behandlung von JAM-Areas nochmals ge„ndert. Das Scannen von JAM-Areas sollte
+  nun wieder schneller sein.
+  Mehr Details darber, wie FleetStreet JAM-Areas handhabt, werden in der
+  Bedienungsanleitung der n„chsten Version erscheinen.
+* Quoten einer leeren Message hat nicht richtig funktioniert.
+# FleetCom verwendet jetzt FLTRUN.DLL, stellen Sie also sicher, daá sie im
+  LIBPATH zu finden ist.
+* File-Request-Dialog konnte mehrmals ge”ffnet werden.

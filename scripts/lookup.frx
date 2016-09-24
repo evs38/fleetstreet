@@ -1,0 +1,53 @@
+/****************************************************************************/
+/*                      FleetStreet example script                          */
+/*                                                                          */
+/*                              LOOKUP.FRX                                  */
+/*                                                                          */
+/* LOOKUP.FRX performs nodelist lookups.                                    */
+/*                                                                          */
+/* This example script demonstrates how to use the nodelist lookup          */
+/* functions of the FleetStreet Rexx environment. It reads the nodelist     */
+/* information of the sender of the current message and displays the        */
+/* data.                                                                    */
+/****************************************************************************/
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+if FSLookupAddress(FleetMsg.Header.FromAddress, 'NodeData') \= 'OK' then
+do
+   /* Node/Point not found */
+   parse var FleetMsg.Header.FromAddress zone':'net'/'node'.'point
+   if point \= '' then
+   do
+      /* it's a point, let's look for the boss node */
+      if FSLookupAddress(zone':'net'/'node, 'NodeData') \= 'OK' then
+      do
+         /* still not found, give up */
+         say 'Node not found'
+         exit
+      end
+   end
+   else
+   do
+      say 'Node not found'
+      exit
+   end
+end
+
+say 'Results:'
+say ''
+say 'Address: ' NodeData.Address
+say 'Name:    ' NodeData.Name
+say 'System:  ' NodeData.System
+say 'Phone:   ' NodeData.Phone
+say 'Location:' NodeData.Location
+say 'Password:' NodeData.Password
+say 'Modem:   ' NodeData.Modem
+say 'Baud:    ' NodeData.Baud
+say 'UserCost:' NodeData.UserCost
+say 'CallCost:' NodeData.CallCost
+say 'Flags:   ' NodeData.Flags
+
+exit

@@ -1,0 +1,46 @@
+.* ****************************** Threadlist *********************************
+:h2 id=threadlist res=&PANEL_THREADLIST..Threadliste
+:p.
+Es werden die Message-Threads in der aktuellen Area dargestellt. Gelesene
+Messages und ungelesene Messages werden in unterschiedlichen Farben
+dargestellt.
+
+
+:h2 res=&PANEL_THRLISTSETTINGS..Threadlisten-Einstellungen
+:p.
+W„hlen Sie eines der folgenden Themen&colon.
+:ul compact.
+:li.:link refid=defview reftype=hd.Threadlisten-Ansicht:elink.
+:li.:link refid=thcolors reftype=hd.Farben:elink.
+:eul.
+
+:h3 id=defview res=&PANEL_SU_THREADS..Threadlisten-Ansicht
+:p.Die Threadliste kann in verschiedenen Modi angezeigt werden&colon.
+:parml.
+:pt.:hp2.Alle Themen:ehp2.
+:pd.Alle Themen mit allen Messages der momentanen Area werden angezeigt.
+:pt.:hp2.Themen mit ungelesenen Messages:ehp2.
+:pd.Nur die Themen, die mindestens eine ungelesene Message enthalten, werden angezeigt..
+:pt.:hp2.Nur ungelesene Messages:ehp2.
+:pd.Nur ungelesene Messages werden angezeigt. Themen beginnen mit der ersten ungelesenen
+Message und enden mit der letzten ungelesenen Message. Wenn ein Thema von ungelesenen
+Messages von einer gelesenen Message unterbrochen wird, werden zwei Themen angezeigt.
+:eparml.
+:p.Zus„tzlich k”nnen Sie angeben, ob der Name des Absenders der Message angezeigt werden
+soll oder nicht.
+:p.Mit der Einstellung :hp2."Kompakte Darstellung":ehp2. werden alle Threads mit
+der gleichen Themenzeile zu einem Pseudo-Thread zusammengefaát.
+
+
+:h3 id=thcolors res=&PANEL_THRLISTCOLORS..Farben
+:p.Sie k”nnen unterschiedliche Farben fr die verschiedenen Message-Typen w„hlen.
+:p.W„hlen Sie die Grundfarbe mit dem Farbkreis aus. Die aktuelle Farbe wird mit
+einem Fadenkreuz markiert.
+:p.Stellen Sie die Helligkeit der Farbe mit dem Slider rechts neben dem
+Farbkreis ein.
+
+:h3 hide res=&PANEL_DOINGWORK..Bearbeitung im Gange
+:p.Ein Thread wird bereits verarbeitet. W„hrend dieser Zeit kann keine
+weitere Bearbeitung eines Threads gestartet werden. Warten Sie ab, bis die
+Bearbeitung beendet ist.
+

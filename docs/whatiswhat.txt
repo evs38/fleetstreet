@@ -1,0 +1,49 @@
+Directories:
+
+.\               C files and H files of the main EXE file, MAKEFILEs
+
+.\bin            executable files (EXE, DLL, language files)
+.\docs           assorted documentation files
+.\obj            object files and other intermediate files
+.\DevKit         Development kit
+
+.\Resources      Resources of the main EXE file (icons, bitmaps etc.)
+.\AddOns         Files that are included in binary distributions
+.\scripts        Rexx scripts
+
+.\areaman        Sources for FLTAMAN.DLL (area and folder management)
+.\controls       Sources for FLTCTLS.DLL (PM controls)
+.\dump           Sources for FLTDUMP.DLL (exception register dump)
+.\FltV7          Sources for FLTV7.DLL (Version 7 nodelist lookups)
+.\handlemsg      Sources for FLTHMSG.DLL (low level message handling)
+.\jamapi         Sources for FLTJAM.DLL (JAM message base handling)
+.\printmsg       Sources for FLTPRNT.DLL (print setup and printing)
+.\runtime        Sources for FLTRUN.DLL (C runtime DLL)
+.\util           Sources for FLTUTIL.DLL (utility functions)
+
+.\fleetcom       Sources for FLEETCOM.EXE
+.\install        Sources for INSTALL.EXE (installation program)
+
+.\testcfg        Sources for TESTCFG.EXE (Tosser CFG DLL tester)
+.\tosstpl        Template for new tosser DLLs
+
+.\bbtoss         Sources for FLTCF_BB.DLL (BBToss support)
+.\fastecho       Sources for FLTCF_FE.DLL (Fastecho support)
+.\FMail          Sources for FLTCF_FM.DLL (FMail support)
+.\GEcho          Sources for FLTCF_GE.DLL (GEcho support)
+.\hpt            Sources for FLTCF_HP.DLL (HPT support)
+.\imail          Sources for FLTCF_IM.DLL (Imail support)
+.\Lora           Sources for FLTCF_LO.DLL (LoraBBS support)
+.\NWPM           Sources for FLTCF_NP.DLL (NewsWave PM support)
+.\shotgun        Sources for FLTCF_SG.DLL (Shotgun support)
+.\SOS            Sources for FLTCF_SO.DLL (SOS tosser support, uncompleted)
+.\squish_cfg     Sources for FLTCF_SQ.DLL (Squish support)
+.\TerMail        Sources for FLTCF_TM.DLL (TerMail support)
+.\wmail          Sources for FLTCF_WM.DLL (WMail support)
+
+.\Languages          Sources for FLTLNG.DLL (carrier DLL for language resources)
+.\Languages\German   Sources for german language files
+.\Languages\English  Sources for english language files
+.\Languages\Italian  Sources for italian language files
+.\Languages\Swedish  Sources for swedish language files
+

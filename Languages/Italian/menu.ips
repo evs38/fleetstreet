@@ -1,0 +1,238 @@
+.***************************************************************************
+.* Help-Panels des Menues                                                  *
+.***************************************************************************
+
+:h1.Menu
+
+:h2 res=&PANEL_MENUFILE..File
+:p.Voci di menu per importare e esportare files.
+
+:h3 res=&PANEL_MENUIMPORTFILE..Importa file
+:p.Copia un file di testo nella finestra messaggio. Disponibile
+esclusivamente nel caso che si scriva un messaggio.
+
+:h3 res=&PANEL_MENUEXPORTFILE..Esporta file
+:p.Salva il messaggio attuale in un file di testo sul disco fisso.
+Disponibile esclusivamente nel caso che si scriva un messaggio.
+
+:h3 res=&PANEL_MENUFILEECHOTOSS..Scrivi Echotoss
+:p.Scrivere il file Echotoss immediatamente.
+
+:h3 res=&PANEL_MENUFILESHELL..Avvia comandshell
+:p.Viene lanciata una sessione comandshell. Il programma usato come Shell
+Š indicato nel file CONFIG.SYS come OS2_SHELL.
+
+:h3 res=&PANEL_MENUFILEPRINT..Stampa
+:p.Stampa il messaggio attuale.
+
+:h3 res=&PANEL_MENUFILEPRINTSETUP..Imposta stampante
+:p.Scegliere l'impostazione per la stampante.
+
+:h3 res=&PANEL_MENUEXIT..Exit
+:p.Termina il programma. Modifiche della configurazione vengono salvate.
+
+:h2 res=&PANEL_MENUEDIT..Edit
+:p.Voci di menu per editare un messaggio e per il collegamento con il
+clipboard.
+
+:h3 res=&PANEL_MENUEDITCUT..Taglia
+:p.Il testo messo in evidenza viene copiato nella clipboard e poi cancellato.
+
+:h3 res=&PANEL_MENUEDITCOPY..Copia
+:p.Il testo messo in evidenza viene copiato nella clipboard. Nel caso che non si
+trovi un testo messo in evidenza viene copiato il testo intero.
+
+:h3 res=&PANEL_MENUEDITPASTE..Incolla
+:p.Il contenuto della clipboard viene inserito nel testo.
+
+:h3 res=&PANEL_MENUEDITCLEAR..Cancella
+:p.Il testo messo in evidenza viene cancellato.
+
+:h3 res=&PANEL_MENUEDITUNDO..Undo
+:p.Le ultime modifiche nel messaggio vengono annullate.
+:p.:hp8.Nota&colon.:ehp8. Questo vale esclusivamente per il testo nella finestra
+del messaggio, non per il messaggio intero. Non si possono recuperare messaggi
+cancellati.
+
+:h3 res=&PANEL_MENUEDITDELLINE..Cancella riga
+:p.Si cancella la riga attuale del messaggio.
+
+:h3 res=&PANEL_MENUEDITSEARCH..Cerca
+:p.Cerca un testo nel messaggio attuale.
+
+:h2 res=&PANEL_MENUMESSAGE..Messaggio
+:p.Voci di menu per l'elaborazione del messaggio.
+
+:h3 res=&PANEL_MENUMSGMOVE..Muovi messaggio
+:p.Serve a muovere il messaggio attuale in un'area diversa.
+
+:h3 res=&PANEL_MENUMSGCOPY..Copia messaggio
+:p.Serve a copiare il messaggio attuale in un'area diversa.
+
+:h3 res=&PANEL_MENUMSGFORWARD..Forwarda messaggio
+:p.Serve a forwardare il messaggio attuale.
+
+:h3 res=&PANEL_MENUMSGNEW..Messaggio nuovo
+:p.Per scrivere un messaggio nuovo nell'area attuale.
+
+:h3 res=&PANEL_MENUMSGCHANGE..Modifica
+:p.Modifica messaggio attuale.
+
+:h3 res=&PANEL_MENUMSGREPLY..Rispondi
+:p.Rispondi al messaggio attuale.
+
+:h3 res=&PANEL_MENUMSGDELETE..Cancella
+:p.Cancella il messaggio attuale.
+
+:h3 res=&PANEL_MENUMSGFIND..Cerca
+:p.Cercare un testo in un messaggio dell'area attuale oppure in tutte le aree.
+
+:h3 res=&PANEL_MENUMSGBCAST..Broadcast
+:p.Cancellazione di broadcast oppure modifica di broadcast del messaggio attuale.
+
+:h3 res=&PANEL_MENUMSGBCDELETE..Cancellazione di broadcast
+:p.Cancellazione di broadcast del messaggio attuale.
+:p.Ci sono alcune limitazioni usando questa funzione&colon.
+:ul compact.
+:li.Pu• essere usata esclusivamente in echo-areas
+:li.Il messaggio deve essere locale
+:li.Il messaggio deve essere stato esportato in precedenza
+:li.Il messaggio deve avere una MSGID-kludgeline
+:eul.
+
+:h3 res=&PANEL_MENUMSGBCMODIFY..Modifica di broadcast
+:p.Modifica di broadcast del messaggio attuale.
+:p.Ci sono alcune limitazioni usando questa funzione&colon.
+:ul compact.
+:li.Pu• essere usata esclusivamente in echo-areas
+:li.Il messaggio deve essere locale
+:li.Il messaggio deve essere stato esportato in precedenza
+:li.Il messaggio deve avere una MSGID-kludgeline
+:eul.
+
+:h3 res=&PANEL_MENUMSGMARKMSG..Segna messaggio
+:p.Segna il messaggio attuale.
+
+:h3 res=&PANEL_MENUMSGUNMARKMSG..Togli segno
+:p.Toglie il segno dal messaggio attuale.
+
+:h2 res=&PANEL_MENUSPECIAL..Speciale
+:p.Diverse funzioni speciali di FleetStreet
+
+:h3 res=&PANEL_MENUMSGXPOST..Crosspost del messaggio
+:p.Spedire il messaggio in pi— di un'area.
+:p.Nel caso questa voce di menu sia stata messa in evidenza, le altre aree sono gi… state
+selezionate. Bisogna selezionare questo punto un'altra volta per annullare l'operazione.
+
+:h3 res=&PANEL_MENUMSGREQUEST..Richiedi files
+:p.Richiedere direttamente files contenuti nel messaggio attuale (request).
+
+:h3 res=&PANEL_MENUMSGCCOPY..Usa carbon copy
+:p.Invia il messaggio a pi— di un destinatario con l'aiuto di una lista di carbon copy.
+:p.Nel caso questa voce di menu sia stata messa in evidenza, Š gi… stata selezionata una lista
+carbon copy. Bisogna selezionare questo punto un'altra volta per annullare l'operazione.
+
+:h3 res=&PANEL_MENUMSGQUICKCC..Carbon copy veloce
+:p.Invia il messaggio a pi— di un destinatario con l'aiuto di una lista di carbon copy.
+:p.Il carbon copy veloce si distingue in alcuni punti dalle liste di carbon copy normali&colon.
+:ul compact.
+:li.Non Š necessario creare un lista nuova e darle un nome.
+:li.La lista non viene salvata.
+:eul.
+
+:h3 id=markmsg res=&PANEL_MENUMSGMARK..Aggiorna
+:p.Se FleetStreet non Š ancora stato utilizzato per leggere una certa base di messaggi,
+tutti i messaggi vengono segnati come "non letti". Perci• tutti i messaggi nell'area
+vengono visualizzati nella lista dei threads. Dato che sono gi… stati letti, questa
+voce di menu permette di segnare tutti i messaggi fino a quella attuale come "letti".
+Dopo aver fatto questo, la lista dei threads visualizza esclusivamente i messaggi
+che non sono ancora stati letti veramente, cioŠ messaggi che sono stati tossati
+nell'area da Squish dopo la prima lettura della base di messaggi.
+:p.Questa funzione di solito occore esclusivamente quando si desidera aggiornare
+le aree di messaggi dopo essere passato a FleetStreet. In futuro FleetStreet
+amministrer… automaticamente l'attributo "letto".
+
+:h3 res=&PANEL_MENUSPCADDTONICK..Aggiungi come nome abbreviato
+:p.Il mittente del messaggio attuale viene aggiunto alla lista dei nomi abbreviati.
+
+:h3 res=&PANEL_MENUSPCADDTOCC..Aggiungi alla lista di carbon copy
+:p.Il mittente del messaggio attuale viene aggiunto ad una lista di carbon copy.
+
+:h3 res=&PANEL_MENUSPCBROWSER..Nodelist-Browser
+:p.Visualizza il contenuto delle nodelist.
+
+
+:h2 res=&PANEL_MENUREXX..Rexx
+:p.Rexx-script-template, Rexx-scripts
+
+:h3 res=&PANEL_MENURXSCRIPTS..Scripts
+:p.Serve ad aprire lo script-template
+
+:h3 res=&PANEL_MENURXQUICK..Rexx-script
+:p.Si tratta di una voce di menu per avviare uno script
+
+:h2 res=&PANEL_MENUOPTIONS..Setup
+:p.Voci di menu per la configurazione di FleetStreet.
+
+:h3 res=&PANEL_MENUOPTIONSCFG..Opzioni
+:p.Premi i bottoni d'aiuto delle pagine corrispondente per aver un ulteriore
+aiuto.
+
+:h3 res=&PANEL_MENUOPTIONSTEMPL..Message template
+:p.Definisce i campi diversi di un message template.
+
+:h3 res=&PANEL_MENUOPTIONSCCL..Liste di carbon copy
+:p.Definire ed elaborare liste di carbon copy.
+
+:h3 res=&PANEL_MENUOPTIONSNICK..Nomi abbreviati
+:p.Apre la lista dei nomi abbreviati.
+
+:h3 res=&PANEL_MENUOPTIONSECHO..Echo-Manager
+:p.Apre la finestra dello Echo-Manager
+
+:h3 res=&PANEL_MENUOPTIONSADDAR..Estrai aree
+:p.Estrae una lista delle aree di messaggio dal messaggio attuale.
+
+:h3 res=&PANEL_MENUOPTIONSNAME..Nome/indirizzo attuali
+:p.Configurazione del nome attuale e dell'indirizzo di rete. Disponibile
+esclusivamente nelle aree di netmail.
+
+:h3 res=&PANEL_MENUOPTIONSSAVE..Salva opzioni
+:p.Salva la configurazione attuale.
+
+:h2 res=&PANEL_MENUWINDOWS..Finestre
+:p.Voci di menu per passare alle singole finestre di FleetStreet.
+
+:h3 res=&PANEL_MENUWINKLUDGES..Kludge lines
+:p.Passa alla finestre che visualizza i dati supplementari (Kludges) di un messaggio.
+
+:h3 res=&PANEL_MENUWINTHREADS..Lista dei soggetti
+:p.Passa alla finestra che visualizza la lista dei soggetti.
+
+:h3 res=&PANEL_MENUWINMSGS..Lista di messaggi
+:p.Passa alla finestra con la lista di messaggi.
+
+:h3 res=&PANEL_MENUWINAREAS..Lista delle aree
+:p.Passa alla finestra con la lista delle aree.
+
+:h3 res=&PANEL_MENUWINRESULTS..Segnalibro
+:p.Passa alla finestra segnalibro.
+
+:h2 res=&PANEL_MENUHELP..Guida
+:p.Voci di menu per lanciare la guida integrata.
+
+:h3 res=&PANEL_MENUHELPINDEX..Indice di guida
+:p.Visualizza l'indice di guida.
+
+:h3 res=&PANEL_MENUHELPGENERAL..Guida generale
+:p.Introduzione al lavoro con FleetStreet.
+
+:h3 res=&PANEL_MENUHELPUSING..Uso della guida
+:p.Introduzione alla guida integrata.
+
+:h3 res=&PANEL_MENUHELPKEYS..Guida per i tasti
+:p.Visualizza le combinazioni di tasti disponibili.
+
+:h3 res=&PANEL_MENUHELPABOUT..Informazione
+:p.Informazioni su FleetStreet ed i suoi autori.
+

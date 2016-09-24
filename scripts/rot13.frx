@@ -1,0 +1,34 @@
+/****************************************************************************/
+/*                      FleetStreet example script                          */
+/*                                                                          */
+/*                               ROT13.FRX                                  */
+/*                                                                          */
+/* ROT13.FRX performs the silly ROT13 "encryption". By running the script   */
+/* once, the text is encrypted. By running it a second time, the excrypted  */
+/* text is decrypted again.                                                 */
+/*                                                                          */
+/* This example script demonstrates accessing the predefined Rexx array,    */
+/* which holds the text of the current message. The text is modified        */
+/* and given back to FleetStreet for display.                               */
+/****************************************************************************/
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+say 'Rotating...'
+
+do i= 1 to FleetMsg.Text.0
+   /* yes, it's only a single function call! */
+   FleetMsg.Text.i = translate(FleetMsg.Text.i,,
+                 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',,
+                 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm')
+end
+
+/* display changed text */
+say FSSetText('FleetMsg.Text')
+
+say 'Done...'
+
+exit
+

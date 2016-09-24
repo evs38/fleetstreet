@@ -1,0 +1,247 @@
+BBToss Keywords in BBT*.INI Dateien  v2.40   Stand 02.08.99
+
+BBT Config-Dateien
+=================================================
+BBTOSS.INI     Main Konfigurations File
+BBTAREA.INI    Area Definitionen
+BBTGROUP.INI   Area/Link Gruppen Definitionen
+BBTLINK.INI    Link Definitionen
+BBTLNK00.INI   Vorgaben fuer neu einzufuegenden Link
+BBTUPLNK.INI   Uplink Definitionen
+BBTZIP.INI     Compressions-Program Definitionen
+
+BBTALIAS.CFG   Aliasnamen Definition
+BBTROUTE.CFG   Netmail-Routing Definitionen
+=================================================
+
+Keywords BBTOSS.INI
+-------------------
+Section [BBTAKA]
+MainAka         BBToss MainAka
+Aka             Weitere Aka's
+Aka
+...
+
+Section [MAILER]
+----------------
+Mailer          mîgliche Werte:
+                BT  oder  BINKLEY
+                FD  oder  FRONTDOOR
+                IM  oder  INTERMAIL
+                MC  oder  MCMAIL
+                XEN oder XENIA
+                TMAIL                TMail im Frontdoor-Style Outbound Mode
+                TMAIL_BINKLEYMODE    TMail im Binkley-Outbound Mode
+                                     (no ARCmail attaches)
+MailerPath      Mailer Verzeichnis
+
+
+Section [NETMAILFOLDER]
+-----------------------
+BaseTyp         Area Typ des globalen Netmailfolders
+Path            Pfad/Name des globalen Netmailfolders
+DefaultZone     Default Zone von Netmails ohne Zone-Angabe
+SentArea        Echo/Area-Tag eines Areas in das gesendete Msgs kopiert
+                werden
+
+
+Section [MAILBOX]
+-----------------
+Mailbox         mîgliche Werte:
+                RA250 oder RA_250
+                RA    oder REMOTE_ACCESS (2.02)
+                EZYCOM
+                EZY_120
+                EZY_148
+                PB    oder PROBOARD
+                PB_212
+                OB_215
+                MAXIMUS
+MailboxPath     Mailbox Verzeichnis
+
+
+Section [BBTPATH]
+-----------------
+WorkPath        temp. Inbound Verzeichnis
+Inbound         Inbound Verzeichnis mit Mailer-Sessionpa·wort
+Unsecinbound    unprotected Inbound Verzeichnis
+Localinbound    (in Ñlteren CFG's auch als SECPKTDIR)
+                lokales Inbound, tossen ohne jeglichen Security-check
+Outbound        Im Frontdoor-Mode werden hier ausgehende ARCMail Archieve
+                gespeichert.
+                Im Binkley mode Outbound fÅr *.flo *.out Files,
+                Pfad wird ggf. mit Zonenr erweitert OUTBOUND.002 usw.
+Tmpoutbound     temporÑrer Outbound zum zwischenspeichern von *.PKT
+                vor dem Packen
+Msgdir          Netmail-Folder *.MSG Format
+HmbPath         Hudson Messagebase Verzeichnis
+Ezymsgbase      Ezycom Messagebase Basis-Verzeichnis
+SemaphorePath   Verzeichnis in das Semaphore Files geschrieben werden
+LogPath         Pfad zur Logdatei (bbtoss.log)
+Echotosslog     Pfad und Name zur Echotoss.log
+Jamlog          Pfad zur Echomail.jam/Netmail.jam
+Importlog       Pfad und Name zur import.log, die beim jedem TOSS/TOSSII
+                erstellt wird und die Echotags mit neuen Mails enthÑlt
+                (Pedant zur Echotosslog fÅr importierte Msgs)
+AreasBBS        Pfad und Name der Areas.BBS Datei zum export der Area-
+                definition
+TimEdCfg        Pfad und Name der TimEd Editor Area Config Datei
+GoldEdCfg       Pfad und Name der GoldEd Area Config Datei
+SquishCfg       Pfad und Name der Squish Area Config Datei
+
+
+Section [BBTLIMITS]
+-------------------
+MaxMsgSize      OS/2 Win32 only  max. Grî·e einer Message (MsgBuffer) in Byte
+MaxPktSize      *.PKT Grî·e in Byte
+MaxzipSize      *.MO1 usw. Grî·e in Byte
+MinDiskSpace    Abbruch bei unterschreiten des Plattenplatzes (in Byte)
+MaxFilesOpen    gleichzeitig zu îffnende Dateien
+
+Section [BBTFLAGS]
+------------------
+LogLevel
+DupeDays        Msg-Alter in Tage wann Msgs immer als Dupe angenommen werden
+DupeMaxSaveDays max. Anzahl Tage Dupecheck CRC-Daten zu speichern
+DupeMaxSaveMsgs max. Dupecheck CRC-Werte pro Area
+MaxTime         beenden des Tosslaufes nach ... Sekunden
+
+; Flags ohne Wert
+MultiLine       beachten von bbtoss.bsy ein/ausschalten
+Pathdupe        Path Kludge fÅr Dupecheck verwenden
+Crcdupe         Dupecheck per CRC-Berechnung (letzten 10000 Msgs)
+Seenbydupe      Seen-By Kludge fÅr Dupecheck verwenden
+Twopasstoss     2-Phasen toss (spÑter in locale Msgbase eintossen)
+Kill0bytenm     0 Byte Netmails lîschen
+KillSentNm      Netmails mit SENT-Flag im Netmailfolder lîschen
+KillAreaMgrNM   Areamgr Requests nach Bearbeitung lîschen
+BounceBadDestNM Nicht duch bbt routebare Netmails bouncen
+KillDupes       Dupes nicht ins DUPEAREA schreiben
+KillBadMails    Badmails nicht ins BADAREA schreiben
+StrictAkaCheck
+PickAliasMsg    Herauskopieren von Echomails an Aliasname aktivieren
+UseEchomailBBS  fÅr scannen nach neuen Mails echomail.bbs echotoss.log
+                netmail.jam usw. verwenden
+Debug           erweiterte Log- und Bildschirmausgabe
+NoZip           nach toss Packets nicht packen
+NoInfoMsg       keine Info (Fehler) Msgs von BBToss an Sysop
+SayErrDirect    Error Msg an Links sofort senden
+ReturnReceipt         ReturnReceiptRequest Antwort Msgs erstellen
+AutoExportAreasBBS    Areas.BBS autom. exportieren wenn Aenderungen
+AutoExportTimEdCfg    TimEd Area Config autom. exportieren wenn Aenderungen
+AutoExportGoldEdCfg   Golded Area Config autom. exportieren wenn Aenderungen
+AutoExportSquishCfg   Squish Config autom. exportieren wenn Aenderungen
+CopySentNetmail       Kopiert gesendete Netmail in ein das eingestellte Area
+UnZipUnsecureInbound  Entpacken von Arcmail auch im Unsecure Inbound
+
+=================================================
+
+Keywords BBTLINK.INI
+-----------------------
+
+Section [nodenummer]
+--------------------
+SYSOP          Name des Sysops
+COMMENT        Kommentar
+USEAKA         eigene Absender Aka
+PKTPWD         Packet Pa·wort
+MGRPWD         Areamgr Pa·wort
+LEVEL          Userlevel (unsigned-word)
+PACKER         Z=Zip A=Arc J=Arj U=UC2 R=Rar L=Lha O=Zoo
+GROUP          max. 15 Gruppen [0..9] [A..Z] [a..z] *=alle
+ARCMAILSTATUS  H=hold D=direct C=crash
+MSGMAILSTATUS  H=hold D=direct C=crash
+FLAGS          Dezimalzahl der Flagwerte
+CAPABILITY     Packet Typ (Capability) *=unknown 2=FTS0001 oder 2+=FSC39
+FLOW           Anzahl erhaltener Msgs
+FLOWKB         Groesse verarbeiteter Messages (in Bytes)
+STATDATE       Datum ab wann Flow/FlowKb gezaehlt wurden
+LASTINDATE     Datum wann letztes Packet received
+MAXPKTSIZE     Max. File Size eines *.PKT Files
+MAXZIPSIZE     Max. File Size eines ARCMail Archives
+CAPABILITY     Packet Typ (Capability) *=unknown 2=FTS0001 oder 2+=FSC39
+Passive        Link ist passiv
+CheckPktPWD    Packet Passwort wird ueberprueft
+ChangePwdOk    Aendern des Passworts via Areamgr Request erlaubt
+SendErrMsg     Fehler Nachrichten senden
+Autocreate     Link kann neue Areas erzeugen
+ForwardMgr     Area Bestellmessages werden an Uplink weitergeleitet
+PackNetmail    Packe Netmail in Outbound Archiv
+PackHoldNet    Packe Netmail mit Status HOLD in Outbound Archiv
+FillArcMail    Auffuellen des Outbound Archives anstatt taeglich neues
+Autoconnect    Autom. anschliessen an neu verfuegbare Areas
+Notify         Sende Notify Nachricht
+FAttachOk      Darf File Attachment Messages senden
+NewAreaInfo    Info Message wenn neues Area verfuegbar
+ArcMail060     Outbound Archiv Namen nach ArcMail 0.60 Standard
+ReadOnly       Nur lesender Zugriff auf Echoareas
+
+=================================================
+
+Keywords BBTAREA.INI
+-----------------------
+
+Section [echotag]
+-----------------
+NR             Areanummer in der Mailbox
+DESC           Areabeschreibung
+PATH           Basisdateiname von Jam und Squish-Areas
+               (bei Passthru, Hudson u. Ezycom leer)
+BASETYP        Msgbasetyp P=passthru J=jam S=squish N=*.msg H=hudson E=ezy
+GROUP          Gruppe (char)
+TYP            Areatyp E=Echo N=Netmail B=Badarea D=Dupeara
+MAINAKA        eigene Hauptaka fÅr das Area
+UPLINK         Nodenummer des Uplinks bei dem die Area bestellt wurde
+FLAGS          Dezimalzahl der Flags
+WRITELEVEL     0..65535
+READLEVEL      0..65535
+MAXMSGS        wenn <> 0 Maxmsganzahl ab der das Area gekÅrzt wird
+MINMSGS        wenn <> 0 Msganzahl die nach aufrÑumen Åbrig bleiben soll
+               (wenn = 0 wird maxmsgs genommen)
+DAYSOLD        wenn <> 0 aufrÑumen per Messagealter (in Tagen)
+ORIGIN
+STATDATE       Datum des letzten zurÅcksetzen der Flowstatistik
+FLOW           Anzahl Msgs seit Statdate
+TODAYFLOW      heutige Anzahl Msgs (rÅcksetzen beim 1. Aufruf des Tages)
+LastMsgRcvd    Datum wann zuletzt Message in Area getosst wurde
+RULEFILE       Pfad + Name zum Rulefile
+LINKCOUNT      Anzahl angeschlossener Links
+LINK           jeweils eine Zeile fÅr jeden angeschlossenen Link
+               mit dessen AKA
+
+=================================================
+
+Keywords BBTGROUP.INI
+-----------------------
+
+Section [groupidentifier]
+-----------------------------
+TAG           Gruppen Kurzzeichen
+DESC          Gruppen Beschreibung
+AREABASETYP   Default Gruppen Message Base Typ
+AREAPATH      Default Gruppen Message Base Verzeichnis
+STARTAREA     Start Areanummer ab der neue Areas eingefÅgt werden
+UPLINK        Nodenummer des Uplinks bei dem diese Gruppe bestellt wird
+RULEPATH      Verzeichnis der Arearule Dateien
+RULELISTFILE  Name der Datei, die Liste der Rulefilenamen enthÑlt
+RULELISTDATE  Dateidatum des importierten Rulelistfile
+STATAREA      Statistik Area fÅr diese Gruppe
+
+=================================================
+
+Keywords BBTUPLNK.INI
+---------------------
+
+Section [uplinkidentifier]
+--------------------------
+ZONE=         Zonenr. fuer die dieser Uplink
+AKA=          Nodenr. des Uplinks
+GROUP=        Gruppe fuer dieser Uplink zustaendig ist
+MGR=          Name des Areamgr oder Areafix fuer Area Bestellungen
+ECHOLISTFILE  Filename des Textfiles der bei diesem Uplink verfuegbaren
+              Areas
+READLEVEL=    Area Default fuer autom. erstellte Areas
+WRITELEVEL=   Area Default fuer autom. erstellte Areas
+AREAMAXMSGS   Max. Msg Default fuer von diesem Uplink autom. erstellte Areas
+AREAMINMSGS   Min. Msg Default fuer von diesem Uplink autom. erstellte Areas
+AREADAYSOLD   Max. Msg Alter fuer von diesem Uplink autom. erstellte Areas

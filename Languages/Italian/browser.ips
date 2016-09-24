@@ -1,0 +1,25 @@
+.* **********************************************************************
+.* Nodelist browser
+.* **********************************************************************
+
+:h2 res=&PANEL_NLBROWSER..Nodelist-browser
+:p.
+Il nodelist-browser permette di sfogliare le nodelist impostate nel setup-notebook.
+:p.
+Bisogna selezionare nella lista la nodelist di cui si desidera vedere il contenuto.
+:p.
+Si pu• cercare o il numero di nodo o il nome di un SysOp&colon.
+:p.
+:hp2.Numero di nodo:ehp2.
+:p.
+Quando si cerca un :hp2.numero di nodo:ehp2., la nodelist viene suddivisa in :hp2.zone:ehp2.
+e :hp2.reti:ehp2.. Le zone e le reti vengono visualizzate sulla parte sinistra come icone.
+Facendo click sull'icona di rete, i nodi vengono visualizzati sulla parte destra.
+:p.
+:hp2.Nome di SysOp:ehp2.
+:p.
+Quando si cerca un :hp2.nome di SysOp:ehp2., la nodelist viene visualizzata in :hp2.ordine alfabetico:ehp2..
+I caratteri dell'alfabeto vengono visualizzati sulla parte sinistra.
+Se per un dato carattere non si trova un nome nella nodelist, il carattere non viene visualizzato.
+Facendo click su un carattere, le inserzioni della nodelist che iniziano con il carattere in questione
+vengono visualizzate sulla parte destra.

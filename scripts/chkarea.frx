@@ -1,0 +1,31 @@
+/****************************************************************************/
+/*                      FleetStreet example script                          */
+/*                                                                          */
+/*                              CHKAREA.FRX                                 */
+/*                                                                          */
+/* CHKAREA.FRX calls SqInfo to check the current area.                      */
+/*                                                                          */
+/* This example script demonstrates how to use the information about the    */
+/* current area, which is provided in predefined variables.                 */
+/****************************************************************************/
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+if FleetStatus.Mode = 'Read' then
+   if FleetStatus.Area.Format = 'Squish' then
+   do
+      /* !!!!!!!! you need to adjust the path */
+      address cmd 'e:\fido\squish\sqinfop' FleetStatus.Area.File ||'.sqd -e'
+      if RC = 0 then
+         say 'Area OK'
+      else
+         say 'Area damaged!'
+   end
+   else
+      say 'This is not a Squish area!'
+else
+   say 'Not in "Read" mode.'
+
+exit

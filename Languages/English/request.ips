@@ -1,0 +1,83 @@
+.* REQUEST.IPS
+
+:h2 res=&PANEL_REQUESTER..Request files
+:p.The file request dialog either displays the current message or a file list.
+You can then request files out of this list.
+:p.
+Select the lines containing the files you want to request. When you press
+:hp2.OK:ehp2., the request is created.
+:p.
+:hp2.Maintaining file lists:ehp2.
+:p.
+Most nodes offer a text file containing a list of all their requestable files.
+You can add these file lists to FleetStreet, view them and request files
+out of them. With :hp2.Add:ehp2. you can add additional lists to the selection
+box. You can delete them again by pressing :hp2.Delete:ehp2.. Double click
+on a list to load and display it.
+:p.
+:hp2.Selecting the files:ehp2.
+:p.
+In the file list you can select the files you like to request. Just click
+on the lines that contain the files (or press the SPACE bar). With :hp2.All:ehp2.
+you can select all lines. You can take back all selections by pressing
+:hp2.None:ehp2..
+:p.
+By pressing :hp2.Search:ehp2. you can search for text in the list. If the text
+is found, it's displayed in the first line of the list.
+:p.
+:hp2.Adding files, passwords:ehp2.
+:p.
+Some requestable files are not contained in the file list, e.g. magic files.
+You can add them by pressing :hp2.Add:ehp2.. The added files appear at the
+end of the list.
+:p.
+Some files can only be requested by specifying a password. When manually adding
+files you can specify the password directly. For the other files you can also
+specify a password. Move the cursor to the line containing the file and press
+:hp2.Password:ehp2.. The password that you specify is used for the request.
+:p.
+:hp2.Other settings:ehp2.
+:parml.
+:pt.:hp2.Request from:ehp2.
+:pd.Address of the node to request files from.
+:pt.:hp2.Area:ehp2.
+:pd.Message area to place the request messages in. Only non-local netmail
+areas are offered.
+:pt.:hp2.direct:ehp2.
+:pd.Don't generate a request message, but create a REQ file directly.
+:pt.:hp2.Attributes:ehp2.
+:pd.Sets the message attributes used for request messages. The "File request"
+attribute should always be set.
+:eparml.
+
+:h3 res=&PANEL_REQ_ADDLIST..Add list
+:p.Enter the data of the new file list. FleetStreet needs&colon.
+:parml.
+:pt.:hp2.File name:ehp2.
+:pd.The file name of the file list (includiung path). You can also use the
+:hp2.Locate:ehp2. button to select the file using a file dialog.
+:pt.:hp2.Node number:ehp2.
+:pd.The address of the node where you can request files out of this list.
+:pt.:hp2.Description:ehp2.
+:pd.A description of the list, e.g. name of the sysop or the BBS. This
+description is displayed in the selection box.
+:eparml.
+
+:h3 res=&PANEL_REQ_DELLIST..Delete list
+:p.Press :hp2.Yes:ehp2. to delete to list. Press :hp2.No:ehp2. to keep it.
+:p.:hp8.Note&colon.:ehp8. The file list on disk is not deleted, only the
+reference to it.
+
+:h3 res=&PANEL_REQ_ADDFILE..Add file
+:p.Enter the name of the file to request. This may also be a magic name.
+:p.You can also specify a password as an option.
+:p.After pressing :hp2.OK:ehp2. the file appears at the end of the list.
+
+:h3 res=&PANEL_REQ_SETPASS..Set password
+:p.Enter the password for requesting the file. Leave the entry field empty if
+you don't want to use a password.
+
+:h3 hide res=&PANEL_REQ_ERROR..Error file list
+:p.An error occured while reading the file list from disk. Correct the problem
+and retry.
+

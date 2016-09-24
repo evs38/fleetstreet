@@ -1,0 +1,91 @@
+.* REQUEST.IPS
+
+:h2 res=&PANEL_REQUESTER..Richiedere files
+:p.Si visualizzano o il messaggio attuale o una lista file.
+E' possibile richiedere files dalla lista in questione.
+:p.
+Bisogna mettere in evidenza le righe con i files da richiedere. Spingendo
+:hp2.OK:ehp2., la richiesta files viene creata.
+:p.
+:hp2.Amministrazione di liste file:ehp2.
+:p.
+La gran parte dei nodi mette a disposizione file di testo che contengono
+tutti i files che possono essere richiesti. E' possibile inserire queste
+liste file in FleetStreet e visualizzarle per selezionarne files da richiedere.
+Con :hp2.Aggiungi:ehp2. ä possibile inserire un'ulteriore lista file nel box
+di selezione. Con :hp2.Cancella:ehp2. ä possibile cancellare la lista in 
+questione. Con un click doppio su una lista ä possibile caricarla e visualizzarla.
+:p.
+:hp2.Selezione di files:ehp2.
+:p.
+Nella lista file ä possibile selezionare i files da richiedere. Bisogna fare
+click sulla riga in cui si trova il file in questione (oppure premere il tasto
+di spazio). Con :hp2.Tutti:ehp2. vengono selezionate tutte le righe, con 
+:hp2.Nessuno:ehp2. si annulla la selezione.
+:p.
+Con :hp2.Cerca:ehp2. ä possibile cercare un testo qualsiasi nella lista. Se il
+testo viene trovato viene visulizzato nella prima riga della lista.
+:p.
+:hp2.Aggiungere files, Passwords:ehp2.
+:p.
+Alcuni files da richiedere non vengono elencati in una lista file, per esempio
+Magic Files. E' possibile aggiungerli ai files visualizzati con :hp2.Aggiungi:ehp2..
+Questi files vengono visualizzati alla fine della lista.
+:p.
+Alcuni files possono essere richiesti solo con l'indicazione di una password.
+Richiedendo files a mano, ä possibile indicarla direttamente. Con gli altri
+files ä possibile aggiungere una password, posizionando il cursore nella lista
+sul file in questione per premere :hp2.Password:ehp2.. La password inserita
+viene utilizzata come password per questo file.
+:p.
+:hp2.Ulteriori impostazioni:ehp2.
+:parml.
+:pt.:hp2.Richiedere da:ehp2.
+:pd.Indirizzo del nodo dal quale vengono richiesti i files.
+:pt.:hp2.Area:ehp2.
+:pd.L'area in cui vengono creati i messaggi di richiesta. Si offrono esclusivamente
+aree netmail non locali.
+:pt.:hp2.diretta:ehp2.
+:pd.Non viene creato un messaggio di richiesta ma un file REQ direttamente nella
+directory di outbound.
+:pt.:hp2.Attributi:ehp2.
+:pd.Imposta gli attributi di messaggio con cui il messaggio di richiesta viene
+creato. Per fare senso ä opportuno mettere sempre l'attributo "Richiesta file".
+:eparml.
+
+:h3 res=&PANEL_REQ_ADDLIST..Aggiungi lista
+:p.Bisogna inserire qui i dati per una lista file nuova. Ci vogliono&colon.
+:parml.
+:pt.:hp2.Nome file:ehp2.
+:pd.Il nome file della lista file, path incluso. E' anche possibile utilizzare
+il pulsante :hp2.Cerca:ehp2. per selezionare il nome via dialogo.
+:pt.:hp2.Numero nodo:ehp2.
+:pd.Il numero nodo del nodo dal quali vengono richiesti i files della lista
+selezionata.
+:pt.:hp2.Nome:ehp2.
+:pd.Un nome per la lista, per esempio il nome del o del BBS.
+Questo nome viene visualizzato nella lista di selezione.
+:eparml.
+
+:h3 res=&PANEL_REQ_DELLIST..Cancella lista
+:p.Bisogna premere :hp2.Sç:ehp2. per cancellare la lista. Bisogna
+premere :hp2.No:ehp2. per mantenere la lista.
+:p.:hp8.Attenzione&colon.:ehp8. Non viene cancellata la lista file
+dal disco fisso, ma solamente il riferimento ad esso..
+
+:h3 res=&PANEL_REQ_ADDFILE..Aggiungi file
+:p.Bisogna indicare il nome del file da richiedere in pió. E' anche
+possibile indicare un cosiddetto nome magic.
+:p.Come opzione ä possibile selezionare una password per il file.
+:p.Dopo aver premuto :hp2.OK:ehp2., il file viene visualizzato alla fine
+della finestra di selezione file.
+
+:h3 res=&PANEL_REQ_SETPASS..Mettere password
+:p.Bisogna indicare la password per la richiesta file. Lasciando vuoto
+il campo, non si utilizza una password per la richiesta..
+
+:h3 hide res=&PANEL_REQ_ERROR..Errore lista file
+:p.Durante la lettura della lista file dal disco fisso ä avvenuto
+un errore. Bisogna eliminarlo e riprovare.
+
+

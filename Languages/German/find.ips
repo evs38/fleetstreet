@@ -1,0 +1,148 @@
+.* ******************************* Find **********************************
+
+:h2 id=findmsg res=&PANEL_FIND..Text suchen
+:p.Sucht eine bestimmte Zeichenkette in der Message-Base.
+:p.Sie k”nnen die Areas ausw„hlen, in denen nach dem Text gesucht werden soll,
+die Teile der Message, in denen gesucht werden soll und die Methode, mit der
+bestimmt wird, ob die Message paát.
+:p.
+Details&colon.
+:ul compact.
+:li.:link reftype=hd refid=findwhat.Was:elink.
+:li.:link reftype=hd refid=findwhere.Wo:elink.
+:li.:link reftype=hd refid=findareas.Welche Areas:elink.
+:li.:link reftype=hd refid=findhow.Wie:elink.
+:eul.
+:p.
+Drcken Sie den Knopf :hp2.Start:ehp2., um die Suche zu starten.
+
+:h3 id=findwhat.Was
+:p.
+Dies ist der Text, nach dem in der Messagebase gesucht werden soll. Abh„ngig von der
+Suchmethode ist dies ein normaler Text oder ein regul„rer Ausdruck. Bei einer
+Suche nach pers”nlichen Messages kann kein Text eingegeben werden.
+
+:h3 id=findwhere.Wo
+:p.
+W„hlen Sie die Teile der Message aus, in denen nach dem Text gesucht werden soll.
+Bei einer Suche nach pers”nlichen Messages kann kein Teil ausgew„hlt werden.
+
+:h3 id=findareas.Welche Areas
+:p.
+W„hlen Sie die Areas aus, in denen dem Text gesucht werden soll.
+:parml.
+:pt.:hp2.Aktuelle Area:ehp2.
+:pd.Nur die aktuelle Area wird durchsucht.
+:pt.:hp2.Alle Areas:ehp2.
+:pd.Alle Areas, die FleetStreet bekannt sind, werden durchsucht.
+:pt.:hp2.Area-Typen:ehp2.
+:pd.Areas des ausgew„hlten Typs werden durchsucht.
+:pt.:hp2.Bestimmte:ehp2.
+:pd.Eine bestimmte Auswahl von Areas wird durchsucht. Drcken Sie den :hp2.Auswahl:ehp2.-Knopf,
+um die Areas auszuw„hlen.
+:eparml.
+
+:h3 id=findhow.Wie
+:p.
+Es gibt verschiedene Methoden zu entscheiden, ob eine Message zum Text im
+"Was"-Feld paát&colon.
+:parml.
+:pt.:hp2.Schreibung beachten:ehp2.
+:pd.Der Text im "Was"-Feld muá in der Message enthalten sein.
+:pt.:hp2.Schreibung ignorieren:ehp2.
+:pd.Wie oben, nur wird die Groá/Kleinschreibung des Textes ignoriert.
+:pt.:hp2.Unscharf:ehp2.
+:pd.Eine unscharfe Suche wird durchgefhrt, d.h. der Suchtext und die Message
+mssen nicht exakt gleich sein. "Stufe" gibt einen Empfindlichkeitswert an,
+von 0 (exakt) bis 5 (am wenigsten genau).
+:pt.:hp2.Regul„rer Ausdruck:ehp2.
+:pd.Der Text im "Was"-Feld bildet einen :link reftype=hd refid=regex.regul„ren Ausdruck:elink..
+:pt.:hp2.Pers”nliche Messages:ehp2.
+:pd.FleetStreet sucht nach pers”nlichen Messages. Drcken Sie :hp2.Optionen:ehp2.,
+um die Optionen fr die Suche einzustellen.
+:pt.:hp2.Unversandte Messages:ehp2.
+:pd.FleetStreet sucht nach lokal erzeugten Messages, die noch nicht
+abgeschickt worden sind.
+:pt.:hp2.Nur ungelesene Messages:ehp2.
+:pd.Nur ungelesene Messages ("read"-Attribut nicht gesetzt) werden in das
+Merkerfenster aufgenommen.
+:eparml.
+
+:h3 id=regex.Regul„rer Ausdruck
+:p.(Bitte in der Bedieneranleitung nachlesen)
+
+:h3 hide res=&PANEL_FINDNOPARTS..Kein Teil ausgew„hlt
+:p.
+Sie mssen einen oder mehrere Teile der Message ausw„hlen.
+
+:h3 hide res=&PANEL_FINDNOAREAS..Keine Area ausgew„hlt
+:p.
+Sie mssen einen Area-Typ oder eine Menge der Areas ausw„hlen.
+
+:h3 hide res=&PANEL_FINDNOTEXT..Kein Text eingegeben
+:p.
+Sie mssen einen Text im "Was"-Feld eingeben.
+
+:h2 res=&PANEL_PERSMAILOPT..Pers”nliche Messages
+:p.
+Die folgenden Optionen steuern die Suche nach pers”nlichen Messages&colon.
+:parml.
+:pt.:hp2.Nur neue Messages durchsuchen:ehp2.
+:pd.Es werden nur die Messages nach dem Lastread durchsucht.
+:pt.:hp2.Alle Messages durchsuchen:ehp2.
+:pd.Alle Messages in der Area werden durchsucht.
+:pt.:hp2.Nach allen Namen suchen:ehp2.
+:pd.FleetStreet vergleicht den Inhalt des "An"-Feldes mit allen Ihren Namen.
+:pt.:hp2.Nur nach Area-Default-Name suchen:ehp2.
+:pd.FleetStreet vergleicht den Inhalt des "An"-Feldes nur mit dem Namen,
+den Sie als Default-Name der Area eingestellt haben.
+:eparml.
+
+:h2 res=&PANEL_FINDRESULTS..Merker
+:p.Das Merkerfenster enth„lt vier Arten von Messages&colon.
+:ul compact.
+:li.Suchergebnisse
+:li.Ergebnisse der Suche nach pers”nlicher Post
+:li.Markierte Messages
+:li.Unversandte Messages
+:eul.
+:p.
+Verwenden Sie das Kontextmen der Liste, um zwischen den drei Ansichten umzuschalten.
+:p.
+Wenn Sie "Inhalt speichern" im Kontextmen w„hlen, wird der Inhalt der Liste
+auf der Platte gespeichert, wenn Sie FleetStreet beenden. Er wird wieder geladen,
+wenn Sie FleetStreet neu starten.
+:p.
+Klicken Sie eine Message an oder drcken Sie den :hp2.Zur Message:ehp2.-Knopf, um
+die komplette Message anzuzeigen.
+:p.
+Drcken Sie den :hp2.Alle entfernen:ehp2.-Knopf, um die aktuelle Ansicht zu leeren,
+d.h. alle Messages der aktuellen Ansicht werden aus der Liste entfernt.
+:p.
+Verwenden Sie das Kontextmen einer Message, um
+:ul compact.
+:li.die Message zu l”schen
+:li.die Message zu exportieren
+:li.die Message zu drucken
+:li.die Message in eine andere Area zu verschieben
+:li.die Message in eine andere Area zu kopieren
+:li.die Message aus der Liste zu entfernen
+:eul.
+
+:h2 hide res=&PANEL_NOTTHERE..Message existiert nicht
+:p.
+Sie haben eine Message im Merkerfenster angeklickt, jedoch existiert entweder
+die Message oder die ganze Area nicht mehr. Deshalb kann die Message nicht
+angezeigt werden. Dies kann passieren, wenn der Eintrag in der Liste gespeichert
+wurde und die Message oder Area gel”scht wurde, als FleetStreet nicht lief.
+:p.
+Entfernen Sie die Message von der Liste, um diese Fehlermeldung zu vermeiden.
+
+:h2 res=&PANEL_SEARCH..Suchen
+:p.
+Geben Sie den Text ein, nach dem gesucht werden soll. Aktivieren Sie
+:hp2.Schreibweise beachten:ehp2., wenn die Schreibweise (groá/klein) des
+Suchtextes bei der Suche beachtet werden soll.
+:p.
+Drcken Sie :hp2.OK:ehp2., um die Suche zu starten.
+

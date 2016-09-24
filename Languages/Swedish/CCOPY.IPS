@@ -1,0 +1,109 @@
+.***************************************************************************
+.* Carbon-Copy-Listen - S„ndlistor
+.* 1997-07-06
+
+:h1.S„ndlistor (carbon copy lists)
+:p.Žmnen&colon.
+:p.:link reftype=hd refid=ccsetup.S„ndlistevisaren:elink.
+:p.:link reftype=hd refid=cclist.S„ndlista:elink.
+:p.:link reftype=hd refid=ccentry.Post:elink.
+:p.:link reftype=hd refid=ccselect.V„lja s„ndlista:elink.
+
+:h2 id=ccsetup res=&PANEL_CCLISTSETUP..S„ndlistevisaren
+:p.S„ndlistevisaren inneh†ller samtliga s„ndlistor (carbon copy lists).
+:p.Du kan
+:ul compact.
+:li.”ppna,
+:li.skapa, eller
+:li.ta bort,
+:eul.
+:p.en s„ndlista genom att du v„ljer motsvarande menypunkt fr†n
+listans till„ggsmeny.
+:p.Du kan „ven radera en lista genom att dra den till tuggen.
+:p.
+Om Du vill „ndra namnet p† en lista klickar du p† ikonen, samtidigt som du
+h†ller ned Alt-tangenten p† tangentbordet.
+
+:h2 id=cclist res=&PANEL_CCLIST..S„ndlista (carbon copy list)
+:p.Posterna i den valda s„ndlistan visas. Du kan l„gga till, „ndra
+eller ta bort poster.
+:parml.
+:pt.:hp2.Infoga:ehp2.
+:pd.Infoga en ny post.
+:pt.:hp2.Žndra:ehp2.
+:pd.Žndra den valda posten. Du kan „ven „nda en post genom att dubbelklicka
+p† den.
+:pt.:hp2.Ta bort:ehp2.
+:pd.Raderar den valda posten. Du kan „ven radera en post genom att dra den
+till tuggen.
+:pt.:hp2.Importera:ehp2.
+:pd.Importering av namn och adresser fr†n en textfil.
+:eparml.
+:p.Du kan flytta och kopiera poster fr†n en lista till en annan genom att
+du ”ppnar b†da listorna och drar en post fr†n den ena listan till den
+andra. Om du h†ller Ctrl-tangenten nedtryckt kopierar du posten i st„llet
+f”r att flytta den.
+:p.
+:artwork align=center name='movecc.bmp'.
+
+
+:h2 id=ccentry res=&PANEL_CCLISTENTRY..Post
+:p.Skriv in en ny post, eller „ndra en redan existerande.
+:parml.
+:pt.:hp2.Namn:ehp2.
+:pd.Mottagarens anv„ndarnamn. Du kan „ven anv„nda ett kortnamn h„r om du
+skriver in kortnamnet och trycker p† :hp2.Tab:ehp2.. Kortnamnet ers„tts d†
+med det riktiga namnet, och mottagarens adress infogas i adressf„ltet.
+:pt.:hp2.Adress:ehp2.
+:pd.Mottagarens n„tadress.
+:pt.:hp2.?:ehp2.
+:pd.S”ker efter mottagarens adress i nodlistan.
+:pt.:hp2.F”rsta rad:ehp2.
+:pd.F”rsta rad i meddelandetexten. Du kan ange mottagarens Internetadress
+h„r ("TO: xxx") om du s„nder meddelandet till en gateway.
+:pt.:hp2.Visa namn i s„ndinformationen:ehp2.
+:pd.Ange om mottagarens namn ska visas i den namnlista som infogas i
+enlighet med den f”r m”tet g„llande meddelandemallen.
+:eparml.
+
+:h2 id=ccselect res=&PANEL_CCLISTSELECT..V„lja s„ndlista
+:p.V„lj en av de definierade s„ndlistorna. Tryck p† :hp2.Ok:ehp2.
+f”r att bekr„fta ditt val. Tryck p† :hp2.Avbryt:ehp2., om Du inte vill
+anv„nda n†gon s„ndlista.
+
+:h2 res=&PANEL_IMPORTCCLIST..Importera
+:p.V„lj den fil som Du ska importera.
+:parml.
+:pt.:hp2.Standard f”r "visa namn":ehp2.
+:pd.H„r st„ller Du in standardv„rde f”r f„ltet "Visa namn". Standardv„rdet
+anv„nds f”r varje inl„st post.
+:eparml.
+
+:h2 hide res=&PANEL_DELCCLIST..Ta bort s„ndlista
+:p.Tryck p† :hp2.Ja:ehp2., om Du vill ta bort den valda
+s„ndlistan. Tryck p† :hp2.Nej:ehp2. om du vill beh†lla den.
+
+:h2 hide res=&PANEL_DELCCENTRY..Ta bort post
+:p.Tryck p†:hp2.Ja:ehp2., om Du vill ta bort den valda posten. Tryck p†
+:hp2.Nej:ehp2. om du vill beh†lla den.
+
+:h2 hide res=&PANEL_NOCCLIST..S„ndlistan existerar inte l„ngre
+:p.S„ndlistan som Du har valt f”r detta meddelande raderades innan
+meddelandet sparades. Meddelandet kan d„rf”r inte skickas med denna
+s„ndlista.
+:p.Du kan skicka meddelandet till en ensam mottagare, skicka det med en
+annan s„ndlista, eller avbryta meddelandet helt och h†llet.
+
+:h2 hide res=&PANEL_NOCCENTRIES..S„ndlistan har inga poster
+:p.Snabbs„ndlistan „r f”r n„rvarande aktiv, men listan inneh†ller
+inga poster, d.v.s. FleetStreet har inga mottagare att skicka meddelandet
+till.
+:p.Infoga poster i listan, eller st„ng av snabbs„ndlistan.
+
+:h2 hide res=&PANEL_MODQUICKCC..Snabbs„ndning
+:p.Snabbs„ndlistan „r f”r n„rvarande aktiv, och du har valt
+menypunkten ytterligare en g†ng.
+:p.Klicka p† :hp2.Ja:ehp2. f”r att „ndra den aktuella listan.
+:p.Klicka p† :hp2.Nej:ehp2. f”r att st„nga av funktionen.
+:p.Klicka p† :hp2.Avbryt:ehp2. f”r att forts„tta redigera meddelandet.
+

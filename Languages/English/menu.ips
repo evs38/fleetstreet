@@ -1,0 +1,236 @@
+.***************************************************************************
+.* Help-Panels des Menues                                                  *
+.***************************************************************************
+
+:h1.Menu
+
+:h2 res=&PANEL_MENUFILE..File
+:p.Menu items for importing and exporting files.
+
+:h3 res=&PANEL_MENUIMPORTFILE..Import File
+:p.Inserts text from a given file into the message window. This is only
+available when editing a message.
+
+:h3 res=&PANEL_MENUEXPORTFILE..Export File
+:p.Writes the current message to a text file on disk. This is only available
+when reading messages.
+
+:h3 res=&PANEL_MENUFILEECHOTOSS..Write Echotoss now
+:p.Write the echotoss file immediately.
+
+:h3 res=&PANEL_MENUFILESHELL..Start command shell
+:p.Starts a commandline session. The program used as shell is specified
+in CONFIG.SYS via OS2_SHELL.
+
+:h3 res=&PANEL_MENUFILEPRINT..Print
+:p.Print current message
+
+:h3 res=&PANEL_MENUFILEPRINTSETUP..Printer setup
+:p.Setup options for printing
+
+:h3 res=&PANEL_MENUEXIT..Exit FleetStreet
+:p.Exits the program. Changes to the configuration will be saved.
+
+:h2 res=&PANEL_MENUEDIT..Edit
+:p.Menu items to perform changes to a messages and for interaction
+with the clipboard.
+
+:h3 res=&PANEL_MENUEDITCUT..Cut
+:p.Copies marked text in the message window to the clipboard and deletes
+the marked text.
+
+:h3 res=&PANEL_MENUEDITCOPY..Copy
+:p.Copies marked text in the message window to the clipboard. If no text is
+marked, the whole message is copied to the clipboard.
+
+:h3 res=&PANEL_MENUEDITPASTE..Paste
+:p.Inserts the contents of the clipboard into the message window.
+
+:h3 res=&PANEL_MENUEDITCLEAR..Clear
+:p.Deletes marked text in the message window.
+
+:h3 res=&PANEL_MENUEDITUNDO..Undo
+:p.Takes back the latest changes in the message window.
+:p.:hp8.Note&colon.:ehp8. This does only apply to text in the message window,
+not to whole messages. Deleted messages can not be recovered.
+
+:h3 res=&PANEL_MENUEDITDELLINE..Delete Line
+:p.Deletes the current line in the message window.
+
+:h3 res=&PANEL_MENUEDITSEARCH..Search
+:p.Searches for text in the current message.
+
+:h2 res=&PANEL_MENUMESSAGE..Message
+:p.Menu items to manipulate messages
+
+:h3 res=&PANEL_MENUMSGMOVE..Move Message
+:p.Move the current message to a different area
+
+:h3 res=&PANEL_MENUMSGCOPY..Copy Message
+:p.Copy the current message to a different area
+
+:h3 res=&PANEL_MENUMSGFORWARD..Forward Message
+:p.Forward the current message
+
+:h3 res=&PANEL_MENUMSGNEW..New message
+:p.Write new message in the current area.
+
+:h3 res=&PANEL_MENUMSGCHANGE..Change
+:p.Change current message.
+
+:h3 res=&PANEL_MENUMSGREPLY..Reply
+:p.Reply to current message.
+
+:h3 res=&PANEL_MENUMSGDELETE..Delete
+:p.Delete current message.
+
+:h3 res=&PANEL_MENUMSGFIND..Find
+:p.Find text in a message in this area or in all areas.
+
+:h3 res=&PANEL_MENUMSGBCAST..Broadcast
+:p.Broadcast-delete or broadcast-modify the current message.
+
+:h3 res=&PANEL_MENUMSGBCDELETE..Broadcast delete
+:p.Broadcast-delete the current message.
+:p.There are several restrictions for using this function&colon.
+:ul compact.
+:li.It can only be used in echomail areas
+:li.The message must be local
+:li.The message must be already scanned out
+:li.The message must have a MSGID kludge line
+:eul.
+
+:h3 res=&PANEL_MENUMSGBCMODIFY..Broadcast modify
+:p.Broadcast-modify the current message.
+:p.There are several restrictions for using this function&colon.
+:ul compact.
+:li.It can only be used in echomail areas
+:li.The message must be local
+:li.The message must be already scanned out
+:li.The message must have a MSGID kludge line
+:eul.
+
+:h3 res=&PANEL_MENUMSGMARKMSG..Mark message
+:p.Set a mark on the current message
+
+:h3 res=&PANEL_MENUMSGUNMARKMSG..Unmark message
+:p.Remove mark on current message
+
+:h2 res=&PANEL_MENUSPECIAL..Special
+:p.Special FleetStreet functions
+
+:h3 res=&PANEL_MENUMSGXPOST..Crosspost Message
+:p.Post the message in more than one area
+:p.If this menu item is checked, you've already selected the destination areas.
+Select this menu item again to uncheck it.
+
+:h3 res=&PANEL_MENUMSGREQUEST..Request Files
+:p.Request files from the current message
+
+:h3 res=&PANEL_MENUMSGCCOPY..Carbon Copy
+:p.Send the message to more than one receipient using a carbon copy list.
+:p.If this menu item is checked, you've already selected a carbon copy list.
+Select this menu item again to uncheck it.
+
+:h3 res=&PANEL_MENUMSGQUICKCC..Quick carbon copy
+:p.Send the message to more than one receipient using a carbon copy list.
+:p.Quick carbon copy is different from normal carbon copy is several aspects&colon.
+:ul compact.
+:li.You don't have to create a new list and name it.
+:li.The list is not saved.
+:eul.
+
+:h3 id=markmsg res=&PANEL_MENUMSGMARK..Catchup
+:p.If you haven't used FleetStreet for reading in a particular message base before,
+all messages are marked as "unread". Therefore the message thread list will show
+you all messages in that area. Because you may have read these messages before,
+this menu item provides a way to mark all the messages as "read".
+After you've done that, the thread list will show only messages that are
+"really" unread, i.e. messages that were added to this area after you've used
+this function.
+:p.This function is usually only needed after you've switched to FleetStreet
+and want to bring "old" message areas up to date. FleetStreet will maintain the
+"read" flag automatically in the future.
+
+:h3 res=&PANEL_MENUSPCADDTONICK..Add to nicknames
+:p.Add sender of current message to your list of nicknames.
+
+:h3 res=&PANEL_MENUSPCADDTOCC..Add to carbon copy list
+:p.Add sender of current message to one of your carbon copy lists.
+
+:h3 res=&PANEL_MENUSPCBROWSER..Nodelist browser
+:p.Display the contents of the nodelists
+
+:h2 res=&PANEL_MENUREXX..Rexx
+:p.Rexx script folder, Rexx scripts
+
+:h3 res=&PANEL_MENURXSCRIPTS..Scripts
+:p.Open the Rexx script folder
+
+:h3 res=&PANEL_MENURXQUICK..Rexx script
+:p.This is a menu item for running a script.
+
+:h2 res=&PANEL_MENUOPTIONS..Setup
+:p.Menu items to set up FleetStreet.
+
+:h3 res=&PANEL_MENUOPTIONSCFG..Setup Options
+:p.Press the help buttons on the various pages of the setup notebook
+to get further help.
+
+:h3 res=&PANEL_MENUOPTIONSTEMPL..Message Template
+:p.Define the various fields of the message template
+
+:h3 res=&PANEL_MENUOPTIONSCCL..Carbon Copy Lists
+:p.Define and modify carbon copy lists.
+
+:h3 res=&PANEL_MENUOPTIONSNICK..Nicknames
+:p.Opens the list of nicknames.
+
+:h3 res=&PANEL_MENUOPTIONSECHO..Echo manager
+:p.Open the echo manager window.
+
+:h3 res=&PANEL_MENUOPTIONSADDAR..Extract areas
+:p.Extract a list of message areas from the current message.
+
+:h3 res=&PANEL_MENUOPTIONSNAME..Current Name/Address
+:p.Change your current name and address. This function is only available in
+Netmail areas.
+
+:h3 res=&PANEL_MENUOPTIONSSAVE..Save Options
+:p.Saves the current configuration.
+
+:h2 res=&PANEL_MENUWINDOWS..Windows
+:p.Menu items for switching to one of the FleetStreet windows
+
+:h3 res=&PANEL_MENUWINKLUDGES..Kludge lines
+:p.Switch to the kludge line window
+
+:h3 res=&PANEL_MENUWINTHREADS..Thread list
+:p.Switch to the thread list window
+
+:h3 res=&PANEL_MENUWINMSGS..Message list
+:p.Switch to the message list window
+
+:h3 res=&PANEL_MENUWINAREAS..Area list
+:p.Switch to the area list window
+
+:h3 res=&PANEL_MENUWINRESULTS..Find results
+:p.Switch to the find results window
+
+:h2 res=&PANEL_MENUHELP..Help
+:p.Menu items to give you information about FleetStreet
+
+:h3 res=&PANEL_MENUHELPINDEX..Help index
+:p.Show the help index
+
+:h3 res=&PANEL_MENUHELPGENERAL..General Help
+:p.Introduction to FleetStreet
+
+:h3 res=&PANEL_MENUHELPUSING..Using Help
+:p.Show help for using the help facility
+
+:h3 res=&PANEL_MENUHELPKEYS..Keys help
+:p.Shows the keys combinations you can use
+
+:h3 res=&PANEL_MENUHELPABOUT..About
+:p.Shows information about FleetStreet and its authors

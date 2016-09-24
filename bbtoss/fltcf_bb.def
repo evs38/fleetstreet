@@ -1,0 +1,10 @@
+LIBRARY FLTCF_BB INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet BBToss CFG'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+  ReadBBTossCfg   @3
+  QueryFormatID   @1
+  QueryFormatName @2
+  QueryVer        @4
+

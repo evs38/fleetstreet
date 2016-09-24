@@ -1,0 +1,12 @@
+LIBRARY FLTPRINT INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet message printing'
+CODE LOADONCALL DISCARDABLE
+DATA MULTIPLE NONSHARED
+PROTMODE
+EXPORTS
+   OpenPrinter       @1
+   OpenPrinterDM     @2
+   ClosePrinter      @3
+   PrintMessage      @4
+   SetupPrinter      @5
+   CleanupPrinter    @6

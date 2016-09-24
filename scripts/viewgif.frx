@@ -1,0 +1,28 @@
+/* Sample script:
+
+   VIEW GIF image specified in GIF kludge.
+
+   You need to have the Image Browser of the Warp bonus pack installed.
+
+*/
+
+/* configuration section, adjust if necessary */
+
+gifdir = 'gifs'    /* where the images are stored */
+viewer = 'IB.EXE'  /* image browser */
+
+/* here we go */
+
+do i=1 to FleetMsg.Kludges.0
+   if word(FleetMsg.Kludges.i, 1) = 'GIF:' then
+   do
+      giffile = word(FleetMsg.Kludges.i, 2)
+      if stream(gifdir||giffile, 'C', 'QUERY EXIST') \= '' then
+         address cmd 'START' viewer gifdir||giffile
+      else
+         say 'GIF image not present.'
+      exit
+   end
+end
+
+exit

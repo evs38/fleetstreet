@@ -1,0 +1,354 @@
+.***************************************************************************
+.* Area-List - M”teslista
+.* 1996-10-10
+
+:h2 id=arealist res=&PANEL_AREALIST..M”teslista
+:p.
+M”teslistan inneh†ller alla de diskussionsm”ten, som finns tillg„ngliga f”r
+FleetStreet. Du kan v„xla till ett av dessa m”ten, skapa och ta bort m”ten, och
+st„lla in m”tenas attribut.
+:p.
+Klicka p† ett av m”tena, eller tryck p† :hp2.ENTER:ehp2., f”r att v„xla till
+detta m”te.
+:p.
+Tryck p† :hp2.Avs”k:ehp2., f”r att starta en avs”kning av alla m”ten.
+
+:h2 hide res=&PANEL_DELETEAREA..Ta bort m”te
+:p.Du har angett att det markerade m”tet ska tas bort. Om du trycker
+:hp2.Ja:ehp2., kommer m”tet att tas bort ur listan. Meddelandebasens datafiler
+kommer dock att finnas kvar p† h†rddisken, s† att de senare kan †teranv„ndas.
+:p.Tryck p† :hp2.Nej:ehp2., om m”tet inte ska tas bort.
+
+:h2 hide res=&PANEL_HAVEAREA..M”tet finns redan
+:p.Det finns redan ett m”te med denna m”testag. Varje m”testag m†ste vara unik.
+V„lj en annan m”testag f”r den nya m”tet.
+
+:h2 hide res=&PANEL_NOAREATAG..Ingen m”testag
+:p.Du har inte angett n†gon m”testag f”r det nya eller f”r„ndrade m”tet.
+Varje m”te m†ste ha en unik m”testag, vilken anv„nds f”r att identifiera
+m”tet.
+
+:h2 hide res=&PANEL_NOPATHFILE..Ingen s”kv„g
+:p.Du har inte angett n†gon s”kv„g och/eller n†got filnamn f”r det nya eller
+f”r„ndrade m”tet.
+
+.***************************************************************************
+.* Area-Setup - Inst„llningar f”r m”te
+.*
+
+:h2 res=&PANEL_AREASETTINGS..Inst„llningar f”r m”te
+:p.Žmnen&colon.
+:p.:link reftype=hd refid=gensett.Allm„nna inst„llningar:elink.
+:p.:link reftype=hd refid=mbase.Meddelandebasinst„llningar:elink.
+:p.:link reftype=hd refid=areaattrib.M”tesattribut:elink.
+
+:h3 id=gensett res=&PANEL_AS_GENERAL..Allm„nna inst„llningar
+:p.H„r kan Du st„lla in beskrivning, m”testag och standardadres f”r detta
+m”te. Om m”testagen inte kan redigeras betyder det att den har l„sts in fr†n
+en extern konfigurationsfil. M”testagen m†ste i s† fall „ndras d„r.
+
+:h3 id=mbase res=&PANEL_AS_MSGBASE..Meddelandebasinst„llningar
+:parml.
+:pt.:hp2.Typ av meddelandebas:ehp2.
+:pd.H„r anger Du formatet p† meddelandebasen p† h†rddisken.
+:pt.:hp2.M”testyp:ehp2.
+:pd.H„r anger Du hur FleetStreet ska behandla m”tet.
+:pt.:hp2.S”kv„g och/eller filnamn:ehp2.
+:pd.H„r anger Du var meddelandena f”r m”tet finns lagrade p† h†rddisken.
+F”r *.MSG-areor anger du s”kv„gen till den katalog som inneh†ller
+*.MSG-filerna. F”r Squish- och JAM-areor anger du areafilens s”kv„g och
+huvudfilnamn (max †tta bokst„ver).
+:eparml.
+:p.Om dessa inst„llningar inte kan redigeras, betyder det att de har l„sts
+in fr†n din tossers konfigurationsfil, och m†ste d„rf”r „ndras d„r.
+
+:h3 id=areaattrib res=&PANEL_AS_ATTRIB..M”tesattribut
+:p.Varje diskussionsm”te kan ha vissa f”rinst„llda meddelandeattribut, och
+andra inst„llningar som bara g„ller f”r det m”tet.
+:parml.
+:pt.:hp2.Meddelandeattribut:ehp2.
+:pd.Meddelanden som skrivs i den h„r m”tet f†r som standardv„rde de angivna
+attributen. Se :link refid=attrib reftype=hd.meddelandeattribut:elink. f”r
+en f”rklaring av de olika attributen.
+:pt.:hp2.Monospaced Font:ehp2.
+:pd.The alternative font is generally used for this area.
+:pt.:hp2.Till†t nationella tecken:ehp2.
+:pd.H„r anger du om anv„ndning av nationella tecken (teckenkoder h”gre „n
+127) ska till†tas i detta m”te. Om nationella tecken inte till†ts kommer
+FleetStreet att vid inmatning omvandla dessa till till†tna tecken. Se
+:link reftype=hd refid=transtbl.”vers„ttningstabellen:elink.
+:pt.:hp2.Separatorlinje:ehp2.
+:pd.En separatorlinje visas under detta m”te.
+:pt.:hp2.Ingen betoning:ehp2.
+:pd.Understreck (_), asterisker (*) och snedstreck (/) ska inte tolkas som
+beteckning f”r understruken, fetstilad resp. kursiv text, utan i st„llet visas
+p† det s„tt de st†r i texten. Detta val „r anv„ndbart i m”ten d„r algoritmen
+ofta sl†r fel (t.ex i programmeringsm”ten med mycket k„llkod).
+:eparml.
+
+:h4 id=transtbl.™vers„ttningstabell
+:p.N„r tecken med teckenkoder ”ver 127 inte till†ts i ett m”te, kommer
+FleetStreet, vid inmatning av s†dana, att omvandla dem till till†tna
+tecken&colon.
+:table cols='3 10'.
+:row.
+:c.&aa.
+:c.a
+:row.
+:c.&ac.
+:c.a
+:row.
+:c.&ae.
+:c.ae
+:row.
+:c.&Ae.
+:c.Ae
+:row.
+:c.&ag.
+:c.a
+:row.
+:c.&aelig.
+:c.ae
+:row.
+:c.&AElig.
+:c.Ae
+:row.
+:c.&Alpha.
+:c.a
+:row.
+:c.&angstrom.
+:c.A
+:row.
+:c.&ao.
+:c.a
+:row.
+:c.&Ao.
+:c.A
+:row.
+:c.&Beta.
+:c.ss
+:row.
+:c.&cc.
+:c.c
+:row.
+:c.&Cc.
+:c.C
+:row.
+:c.&cdqf.
+:c.>>
+:row.
+:c.&degree.
+:c.deg
+:row.
+:c.&divide.
+:c./
+:row.
+:c.&dot.
+:c..
+:row.
+:c.&darrow.
+:c.|
+:row.
+:c.&ea.
+:c.e
+:row.
+:c.&Ea.
+:c.E
+:row.
+:c.&ec.
+:c.e
+:row.
+:c.&ee.
+:c.e
+:row.
+:c.&eg.
+:c.e
+:row.
+:c.&fnof.
+:c.f
+:row.
+:c.&house.
+:c.
+:row.
+:c.&ia.
+:c.i
+:row.
+:c.&ic.
+:c.i
+:row.
+:c.&ie.
+:c.i
+:row.
+:c.&ig.
+:c.i
+:row.
+:c.&inve.
+:c.!
+:row.
+:c.&invq.
+:c.?
+:row.
+:c.&larrow.
+:c.<-
+:row.
+:c.&lnot.
+:c.-|
+:row.
+:c.&mu.
+:c.mc
+:row.
+:c.&nt.
+:c.n
+:row.
+:c.&Nt.
+:c.N
+:row.
+:c.&oa.
+:c.o
+:row.
+:c.&oc.
+:c.o
+:row.
+:c.&og.
+:c.o
+:row.
+:c.&oe.
+:c.oe
+:row.
+:c.&Oe.
+:c.Oe
+:row.
+:c.&frac14.
+:c.1/4
+:row.
+:c.&frac12.
+:c.1/2
+:row.
+:c.&odqf.
+:c.<<
+:row.
+:c.&plusmin.
+:c.+-
+:row.
+:c.&Lsterling.
+:c.PS
+:row.
+:c.&sup2.
+:c.qd
+:row.
+:c.&ua.
+:c.u
+:row.
+:c.&uc.
+:c.u
+:row.
+:c.&ug.
+:c.u
+:row.
+:c.&ue.
+:c.ue
+:row.
+:c.&Ue.
+:c.Ue
+:row.
+:c.&aus.
+:c.a
+:row.
+:c.&ous.
+:c.o
+:row.
+:c.&ye.
+:c.y
+:etable.
+
+.***************************************************************************
+.* Area list settings - Inst„llningar f”r m”teslista
+.*
+
+:h2 res=&PANEL_AREALISTSETT..Inst„llningar f”r m”teslista
+:p.Var god v„lj ett „mne&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_ALS_VIEW..Standardvisning:elink.
+:li.:link reftype=hd res=&PANEL_ALS_COLORS..F„rger:elink.
+:esl.
+
+:h3 res=&PANEL_ALS_VIEW..Standardvisning
+:p.Inst„llningar f”r standardvisning&colon.
+:parml.
+:pt.:hp2.M”tesbeskrvningar:ehp2.
+:pd.M”tesbeskrivningarna visas i m”teslistan.
+:pt.:hp2.M”testag:ehp2.
+:pd.M”testagarna visas i m”testlistan.
+:eparml.
+
+:h3 res=&PANEL_ALS_COLORS..F„rger
+:p.Du kan v„lja olika f„rger f”r de olika m”testyperna.
+:p.V„lj grundf„rgen med f„rgcirkeln. Den aktuella f„rgen markeras med ett
+h†rkors.
+:p.St„ll in f„rgens ljusstyrka med reglaget till h”ger om f„rgcirkeln.
+
+.***************************************************************************
+.* Squish-Parameter - Squishinst„llningar
+.*
+
+:h2 res=&PANEL_SQPARAMS..Parametrar f”r Squishmeddelandebas
+:p.Det finns tre parametrar vilka styr hur Squishmeddelandebasfilerna
+hanteras av Squish-APIt.
+:parml.
+:pt.:hp2.Maximalt antal meddelanden:ehp2.
+:pd.Maximalt antal meddelanden som kan sparas i detta m”te. N„r ytterligare
+meddelanden, ut”ver den gr„ns Du st„llt in h„r, tossas in i detta m”te,
+eller n„r du sj„lv skriver nya meddelanden, kommer „ldre meddelanden
+automatiskt att raderas.
+:pt.:hp2.Antal inledande meddelanden att beh†lla:ehp2.
+:pd.Om meddelanden raderas p† ovan beskrivna s„tt, kommer detta antal
+meddelanden i b”rjan av meddelandebasen att l„mnas kvar.
+:p.Observera&colon. Om du st„ller in detta v„rde p† ett annat tal „n 0,
+m†ste du „ven ange ett maximalt antal meddelanden.
+:pt.:hp2.Antal dager meddelanden ska beh†llas:ehp2.
+:pd.Anger hur m†nga dagar som meddelanden ska bevaras. Meddelanden som „r
+„ldre „n detta antal dagar kommer att raderas om du k”r programmet SQPACK.
+:eparml.
+:p.
+Om du st„ller in alla talen p† 0, kommer Squish inte att radera n†gra
+meddelanden automatiskt.
+
+:h2 hide res=&PANEL_ERRREADSQPARAM..Fel vid l„sning av Squishinst„llningar
+:p.Squish' m”tesparametrar kunde inte l„sas. Detta kan bero p† f”ljande
+orsaker&colon.
+:ul.
+:li.En annan process har exklusiv kontroll ”ver filen
+:li.Du har inte l„sr„ttigheter till filen
+:li.Filen existerar inte
+:eul.
+
+:h2 hide res=&PANEL_ERRWRITESQPARAM..Fel vid skrivning av Squishinst„llningar
+:p.Squish' m”tesparametrar kunde inte skrivas. Detta kan bero p† f”ljande
+orsaker&colon.
+:ul.
+:li.En annan process har exklusiv kontroll ”ver filen
+:li.Du har inte l„sr„ttigheter till filen
+:li.Filen existerar inte
+:li.Filen „r skrivskyddad
+:eul.
+
+:h2 hide res=&PANEL_SQPARAMVALUES..Squishinst„llningarna „r felaktiga
+:p.Om Du s„tter :hp2."Antal inledande meddelanden att beh†lla":ehp2. till
+ett v„rde skilt fr†n 0, m†ste Du „ven s„tta :hp2."Maximalt antal
+meddelanden":ehp2. till ett v„rde skilt fr†n 0.
+
+.***************************************************************************
+.* Area-Renumber - Omnumrera m”te
+.*
+
+:h2 res=&PANEL_RENUMBER..Omnumrera m”te
+:p.*.MSG-areor blir vid anv„ndning mer och mer "s”nderstyckade". Det „r
+d„rf”r ”nskv„rt att d† och d† omnumrera dem. Efter det att m”tet har
+omnumrerats b”rjar meddelandefilerna †ter med 1, och de ”vriga f”ljer efter
+i nummerodning.
+:parml.
+:pt.:hp2.Start:ehp2.
+:pd.P†b”rjar omnumreringen av arean.
+:pt.:hp2.Avbryt:ehp2.
+:pd.Omnumrerar inte arean.
+:eparml.

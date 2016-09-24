@@ -1,0 +1,21 @@
+LIBRARY FLTUTIL INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet utility functions'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+   AreaInAreaSet          @1
+   StripWhitespace        @4
+   RemoveBackslash        @5
+   CollectRecordPointers  @6
+   ApplySourceEmphasis    @7
+   RemoveSourceEmphasis   @8
+   SelectAllRecords       @9
+   DeselectAllRecords     @10
+   Fuzz_init              @11
+   Fuzz_next              @12
+   Fuzz_term              @13
+   Crc32                  @15
+   StripRe                @16
+   NetAddrToString        @17
+   StringToNetAddr        @18
+   stristr                @19

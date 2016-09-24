@@ -1,0 +1,176 @@
+.* ******************************* Find **********************************
+
+:h2 id=findmsg res=&PANEL_FIND..Cerca testo
+:p.Cerca una data stringa nella base di messaggi.
+:p.E' possibile selezionare le aree nella quale verr… cercato il testo,
+le parti dei messaggi nelle quali verr… cercato, e il metodo con il quale
+viene stabilito se il messaggio corrisponde ai criteri selezionati.
+:p.
+Details&colon.
+:ul compact.
+:li.:link reftype=hd refid=findwhat.Cosa:elink.
+:li.:link reftype=hd refid=findwhere.Dove:elink.
+:li.:link reftype=hd refid=findareas.Quali aree:elink.
+:li.:link reftype=hd refid=findhow.Come:elink.
+:eul.
+:p.
+Bisogna premere il pulsante :hp2.Start:ehp2. per avviare la ricerca.
+
+:h3 id=findwhat.Cosa
+:p.
+Qui si stabilisce il testo da cercare nella base di messaggi. A seconda del
+metodo di ricerca si pu• trattare di un testo normale oppure di un'espressione
+regolare. Facendo una ricerca per messaggi personali non Š possibile stabilire
+un testo.
+
+:h3 id=findwhere.Dove
+:p.
+Bisogna selezionare le parti del messaggio nelle quali verr… cercato il testo.
+Facendo una ricerca per messaggi personali non Š possibile stabilire
+una parte.
+
+:h3 id=findareas.Quali aree
+:p.
+Bisogna selezionare le aree nelle quali verr… cercato il testo.
+:parml.
+:pt.:hp2.Area attuale:ehp2.
+:pd.La ricerca viene effettuata esclusivamente nell'area attuale.
+:pt.:hp2.Tutte le aree:ehp2.
+:pd.La ricerca viene effettuata in tutte le aree conosciute a FleetStreet.
+:pt.:hp2.Tipi di area:ehp2.
+:pd.La ricerca viene effettuata nelle aree del tipo selezionato.
+:pt.:hp2.Definite:ehp2.
+:pd.La ricerca viene effettuata nelle definite aree selezionate. Bisogna premere il pulsante:hp2.Selezione:ehp2.
+per selezionare le aree.
+:eparml.
+
+:h3 id=findhow.Come
+:p.
+Ci sono diversi metodi per decidere se un messaggio corrisponda al testo nel campo
+"Cosa"&colon.
+:parml.
+:pt.:hp2.Considera ortografia:ehp2.
+:pd.Il testo nel campo "Cosa" deve essere contenuto nel messaggio.
+:pt.:hp2.Ignora ortografia:ehp2.
+:pd.Come sopra, tranne che si ignora l'ortografia.
+:pt.:hp2.Approssimazione:ehp2.
+:pd.Si effettua una ricerca approssimativa, cioŠ il testo da cercare e il messaggio
+non devono corrispondere esattamente. "Livello" stabilisce un valore di sensibilit…,
+da 0 (esatto) fino a 5 (il meno preciso).
+:pt.:hp2.Espressione regolare:ehp2.
+:pd.Il testo nel campo "Cosa" forma un':link reftype=hd refid=regex.espressione regolare:elink..
+:pt.:hp2.Messaggi personali:ehp2.
+:pd.FleetStreet cerca per messaggi personali. Bisogna premere :hp2.Opzioni:ehp2. per
+stabilire le opzione di ricerca.
+:pt.:hp2.Messaggi non inviati:ehp2.
+:pd.FleetStreet cerca per messaggi creati localmente, non ancora iniviati.
+:pt.:hp2.Segna esclusivamente messaggi non letti:ehp2.
+:pd.Esclusivamente messaggi non letti (attributo "read" non messo) vengono elencati
+nella finestra di segnalibro.
+:eparml.
+
+:h3 id=regex.Espressione regolare
+:p.
+Un'espressione regolare descrive un modello di testo. Alcuni caratteri hanno un
+certo significato&colon.
+:parml.
+:pt.:hp2.*:ehp2.
+:pd.corrisponde ad una sequenza di carattere qualsiasi (nessuno o diversi)
+:pt.:hp2.?:ehp2.
+:pd.corrisponde ad un carattere qualsiasi
+:pt.:hp2.[QUANTITA']:ehp2.
+:pd.corrisponde ad un carattere qualsiasi nella quantit…
+:pt.:hp2.[!QUANTITA'] or [^QUANTITA']:ehp2.
+:pd.corrisponde ad un carattere qualsiasi non contenuto nella quantit….
+:eparml.
+:p.
+Una quantit… si compone di caratteri oppure spazi di caratteri; uno spazio di
+caratteri pu• essere "carattere sbaretta carattere" (per esempio 0-9 o A-Z).
+[0-9a-ZA-Z_] Š la quantit… minima di caratteri permessi nella costruzione [..].
+:p.
+Per sopprimere il significato preciso di uno dei caratteri :hp2.[]*?!^-\:ehp2.
+e per cercare il carattere stesso bisogna farlo precedere da un :hp2.\:ehp2..
+:p.
+:hp2.Esempio:ehp2.
+:xmp.
+*FleetStreet 0.[89]0*
+:exmp.
+:p.
+corrisponde a "FleetStreet 0.80" oppure "FleetStreet 0.90" in qualsiasi posto
+nel testo.
+
+:h3 hide res=&PANEL_FINDNOPARTS..Nessuna parte selezionata
+:p.
+Bisogna selezionare una o pi— parti del messaggio.
+
+:h3 hide res=&PANEL_FINDNOAREAS..Nessun'area selezionata
+:p.
+Bisogna selezionare un tipo di area oppure un numero di aree.
+
+:h3 hide res=&PANEL_FINDNOTEXT..Nessun testo inserito
+:p.
+Bisogna inserire un testo nel campo "Cosa".
+
+:h2 res=&PANEL_PERSMAILOPT..Messaggi personali
+:p.
+Le seguenti opzioni stabiliscono la ricerca di messaggi personali&colon.
+:parml.
+:pt.:hp2.Cerca esclusivamente tra messaggi nuovi:ehp2.
+:pd.Si cerca esclusivamente tra i messaggi dopo il lastread.
+:pt.:hp2.Cerca tra tutti i messaggi:ehp2.
+:pd.Si cerca tra tutti i messaggi.
+:pt.:hp2.Cerca per tutti i nomi:ehp2.
+:pd.FleetStreet paragona il contenuto del campo "A" con tutti i tuoi nomi.
+:pt.:hp2.Cerca per il nome di default dell'area:ehp2.
+:pd.FleetStreet paragona il contenuto del campo "A" esclusivamente con il nome di
+default dell'area in questione.
+:eparml.
+
+:h2 res=&PANEL_FINDRESULTS..Segnalibro
+:p.La finestra di segnalibro contiene quattro tipi di messaggi&colon.
+:ul compact.
+:li.Risultati di ricerca
+:li.Risultati della ricerca per posta personale
+:li.Messaggi segnati
+:li.Messaggi non inviati
+:eul.
+:p.
+Usa il menu di contesto della lista per saltare tra i tre tipi di visualizzazione.
+:p.
+Selezionando "Salva contenuto" nel menu di contesto, il contenuto della lista viene
+salvato sul disco fisso quando si termina FleetStreet. Esso viene ricaricato quando
+si riavvia FleetStreet.
+:p.
+Bisogna fare click sul messaggio oppure premere il pulsante :hp2.Al messaggio:ehp2.
+per visualizzare il messaggio intero.
+:p.
+Bisogna premere il pulsante :hp2.Cancella tutto:ehp2. per cancellare la visualizzazione
+attuale, cioŠ tutti i messaggi della visualizzazione vengono tolti dalla lista.
+:p.
+Bisogna usare il menu di contesto di un messaggio per
+:ul compact.
+:li.cancellare il messaggio
+:li.esportare il messaggio
+:li.stampare il messaggio
+:li.spostare il messaggio in un'altra area
+:li.copiare il messaggio in un'altra areadie Message in eine andere Area zu kopieren
+:li.togliere il messaggio dalla lista
+:eul.
+
+:h2 hide res=&PANEL_NOTTHERE..Il messaggio non esiste
+:p.
+Hai fatto click su un messaggio nella finestra di segnalibro, ma o il messaggio
+non esiste oppure l'area intera. Perci• non Š possibile visualizzare il messaggio.
+Questo pu• succedere se l'inserimento Š stato salvato nella lista e il messaggio
+oppure l'area sono stati cancellati quando FleetStreet non era avviato.
+:p.
+Bisogna cancellare il messaggio dalla lista per evitare questo messaggio di errore.
+
+:h2 res=&PANEL_SEARCH..Cerca
+:p.
+Bisogna inserire il testo da cercare. Attiva
+:hp2.Considera maiuscole/minuscole:ehp2. se il modo in cui viene scritto il testo
+(maiuscole/minuscole) deve essere considerato durante la ricerca.
+:p.
+Bisogna premere :hp2.OK:ehp2. per avviare la ricerca.
+

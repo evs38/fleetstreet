@@ -1,0 +1,292 @@
+                    Version 7 Nodelist, eine Beschreibung
+                    =====================================
+
+1. Allgemeines
+
+Dieses Dokument beschreibt den Aufbau der compilierten Version-7-Nodeliste.
+
+1.1 Entstehung dieser Beschreibung
+
+Waehrend ich an der ersten Version von FleetStreet [1] arbeitete, hatte ich
+das Problem, dass es eine solche Beschreibung offensichtlich noch nicht
+gab. FleetStreet sollte natuerlich in der Lage sein, eine Version-7-Nodeliste
+zu lesen, jedoch war zunaechst nirgendwo zu erfahren, wie denn diese
+Nodeliste aufgebaut ist.
+
+Die ersten Hinweise bekam ich, als ich den Sourcecode von Binkley Term [2]
+bekam. Jedoch war der Code sehr unuebersichtlich und vor allem mit sehr viel
+altem Ballast beladen.
+
+Dieser Anfang genuegte jedoch, um die ersten Versuche zu starten und vor
+allem sich mit den Datenstrukturen der Index-Dateien vertraut zu machen.
+
+Der Nodelist-Lookup durch FleetStreet ist wesentlich komplexer als der von
+Binkley Term. Deshalb schrieb ich mir ein kleines Testprogramm, mit dem
+ich die Index-Strukturen weiter erforschte, um noch mehr ueber dessen
+Aufbau zu erfahren.
+
+Am Ende kam mir die Idee, dass dieses Wissen nicht wieder in der Schublade
+verschwinden sollte. Die Version-7-Nodeliste sollte keine "Geheimwissenschaft"
+bleiben. Deshalb schrieb ich dieses Dokument.
+
+[1] FleetStreet ist ein Messageeditor fÅr OS/2 2.x
+[2] Binkley Term ist ein FTN-Mailer fuer DOS und OS/2
+
+
+1.2 B-Baeume
+
+Die Index-Dateien der Nodelist sind B-Baeume. Falls Sie nicht wissen, was es
+mit solchen Baeumen auf sich hat, will ich Ihnen das Wesen von B-Baeumen kurz
+erlaeutern.
+
+[Diese Erlaeuterung ist eigentlich viel zu kurz. Hier geht es lediglich um
+das Lesen dieser Baeume. Zum Aendern von B-Baeumen durch Einfuegen oder
+Loeschen von Datensaetzen ist zusaetzliches Wissen noetig. Siehe dazu
+die Literaturhinweise am Ende.]
+
+B-Baeume sind Datenstrukturen, die sich besonders gut zum schnellen Auffinden
+von Datensaetzen auf externen Speichern eigenen. Externe Speicher sind
+im Vergleich zum Hauptspeicher extrem langsam, deshalb sollte der gesuchte
+Datensatz mit moeglichst wenigen Plattenzugriffen gefunden werden, und die
+einzelnen Zugriffe sollte moeglichst viele Informationen fuer die weitere
+Suche liefern.
+
+Aus diesem Grund werden in B-Baeumen mehr als ein Datensatz auf einmal
+verwaltet und zu Knoten zusammengefasst. Ein Knoten enthaelt mindestens
+folgende Daten:
+
+  - 2*n Datensaetze
+  - 2*n+1 Verweise auf Nachfolgeknoten
+
+n wird auch die Ordnung des Baumes genannt.
+
+Es gibt einen speziellen Knoten, der die Wurzel des Baumes darstellt.
+
+Die Datensaetze sind innerhalb eines Knotens sortiert. Datensaetze, die in
+der Ordnung vor dem ersten Datensatz liegen, werden in einem weiteren Knoten
+gespeichert. Der erste Verweis deutet auf diesen Knoten. Datensaetze, die
+in der Ordnung zwischen dem ersten und zweiten Datensatz liegen, stehen
+wieder in einem weiteren Knoten. Der zweite Verweis deutet auf diesen Knoten,
+usw.
+
+Einen Knoten kann man sich also so vorstellen:
+
+                                  |
+                                  v
+         +-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+
+         |P| 2|P| 8|P|27|P|78|P|99|P|  |P|  |P|  |P|  |P|
+         +-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+
+          |    |    |    |    |    |
+          v    v    v    v    v    v
+
+
+Alle SchlÅssel kleiner als 2 stehen in dem Block, auf den der erste Verweis "P"
+zeigt (oder darunter). Alle SchlÅssel zwischen 2 und 8 stehen in dem Block,
+auf den der zweite Verweis zeigt etc.
+
+Die Unterknoten sind wiederum sortiert, und die Verweise dort deuten
+wieder auf weitere Knoten, die in der Ordnung jeweils vor, zwischen oder
+nach den einzelnen Saetzen liegen.
+
+Man unterscheidet Baumknoten und Blattknoten. Baumknoten enthalten Verweise
+auf weitere Knoten, bei Blattknoten sind diese Verweise meist 0 (fuer: "hier
+geht es nicht mehr weiter").
+
+Eine Suche in einem solchen Baum laeuft folgendermaszen ab:
+
+Man liest zuerst den Wurzelknoten. Dann vergleicht man die enthaltenen
+Saetze mit dem Suchschluessel. Wenn der gesuchte Satz in der Wurzel enthalten
+ist, kann man die Suche abbrechen. Ansonsten muss man den Verweis verwenden,
+der zwischen dem naechstsgroesseren und naechstkleineren Satz liegt.
+Wenn z.B. das "D" gesucht wird und die Saetze "B F M T" in der Wurzel liegen,
+muss man den zweiten Verweis verfolgen (der erste Verweis fuehrt zu Saetzen
+kleiner als B, der dritte zu Saetzen groesser als F).
+Der Verweis ist meist die Datensatznummer der weiterfuehrenden Knotens. Dieser
+muss dann gelesen und auf die gleiche Weise durchsucht werden.
+
+Die Suche endet, wenn der Satz gefunden wurde, oder er auch in einem
+Blattknoten nicht enthalten ist (in diesem Fall war die Suche erfolglos).
+
+Die Index-Dateien der Nodeliste sind spezialisiertere B-Baeume. Da die
+Blattknoten keine weiteren Verweise enthalten muessen, wird der Platz durch
+eine hoehere Anzahl von Schluesseln genutzt. Ein zusaetzliches Kennzeichen
+in jedem Knoten zeigt an, ob es sich um einen Baumknoten oder einen
+Blattknoten handelt.
+
+Desweiteren sind in den Index-Dateien keine Nutzdaten enthalten, sondern
+lediglich der Schluessel und eine Positionsmarke der Nutzdaten in einer
+Nutzdaten-Datei. Dadurch lassen sich noch mehr Schluessel in einem Knoten
+unterbringen.
+
+
+1.3 Datentypen
+
+In der weiteren Beschreibung werden folgende Datentypen verwendet:
+
+[Alle Integer-Typen mit LSB zuerst (Intel-Format)]
+
+ BYTE     vorzeichenloser Integer, 8 Bit
+ SHORT    vorzeichenbehafteter Integer, 16 Bit
+ USHORT   vorzeichenloser Integer, 16 Bit
+ LONG     vorzeichenbehafteter Integer, 32 Bit
+ ULONG    vorzeichenloser Integer, 32 Bit
+
+
+2. Datenstrukturen
+
+2.1 Struktur der Index-Dateien
+
+Die Index-Dateien enthalten pro Baumknoten maximal 20 Schluessel, und pro
+Blattknoten maximal 30 Schluessel. Die Knoten sind genau 512 Bytes gross.
+[Es muessen immer genau 512 Bytes gelesen werden, auch wenn die
+jeweiligen Strukturen diese Groesse nicht voll ausnutzen]
+
+Knoten werden durch eine Blocknummer identifiziert. Die genaue
+Position innerhalb der Datei ergibt sich also als 512*Blocknummer.
+Die Anzahl der gÅltigen Datensaetze in einem Knoten ist ebenfalls im Knoten
+gespeichert.
+
+Der Verweis auf die Nutzdaten ist der exakte Dateioffset in der Nutzdaten-
+Datei.
+
+
+2.2 Control-Block
+
+Dies ist der erste Datenblock in der Indexdatei. Er enthaelt u.a. die
+Blocknummer der Wurzel des Baums.
+
+Die Struktur im Detail:
+
+ Datentyp    Name        Beschreibung
+=====================================================================
+ USHORT    CtlBlkSize    Groesse eines Blocks in Index [3]
+ LONG      CtlRoot       Blocknummer der Wurzel
+ LONG      CtlHiBlk      Blocknummer des letzten Blocks
+ LONG      CtlLoLeaf     Blocknummer des ersten Blattes
+ LONG      CtlHiLeaf     Blocknummer des letzten Blattes
+ LONG      CtlFree       Anfang der Freispeicherkette
+ USHORT    CtlLvls       Anzahl der Index-Ebenen
+ USHORT    CtlParity     XOR-Verknuepfung der obigen Felder als
+                         Pruefsumme
+
+[3] Es sollte zur Ermittlung des Dateioffsets eines Blocks dieser
+    Wert verwendet werden, nicht fest "512".
+
+
+2.3 Baum-Knoten
+
+ Datentyp    Name        Beschreibung
+=====================================================================
+ LONG      IndxFirst     Erster Verweis auf Nachfolger [4]
+ LONG      IndxBLink     Verkettung zum Nachbarknoten vorher [6]
+ LONG      IndxFLink     Verkettung zum Nachbarknoten nachher [6]
+ SHORT     IndxCnt       Anzahl der Schluessel im Knoten
+ USHORT    IndxStr       Offset des ersten Schluessels im Knoten
+
+dann 20-mal:
+  USHORT    IndxOfs      Offset des Schluessels im Knoten
+  USHORT    IndxLen      Laenge des Schluessels [5]
+  LONG      IndxData     Offset der Nutzdaten in der Daten-Datei
+  LONG      IndxPtr      Verweis auf Nachfolger
+
+[4] Der Wert ist -1 als Kennzeichnung eines Blattknotens
+[5] Die Schluessel stehen direkt hintereinander. Beim Sysop-Index sind
+    also die Sysop-Namen nicht 0-terminiert, die Laengenangabe muss
+    beachtet werden!
+[6] Ueber diese Felder kann die Index-Datei linear durchlaufen
+    werden.
+
+2.4 Blatt-Knoten
+
+ Datentyp    Name        Beschreibung
+=====================================================================
+ LONG      IndxFirst     Erster Verweis auf Nachfolger [6]
+ LONG      IndxBLink     Verkettung zum Nachbarknoten vorher
+ LONG      IndxFLink     Verkettung zum Nachbarknoten nachher
+ SHORT     IndxCnt       Anzahl der Schluessel im Knoten
+ USHORT    IndxStr       Offset des ersten Schluessels im Knoten
+dann 30-mal:
+  USHORT    KeyOfs       Offset des Schluessels im Knoten
+  USHORT    KeyLen       Laenge des Schluessels [5]
+  LONG      KeyVal       Offset der Nutzdaten in der Daten-Datei
+
+[6] In Blattknoten immer -1
+
+
+2.5 Node-Daten
+
+Die Nutzdaten eines Nodes stehen in der Datei NODEX.DAT.
+
+ Datentyp    Name          Beschreibung
+=====================================================================
+ SHORT       Zone          Zonen-Nummer
+ SHORT       Net           Netz-Nummer
+ SHORT       Node          Node-Nummer
+ SHORT       HubNode       Hub-Node oder Point-Nummer [7]
+ USHORT      CallCost      Kosten fuer den Anruf [8]
+ USHORT      MsgFee        Kosten fuer eine Message [8]
+ USHORT      NodeFlags     Node-Flags, s.u.
+ BYTE        ModemType     Modem-Typ [8]
+ BYTE        Phone_len     Laenge der Telefonnummer
+ BYTE        Password_len  Laenge des Passworts
+ BYTE        Bname_len     Laenge des System-Namens (entpackt)
+ BYTE        Sname_len     Laenge des Sysop-Namens (entpackt)
+ BYTE        Cname_len     Laenge des Orts-Namens (entpackt)
+ BYTE        pack_len      Gesamt-Laenge der gepackten Daten
+ BYTE        BaudRate      Baud-Rate, durch 300 dividiert
+anschliessend:
+ Telefon-Nummer, ungepackt
+ Passwort, ungepackt
+ System-Name, Sysop-Name, Ort, gepackt
+
+
+Die Flags fuer NodeFlags sind (ODER-verknueft):
+
+ Flag      Bedeutung
+========================================================
+ 0x0001    Der Node ist ein Hub
+ 0x0002    Der Node ist ein Host
+ 0x0004    Der Node ist ein RC
+ 0x0008    Der Node ist ein ZC
+ 0x0010    Der Node ist CM
+ 0x0020    reserviert fuer Opus
+ 0x0040    reserviert fuer Opus
+ 0x0080    reserviert fuer Opus
+ 0x0100    reserviert fuer Opus
+ 0x0200    reserviert fuer andere Programme
+ 0x0400    reserviert fuer andere Programme
+ 0x0800    reserviert fuer andere Programme
+ 0x1000    Der Node ist ein Point
+ 0x2000    reserviert fuer andere Programme
+ 0x4000    reserviert fuer andere Programme
+ 0x8000    reserviert fuer andere Programme
+
+
+Die Telefon-Nummer und das Session-Passwort stehen direkt hinter dem Feld
+"BaudRate". Beide Strings sind nicht 0-terminiert, d.h. Phone_len und
+Password_len muessen unbedingt beachtet werden.
+
+Direkt anschliessend stehen der System-Name, der Sysop-Name und der Ort
+in gepackter Form. Die Gesamtlaenge der Daten ist pack_len.
+
+Nach dem Entpacken der Daten stehen die entpackten Daten direkt
+hintereinander, jeweils mit Laenge Bname_len, Sname_len und Cname_len.
+
+Die gepackten Daten sind folgendermassen gepackt:
+
+[BASE40-Polynom, Tabelle " EANROSTILCHBDMUGPKYWFVJXZQ-'0123456789"]
+
+[7] Falls das Point-Flag in NodeFlags gesetzt ist, bezeichnet der Wert
+    die Point-Nummer, sonst den Hub-Node.
+[8] wird vom Nodelist-Compiler eingesetzt.
+
+
+3. Literatur:
+=============
+
+Weiterfuehrende Literatur zu B-Baeumen:
+
+Donald E. Knuth: "The art of computer programming"
+Niklas Wirth: "Algorithmen und Datenstrukturen", Teubner Verlag
+Robert Sedgewick: "Algorithmen", Addison Wesley Verlag
+

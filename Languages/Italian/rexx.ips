@@ -1,0 +1,108 @@
+.* Ampliamento Rexx, versione italiana
+
+:h1.Rexx scripts
+:p.FleetStreet ha la capacitÖ di eseguire scripts nel linguaggio Rexx. Il linguaggio
+Rexx viene ampliato da :hp2.variabili predefinite:ehp2. e :hp2.funzioni:ehp2. ulteriori
+e :hp2.comandi:ehp2..
+
+:h2 res=&PANEL_RXFOLDER..Script-template
+:p.Lo script-template contiene tutti gli scripts.
+:p.Bisogna usare il menu di contesto di uno script per
+:ul compact.
+:li.aprire il notebook di configurazione dello script
+:li.eseguire lo script
+:li.creare uno script nuovo
+:li.cancellare lo script.
+:eul.
+:p.
+Il nome dello script viene modificato facendo click sull'icona, tenendo
+premuto il tasto ALT contemporaneamente.
+:p.E' possibile cancellare uno script trascinandolo sulla trinciatrice.
+:p.
+:artwork align=center name='shredscr.bmp'.
+:p.E' possibile stampare uno script trascinandolo su un oggetto di stampante.
+:p.
+:artwork align=center name='printscr.bmp'.
+:p.E' anche possibile editare uno script trascinandolo su un oggetto di
+programma del WPS oppure su una finestra aperta dell'EPM.
+:p.
+:artwork align=center name='editscr.bmp'.
+:p.Un oggetto di script puï essere creato in modo molto semplice: basta
+trascinare il file corrispondente da un WPS-folder nello script-folder.
+:p.
+:artwork align=center name='makescr.bmp'.
+
+
+:h2 res=&PANEL_RXSETTINGS..Configurazione script
+:p.Seleziona una pagina&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_RXSETTINGS_GEN..Configurazione generale script:elink.
+:li.:link reftype=hd res=&PANEL_RXSETTINGS_MONI..Configurazione monitor-script:elink.
+:esl.
+
+
+:h3 res=&PANEL_RXSETTINGS_GEN..Configurazione generale script
+:parml.
+:pt.:hp2.Nome dello script:ehp2.
+:pd.Nome descrittivo dello script. Questo nome appare sotto la icona script e
+nel menu Rexx.
+:pt.:hp2.Nome di file:ehp2.
+:pd.Nome di file dello script. E' possibile premere il pulsante :hp2.Cerca:ehp2. per
+selezionare un file. E' anche possibile trascinare un file da un WPS-folder nel
+campo di inserimento.
+:pt.:hp2.Accesso rapido:ehp2.
+:pd.Selezionando accesso rapido, lo script appare nel menu Rexx e puï essere
+avviato senza aprire lo script-folder.
+:eparml.
+
+:h3 res=&PANEL_RXSETTINGS_MONI..Configurazione monitor-script
+:p.E' possibile avviare uno script con o senza finestra monitor. Una
+finestra di monitoraggio visualizza i risultati dello script e offre un
+campo di inserimento per ulteriori comandi.
+:p.Selezionando :hp2.Monitor:ehp2., si puï ulteriormente selezionare se la
+finestra viene tenuto aperta dopo la terminazione dello script, oppure se
+viene chiusa automaticamente.
+:p.:hp8.Attenzione&colon.:ehp8. Non selezionare :hp2.Nessun monitor:ehp2.,
+se lo script - oppure programmi avviati dallo script - richiedono inserimenti
+da parte dell'utente. In questo caso lo script non continuerÖ. Questa situazione
+:hp8.non:ehp8. puï essere evitata da FleetStreet, lo script non puï essere
+fermato!
+
+:h2 res=&PANEL_RXMONITOR..Script-monitor
+:p.La finestra monitor visualizza i risultati dello script e offre un campo
+di inserimento per ulteriori comandi.
+:p.Bisogna premere :hp2.Stop:ehp2. per fermare lo script. Se lo script aspetta
+degli inserimenti da parte dell'utente, si fermerÖ solamente dopo un inserimento.
+:p.Bisogna premere :hp2.Chiudi:ehp2. per chiudere la finestra monitor dopo la
+terminazione dello script.
+
+:h2 hide res=&PANEL_DELSCRIPT..Cancella script
+:p.Se desideri cancellare lo script bisogna premere :hp2.Sç:ehp2.. Bisogna
+premere :hp2.No:ehp2. se non vuoi cancellare lo script.
+
+:h2 hide res=&PANEL_REXXERROR..Errore Rexx
+:p.E' avvenuto un errore durante l'esecuzione dello script. Si visualizza la
+descrizione dell'errore.
+:p.:hp8.Attenzione&colon.:ehp8. La descrizione viene messa a disposizione dal
+sistema, per cui la lingua della descrizione dipende dalla versione di OS/2
+installata.
+
+.* ******************************** Hooks ***********************************
+
+:h2 res=&PANEL_RXHOOKS..Hooks
+:p.FleetStreet puï avviare scripts automaticamente in certe situazioni.
+:p.Momentaneamente esistono i seguenti hooks&colon.
+:parml.
+:pt.:hp2.Fine programma:ehp2.
+:pd.Questo hook viene avviato quando FleetStreet viene terminato. La variabile
+speciale :hp2.NewMail:ehp2. avrä un valore che indica che tipo di messaggi ä stato
+scritto durante la session in questione. Se questo hook viene avviato il file
+:hp2.Echotoss.Log:ehp2. ä giÖ stato scritto sul disco. Perciï non ä un problema
+avviare :hp2.Squish:ehp2. per esportare i messaggi nuovi.
+
+:pt.:hp2.Prima di salvare:ehp2.
+:pd.Questo hook viene avviato prima che un messaggio nuovo venga salvato nell'area,
+come anche prima che vengano salvate modifiche di un messaggio esistente.
+:eparml.
+
+

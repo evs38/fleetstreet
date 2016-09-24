@@ -1,0 +1,89 @@
+; Fileliste f. INSTALL.FIL
+
+Help obj\german.hlp   German
+Lang obj\german.lng   German
+Doc  obj\german.inf   German
+Help obj\italian.hlp Italian
+Lang obj\italian.lng Italian
+Doc  obj\italian.inf Italian
+Help obj\swedish.hlp Swedish
+Lang obj\swedish.lng Swedish
+Doc  obj\swedish.inf Swedish
+Help obj\english.hlp English
+Lang obj\english.lng English
+Doc  obj\english.inf English
+
+; Executables
+File bin\fltstrt.exe
+File bin\fltctls.dll
+File bin\fltv7.dll
+File bin\flthmsg.dll
+File bin\fltrun.dll
+File bin\fltprint.dll
+File bin\fltaman.dll
+File bin\fltdump.dll
+File bin\fltcf_sq.dll
+File bin\fltcf_fe.dll
+File bin\fltcf_im.dll
+File bin\fltcf_ge.dll
+File bin\fltcf_lo.dll
+File bin\fltcf_fm.dll
+File bin\fltcf_tm.dll
+File bin\fltcf_wm.dll
+File bin\fltcf_np.dll
+File bin\fltcf_bb.dll
+File bin\fltcf_sg.dll
+File bin\fltutil.dll
+File bin\fltjam.dll
+File bin\fleetcom.exe
+
+; Extra-Skripte
+File addons\tjscript.zip
+File addons\pgpfrx97.zip
+File addons\launchp.zip
+File addons\sac11.rar
+File addons\msgapi32.dll
+
+; Texte
+File docs\whatsnew.txt   #
+File docs\whatsnew.eng   #
+File docs\problems.txt   #
+File docs\lizenz.txt     #
+File docs\license.eng    #
+
+Script scripts\rot13.frx     ROT13
+Script scripts\mbox.frx      Message-Box
+Script scripts\lookup.frx    Node_Info
+Script scripts\lookup2.frx   Nodelist_Lookup_2
+Script scripts\uudecode.frx  UUDecode
+Script scripts\uuencode.frx  UUEncode
+Script scripts\chkarea.frx   Check_Area
+Script scripts\sfs.frx       Swift_Filelist_Searcher
+Script scripts\filefind.frx  WagoTEC_File-Finder
+Script scripts\newswrap.frx  Word_Wrap
+Script scripts\viewgif.frx   View_GIF
+
+Readme docs\readme.txt       German
+Readme docs\readme.eng       English
+
+ObsFile ??_cfg.dll
+ObsFile layouts.dll
+ObsFile layout.dll
+ObsFile areaman.dll
+ObsFile statline.dll
+ObsFile clrsel.dll
+ObsFile mlist.dll
+ObsFile printmsg.dll
+ObsFile hmsg.dll
+ObsFile msgview.dll
+ObsFile editwin.dll
+ObsFile form.*
+ObsFile fltcf_nw.dll
+ObsFile fltview.dll
+ObsFile fltstatl.dll
+ObsFile fltclrw.dll
+ObsFile fltmlist.dll
+ObsFile flttoolb.dll
+ObsFile fltctrls.dll
+ObsFile register.*
+ObsFile regsites.*

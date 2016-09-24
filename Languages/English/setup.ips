@@ -1,0 +1,414 @@
+.***************************************************************************
+.* Setup                                                                   *
+.***************************************************************************
+
+:h1 res=&PANEL_SETUP..Setup
+:p.Select a page&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_SU_USER..User names:elink.
+:li.:link reftype=hd res=&PANEL_SU_ADDRESSES..Addresses:elink.
+:li.:link reftype=hd res=&PANEL_SU_ORIGIN..Default origin:elink.
+:li.:link reftype=hd res=&PANEL_SU_SQUISH..Tosser options:elink.
+:li.:link reftype=hd res=&PANEL_SU_TOSSERPATHS..Paths:elink.
+:li.:link reftype=hd res=&PANEL_SU_MACROS..Macros:elink.
+:li.:link reftype=hd res=&PANEL_SU_DOMAINS..Domains:elink.
+:li.:link reftype=hd res=&PANEL_SU_MODEMTYPES..Modem types:elink.
+:li.:link reftype=hd res=&PANEL_SU_OPTIONS..Options:elink.
+:li.:link reftype=hd res=&PANEL_SU_STARTUP..Startup area:elink.
+:li.:link reftype=hd res=&PANEL_SU_EDITOROPT..Editor options:elink.
+:li.:link reftype=hd res=&PANEL_SU_SAFETY..Confirmations:elink.
+:li.:link reftype=hd res=&PANEL_SU_OPENWIN..Windows:elink.
+:li.:link reftype=hd res=&PANEL_SU_DRIVEREMAP..Remapping:elink.
+:esl.
+
+:h2 res=&PANEL_SU_USER..User names
+:p.If you want to use FleetStreet you must have at least one user name.
+:p.Your names are shown in the list. To :hp2.add:ehp2. new
+names press the :hp2.Add:ehp2. button. You are
+prompted for a new name.
+:p.To :hp2.delete:ehp2. a name select the name in the list and press
+the :hp2.Delete:ehp2. button.
+:p.To :hp2.change:ehp2. a name select the name in the list and press
+the :hp2.Change:ehp2. button.
+:p.To make a name the :hp2.default:ehp2., select the name in the list and
+press the :hp2.Default:ehp2. button. If you create new message areas or read areas
+from the squish configuration file, the default name will
+be selected as the initial name for that area.
+
+:h2 res=&PANEL_SU_ADDRESSES..Addresses
+:p.If you want to use FleetStreet you must have at least one address.
+:p.Your addresses are shown in the list. To :hp2.add:ehp2. new
+addresses, press the :hp2.Add:ehp2. button. You are
+prompted for a new address.
+:p.To :hp2.delete:ehp2. an address, select the address in the list and press
+the :hp2.Delete:ehp2. button.
+:p.To :hp2.change:ehp2. an address, select the address in the list and press
+the :hp2.Change:ehp2. button.
+:p.To make an address the :hp2.default:ehp2., select the address in the list and
+press the :hp2.Default:ehp2. button. If you create new message areas or read areas
+from the squish configuration file, the default address will
+be selected as the initial address for that area.
+
+:h2 res=&PANEL_SU_ORIGIN..Default origin
+:p.The origin line is optional, but it's always a good idea to have one.
+:p.Enter the text for your origin line.
+
+:h2 res=&PANEL_SU_SQUISH..Tosser options
+:p.FleetStreet can read the configuration file of various tosser programs,
+thus making it
+easier to provide consistency between your message base maintained by
+your tosser and that maintained by FleetStreet.
+:parml.
+:pt.:hp2.External configuration file:ehp2.
+:pd.If you want FleetStreet to read the configuration file of your tosser
+automatically at startup, klick on "read". Specify
+path and name of the file in the entryfield below, or press the "Locate"
+button to select the file via a file dialog.
+:p.
+If an error occures while reading the new file, you will get an error message
+and nothing will be lost.
+:p.:hp8.Note&colon.:ehp8. You must have entered at least one user name to read the file.
+:p.:hp8.Note&colon.:ehp8. FleetStreet still only supports :hp2.Squish:ehp2.,
+:hp2.*.MSG:ehp2. and :hp2.JAM:ehp2. format areas. Areas in different formats are ignored.
+:eparml.
+:i2 refid=squish.Configuration file
+:i2 refid=squish.Lastread pointer
+
+:h2 hide res=&PANEL_DUPAREAS..Duplicate Areas
+:p.One or more areas that were read from the external configuration file
+are already defined as private areas,
+i.e. they have the same area tag. Area tags must be unique in the area list.
+:p.To solve the problem do one of the following&colon.
+:ul.
+:li.Change the area tags of your private areas,
+:li.Edit the external configuration file.
+:eul.
+
+:h2 hide res=&PANEL_CFGDLLERROR..Error reading the tosser configuration
+:p.
+An error occured while loading the DLL for reading the tosser configuration
+file. This can have one of the following reasons&colon.
+:ul.
+:li.The necessary DLL is not (or no longer) present.
+:li.The DLL is of a wrong version.
+:li.One or more functions in the DLL are missing, i.e. the DLL is corrupted.
+:eul.
+:p.
+This problem may be solved by reinstalling FleetStreet.
+:p.
+Press :hp2.OK:ehp2. to ignore the error and continue.
+:p.:hp8.Caution&colon.:ehp8. Ignoring this error may cause loss of program
+settings!
+:p.
+Press :hp2.Cancel:ehp2. to stop and remove the problem.
+
+
+:h2 res=&PANEL_SU_TOSSERPATHS..Paths
+:parml.
+:pt.:hp2.Default directory for attached files:ehp2.
+:pd.This directory is used when the dialog for selecting attached files is
+opened.
+:pt.:hp2.Echotoss.Log:ehp2.
+:pd.The Echotoss.Log file is a plain ASCII text file where all the message areas
+are listed, where you have entered mail. The tosser and other utilities read this file
+to process only these areas (normally tossers process all areas, which may take much longer).
+FleetStreet creates this file if necessary and writes the appropriate area names to it.
+:p.If this option is turned off, FleetStreet does not write to the file.
+:pt.:hp2.Path for ECHOMAIL.JAM/NETMAIL.JAM:ehp2.
+:pd.Specify the path containing the ECHOMAIL.JAM and NETMAIL.JAM files.
+Leave the entry field empty if you don't want FleetStreet to generate these files.
+:p.If you don't have any JAM areas or if your tosser doesn't support these
+files, you can leave the entry field empty, as well.
+:pt.:hp2.Lastread:ehp2.
+:pd.This is the offset into the lastread file for each message area. The number
+of the message that was last read is stored in in a lastread file (*.SQL files for
+Squish message areas). Each user of a BBS has his own offset, the sysop
+usually has offset 0. Some utility programs use an offset as well.
+:p.
+:hp8.If you don't understand the meaning of this setting it's best to leave it
+at 0.:ehp8.
+:p.
+The current limit for this setting is 500, thus giving the sysop access to
+the lastread pointers of his first 500 users. If you really have a need for
+more users, feel free to drop us a note.
+:eparml.
+
+:h2 res=&PANEL_SU_NICKNAMES..Nicknames
+:p.With FleetStreet it is possible to define nicknames for users you often
+write to.
+:p.To use these nicknames, just enter the nickname in the TO field of
+the message and press "Enter". The nickname will be replaced by the real name,
+and the address of the user will be entered automatically in the address field.
+If you defined a subject line for this nickname, it will be inserted in the subject
+field as well.
+:p.:hp2.To define a nickname, do the following&colon.:ehp2.
+:ol compact.
+:li.Press the "Add" button,
+:li.Fill in the fields,
+:li.Press "OK".
+:eol.
+:p.:hp2.To change a nickname, do the following&colon.:ehp2.
+:ol compact.
+:li.Select the nickname in the list,
+:li.Press the "Change" button or double click on the entry,
+:li.Do your changes,
+:li.Press "OK".
+:eol.
+:p.:hp2.To delete a nickname, do the following&colon.:ehp2.
+:ol compact.
+:li.Select the nickname in the list,
+:li.Press the "Delete" button.
+:eol.
+
+:h3 res=&PANEL_NICKENTRY..Nickname
+:p.Enter a new nickname or change an existing nickname.
+:parml.
+:pt.:hp2.Nickname:ehp2.
+:pd.This is what you type to reference this nickname.
+:pt.:hp2.Real name:ehp2.
+:pd.This is the name of the addressed user as you would usually use it.
+:pt.:hp2.Address:ehp2.
+:pd.Address of the user. Use a 3D or 4D address.
+:pt.:hp2.?:ehp2.
+:pd.Lookup address of the user in the nodelist.
+:pt.:hp2.Subject:ehp2.
+:pd.Default subject line. Useful for pseudo-users like area managers. Leave this
+field blank if you don't want to have a subject line for this nickname.
+:pt.:hp2.1st line:ehp2.
+:pd.First line in message text. When this line contains a :hp2.%?:ehp2., you are
+prompted for additional text.
+:p.This feature is intended to be used in conjunction with UUCP gateways. Consider the
+following example&colon.
+:p.
+Nickname&colon. :hp2.u:ehp2.
+.br
+Real name&colon. :hp2.UUCP:ehp2.
+.br
+Address&colon. :hp2.1&colon.234/567:ehp2.
+.br
+Subject&colon. :hp2.test:ehp2.
+.br
+First line&colon. :hp2.TO: %?"Enter UUCP address":ehp2.
+:p.
+Now, when you use the nickname "U", the UUCP gateway is addressed
+and you are prompted to enter the FQDA of the addressed user.
+:p.
+You can use the tokens :hp2.%?:ehp2. or :hp2.%?"prompt text":ehp2..
+:pt.:hp2.Don't use Template:ehp2.
+:pd.When using this nickname, the message template is not processed.
+:pt.:hp2.Attributes:ehp2.
+:pd.Default message :link refid=attrib reftype=hd.attributes:elink.. These are set automatically when you use the
+nickname.
+:eparml.
+:p.Press :hp2.OK:ehp2. to confirm your changes. Press :hp2.Cancel:ehp2. to abort editing.
+
+:h2 hide res=&PANEL_NICKPROMPT..Prompt
+:p.There is a :hp2.%?:ehp2. token in the nickname attribute "first line". You
+are prompted to enter additional text.
+
+:h2 hide res=&PANEL_DELNICKNAME..Delete Nickname
+:p.Press "YES" if you want to delete the selected nickname. Press "NO" if
+you want to keep it.
+
+:h2 hide res=&PANEL_HAVENICKNAME..Have Nickname
+:p.There already is an entry in the list with the same nickname. Nicknames
+must be unique. Re-edit the entry.
+
+:h2 hide res=&PANEL_REPLACENICK..Replace Nickname
+:p.There already is an entry in the list with the same nickname.
+:p.Press :hp2.Yes:ehp2. to replace the old definition of this nickname.
+:p.Press :hp2.No:ehp2. to re-edit your entry.
+
+:h2 res=&PANEL_SU_MACROS..Macros
+:p.If you are editing a message and press F2 through F12, the text associated
+with that key is inserted into the message window.
+:p.:hp8.Note&colon.:ehp8. F1 is reserved for HELP.
+:p.A macro may have up to 240 characters.
+
+:h2 res=&PANEL_SU_DOMAINS..Domains
+:p.Domains are necessary to tell FleetStreet where to look for your
+compiled nodelist(s).
+:parml.
+:pt.:hp2.Domains:ehp2.
+:pd.List of currently defined domains.
+:pt.:hp2.Add:ehp2.
+:pd.Add a new domain to the list.
+:pt.:hp2.Change:ehp2.
+:pd.Change the domain information for the selected domain.
+:pt.:hp2.Delete:ehp2.
+:pd.Delete the selected domain.
+:eparml.
+
+
+:h3 res=&PANEL_DOMAINENTRY..Domain
+:p.A domain has three attributes&colon.
+:parml.
+:pt.:hp2.Domain name:ehp2.
+:pd.Name of the domain, which must be unique.
+:pt.:hp2.Sysop index file:ehp2.
+:pd.Index file of the compiled nodelist for this domain. This is usually
+:hp2.SYSOP.NDX:ehp2. for your primary AKA. The full path and name of the file
+must be entered.
+:pt.:hp2.Nodelist data file:ehp2.
+:pd.Data file of the compiled nodelist for this domain. This is usually
+:hp2.NODEX.DAT:ehp2. for your primary AKA. The full path and name of the file
+must be entered.
+:eparml.
+:p.The name of the node index file is the same as the name of the data file,
+except that a file name extension of .NDX is used. This file name need not
+be entered.
+
+:h2 hide res=&PANEL_HAVEDOMAIN..Domain already defined
+:p.You have already defined a domain with this name. Domain names must be
+unique.
+:p.Enter a unique domain name and press :hp2.OK:ehp2.
+
+:h2 hide res=&PANEL_DELDOMAIN..Delete Domain
+:p.You are about to delete a domain.
+:p.Press :hp2.YES:ehp2. to delete the domain, press :hp2.NO:ehp2. to keep it.
+
+
+:h2 res=&PANEL_SU_MODEMTYPES..Modem types
+:p.The compiled nodelist contains information about the modem of each node.
+This information is saved in a single byte.
+:p.When you compile your nodelist, the nodelist compiler sets this
+field according to the modem flags that are in the distribution nodelist.
+:p.
+There are two ways to use this field&colon.
+:parml.
+:pt.:hp2.Bit types:ehp2.
+:pd.Each bit of the modem field is associated with a modem type. That way
+each node can have up to 8 modem types at the same time. However, that way you
+also can't define more than 8 modem types.
+:pt.:hp2.Byte types:ehp2.
+:pd.The modem field is interpreted as a number. That way you can define up to
+255 modem types, but each node can have only one modem type.
+:eparml.
+:p.
+Configure your nodelist compiler and FleetStreet so that the corresponding
+modem type is displayed for a node.
+
+:h2 res=&PANEL_SU_OPTIONS..Options
+:p.You may specify several options that influence the way FleetStreet operates.
+:parml break=all.
+:pt.:hp2.Use monospaced font:ehp2.
+:pd.Always uses the alternative (monospaced) font.
+:pt.:hp2.Use ^aPID:ehp2.
+:pd.The ^aPID klugde line is used instead of the long tearline.
+:pt.:hp2.Use Tearline in Netmail:ehp2.
+:pd.The Tearline is used in netmail areas. When turned off, the tearline
+is only used in echomail areas.
+:pt.:hp2.Use Origin in Netmail:ehp2.
+:pd.The Origin line is used in netmail areas. When turned off, the
+origin line is only used in echomail areas.
+:pt.:hp2.Area scan at startup:ehp2.
+:pd.The areas are scanned automatically when FleetStreet is started.
+:pt.:hp2.Beep on personal mail:ehp2.
+:pd.FleetStreet makes noise when a message is displayed which is addressed to you.
+:pt.:hp2.No highlighting:ehp2.
+:pd.Underscores (_) and asterisks (*) are generally not interpreted as indication of
+underlined or boldface text, but are displayed as is.
+:pt.:hp2.Use ^aFWDSUBJ:ehp2.
+:pd.The FWDSUBJ kludge line is generated when forwarding a message.
+:eparml.
+
+:h2 res=&PANEL_SU_STARTUP..Startup area
+:p.Specifies whether FleetStreet opens a specific area when started, or whether
+the area is opened that was open when you last used FleetStreet.
+
+:h2 res=&PANEL_SU_EDITOROPT..Editor options
+:parml.
+:pt.:hp2.Quotes color:ehp2.
+:pt.:hp2.Tearline color:ehp2.
+:pt.:hp2.Origin color:ehp2.
+:pd.Select a color for the corresponding element in a message. :hp2.Note&colon.:ehp2.
+These colors are not used when writing messages. The background color and the color
+of normal message text must be selected using the color panel.
+:pt.:hp2.Tab size:ehp2.
+:pd.Number of whitespace charaters that are inserted into the message text when you
+press the TAB key while editing.
+:pt.:hp2.Max. msg. size:ehp2.
+:pd.Maximum length of a message to be saved in the message base. Messages longer
+than the number specified are split into several pieces.
+:eparml.
+
+:h2 res=&PANEL_SU_SAFETY..Confirmations
+:parml.
+:pt.:hp2.Delete messages:ehp2.
+:pd.Ask for confirmation before deleting messages
+:pt.:hp2.Shred messages:ehp2.
+:pd.Ask for confirmation before deleting messages by dragging them to the shredder
+:pt.:hp2.Catchup:ehp2.
+:pd.Ask for confirmation before catching up
+:pt.:hp2.Edit sent messages:ehp2.
+:pd.Ask for confirmation before editing messages that are already sent
+:pt.:hp2.Change setup:ehp2.
+:pd.Ask for confirmation before making significant changes to the setup
+:pt.:hp2.Discard messages:ehp2.
+:pd.Ask for confirmation before discarding messages
+:eparml.
+
+:h2 res=&PANEL_SU_OPENWIN..Windows
+:p.
+On this page you can specify which Windows are opened automatically at
+startup.
+:p.
+For an :hp2.unchecked:ehp2. checkbox, the corresponding window is not opened,
+for a :hp2.checked:ehp2. checkbox, it's opened, and for a :hp2.greyed:ehp2.
+checkbox, it's only opened if it was open during your last FleetStreet session.
+
+
+:h2 hide res=&PANEL_CATCHUP..Catch up
+:p."Catching up" means that all messages are marked as "read", so that they are not
+highlighted in the various lists.
+:p.Press :hp2.Yes:ehp2. if you want to perform the function.
+:p.Press :hp2.No:ehp2. if you don't want to perform the function.
+
+
+:h2 res=&PANEL_SU_DRIVEREMAP..Remapping
+:p.
+:parml.
+:pt.:hp2.Remote Drive:ehp2.
+:pd.Drive letters as used on the remote machine in the tosser configuration file
+
+:pt.:hp2.Local Drive:ehp2.
+:pd.Drive letters that are to be used by FleetStreet when accessing the
+message base
+:eparml.
+
+:h2 hide res=&PANEL_SU_NEWUSER..New username
+:p.Enter the new name or edit the old name. Press "OK" to confirm your changes.
+Press "Cancel" if you don't want a new name or if you want to keep the old one.
+
+:h2 hide res=&PANEL_DELUNAME..Delete username
+:p.If you want to delete the selected name, press "YES". Press "NO" if
+you want to keep it.
+
+:h2 hide res=&PANEL_SU_NEWADDRESS..New address
+:p.Enter the new address or edit the old address. Press "OK" to confirm your changes.
+Press "Cancel" if you don't want a new address or if you want to keep the old one.
+
+:h2 hide res=&PANEL_DELADDRESS..Delete address
+:p.If you want to delete the selected address, press "YES". Press "NO" if
+you want to keep it.
+
+:h1 res=&PANEL_TOOLBARCONFIG..Toolbar
+:p.The list on the left side displays all buttons that appear in the toolbar.
+The list on the right side contains all other buttons.
+:p.The special button :artwork name='separator.bmp' runin. causes a gap to be
+inserted between two buttons.
+:p.You can modify the order of the buttons in the list on the left side by
+using Drag'n'Drop.
+:parml.
+:pt.:hp2.Add:ehp2.
+:pd.Adds the currently selected button in the right-hand list to the left-hand
+list. You can also add a button by dragging it from the right-hand list to
+the desired place in the left-hand list.
+:pt.:hp2.Remove:ehp2.
+:pd.Removes the currently selected button from the left-hand list.
+:pt.:hp2.Default:ehp2.
+:pd.Resets the configuration of the toolbar to the default.
+:eparml.
+:p.
+Press :hp2.OK:ehp2. to let your changes take effect. Press :hp2.Cancel:ehp2.
+to discard your changes.

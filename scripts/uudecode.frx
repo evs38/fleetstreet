@@ -1,0 +1,92 @@
+/****************************************************************************/
+/*                      FleetStreet example script                          */
+/*                                                                          */
+/*                             UUDECODE.FRX                                 */
+/*                                                                          */
+/* UUDECODE.FRX searches the current message for an uu-encoded file         */
+/* and decodes it.                                                          */
+/*                                                                          */
+/* This example script demonstrates accessing the predefined Rexx array,    */
+/* which holds the text of the current message.                             */
+/*                                                                          */
+/****************************************************************************/
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+/* look for beginning of file */
+
+do i=1 to FleetMsg.Text.0
+   if words(FleetMsg.Text.i) = 3 & ,
+      translate(word(FleetMsg.Text.i, 1)) = 'BEGIN' & ,
+      datatype(word(FleetMsg.Text.i, 2)) = 'NUM' then
+   do
+     /* found UU header */
+     call FSSetEntryField word(FleetMsg.Text.i, 3)
+     say 'Enter file name'
+     parse pull filename .
+     if length(filename) > 0 then
+        /* decode file */
+        call DecodeFile filename, i
+     else
+        say 'ERROR: No file name.'
+   end
+end
+
+exit
+
+/* DecodeFile decodes encoded data and writes the decoded file to disk.
+   Parameter 1 is the file name, parameter 2 is the starting text line */
+
+DecodeFile: procedure expose FleetMsg.
+
+i = arg(2)+1
+destfile = arg(1)
+
+/* open output file for writing */
+if stream(destfile, 'C', 'open write') \= 'READY:' then
+do
+   say 'ERROR: Unable to open destination file.'
+   return
+end
+
+say 'Decoding...'
+
+/* decode data */
+do while i <= FleetMsg.Text.0
+   if translate(word(FleetMsg.Text.i, 1)) = 'END' then
+      /* end mark */
+      leave
+   if length(FleetMsg.Text.i) > 0 then  /* ignore empty lines */
+      call charout destfile, FSDecodeLine(FleetMsg.Text.i)
+   i = i+1
+end
+
+/* done, close output file */
+call stream destfile, 'C', 'close'
+
+say 'done.'
+
+i = i+1
+
+/* check size of output file */
+if i <= FleetMsg.Text.0 then
+do
+   if translate(word(FleetMsg.Text.i, 1)) == 'SIZE' then
+   do
+      expectedsize = word(FleetMsg.Text.i, 2)
+      if expectedsize \= '' then
+      do
+         actualsize = stream(destfile, 'C', 'query size')
+         if actualsize \= expectedsize then
+         do
+            say 'WARNING: File size differs.'
+            say '         Expected size:' expectedsize
+            say '         Actual size:  ' actualsize
+         end
+      end
+   end
+end
+
+return

@@ -1,0 +1,44 @@
+.***************************************************************************
+.* Printer-Setup                                                           *
+.***************************************************************************
+
+:h1 res=&PANEL_PRINTSETUP..Drucker einrichten
+:p.
+:p.WÑhlen Sie eine Seite aus&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_PS_LIST..Drucker:elink.
+:li.:link reftype=hd res=&PANEL_PS_BORDERS..RÑnder:elink.
+:li.:link reftype=hd res=&PANEL_PS_FONTS..Fonts:elink.
+:li.:link reftype=hd res=&PANEL_PS_OUTPUT..Ausgabe:elink.
+:esl.
+
+:h2 res=&PANEL_PS_LIST..Drucker
+:p.
+WÑhlen Sie den Drucker in der Liste, auf dem die Druckausgabe von FleetStreet
+erfolgen soll.
+:p.
+Durch einen Doppelklick auf einen Drucker oder durch DrÅcken von
+:hp2.Konfigurieren:ehp2. kînnen weitere Optionen fÅr einen Druckauftrag
+eingestellt werden.
+
+:h2 res=&PANEL_PS_BORDERS..RÑnder
+:p.
+Stellen Sie die RÑnder fÅr die Druckausgabe ein. Es kînnen der Abstand vom
+linken, rechten, oberen und unteren Papierrand eingestellt werden.
+
+:h2 res=&PANEL_PS_FONTS..Fonts
+:p.
+Stellen Sie die Fonts ein, mit denen gedruckt werden soll. Die Fonts fÅr
+den Message-Kopf und Text kînnen getrennt eingestellt werden.
+:p.
+Sie kînnen einen neuen Font wÑhlen, indem Sie einen Font aus der Fontpalette
+auf das betreffende Feld werfen. Mit einem Doppelklick auf ein Feld kann
+der Font per Fontdialog eingestellt werden.
+
+:h2 res=&PANEL_PS_OUTPUT..Ausgabe
+:p.
+Stellen Sie ein, welche Teile der Message gedruckt werden sollen.
+:p.
+Mit der Einstellung :hp2.Seitennummer:ehp2. wird auf der zweiten und den weiteren
+Seiten eine Titelzeile mit Seitennummer gedruckt.
+

@@ -1,0 +1,101 @@
+.* Rexx extension, english
+
+:h1.Rexx scripts
+:p.FleetStreet has the capability to run scripts in the Rexx language. The Rexx
+language is extended by :hp2.predefined variables:ehp2., additional :hp2.functions:ehp2.
+and additional :hp2.commands:ehp2..
+
+:h2 res=&PANEL_RXFOLDER..Script folder
+:p.The script folder contains all scripts.
+:p.Use the context menu of a script to
+:ul compact.
+:li.Open the script settings notebook
+:li.Run the script
+:li.Create another script
+:li.Delete the script
+:eul.
+:p.
+Change the name of the script by clicking on the icon while holding down
+the ALT key.
+:p.You can delete a script by dragging it to the shredder.
+:p.
+:artwork align=center name='shredscr.bmp'.
+:p.You can print a script by dragging it to a printer object.
+:p.
+:artwork align=center name='printscr.bmp'.
+:p.It's also possible to edit the script by dragging it to a program
+object of the WPS or to an open EPM window.
+:p.
+:artwork align=center name='editscr.bmp'.
+:p.A script object can be created easily by dragging the corresponding
+file from a WPS folder to the script folder.
+:p.
+:artwork align=center name='makescr.bmp'.
+
+
+:h2 res=&PANEL_RXSETTINGS..Settings
+:p.Select a page&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_RXSETTINGS_GEN..General script settings:elink.
+:li.:link reftype=hd res=&PANEL_RXSETTINGS_MONI..Script monitor settings:elink.
+:esl.
+
+
+:h3 res=&PANEL_RXSETTINGS_GEN..General script settings
+:parml.
+:pt.:hp2.Script name:ehp2.
+:pd.Descriptive name of the script. This name appears below the script icons and
+in the Rexx menu.
+:pt.:hp2.File name:ehp2.
+:pd.File name of the script. You can press the :hp2.Locate:ehp2. button to select
+a file. You can also drag a file from a WPS folder to the entry field.
+:pt.:hp2.Quick access:ehp2.
+:pd.When you check Quick access, the script appears in the Rexx menu and can be
+started without opening the script folder.
+:eparml.
+
+:h3 res=&PANEL_RXSETTINGS_MONI..Script monitor settings
+:p.A script can be run with or without a monitor window. A monitor window displays output
+from the script and provides an entry field for input to the script.
+:p.When you select :hp2.Monitor:ehp2., you can also choose whether the window should
+stay open when the script ends, or whether it should be closed automatically.
+:p.:hp8.Caution&colon.:ehp8. Don't choose :hp2.No monitor:ehp2. when the script or
+programs started by the script expect user input. The script then won't
+continue to run. This situation can :hp8.not:ehp8. be avoided by FleetStreet, the script can
+not be stopped!
+
+:h2 res=&PANEL_RXMONITOR..Script monitor
+:p.The monitor window displays output from the script and provides an entry field
+for script input.
+:p.Press :hp2.Stop:ehp2. to stop the script. When the script is waiting for user input,
+it will stop after you've entered something.
+:p.Press :hp2.Close:ehp2. to close the monitor window after the script has ended.
+
+:h2 hide res=&PANEL_DELSCRIPT..Delete script
+:p.If you want to delete the selected script, press :hp2.Yes:ehp2.. Press :hp2.No:ehp2.
+if you don't want to delete the script.
+
+:h2 hide res=&PANEL_REXXERROR..Rexx error
+:p.An error occured during script execution. The description of the error is displayed.
+:p.:hp8.Note&colon.:ehp8. The description is provided by the system, so the language
+of the description depends on your OS/2 version.
+
+
+.* ******************************** Hooks ***********************************
+
+:h2 res=&PANEL_RXHOOKS..Hooks
+:p.FleetStreet can start certain scripts in certain situations automatically.
+:p.Currently, the following hooks exist&colon.
+:parml.
+:pt.:hp2.Exit:ehp2.
+:pd.This hook is called when FleetStreet is closed. The special variable
+:hp2.NewMail:ehp2. then has a value that indicates, which kinds of new messages
+have been entered during this session. When this hook is executed, the :hp2.Echotoss.Log:ehp2.
+file has already been written to disk, so you can safely call :hp2.Squish:ehp2. to
+export the new messages.
+
+:pt.:hp2.Pre-save:ehp2.
+:pd.This hook is called just before a new message is saved in the area. It is also
+called before changes to an existing messages are saved.
+:eparml.
+

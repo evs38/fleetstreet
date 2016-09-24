@@ -1,0 +1,43 @@
+.***************************************************************************
+.* Threadlist - Tr„dlista
+.* 1996-07-22
+:h2 id=threadlist res=&PANEL_THREADLIST..Tr„dlistan
+:p.
+H„r visas meddelandetr„det f”r det aktuella m”tet. L„sta och ol„sta
+meddelanden visas i olika f„rger.
+
+:h2 res=&PANEL_THRLISTSETTINGS..Inst„llningar f”r tr„dlistan
+:p.
+V„lj ett av f”ljande „mnen&colon.
+:ul compact.
+:li.:link refid=defview reftype=hd.Visningstyper f”r tr„dlistan:elink.
+:li.:link refid=thcolors reftype=hd.F„rger:elink.
+:eul.
+
+:h3 id=defview res=&PANEL_SU_THREADS..Visningstyper f”r tr„dlistan
+:p.Tr„dlistan kan visas p† tre olika s„tt&colon.
+:parml.
+:pt.:hp2.Alla tr„d:ehp2.
+:pd.Alla tr„d med samtliga meddelanden f”r det aktuella m”tet visas.
+:pt.:hp2.Tr„d med ol„sta meddelande:ehp2.
+:pd.Endast de tr„d som har minst ett ol„st meddelande visas.
+:pt.:hp2.Endast ol„sta meddelanden:ehp2.
+:pd.Endast de ol„sta meddelandena visas. Tr„den b”rjar med det f”rsta
+ol„sta meddelande och slutar med det sista. Om ett tr„d avbryts av ett l„st
+meddelande kommer delarna att visas som tv† olika tr„d.
+:eparml.
+:p.Dessutom kan Du v„lja om namnet p† meddelandets avs„ndare ska visas
+eller inte.
+:p.Med inst„llningen :hp2."Kompakt visning":ehp2. kommer alla tr„d med
+samma „renderad att sammanfogas till ett "pseudo"-tr„d.
+
+:h3 id=thcolors res=&PANEL_THRLISTCOLORS..F„rger
+:p.Du kan v„lja olika f„rger f”r de olika typerna av meddelanden.
+:p.V„lj grundf„rgen med f„rgcirkeln. Den aktuella f„rgen markeras med ett
+h†rkors.
+:p.St„ll in f„rgens ljusstyrka med reglaget till h”ger om f„rgcirkeln.
+
+:h3 hide res=&PANEL_DOINGWORK..Bearbetning p†g†r
+:p.Ett tr„d bearbetas redan, och under tiden kan Du inte starta bearbetning
+av n†gon annat tr„d. V„nta tills dess att bearbetningen „r klar.
+

@@ -1,0 +1,105 @@
+.***************************************************************************
+.* Carbon-Copy-Listen                                                      *
+.***************************************************************************
+
+:h2.Liste di carbon copy
+:p.Soggetto&colon.
+:p.:link reftype=hd refid=ccsetup.Setup di liste di carbon copy:elink.
+:p.:link reftype=hd refid=cclist.Liste di carbon copy:elink.
+:p.:link reftype=hd refid=ccentry.Inserisci:elink.
+:p.:link reftype=hd refid=ccselect.Seleziona lista di carbon copy:elink.
+
+:h2 id=ccsetup res=&PANEL_CCLISTSETUP..Template carbon copy
+:p.Il template carbon copy contiene tutte le liste di carbon copy.
+:p.E' possibile
+:ul compact.
+:li.aprire,
+:li.creare oppure
+:li.cancellare
+:eul.
+:p.una lista, selezionando la voce corrispondente nel menu di contesto di una lista.
+:p.E' anche possibile cancellare una lista, trascinandola sulla trinciatrice.
+:p.
+Il nome della lista viene modificato facendo click sull'icona, tenendo premuto il tasto
+ALT contemporaneamente.
+
+:h3 id=cclist res=&PANEL_CCLIST..Lista carbon copy
+:p.Si visualizzano gli inserimenti delle liste di carbon copy selezionate. E' possibile
+aggiungere, modificare oppure cancellare inserimenti.
+:parml.
+:pt.:hp2.Aggiungi:ehp2.
+:pd.Aggiungere un inserimento nuovo.
+:pt.:hp2.Modifica:ehp2.
+:pd.Modificazione dell'inserimento selezionato. E' anche possibile modificare l'inserimento
+facendo due click su esso.
+:pt.:hp2.Cancella:ehp2.
+:pd.Cancellazione dell'inserimento selezionato. E' anche possibile cancellarlo trascinandolo
+sull trinciatrice.
+:pt.:hp2.Importa:ehp2.
+:pd.Importazione di nome e indirizzi da un file di testo.
+:eparml.
+:p.E' possibile spostare o copiare inserimenti da una lista all'altra aprendone
+due e trascinando un inserimento da una lista all'altra. Tenendo premuto il tasto
+CTRL, il contenuto viene copiato e non spostato.
+
+:h3 id=ccentry res=&PANEL_CCLISTENTRY..Inserimento
+:p.Aggiunga un inserimento nuovo o modifichi uno esistente.
+:parml.
+:pt.:hp2.Nome:ehp2.
+:pd.Nome d'utente del destinatorio. E' anche possibile usare un nome abbreviato.
+Bisogna inserire il nome abbreviato e spingere :hp2.TAB:ehp2.. Il nome abbreviato
+viene sostituito con il nome corretto, e l'indirizzo del destinatario viene viene
+inserito nel campo dell'indirizzo.
+:pt.:hp2.Indirizzo:ehp2.
+:pd.Indirizzo di rete del destinatario.
+:pt.:hp2.?:ehp2.
+:pd.L'indirizzo del destinatario viene cercato nella nodelist.
+:pt.:hp2.Prima riga:ehp2.
+:pd.La prima riga del testo di messaggio. E' possibile inserire l'indirizzo internet di
+destinazione con "TO: xxx" se il messaggio viene inviato tramite una gateway.
+:pt.:hp2.Visualizzare nome nelle righe CC:ehp2.
+:pd.Si stabilisce se il nome dell'utente venga visualizzato nella lista dei nomi,
+la quale viene aggiunta al messaggio da un message template.
+:eparml.
+
+:h3 id=ccselect res=&PANEL_CCLISTSELECT..Seleziona lista di carbon copy
+:p.Seleziona una delle liste carbon copy definite. Premi :hp2.OK:ehp2.
+per confermare la selezione. Premi :hp2.Annulla:ehp2. nel caso che non
+desideri usare una lista di carbon copy.
+
+:h2 res=&PANEL_IMPORTCCLIST..Importa
+:p.Bisogna selezionare il file il quale si desidera importare.
+:p.
+:parml.
+:pt.:hp2.Si stabilisce il nome "Visualizza nome":ehp2.
+:pd.Bisogna configurare qui il nome prestabilito per il campo "Visualizza nome".
+Il nome prestabilito viene usato con ogni inserimento letto.
+:eparml.
+
+:h2 hide res=&PANEL_DELCCLIST..Cancella lista di carbon copy
+:p.Premi :hp2.Sç:ehp2. nel caso che desideri cancellare la lista carbon copy
+selezionata.
+Prema :hp2.No:ehp2. nel caso che desideri mantenere la lista.
+
+:h2 hide res=&PANEL_DELCCENTRY..Cancella inserimento
+:p.Prema :hp2.Sç:ehp2. nel caso che desideri cancellare l'inserimento selezionato.
+Prema :hp2.No:ehp2. nel caso che desideri mantenerlo.
+
+:h2 hide res=&PANEL_NOCCLIST..Lista di carbon copy non pió presente
+:p.La lista di carbon copy selezionata ä stata cancellata prima di aver salvato
+il messaggio. Non ä possibile salvare il messaggio con la lista di carbon copy
+in questione..
+:p.E' possibile inviare il messaggio ad un singolo destinatario, selezionare
+un'altra lista di carbon copy oppure rifiutare il messaggio intero.
+
+:h2 hide res=&PANEL_NOCCENTRIES..Salva messaggio
+:p.Momentaneamente il carbon copy veloce ä attivo. La lista perï non contiene
+inserimenti, cioä FleetStreet non conosce destinatari ai quali inviare il messaggio.
+:p.Bisogna inserire qualcosa nella lista oppure disattivare il carbon copy veloce.
+:h2 hide res=&PANEL_MODQUICKCC..Carbon copy veloce
+:p.Il carbon copy veloce ä momentaneamente attivo, oppure la voce di menu ä stata
+selezionata una seconda volta.
+:p.Bisogna premere :hp2.Sç:ehp2. per modificare la lista esistente.
+:p.Bisogna premere :hp2.No:ehp2. per disattivare il carbon copy veloce.
+:p.Bisogna premere :hp2.Annulla:ehp2. per riprocessare il messaggio.
+

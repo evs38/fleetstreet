@@ -1,0 +1,32 @@
+DLGINCLUDE 1 "F:\DATEN\C\READER\squish_cfg\echoman_sq.h"
+
+DLGTEMPLATE IDD_SETUPDLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Squish defaults", IDD_SETUPDLG, 12, 6, 176, 113, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        CONTROL         "", 101, 59, 94, 35, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTDEFAULT | SPBS_JUSTRIGHT | 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", 102, 59, 82, 35, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTDEFAULT | SPBS_JUSTRIGHT | 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", 103, 59, 70, 35, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTDEFAULT | SPBS_JUSTRIGHT | 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        AUTORADIOBUTTON "*.~MSG", 104, 105, 87, 42, 10, WS_GROUP | 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Squish", 105, 105, 76, 43, 10
+        ENTRYFIELD      "", 106, 5, 42, 166, 8, ES_MARGIN | WS_GROUP
+        LTEXT           "Default path for new areas", 107, 3, 54, 165, 8
+        AUTOCHECKBOX    "Use ~HPFS (long) file names", 111, 3, 26, 161, 10
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Cancel", DID_CANCEL, 49, 4, 40, 14, NOT WS_TABSTOP
+        RTEXT           "Messages", 108, 8, 96, 49, 8
+        RTEXT           "Days", 109, 8, 84, 49, 8
+        RTEXT           "Keep", 110, 8, 72, 49, 8
+    END
+END

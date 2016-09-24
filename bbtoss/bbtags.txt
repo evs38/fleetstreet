@@ -1,0 +1,183 @@
+=================================== Netmail ====================================
+    Von: Burkhard Buelte                     2:2471/2402     11 Aug 96  03:28:00
+     An: Michael Hohner                      2:2490/2520.17  13 Aug 96  02:01:46
+  Thema: BBToss Addings                                                         
+================================================================================
+Hallo Michael,
+
+----------------------------------------------------------------------
+
+·0730
+
+  - TOSS/TOSSII: erstellen eine IMPORT.LOG mit den Echotags der
+                 importierten Echomails hinzu
+
+  - bbtzip.ini auf gemischte Dos und OS/2 Packer-Config erweitert
+    EintrÑge fÅr OS/2 werden mit [OS2_ZIP] [OS2_ARJ] als zusÑtzlicher
+    Eintrag gekennzeichnet (mu· per Editor eingetragen werden bbtcfg
+    noch nicht entsprechend erweitert)
+
+    Beispiel:
+        [ZIP]
+        Extract=pkunzip.exe -e -- -+ -) %a %f %p
+        add=pkzip.exe -) %a %f
+        ListSign=@
+
+        [OS2_ZIP]
+        Extract=c:\osbin\unzip.exe -s -j -o -L -qq %a %f -p %p
+        add=c:\osbin\zip.exe -D %a %f
+        ListSign=-@<
+
+
+  - Datalevel der *.BBT Dateien fÅr Dos u. OS/2 Version gleich, damit
+    kein erneutes compilieren bei gemischtem Einsatz
+
+  - Umbenennen von Arcmail-Archiven (*.ERR), wenn Packer einen
+    Errorlevel <> 0 zurÅckgibt.
+
+
+BBTCFG:
+
+  - Extra Pfade mit import.log erweitert
+    (mit Eintrag "importlog" in bbtoss.cfg)
+
+--------------------------------------------------------------------------
+·0710
+
+BBT:
+
+  - BBTZIP.INI als Configdatei fÅr die Packer eingefÅhrt
+       - BBTZIP.CFG wird in BBTZIP.OLD umbenannt
+       - Keywîrter in bbtzip.ini
+
+         [GLOB_PACKERDEF]
+         PACKERPATH= globaler Pfad zu den Packern
+
+         [ZIP]     Beginn eines Setupblocks, hier fÅr *.ZIP
+         Extract=  (Pfad+)Exe mit Parameter zum packen
+         Add=      (Pfad+)Exe mit Parameter zum entpacken
+         LISTSIGN= Parameter oder Zeichen des Packers um die Liste der
+                   zu packenden Files aus einer Textdatei zu entnehmen,
+                   default ist @
+
+    In den Befehlszeilen von Extract und Compress werden 3 Parameter
+    verwendet die von bbt zur Laufzeit ersetzt werden:
+       %a  Archivname (zu ent-/packendes Archiv)
+       %f  Dateiname  (zu ent-/packende Filenamen)
+       %p  Pfadname   (beim entpacken der Pfad in den entpackt werden
+                       soll)
+
+    Beispiel: Extract=unzip.exe -e %a %f -d %p
+    wird zu   unzip.exe -e 0000ffff.MO1 *.* -d \bbt\work
+
+              Compress=arj.exe a %a %f
+    wird zu   arj.exe a ffff0000.MO1 12345678.PKT
+
+------------------------------------------------------------------
+
+Keywords BBTOSS.CFG
+===================
+RegName
+RegKey
+Mailer          mîgliche Werte:
+                BT   BINKLEY
+                FD   FRONTDOOR
+                IM   INTERMAIL
+                MC   MCMAIL
+                XEN  XENIA
+Mailbox         mîgliche Werte:
+                RA250 RA_250
+                RA REMOTE_ACCESS (2.02)
+                EZYCOM
+                EZY_120
+                PB PROBOARD
+                PB_212
+                MAXIMUS
+Mailboxdir      Mailbox Verzeichnis
+Workdir         temp. Inbound Verzeichnis
+Inbounddir      Inbound Verzeichnis mit Mailer-Sessionpa·wort
+Outbounddir
+Tmpoutbounddir
+Unsecinbounddir unprotected Inbound Verzeichnis
+Localinbound    (in Ñlteren CFG's auch als SECPKTDIR
+Msgdir          Netmail-Folder *.MSG Format
+Hmbdir          Hudson Messagebase Verzeichnis
+Ezymsgbasedir   Ezycom Messagebase Basis-Verzeichnis
+SemaphoreDir
+Logpath         Pfad zur Logdatei (bbtoss.log)
+Echotosslog     Pfad und Name zur Echotoss.log
+Jamlog          Pfad zur Echomail.jam/Netmail.jam
+>Importlog       Pfad und Name zur import.log, die beim jedem TOSS/TOSSII
+                erstellt wird und die Echotags mit neuen Mails enthÑlt
+                (Pedant zur Echotosslog fÅr importierte Msgs)
+Minmemsize      Arbeitsspeicher nach laden des Progs
+MaxPktSize      *.PKT Grî·e in Byte
+Maxzipsize      *.MO1 usw. Grî·e in Byte
+MinDiskSpace    Abbruch bei unterschreiten des Plattenplatzes (in Byte)
+MaxFilesOpen    gleichzeitig zu îffnende Dateien
+LogLevel
+DupeDays        Msg-Alter in Tage wann Msgs immer als Dupe angenommen werden
+MaxTime         beenden des Tosslaufes nach ... Sekunden
+
+; Flags ohne Wert
+MultiLine       beachten von bbtoss.bsy ein/ausschalten
+Pathdupe        Path Kludge fÅr Dupecheck verwenden
+Crcdupe         Dupecheck per CRC-Berechnung (letzten 10000 Msgs)
+Seenbydupe      Seen-By Kludge fÅr Dupecheck verwenden
+Twopasstoss     2-Phasen toss (spÑter in locale Msgbase eintossen)
+Kill0bytenm     0 Byte Netmails lîschen
+KillSentNm      Netmails mit SENT-Flag im Netmailfolder lîschen
+KillAreaMgrNM   Areamgr Requests nach Bearbeitung lîschen
+BounceBadDestNM Nicht duch bbt routebare Netmails bouncen
+KillDupes       Dupes nicht ins DUPEAREA schreiben
+StrictAkaCheck
+PickAliasMsg    Herauskopieren von Echomails an Aliasname aktivieren
+UseEchomailBBS  fÅr scannen nach neuen Mails echomail.bbs echotoss.log
+                netmail.jam usw. verwenden
+Debug           erweiterte Log- und Bildschirmausgabe
+NoZip           nach toss Packets nicht packen
+
+-----------------------
+Keywords BBTLINK.INI
+-----------------------
+SYSOP          Name des Sysops
+COMMENT        Kommentar
+USEAKA         eigene Absender Aka
+PKTPWD         Packet Pa·wort
+MGRPWD         Areamgr Pa·wort
+LEVEL          Userlevel (unsigned-word)
+PACKER         Z=Zip A=Arc J=Arj U=UC2 R=Rar L=Lha O=Zoo
+GROUP          max. 15 Gruppen [0..9] [A..Z] [a..z] *=alle
+ARCMAILSTATUS  H=hold D=direct C=crash
+MSGMAILSTATUS  H=hold D=direct C=crash
+FLAGS          Dezimalzahl der Flagwerte
+FLOW           Anzahl erhaltener Msgs
+FLOWKB         Bytes
+
+-----------------------
+Keywords BBTAREA.INI
+-----------------------
+NR             Areanummer in der Mailbox
+DESC           Areabeschreibung
+PATH           Basisdateiname von Jam und Squish-Areas
+               (bei Passthru, Hudson u. Ezycom leer)
+BASETYP        Msgbasetyp P=passthru J=jam S=squish N=*.msg H=hudson E=ezy
+GROUP          Gruppe (char)
+TYP            Areatyp E=Echo N=Netmail B=Badarea D=Dupeara
+MAINAKA        eigene Hauptaka fÅr das Area
+FLAGS          Dezimalzahl der Flags
+WRITELEVEL
+READLEVEL
+MAXMSGS        wenn <> 0 Maxmsganzahl ab der das Area gekÅrzt wird
+MINMSGS        wenn <> 0 Msganzahl die nach aufrÑumen Åbrig bleiben soll
+               (wenn = 0 wird maxmsgs genommen)
+DAYSOLD        wenn <> 0 aufrÑumen per Messagealter (in Tagen)
+ORIGIN
+STATDATE       Datum des letzten zurÅcksetzen der Flowstatistik
+FLOW           Anzahl Msgs seit Statdate
+TODAYFLOW      heutige Anzahl Msgs (rÅcksetzen beim 1. Aufruf des Tages)
+RULEFILE       Pfad + Name zum Rulefile
+LINKCOUNT      Anzahl angeschlossener Links
+LINK           jeweils eine Zeile fÅr jeden angeschlossenen Link
+               mit dessen AKA
+

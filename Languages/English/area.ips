@@ -1,0 +1,351 @@
+.* ***************************** Area-List *********************************
+
+:h2 id=arealist res=&PANEL_AREALIST..Area list
+:p.
+The area list contains all message areas accessible for FleetStreet.
+You can switch to one of these areas, create and delete areas and
+set attributes for areas.
+:p.
+Double click on the area or press :hp2.ENTER:ehp2. to switch to that message area.
+:p.
+Press :hp2.Scan:ehp2. to start a re-scan of all areas.
+
+:h2 hide res=&PANEL_DELETEAREA..Delete Area
+:p.You've decided to delete the selected area. If you press :hp2.Yes:ehp2.,
+the area will be removed from the area list. However, the message base
+file(s) on your hard disk drive will not be deleted and may be re-used
+at a later time.
+:p.Press :hp2.No:ehp2. if you don't want to delete this area.
+
+:h2 hide res=&PANEL_HAVEAREA..Area already defined
+:p.There already is a message area with this area tag. Area tags must be
+unique. Choose a different tag for the new area.
+
+:h2 hide res=&PANEL_NOAREATAG..No area tag
+:p.You haven't specified an area tag for a new area or for an existing area.
+Every area must have a unique area tag to identify it.
+
+:h2 hide res=&PANEL_NOPATHFILE..No path name
+:p.You haven't specified a path and/or file name for a new area or for an
+existing area.
+
+
+.***************************************************************************
+.* Area-Setup                                                              *
+.***************************************************************************
+
+:h2 res=&PANEL_AREASETTINGS..Area settings
+:p.Topics&colon.
+:p.:link reftype=hd refid=gensett.General area settings:elink.
+:p.:link reftype=hd refid=mbase.Message base settings:elink.
+:p.:link reftype=hd refid=areaattrib.Area attributes:elink.
+
+:h3 id=gensett res=&PANEL_AS_GENERAL..General area settings
+:p.Fill in the description, area tag and default address for this
+area. If the area tag are not editable, this area was
+read from the squish configuration file. The area tag
+must then be changed there.
+
+:h3 id=mbase res=&PANEL_AS_MSGBASE..Message base settings
+:parml.
+:pt.:hp2.Message base format:ehp2.
+:pd.Specify the format of the message area on disk.
+:pt.:hp2.Area type:ehp2.
+:pd.Specify how FleetStreet is to handle this area.
+:pt.:hp2.Area path/file:ehp2.
+:pd.Specify where the messages are stored on disk. For FTS *.MSG areas
+specify the path to the directory that contains the *.MSG files. For Squish
+and JAM areas specify the path and root name (eight characters) of the area files.
+:eparml.
+:p.If these settings are not changeable, the area was read from the tosser
+configuration file, and settings must be changed there.
+
+
+:h3 id=areaattrib res=&PANEL_AS_ATTRIB..Area attributes
+:p.Every message area can have some default message attributes and additional
+area attributes.
+:parml.
+:pt.:hp2.Default message attributes:ehp2.
+:pd.Messages entered in this area will have the specified attributes
+by default. See :link refid=attrib reftype=hd."Message Attributes":elink. for
+an explanation of the various attributes.
+:pt.:hp2.Monospaced Font:ehp2.
+:pd.The alternative font is generally used for this area.
+:pt.:hp2.Foreign characters allowed:ehp2.
+:pd.Indicates that usage of foreign characters (i.e. ASCII values above 127)
+is allowed in this area. If such characters are not allowed, FleetStreet
+will convert these characters while typing. See :link reftype=hd refid=transtbl.
+"Translation table":elink..
+:pt.:hp2.Separator line:ehp2.
+:pd.A separator line will be drawn below this area in the area list.
+:pt.:hp2.No highlighting:ehp2.
+:pd.Underscores (_) and asterisks (*) are not interpreted as indication of
+underlined or boldface text, but are displayed as is. This option is useful
+in echos where the algorithm often fails (e.g. programming related echos
+containing a lot of source code).
+:eparml.
+
+:h4 id=transtbl.Character translation table
+:p.When foreign characters (8 bit ASCII) are not allowed in a message area,
+FleetStreet uses the following translation table to convert characters while
+typing&colon.
+:table cols='3 10'.
+:row.
+:c.&aa.
+:c.a
+:row.
+:c.&ac.
+:c.a
+:row.
+:c.&ae.
+:c.ae
+:row.
+:c.&Ae.
+:c.Ae
+:row.
+:c.&ag.
+:c.a
+:row.
+:c.&aelig.
+:c.ae
+:row.
+:c.&AElig.
+:c.Ae
+:row.
+:c.&Alpha.
+:c.a
+:row.
+:c.&angstrom.
+:c.A
+:row.
+:c.&ao.
+:c.a
+:row.
+:c.&Ao.
+:c.A
+:row.
+:c.&Beta.
+:c.ss
+:row.
+:c.&cc.
+:c.c
+:row.
+:c.&Cc.
+:c.C
+:row.
+:c.&cdqf.
+:c.>>
+:row.
+:c.&degree.
+:c.deg
+:row.
+:c.&divide.
+:c./
+:row.
+:c.&dot.
+:c..
+:row.
+:c.&darrow.
+:c.|
+:row.
+:c.&ea.
+:c.e
+:row.
+:c.&Ea.
+:c.E
+:row.
+:c.&ec.
+:c.e
+:row.
+:c.&ee.
+:c.e
+:row.
+:c.&eg.
+:c.e
+:row.
+:c.&fnof.
+:c.f
+:row.
+:c.&house.
+:c.
+:row.
+:c.&ia.
+:c.i
+:row.
+:c.&ic.
+:c.i
+:row.
+:c.&ie.
+:c.i
+:row.
+:c.&ig.
+:c.i
+:row.
+:c.&inve.
+:c.!
+:row.
+:c.&invq.
+:c.?
+:row.
+:c.&larrow.
+:c.<-
+:row.
+:c.&lnot.
+:c.-|
+:row.
+:c.&mu.
+:c.mc
+:row.
+:c.&nt.
+:c.n
+:row.
+:c.&Nt.
+:c.N
+:row.
+:c.&oa.
+:c.o
+:row.
+:c.&oc.
+:c.o
+:row.
+:c.&og.
+:c.o
+:row.
+:c.&oe.
+:c.oe
+:row.
+:c.&Oe.
+:c.Oe
+:row.
+:c.&frac14.
+:c.1/4
+:row.
+:c.&frac12.
+:c.1/2
+:row.
+:c.&odqf.
+:c.<<
+:row.
+:c.&plusmin.
+:c.+-
+:row.
+:c.&Lsterling.
+:c.PS
+:row.
+:c.&sup2.
+:c.qd
+:row.
+:c.&ua.
+:c.u
+:row.
+:c.&uc.
+:c.u
+:row.
+:c.&ug.
+:c.u
+:row.
+:c.&ue.
+:c.ue
+:row.
+:c.&Ue.
+:c.Ue
+:row.
+:c.&aus.
+:c.a
+:row.
+:c.&ous.
+:c.o
+:row.
+:c.&ye.
+:c.y
+:etable.
+
+.* ************************* Area list settings ****************************
+
+:h2 res=&PANEL_AREALISTSETT..Area List Settings
+:p.Select a page&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_ALS_VIEW..Default view:elink.
+:li.:link reftype=hd res=&PANEL_ALS_COLORS..Colors:elink.
+:esl.
+
+:h3 res=&PANEL_ALS_VIEW..View
+:p.View options&colon.
+:parml.
+:pt.:hp2.Area description:ehp2.
+:pd.The area descriptions are displayed in the area list.
+:pt.:hp2.Area tag:ehp2.
+:pd.The area tags are displayed in the area list.
+:eparml.
+
+
+:h3 res=&PANEL_ALS_COLORS..Colors
+:p.You can select different colors for different area types.
+:p.Select the base color by using the color wheel. The current color is
+marked with crosshairs.
+:p.Adjust the brightness of the color by using the slider to the right
+of the color wheel.
+
+
+.***************************************************************************
+.* Squish-Parameter                                                        *
+.***************************************************************************
+
+:h2 res=&PANEL_SQPARAMS..Squish message base parameters
+:p.There are three major parameters that control how Squish message base file
+are maintained by the Squish Message API.
+:parml.
+:pt.:hp2.Max. number of messages:ehp2.
+:pd.Maximum number of messages that can be stored in this area. When additional
+messages are tossed into this area or when you write new messages in this area,
+older messages are deleted automatically, if the limit represented by this
+value is hit.
+:pt.:hp2.Number of skipped messages:ehp2.
+:pd.When deleting messages as described above, this nummer of messages (from the
+beginning of the message base) are skipped.
+:p.Note&colon. When you set this number to a value other than 0, you must set
+a maximum of messages as well.
+:pt.:hp2.Number of days to keep messages:ehp2.
+:pd.Specifies the number of days that messages should be kept. Messages older
+than this number of days are deleted when you run SQPACK.
+:eparml.
+:p.
+When you set all the numbers to 0, Squish will not delete any message automatically.
+
+:h2 hide res=&PANEL_ERRREADSQPARAM..Error reading parameters
+:p.The Squish area parameters could not be read. This may be caused by one of the
+following reasons&colon.
+:ul.
+:li.another process uses the file exclusively
+:li.you don't have access rights to the file
+:li.the file doesn't exist
+:eul.
+
+:h2 hide res=&PANEL_ERRWRITESQPARAM..Error writing parameters
+:p.The Squish area parameters could not be written. This may be caused by one of the
+following reasons&colon.
+:ul.
+:li.another process uses the file exclusively
+:li.you don't have access rights to the file
+:li.the file doesn't exist
+:li.the file is write protected
+:eul.
+
+:h2 hide res=&PANEL_SQPARAMVALUES..Incorrect parameters
+:p.If you set :hp2."Number of skipped messages":ehp2. to a value other than 0, you must set
+:hp2."Max. number of messages":ehp2. to a non-null value as well.
+
+.***************************************************************************
+.* Area-Renumber                                                           *
+.***************************************************************************
+
+:h2 res=&PANEL_RENUMBER..Renumber Area
+:p.*.MSG areas become more and more "fragmented" while being used. It's desireable
+from time to time to renumber the area. After being renumbered, the message files
+in the area start from 1 and are numbered contiguously.
+:parml.
+:pt.:hp2.Start:ehp2.
+:pd.Start renumbering the area
+:pt.:hp2.Cancel:ehp2.
+:pd.Don't renumber the area
+:eparml.

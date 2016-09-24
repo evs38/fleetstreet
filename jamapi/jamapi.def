@@ -1,0 +1,22 @@
+LIBRARY FLTJAM INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet JAM Message base'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+  JAM_QueryAttribMask    @1
+  JAM_OpenApi            @2
+  JAM_CloseApi           @3
+  JAM_OpenArea           @4
+  JAM_CloseArea          @5
+  JAM_ReadLastread       @6
+  JAM_WriteLastread      @7
+  JAM_ReadHeader         @8
+  JAM_LinkMessages       @9
+  JAM_UnlinkMessage      @10
+  JAM_MarkRead           @11
+  JAM_ReadMessage        @12
+  JAM_ChangeMessage      @13
+  JAM_AddMessage         @14
+  JAM_KillMessage        @15
+  JAM_UidToMsgn          @16
+  JAM_MsgnToUid          @17

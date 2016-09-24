@@ -1,0 +1,242 @@
+.***************************************************************************
+.* Help-Panels des Menues - Hj„lp f”r menyer
+.* 1996-07-22
+
+:h1.Meny
+
+:h2 res=&PANEL_MENUFILE..Arkiv
+:p.Meny f”r import och export av filer.
+
+:h3 res=&PANEL_MENUIMPORTFILE..Importera fil
+:p.Kopierar in en textfil i meddelandef”nstret. Kan endast anv„ndas n„r du
+redigerar ett meddelande.
+
+:h3 res=&PANEL_MENUEXPORTFILE..Exportera fil
+:p.Kopierar in det aktuella meddelandet till en fil p† disken. Kan endast
+anv„ndas n„r du l„ser ett meddelande.
+
+:h3 res=&PANEL_MENUFILEECHOTOSS..Skriv Echotoss nu
+:p.Skriv Echotossfilen p† en g†ng.
+
+:h3 res=&PANEL_MENUFILESHELL..Starta kommandosession
+:p.Startar en kommandoradssession. Programmet som anv„nds f”r
+kommandosessionen „r det som angetts med OS2_SHELL i din CONFIG.SYS-fil.
+
+:h3 res=&PANEL_MENUFILEPRINT..Skriv ut
+:p.Skriver ut det aktuella meddelandet p† skrivaren.
+
+:h3 res=&PANEL_MENUFILEPRINTSETUP..Skrivare
+:p.™ppnar inst„llningarna f”r skrivaren
+
+:h3 res=&PANEL_MENUEXIT..Avsluta
+:p.Avslutar programmet. F”r„ndringar i konfigurationen kommer att sparas.
+
+:h2 res=&PANEL_MENUEDIT..Redigera
+:p.Meny f”r bearbetande av ett meddelande, och funktioner med anknytning
+till Urklipp.
+
+:h3 res=&PANEL_MENUEDITCUT..Klipp ut
+:p.Det markerade textavsnittet kopieras till Urklipp, och sedan att tas
+bort fr†n meddelandet.
+
+:h3 res=&PANEL_MENUEDITCOPY..Kopiera
+:p.Det markerade textavsnittet kopieras till Urklipp. Om inget omr†de har
+markerats kommer hela texten att kopieras.
+
+:h3 res=&PANEL_MENUEDITPASTE..Klistra in
+:p.Inneh†llet i Urklipp infogas i texten.
+
+:h3 res=&PANEL_MENUEDITCLEAR..Ta bort
+:p.Det markerade textomr†det tas bort.
+
+:h3 res=&PANEL_MENUEDITUNDO..ngra
+:p.terst„ller meddelandet till s† det s†g ut f”re den senaste
+f”r„ndringen.
+:p.:hp8.Observera&colon.:ehp8. Detta g„ller endast f”r text i
+meddelandef”nstret, inte f”r hela meddelandet. Borttagna meddelanden kan
+inte †terskapas.
+
+:h3 res=&PANEL_MENUEDITDELLINE..Ta bort rad
+:p.Tar bort den aktuella raden i meddelandet.
+
+:h3 res=&PANEL_MENUEDITSEARCH..S”k
+:p.S”ker efter en text i det aktuella meddelandet.
+
+:h2 res=&PANEL_MENUMESSAGE..Meddelande
+:p.Meny f”r att bearbeta meddelanden.
+
+:h3 res=&PANEL_MENUMSGMOVE..Flytta meddelande
+:p.Flyttar det aktuella meddelandet till ett annat m”te.
+
+:h3 res=&PANEL_MENUMSGCOPY..Kopiera meddelande
+:p.Kopierar det aktuella meddelandet till ett annat m”te.
+
+:h3 res=&PANEL_MENUMSGFORWARD..Vidarebefordra meddelande
+:p.Vidarebefordrar det aktuella meddelandet.
+
+:h3 res=&PANEL_MENUMSGNEW..Nytt meddelande
+:p.Skapar ett nytt meddelande i det aktuella m”tet, och l†ter dig redigera
+det.
+
+:h3 res=&PANEL_MENUMSGCHANGE..Redigera
+:p.ndrar det aktuella meddelandet.
+
+:h3 res=&PANEL_MENUMSGREPLY..Svara
+:p.Svarar p† det aktuella meddelandet.
+
+:h3 res=&PANEL_MENUMSGDELETE..Ta bort
+:p.Tar bort det aktuella meddelandet.
+
+:h3 res=&PANEL_MENUMSGFIND..S”k
+:p.S”ker efter text i ett meddelande i detta eller flera m”ten.
+
+:h3 res=&PANEL_MENUMSGBCAST..Fj„rrberodning
+:p.Beordrar borttagning eller uppdatering av det aktuella meddelandet.
+
+:h3 res=&PANEL_MENUMSGBCDELETE..Fj„rrbeordrad borttagning
+:p.Beordrar borttagning av det aktuella meddelandet.
+:p.Det finns vissa begr„nsningar f”r anv„ndandet av denna funktion&colon.
+:ul compact.
+:li.Det kan endast anv„ndas i echomailm”ten
+:li.Meddelandet m†ste vara lokalt
+:li.Meddelandet m†ste redan ha exporterats
+:li.Meddelandet m†ste ha en MSGID-kludge
+:eul.
+
+:h3 res=&PANEL_MENUMSGBCMODIFY..Fj„rrbeordrad uppdatering
+:p.Beordrar uppdatering av det aktuella meddelandet.
+:p.Det finns vissa begr„nsningar f”r anv„ndandet av denna funktion&colon.
+:ul compact.
+:li.Det kan endast anv„ndas i echomailm”ten
+:li.Meddelandet m†ste vara lokalt
+:li.Meddelandet m†ste redan ha exporterats
+:li.Meddelandet m†ste ha en MSGID-kludge
+:eul.
+
+:h3 res=&PANEL_MENUMSGMARKMSG..Markera meddelande
+:p.S„tter ett bokm„rke p† det aktuella meddelandet.
+
+:h3 res=&PANEL_MENUMSGUNMARKMSG..Avmarkera meddelande
+:p.Tar bort bokm„rke p† det aktuella meddelandet.
+
+:h2 res=&PANEL_MENUSPECIAL..Special
+:p.Meny f”r diverse specialfunktioner i FleetStreet
+
+:h3 res=&PANEL_MENUMSGXPOST..Korsposta meddelande
+:p.Skickar meddelandet i mer „n ett m”te.
+:p.Om detta menyval „r markerad har Du redan valt m”ten att posta det i.
+V„ljer du det igen kommer dessa m”tesval att tas bort.
+
+:h3 res=&PANEL_MENUMSGREQUEST..Efterfr†ga filer.
+:p.Efterfr†ga filer (file request) direkt ur det aktuella meddelandet.
+
+:h3 res=&PANEL_MENUMSGCCOPY..Skicka med s„ndlista
+:p.(carbon copy)
+:p.S„nder meddelandet till mer „n en mottagare m.h.a en s„ndlista.
+:p.Om detta menyval „r markerat har Du redan valt en s„ndlista.
+V„ljer du det igen kommer denna s„ndlista att avmarkeras.
+
+:h3 res=&PANEL_MENUMSGQUICKCC..Snabbs„ndlista
+:p.(fast carbon copy)
+:p.S„nder meddelandet till mer „n en mottagare m.h.a en
+snabbs„ndlista.
+:p.Att anv„nda snabbs„ndlistan skiljer sig p† n†gra punkter fr†n att
+anv„nda den normala s„ndlistan&colon.
+:ul compact.
+:li.Du beh”ver inte skapa och namnge en ny lista.
+:li.Listan kommer inte att sparas.
+:eul.
+
+:h3 id=markmsg res=&PANEL_MENUMSGMARK..terh„mta
+:p.Om du tidigare anv„nt ett annat program „n FleetStreet f”r att l„sa
+meddelandebaserna, kommer n„stan alla meddelanden att vara markerade som
+"ol„sta", vilket g”r att alla meddelanden visas i „mneslistan. Efter det
+att du har utf”rd detta kommando kommer endast de meddelanden som verkligen
+„r ol„sta att visas, d.v.s. meddelanden som senare tossas in i m”tet.
+:p.Denna funktion beh”vs vanligen endast d† Du byter till FleetStreet och
+vill markera alla de gamla meddelandena som ol„sta. FleetStreet kommer
+i forts„ttningen automatiskt hantera "ol„st"-attributet.
+
+:h3 res=&PANEL_MENUSPCADDTONICK..L„gg till som kortnamn
+:p.Infogar avs„ndaren av det aktuella meddelandet i listan ”ver kortnamn.
+
+:h3 res=&PANEL_MENUSPCADDTOCC..L„gg till i s„ndlista
+:p.Infogar avs„ndaren av det aktuella meddelandet i en s„ndlista
+(carbon copy list).
+
+:h3 res=&PANEL_MENUSPCBROWSER..Nodlistevisare
+:p.Visar inneh†llet i nodlistan.
+
+:h2 res=&PANEL_MENUREXX..Rexx
+:p.Meny som inneh†ller Rexxprogramhanteraren och en lista ”ver Rexxprogram.
+
+:h3 res=&PANEL_MENURXSCRIPTS..Program
+:p.™ppnar Rexxprogramhanteraren.
+
+:h3 res=&PANEL_MENURXQUICK..Rexxprogram
+:p.Detta menyval startar ett Rexxprogram.
+
+:h2 res=&PANEL_MENUOPTIONS..Alternativ
+:p.Meny f”r inst„llning av FleetStreet.
+
+:h3 res=&PANEL_MENUOPTIONSCFG..Allm„nna inst„llningar
+:p.F”r att f† ytterligare hj„lp, tryck p† de hj„lpknappar som finns p†
+varje sida i inst„llningarna.
+
+:h3 res=&PANEL_MENUOPTIONSTEMPL..Meddelandemallar
+:p.Definierar de olika f„lten i en meddelandemall.
+
+:h3 res=&PANEL_MENUOPTIONSCCL..S„ndlistor
+:p.Definierar och bearbetar s„ndlistor.
+
+:h3 res=&PANEL_MENUOPTIONSNICK..Kortnamn
+:p.™ppnar listan ”ver kortnamn
+
+:h3 res=&PANEL_MENUOPTIONSECHO..M”teshanteraren
+:p.™ppnar m”teshanterarens f”nster
+
+:h3 res=&PANEL_MENUOPTIONSADDAR..H„mta m”testitlar
+:p.H„mtar en lista ”ver meddelandem”ten fr†n det aktuella meddelandet
+
+:h3 res=&PANEL_MENUOPTIONSNAME..Aktuellt namn/adress
+:p.St„ller in det aktuella namnet och den aktuella n„tadressen.
+
+:h3 res=&PANEL_MENUOPTIONSSAVE..Spara inst„llningnar
+:p.Sparar de aktuella inst„llningarna.
+
+:h2 res=&PANEL_MENUWINDOWS..F”nster
+:p.Meny f”r att v„xla till FleetStreets olika f”nster.
+
+:h3 res=&PANEL_MENUWINKLUDGES..Kludgerader
+:p.V„xlar till f”nstret med meddelandets till„gsinformation (kludges).
+
+:h3 res=&PANEL_MENUWINTHREADS..Meddelandetr„d
+:p.V„xlar till f”nstret med meddelandetr„det.
+
+:h3 res=&PANEL_MENUWINMSGS..mneslista
+:p.V„xlar till f”nstret med „mneslistan.
+
+:h3 res=&PANEL_MENUWINAREAS..M”teslista
+:p.V„xlar till f”nstret med m”teslistan.
+
+:h3 res=&PANEL_MENUWINRESULTS..Bokm„rken
+:p.V„xlar till bokm„rkesf”nstret.
+
+:h2 res=&PANEL_MENUHELP..Hj„lp
+:p.Meny f”r att anropa onlinehj„lpen.
+
+:h3 res=&PANEL_MENUHELPINDEX..Hj„lpindex
+:p.Visar hj„lpindexet.
+
+:h3 res=&PANEL_MENUHELPGENERAL..Allm„n hj„lp
+:p.Visar information om hur Du kommer ig†ng med FleetStreet.
+
+:h3 res=&PANEL_MENUHELPUSING..Om hj„lpfunktionen
+:p.Visar hur onlinehj„lpen fungerar.
+
+:h3 res=&PANEL_MENUHELPKEYS..Tangentbordsfunktioner
+:p.Visar tillg„ngliga tangentbordskombinationer.
+
+:h3 res=&PANEL_MENUHELPABOUT..Produktinformation
+:p.Visar information om FleetStreet och dess f”rfattare.
+

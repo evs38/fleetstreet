@@ -1,0 +1,76 @@
+                           How to compile the source
+
+What you need:
+
+IBM VAC++ 3.0 with OS/2 Toolkit
+Squish MsgAPI Toolkit
+Rexx
+HPFS
+Info-ZIP (when making binary distributions)
+
+How to compile:
+
+1. Edit MAKEFILE
+
+The macro MSGAPIDIR must point to the directory where the Squish MsgAPI Toolkit
+is located on your machine. Otherwise the source is completely position
+independent.
+
+2. Edit PMSTDDLG.H
+
+Change the line
+
+   #define CCS_MINIRECORDCORE        0x00000040L
+
+to
+
+   #define CCS_MINIRECORDCORE        0x00000840L
+
+
+This change is necessary to have containes in tree view with mini icons. The
+change must be in the OS/2 standard header, because the above macro is used
+by the dialog editor, and you can't force it to add some other flag or use
+a different header file.
+
+3. Edit MSGAPI.H
+
+Change all function pointer declarations from e.g.
+
+    void   * (MAPIENTRY * palloc)(size_t size);
+
+to
+
+    void   * (* MAPIENTRY palloc)(size_t size);
+
+Only the latter form is accepted by CSet++/VAC++.
+
+4. Run nmake
+
+Run nmake from the source directory. The compilation process should run to
+the end. This takes 6 1/2 minutes on my machine.
+
+5. Run program
+
+All binary files are located in .\bin. Change to this directory and run
+the program.
+
+6. Cleanup
+
+A complete cleanup procedure can be started with
+
+nmake clean
+
+from the source directory. This deletes all binary files and intermediate
+files. INI files in the .\bin directory are not deleted, so after rebuilding
+FleetStreet you can run it with the settings retained from a previous version.
+
+7. Make binary distributions
+
+To make a binary distribution (ZIP file containing installation program)
+run
+
+nmake binary
+
+from the source directory. The file FLEET.ZIP is generated in the current
+directory.
+

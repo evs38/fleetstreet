@@ -1,0 +1,17 @@
+LIBRARY FLTCTLS INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet Controls'
+CODE EXECUTEONLY SHARED DISCARDABLE
+DATA MULTIPLE NONSHARED READWRITE
+PROTMODE
+EXPORTS
+   RegisterColorSelect         @1
+   RegisterEditWin             @2
+   RegisterFontDisplay         @3
+   RegisterListBox             @4
+   FileEntryProc               @5
+   FidoEntryProc               @6
+   RegisterAttribSelect        @7
+   RegisterMsgViewer           @8
+   RegisterMessageList         @9
+   RegisterToolbar             @10
+   RegisterStatusLineClass     @11

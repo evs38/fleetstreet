@@ -1,0 +1,200 @@
+.***************************************************************************
+.* Template-Setup                                                          *
+.***************************************************************************
+
+:h1 res=&PANEL_TEMPLATE..Schablone
+:p.W„hlen Sie eine Seite&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_TE_QUOTE..Zitat:elink.
+:li.:link reftype=hd res=&PANEL_TE_HEADER..Kopftext:elink.
+:li.:link reftype=hd res=&PANEL_TE_FOOTER..Fuátext:elink.
+:li.:link reftype=hd res=&PANEL_TE_REPLY..Antwort-Text:elink.
+:li.:link reftype=hd res=&PANEL_TE_DAREA..Antwort in anderer Area:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARD..Weiterleiten:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARDFOOTER..Weiterleiten, Fuá:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARDORDER..Reihenfolge:elink.
+:li.:link reftype=hd res=&PANEL_TE_XPOST..Crosspost:elink.
+:li.:link reftype=hd res=&PANEL_TE_CCOPY..Verteiler-Text:elink.
+:li.:link reftype=hd res=&PANEL_TE_ORIGIN..Origin-Zeile:elink.
+:esl.
+
+:h1 hide res=&PANEL_DELTEMPLATE..Schablone l”schen
+:p.
+Drcken Sie :hp2.Ja:ehp2., um die Schablone zu l”schen. Alle Areas, denen diese
+Schablone zugewiesen wurde, verwenden dann wieder die Default-Schablone.
+:p.
+Drcken Sie :hp2.Nein:ehp2., um die Schablone zu behalten.
+
+.* ****************************** Template-Folder *****************************
+:h1 res=&PANEL_TPLFOLDER..Schablonen-Ordner
+:p.
+Der Schablonen-Ordner enth„lt alle Message-Schablonen.
+:p.
+Es gibt eine spezielle Schablone, die Default-Schablone. Sie hat ein blaues :hp2."M":ehp2.
+auf ihrem Icon statt eines roten :hp2."M":ehp2..
+:p.
+Die Default-Schablone wird verwendet&colon.
+:ul compact.
+:li.fr neue Areas (bis eine andere Schablone der Area zugewiesen wird)
+:li.fr Areas mit einer anderen Schablone, wenn diese andere Schablone
+nicht mehr existiert.
+:eul.
+:p.
+Sie k”nnen eine Schablone einer Message-Area auf zwei Arten zuweisen&colon.
+:ol compact.
+:li.™ffnen Sie das Einstellungs-Notebook der Area und w„hlen Sie eine
+Schablone auf der "Allgemein"-Seite aus.
+:li.Ziehen Sie das Schablonen-Icon zur Area-Liste und lassen Sie es auf
+der gewnschten Area fallen.
+:eol.
+:p.
+Verwenden Sie das Kontext-Men einer Schablone, um
+:ul compact.
+:li.sie zu ”ffnen und die verschiedenen Felder zu editieren
+:li.eine neue Schablone zu erstellen
+:li.eine Schablone kopieren
+:li.sie zu l”schen (auáer bei der Default-Schablone)
+:eul.
+:p.
+ndern Sie den Namen der Schablone, indem Sie auf das Icon klicken und
+gleichzeitig die ALT-Taste festhalten.
+:p.
+Sie k”nnen eine Schablone kopieren, indem Sie die STRG-Taste gedrckt halten,
+w„hrend Sie die Schablone ber den Schablonen-Ordner ziehen.
+
+:h2 res=&PANEL_TE_QUOTE..Zitat
+:p.Das Zitieren von Messages wird durch folgende Einstellungen gesteuert&colon.
+:parml.
+:pt.:hp2.Zeilenl„nge beim Zitat:ehp2.
+:pd.L„nge der Zeile, gemessen in Zeichen, wenn die Message in zitierten Text
+umgewandelt wird.
+:pt.:hp2.L„nge f. Zusammenfgen:ehp2.
+:pd.Zeilenl„nge, ab der zwei aufeinanderfolgende Zeilen zusammengefgt werden.
+:pt.:hp2.Zitier-Stil:ehp2.
+:pd.Es werden entweder die Initialen des Absenders und ein ">" als Kennzeichnung
+der zitierten Zeilen verwendet, oder nur ein ">".
+:pt.:hp2.Zitat-Zeichen:ehp2.
+:pd.Stellen Sie das Zeichen ein, das zur Kennzeichnung eines Zitats verwendet
+werden soll.
+:eparml.
+
+:h2 res=&PANEL_TE_HEADER..Kopftext
+:p.Der Kopftext wird am Anfang der Message eingefgt.
+:p.Verwendbare :link reftype=hd refid=tokens.Krzel:elink.&colon.
+:p.%T, %Z
+:p.:hp2.Synonym fr "Alle":ehp2.
+:p.Wenn der Name des Empf„ngers mit diesem Eintrag identisch ist, wird der Name in der
+Schablone des Kopftextes nicht eingetragen.
+
+:h2 res=&PANEL_TE_FOOTER..Fuátext
+:p.Der Fuátext wird am Ende der Message eingefgt. Er wird verwendet, wenn Sie eine
+neue Message schreiben oder auf eine Message antworten.
+:p.Verwendbare :link reftype=hd refid=tokens.Krzel:elink.&colon.
+:p.%U, %I
+
+:h2 id=reptempl res=&PANEL_TE_REPLY..Antwort-Text
+:p.Der Antwort-Text wird am Anfang der Message nach dem Kopftext eingefgt.
+Er wird nur verwendet, wenn Sie auf eine Message antworten.
+:p.Verwendbare :link reftype=hd refid=tokens.Krzel:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %D, %M, %O, %P, %J, %R, %S, %E
+
+:h2 res=&PANEL_TE_DAREA..Antwort in anderer Area
+:p.Der Antwort-in-anderer-Area-Text wir vor dem Kopftext eingefgt. Er wird nur
+verwendet, wenn Sie auf eine Message antworten und die Antwort in einer anderen
+Area speichern.
+:p.Verwendbare :link reftype=hd refid=tokens.Krzel:elink.&colon.
+:p.%A, %E
+
+:h2 res=&PANEL_TE_FORWARD..Weiterleiten
+:p.Der Weiterleiten-Text wird am Anfang der Message eingefgt. Er wird nur
+verwendet, wenn Sie eine Message weiterleiten.
+:p.Verwendbare :link reftype=hd refid=tokens.Krzel:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %U, %I, %J, %R, %S, %E, %D, %M, %W
+
+:h2 res=&PANEL_TE_FORWARDFOOTER..Weiterleiten, Fuá
+:p.Der Weiterleiten-Fuátext wird nach der Original-Message eingefgt. Er wird nur
+verwendet, wenn Sie eine Message weiterleiten.
+:p.Verwendbare :link reftype=hd refid=tokens.Krzel:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %U, %I
+
+:h2 res=&PANEL_TE_FORWARDORDER..Reihenfolge
+:parml.
+:pt.:hp2.Begleittext zuerst:ehp2.
+:pd.Der Begleittext beim Weiterleiten einer Message steht vor der
+weitergeleiteten Message.
+:pt.:hp2.Weitergeleitete Message zuerst:ehp2.
+:pd.Die weitergeleitete Message steht vor dem Begleittext.
+:eparml.
+
+:h2 res=&PANEL_TE_XPOST..Crosspost
+:p.Der Crosspost-Text wird am Anfang einer Message eingefgt. Er wird verwendet, wenn
+Sie eine Message in mehreren Areas crossposten.
+:p.Verwendbare :link reftype=hd refid=tokens.Krzel:elink.&colon.
+:p.%A, %E
+
+:h2 res=&PANEL_TE_CCOPY..Verteiler-Text
+:p.Der Verteiler-Text wird am Anfang einer Message eingefgt. Er wird verwendet, wenn
+Sie eine Verteilerliste verwenden, um eine Message an mehr als einen Empf„nger
+zu schicken.
+:p.Verwendbare :link reftype=hd refid=tokens.Krzel:elink.&colon.
+:p.%C
+
+:h2 res=&PANEL_TE_ORIGIN..Origin-Zeile
+:p.Der angegebene Text wird in der Origin-Zeile der Messages eingefgt.
+:p.
+:hp2.Origin-Zeile zuf„llig ausw„hlen&colon.:ehp2.
+:p.
+Wenn die Option :hp2."Origin-Zeile zuf„llig ausw„hlen":ehp2. aktiv ist, dann
+wird der Origin-Text jeder neuen Message zuf„llig ausgew„hlt. Die Origin-Texte
+werden aus einer Datei ausgelesen. Die Datei ist eine einfache Text-Datei,
+die pro Zeile ein Origin enth„lt.
+:p.
+Geben Sie den Namen der Datei mit den Origin-Zeilen an, oder drcken Sie den
+:hp2."Suchen":ehp2.-Knopf, um die Datei auszuw„hlen.
+
+:h2 id=tokens hide.Krzel
+:p.The folgenden Krzel sind in Message-Schablonen verfgbar&colon.
+:parml break=none.
+:pt.:hp2.%T:ehp2.
+:pd.Name des adressierten Benutzers (Original-Message)
+:pt.:hp2.%Z:ehp2.
+:pd.Vorname des adressierten Benutzers (Original-Message)
+:pt.:hp2.%R:ehp2.
+:pd.Adresse des adressierten Benutzers (Original-Message). Bei Antworten oder
+Weiterleiten von Echomail wird dieses Krzel ignoriert.
+:pt.:hp2.%O:ehp2.
+:pd.Name des adressierten Benutzers (neue Message)
+:pt.:hp2.%P:ehp2.
+:pd.Vorname des adressierten Benutzers (neue Message)
+:pt.:hp2.%F:ehp2.
+:pd.Name des Absenders
+:pt.:hp2.%G:ehp2.
+:pd.Vorname des Absenders
+:pt.:hp2.%J:ehp2.
+:pd.Adresse des Absenders
+:pt.:hp2.%A:ehp2.
+:pd.Area-Kennung. Wenn eine Message gecrossposted [was fr ein Wort!] wird, ist
+dies die Ziel-Area. Wenn in einer anderen Area geantwortet wird oder eine Message
+weitergeleitet wird, ist dies die Original-Area.
+:pt.:hp2.%E:ehp2.
+:pd.Area-Beschreibung. Wenn eine Message gecrossposted wird, ist
+dies die Ziel-Area. Wenn in einer anderen Area geantwortet wird oder eine Message
+weitergeleitet wird, ist dies die Original-Area.
+:pt.:hp2.%U:ehp2.
+:pd.Ihr eigener Name
+:pt.:hp2.%I:ehp2.
+:pd.Ihr Vorname
+:pt.:hp2.%W:ehp2.
+:pd.Ihre eigene Adresse
+:pt.:hp2.%C:ehp2.
+:pd.Namen der Benutzer in einer Verteilerliste
+:pt.:hp2.%D:ehp2.
+:pd.Datum der Message, auf die Sie antworten
+:pt.:hp2.%M:ehp2.
+:pd.Zeit der Message, auf die Sie antworten
+:pt.:hp2.%S:ehp2.
+:pd.Thema der Message, auf die Sie antworten
+:pt.:hp2.%%:ehp2.
+:pd.Ein %
+:eparml.
+

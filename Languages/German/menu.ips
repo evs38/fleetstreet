@@ -1,0 +1,240 @@
+.***************************************************************************
+.* Help-Panels des Menues                                                  *
+.***************************************************************************
+
+:h1.MenÅ
+
+:h2 res=&PANEL_MENUFILE..Datei
+:p.MenÅpunkte zum Import und Export von Dateien.
+
+:h3 res=&PANEL_MENUIMPORTFILE..Datei importieren
+:p.öbernimmt eine Textdatei in das Nachrichtenfenster. Nur
+verfÅgbar, wenn Sie Nachrichten schreiben.
+
+:h3 res=&PANEL_MENUEXPORTFILE..Datei exportieren
+:p.Speichert die aktuelle Nachricht in eine Textdatei auf der Platte. Nur
+verfÅgbar, wenn Sie Nachrichten lesen.
+
+:h3 res=&PANEL_MENUFILEECHOTOSS..Echotoss schreiben
+:p.Echotoss-File sofort schreiben.
+
+:h3 res=&PANEL_MENUFILESHELL..Kommando-Shell starten
+:p.Startet eine Kommandozeilen-Session. Das Programm, das als Shell
+verwendet wird, ist in der CONFIG.SYS mit OS2_SHELL angegeben.
+
+:h3 res=&PANEL_MENUFILEPRINT..Drucken
+:p.Aktuelle Message ausdrucken
+
+:h3 res=&PANEL_MENUFILEPRINTSETUP..Drucker einrichten
+:p.Einstellungen fÅr die Druckausgabe vornehmen
+
+:h3 res=&PANEL_MENUEXIT..Programmende
+:p.Beendet das Programm. énderungen an der Konfiguration werden gespeichert.
+
+:h2 res=&PANEL_MENUEDIT..Editieren
+:p.MenÅpunkte zum Bearbeiten einer Nachricht und zur Verbindung mit der
+Zwischenablage.
+
+:h3 res=&PANEL_MENUEDITCUT..Ausschneiden
+:p.Markierte Textbereiche werden in die Zwischenablage kopiert und der markierte
+Text dann gelîscht.
+
+:h3 res=&PANEL_MENUEDITCOPY..Kopieren
+:p.Markierte Textbereiche werden in die Zwischenablage kopiert. Ist kein
+Bereich markiert, wird der gesamte Text kopiert.
+
+:h3 res=&PANEL_MENUEDITPASTE..EinfÅgen
+:p.Der Inhalt der Zwischenablage wird in den Text eingefÅgt.
+
+:h3 res=&PANEL_MENUEDITCLEAR..Lîschen
+:p.Der markierte Textbereich wird gelîscht.
+
+:h3 res=&PANEL_MENUEDITUNDO..ZurÅcknehmen
+:p.Macht die letzten énderungen in der Nachricht rÅckgÑngig.
+:p.:hp8.Notiz&colon.:ehp8. Dies gilt nur fÅr Text im Nachrichtenfenster, nicht
+fÅr die ganze Nachricht. Gelîschte Nachrichten kînnen nicht zurÅckgeholt
+werden.
+
+:h3 res=&PANEL_MENUEDITDELLINE..Zeile lîschen
+:p.Lîscht die aktuelle Zeile in der Nachricht.
+
+:h3 res=&PANEL_MENUEDITSEARCH..Suchen
+:p.Sucht einen Text in der aktuellen Message.
+
+:h2 res=&PANEL_MENUMESSAGE..Message
+:p.MenÅpunkte, um Nachrichten zu bearbeiten.
+
+:h3 res=&PANEL_MENUMSGMOVE..Message verschieben
+:p.Verschieben der aktuellen Nachricht in eine andere Area.
+
+:h3 res=&PANEL_MENUMSGCOPY..Message kopieren
+:p.Kopieren der aktuellen Nachricht in eine andere Area.
+
+:h3 res=&PANEL_MENUMSGFORWARD..Message weiterleiten
+:p.Weiterleiten der aktuellen Nachricht.
+
+:h3 res=&PANEL_MENUMSGNEW..Neue Message
+:p.Neue Message in aktuelle Area schreiben.
+
+:h3 res=&PANEL_MENUMSGCHANGE..éndern
+:p.Aktuelle Message Ñndern.
+
+:h3 res=&PANEL_MENUMSGREPLY..Antworten
+:p.Auf aktuelle Message antworten.
+
+:h3 res=&PANEL_MENUMSGDELETE..Lîschen
+:p.Aktuelle Message lîschen.
+
+:h3 res=&PANEL_MENUMSGFIND..Suchen
+:p.Text in einer Message dieser Area oder aller Areas suchen.
+
+:h3 res=&PANEL_MENUMSGBCAST..Broadcast
+:p.Broadcast-lîschen or Broadcast-Ñndern der aktuellen Message.
+
+:h3 res=&PANEL_MENUMSGBCDELETE..Broadcast-lîschen
+:p.Broadcast-lîschen der aktuellen Message.
+:p.Es gibt einige EinschrÑnkungen bei der Verwendung dieser Funktion&colon.
+:ul compact.
+:li.Sie kann nur in Echo-Areas verwendet werden
+:li.Die Message mu· lokal sein
+:li.Die Message mu· bereits exportiert sein
+:li.Die Message mu· eine MSGID-Kludgeline haben
+:eul.
+
+:h3 res=&PANEL_MENUMSGBCMODIFY..Broadcast-Ñndern
+:p.Broadcast-Ñndern der aktuellen Message.
+:p.Es gibt einige EinschrÑnkungen bei der Verwendung dieser Funktion&colon.
+:ul compact.
+:li.Sie kann nur in Echo-Areas verwendet werden
+:li.Die Message mu· lokal sein
+:li.Die Message mu· bereits exportiert sein
+:li.Die Message mu· eine MSGID-Kludgeline haben
+:eul.
+
+:h3 res=&PANEL_MENUMSGMARKMSG..Message markieren
+:p.Markierung auf aktueller Message setzen
+
+:h3 res=&PANEL_MENUMSGUNMARKMSG..Unmark message
+:p.Markierung auf aktueller Message aufheben
+
+:h2 res=&PANEL_MENUSPECIAL..Spezial
+:p.Verschiedene FleetStreet-Spezialfunktionen
+
+:h3 res=&PANEL_MENUMSGXPOST..Message Crossposten
+:p.Die Nachricht in mehr als eine Area schicken.
+:p.Wenn dieser MenÅpunkt markiert ist, dann haben Sie bereits die anderen Areas
+ausgewÑhlt. WÑhlen Sie diesen Punkt nochmals, um die Markierung wieder
+aufzuheben.
+
+:h3 res=&PANEL_MENUMSGREQUEST..Files requesten
+:p.Dateien aus der aktuellen Nachricht direkt anfordern (requesten).
+
+:h3 res=&PANEL_MENUMSGCCOPY..Verteiler verwenden
+:p.Sende die Nachricht an mehr als einen EmpfÑnger m.H. einer Verteierliste.
+:p.Wenn dieser MenÅpunkt markiert ist, dann haben Sie bereits eine
+Verteilerliste ausgewÑhlt. WÑhlen Sie diesen Punkt nochmals, um die Markierung
+wieder aufzuheben.
+
+:h3 res=&PANEL_MENUMSGQUICKCC..Schnellverteiler
+:p.Sende die Nachricht an mehr als einen EmpfÑnger m.H. einer Verteierliste.
+:p.Der Schnellverteiler unterscheidet sich in einigen Punkten von den normalen
+Verteilerlisten&colon.
+:ul compact.
+:li.Sie mÅssen keine neue Liste erstellen und benennen.
+:li.Die Liste wird nicht gespeichert.
+:eul.
+
+:h3 id=markmsg res=&PANEL_MENUMSGMARK..Aufholen
+:p.Wenn Sie FleetStreet noch nicht verwendet haben, um eine bestimmte Message-Base
+zu lesen, sind zunÑchst alle Messages als "ungelesen" markiert. Deshalb werden
+in der Themen-Liste alle Messages in der Area angezeigt. Da Sie die Messages
+aber schon gelesen haben kînnten, ermîglicht dieser MenÅpunkt, alle Messages
+als "gelesen" zu markieren. Nachdem Sie dies getan haben, zeigt
+die Themen-Liste nur noch die Messages an, die wirklich ungelesen sind, also Messages
+die danach von Squish in die Area getosst wurden.
+:p.Diese Funktion wird Åblicherweise nur benîtigt, nachdem Sie zu FleetStreet gewechselt
+haben und alte Message-Areas auf den neuesten Stand bringen wollen. FleetStreet
+verwaltet in Zukunft das "gelesen"-Attribut automatisch.
+
+:h3 res=&PANEL_MENUSPCADDTONICK..Als Kurzname aufnehmen
+:p.Absender der aktuellen Message zur Liste der Kurznamen hinzufÅgen.
+
+:h3 res=&PANEL_MENUSPCADDTOCC..In Verteilerliste aufnehmen
+:p.Absender der aktuellen Message zu einer Verteilerliste hinzufÅgen.
+
+:h3 res=&PANEL_MENUSPCBROWSER..Nodelist-Browser
+:p.Inhalt der Nodelisten anzeigen.
+
+:h2 res=&PANEL_MENUREXX..Rexx
+:p.Rexx-Skript-Ordner, Rexx-Skripts
+
+:h3 res=&PANEL_MENURXSCRIPTS..Skripts
+:p.ôffnen den Skript-Ordners
+
+:h3 res=&PANEL_MENURXQUICK..Rexx-Skript
+:p.Dies ist ein MenÅpunkt zum Starten eines Skripts.
+
+:h2 res=&PANEL_MENUOPTIONS..Setup
+:p.MenÅpunkte zur Konfiguration von FleetStreet.
+
+:h3 res=&PANEL_MENUOPTIONSCFG..Optionen
+:p.DrÅcken Sie die Hilfe-Buttons der entsprechenden Seiten, um weitere Hilfe zu
+erhalten.
+
+:h3 res=&PANEL_MENUOPTIONSTEMPL..Message-Schablone
+:p.Definiert die verschiedenen Felder einer Nachrichten-Schablone.
+
+:h3 res=&PANEL_MENUOPTIONSCCL..Verteilerlisten
+:p.Definieren und Bearbeiten von Verteilerlisten.
+
+:h3 res=&PANEL_MENUOPTIONSNICK..Kurznamen
+:p.ôffnet die Liste der Kurznamen.
+
+:h3 res=&PANEL_MENUOPTIONSECHO..Echo-Manager
+:p.ôffnet das Echo-Manager-Fenster
+
+:h3 res=&PANEL_MENUOPTIONSADDAR..Areas extrahieren
+:p.Extrahiert eine List der Message-Areas aus der aktuellen Message.
+
+:h3 res=&PANEL_MENUOPTIONSNAME..Aktueller Name/Adresse
+:p.Einstellen der aktuellen Name und der akt. Netz-Adresse. Nur in Netmail-Areas verfÅgbar.
+
+:h3 res=&PANEL_MENUOPTIONSSAVE..Optionen speichern
+:p.Speichert die momentane Konfiguration ab.
+
+:h2 res=&PANEL_MENUWINDOWS..Fenster
+:p.MenÅpunkte, um zu den einzelnen Fenstern von Fleet zu springen.
+
+:h3 res=&PANEL_MENUWINKLUDGES..Kludge lines
+:p.Wechselt zum Fenster mit den Zusatzdaten (Kludges) einer Nachricht.
+
+:h3 res=&PANEL_MENUWINTHREADS..Themenliste
+:p.Wechselt zum Fenster mit der Themenliste.
+
+:h3 res=&PANEL_MENUWINMSGS..Messageliste
+:p.Wechselt zum Fenster mit der Messageliste.
+
+:h3 res=&PANEL_MENUWINAREAS..Arealiste
+:p.Wechselt zum Fenster mit der Arealiste.
+
+:h3 res=&PANEL_MENUWINRESULTS..Merker
+:p.Wechselt zum Merker-Fenster.
+
+:h2 res=&PANEL_MENUHELP..Hilfe
+:p.MenÅpunkte, um die Onlinehilfe aufzurufen.
+
+:h3 res=&PANEL_MENUHELPINDEX..Hilfeindex
+:p.Zeige den Hilfeindex.
+
+:h3 res=&PANEL_MENUHELPGENERAL..Allgemeine Hilfe
+:p.EinfÅhrung in die Arbeit mit FleetStreet.
+
+:h3 res=&PANEL_MENUHELPUSING..Benutzung der Hilfe
+:p.Wie benutzt man die Onlinehilfe.
+
+:h3 res=&PANEL_MENUHELPKEYS..Hilfe fÅr Tasten
+:p.Zeigt die verfÅgbaren Tastenkombinationen.
+
+:h3 res=&PANEL_MENUHELPABOUT..Produktinformation
+:p.Infos zu FleetStreet und zu den Autoren.
+

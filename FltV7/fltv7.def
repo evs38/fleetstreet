@@ -1,0 +1,15 @@
+LIBRARY FLTV7 INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet Version7 Lookup'
+CODE LOADONCALL EXECUTEONLY DISCARDABLE
+DATA LOADONCALL READWRITE MULTIPLE NONSHARED
+PROTMODE
+EXPORTS
+   FLTV7OpenSearch           @1
+   FLTV7SearchNext           @2
+   FLTV7CloseSearch          @3
+   FLTV7OpenNodeBrowse       @4
+   FLTV7CloseNodeBrowse      @5
+   FLTV7ReadNodeData         @6
+   FLTV7OpenNameBrowse       @7
+   FLTV7CloseNameBrowse      @8
+   FLTV7ReadNameData         @9

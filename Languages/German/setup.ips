@@ -1,0 +1,438 @@
+.***************************************************************************
+.* Setup                                                                   *
+.***************************************************************************
+
+:h1 res=&PANEL_SETUP..Setup
+:p.W„hlen Sie eine Seite aus&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_SU_USER..Benutzer-Namen:elink.
+:li.:link reftype=hd res=&PANEL_SU_ADDRESSES..Adressen:elink.
+:li.:link reftype=hd res=&PANEL_SU_ORIGIN..Origin:elink.
+:li.:link reftype=hd res=&PANEL_SU_SQUISH..Tosser-Einstellungen:elink.
+:li.:link reftype=hd res=&PANEL_SU_TOSSERPATHS..Pfade:elink.
+:li.:link reftype=hd res=&PANEL_SU_MACROS..Tastatur-Makros:elink.
+:li.:link reftype=hd res=&PANEL_SU_DOMAINS..Domains:elink.
+:li.:link reftype=hd res=&PANEL_SU_MODEMTYPES..Modem-Typen:elink.
+:li.:link reftype=hd res=&PANEL_SU_OPTIONS..Optionen:elink.
+:li.:link reftype=hd res=&PANEL_SU_STARTUP..Startarea:elink.
+:li.:link reftype=hd res=&PANEL_SU_EDITOROPT..Editor:elink.
+:li.:link reftype=hd res=&PANEL_SU_SAFETY..Sicherheitsabfragen:elink.
+:li.:link reftype=hd res=&PANEL_SU_OPENWIN..Fenster:elink.
+:li.:link reftype=hd res=&PANEL_SU_DRIVEREMAP..Umsetzung:elink.
+:esl.
+
+
+:h2 res=&PANEL_SU_USER..Benutzer-Namen
+:p.Wenn Sie FleetStreet benutzen wollen, dann mssen Sie mindestens einen Benutzernamen
+haben.
+:p.Ihre Namen werden in der Liste angezeigt. Um einen neuen Namen
+:hp2.hinzuzufgen:ehp2., drcken Sie einfach den :hp2.Hinzufgen:ehp2.-Button.
+Sie werden dann nach einer Eingabe gefragt.
+:p.Um einen Namen zu :hp2.l”schen:ehp2., w„hlen Sie den Namen in der Liste und
+drcken Sie den :hp2.L”schen:ehp2.-Button.
+:p.Um einen Namen zu :hp2.„ndern:ehp2., w„hlen Sie den Namen in der Liste und
+drcken Sie den :hp2.ndern:ehp2.-Button.
+:p.Um einen Namen als Standard zu verwenden, w„hlen Sie den passenden
+Eintrag in der Liste und drcken Sie den :hp2.Default:ehp2.-Button. Wenn Sie neue Areas
+anlegen bzw. die Arealiste der Tosser-Konfigurationsdatei
+einlesen, dann ist dies Ihr Standardname fr diese Area.
+
+:h2 res=&PANEL_SU_ADDRESSES..Adressen
+:p.Wenn Sie FleetStreet benutzen wollen, dann mssen Sie mindestens eine Adresse
+haben.
+:p.Ihre Adressen werden in der Liste angezeigt. Um eine neue Adresse
+:hp2.hinzuzufgen:ehp2., drcken Sie einfach den :hp2.Hinzufgen:ehp2.-Button.
+Sie werden dann nach einer Eingabe gefragt.
+:p.Um eine Adresse zu :hp2.l”schen:ehp2., w„hlen Sie die Adresse in der Liste und
+drcken Sie den :hp2.L”schen:ehp2.-Button.
+:p.Um eine Adresse zu :hp2.„ndern:ehp2., w„hlen Sie die Adresse in der Liste und
+drcken Sie den :hp2.ndern:ehp2.-Button.
+:p.Um eine Adresse als Standard zu verwenden, w„hlen Sie den passenden
+Eintrag in der Liste und drcken Sie den :hp2.Default:ehp2.-Button. Wenn Sie neue Areas
+anlegen bzw. die Arealiste der Tosser-Konfigurationsdatei
+einlesen, dann ist dies Ihre Standardadresse fr diese Area.
+
+:h2 res=&PANEL_SU_ORIGIN..Origin
+:p.Die Originzeile ist optional, aber immer ganz nett, sowas zu haben.
+:p.Geben Sie den Text fr die Origin-Zeile ein.
+
+:h2 res=&PANEL_SU_SQUISH..Tosser-Einstellungen
+:p.FleetStreet kann die Konfigurationsdatei von diversen Tossern einlesen, um die Pflege
+und Konsistenz Ihrer Message-Base zu vereinfachen.
+
+:parml.
+:pt.:hp2.Externe Konfigurationsdatei:ehp2.
+:pd.Falls sie wollen, daá FleetStreet die externe Konfigurationsdatei
+beim Start automatisch einliest, dann aktivieren sie "automatisch einlesen".
+Geben Sie den Pfad und Dateinamen der Datei im Eingabefeld darunter an, oder
+drcken Sie den "Suchen"-Knopf, um die Datei ber einen File-Dialog auszuw„hlen.
+:p.
+Falls ein Fehler auftritt, wenn die neue Datei eingelesen wird, wird eine
+Fehlermeldung ausgegeben und es geht nichts verloren.
+:p.:hp8.Beachte&colon.:ehp8. Sie mssen mindestens einen Benutzernamen
+angegeben haben, um die Datei zu lesen.
+:p.:hp8.Beachte&colon.:ehp8. FleetStreet untersttzt immer noch ausschlieálich
+Areas im :hp2.Squish:ehp2.-, :hp2.*.MSG:ehp2. und :hp2.JAM:ehp2.-Format. Areas in einem anderen
+Format werden ignoriert.
+:eparml.
+:i2 refid=squish.Konfigurations-Datei
+:i2 refid=squish.Lastread-Zeiger
+
+:h2 hide res=&PANEL_DUPAREAS..Doppelte Areas
+:p.
+Eine oder mehrere Areas, die aus der externen Konfigurationsdatei gelesen wurden,
+sind bereits als private Areas definiert,
+d.h. sie haben die gleiche Area-Kennung. Area-Kennungen mssen in der Area-Liste
+eindeutig sein.
+:p.Tun Sie folgendes, um das Problem zu l”sen&colon.
+:ul.
+:li.ndern Sie die Area-Kennungen der privaten Areas,
+:li.Editieren Sie die externe Konfigurationsdatei.
+:eul.
+
+:h2 hide res=&PANEL_CFGDLLERROR..Fehler beim Lesen der Tosser-Konfiguration
+:p.
+Beim Laden der DLL zum Lesen der Tosser-Konfiguration ist ein Fehler aufgetreten.
+Dies kann die folgenden Ursachen haben&colon.
+:ul.
+:li.Die n”tige DLL ist nicht (mehr) vorhanden.
+:li.Die DLL ist nur in einer falschen Version vorhanden.
+:li.In der DLL fehlen eine oder mehrere Funktionen, d.h. die DLL ist defekt.
+:eul.
+:p.
+Das Problem l„át sich meist durch Neuinstallation von FleetStreet beheben.
+:p.
+Drcken Sie :hp2.OK:ehp2., um den Fehler zu ignorieren und fortzufahren.
+:p.:hp8.Achtung&colon.:ehp8. Ein ignorieren dieses Fehlers kann den Verlust
+von Programmeinstellungen verursachen!
+:p.
+Drcken Sie :hp2.Abbrechen:ehp2., um den Vorgang abzubrechen und den Fehler
+zu beheben.
+
+:h2 res=&PANEL_SU_TOSSERPATHS..Pfade
+:parml.
+:pt.:hp2.Default-Verzeichnis fr File-Attaches:ehp2.
+:pd.Dieses Verzeichnis wird verwendet, wenn der Dialog zur Auswahl der
+angeh„ngten Dateien ge”ffnet wird.
+:pt.:hp2.Echotoss.Log:ehp2.
+:pd.Die Datei ECHOTOSS.LOG ist eine reine ASCII-Textdatei, in der alle Areas aufgelistet
+sind, in die Sie Nachrichten geschrieben haben. Der Tosser und andere Utilities lesen diese
+Datei, um nur diese Areas zu bearbeiten (normalerweise bearbeiten Tosser alle Areas,
+was aber sehr lange dauern kann). FleetStreet legt bei Bedarf diese Datei selbst an
+und tr„gt die passenden Areas dort ein.
+:p.Wenn diese Option ausgeschaltet ist, schreibt FleetStreet nicht in diese Datei.
+:pt.:hp2.Pfad f. ECHOMAIL.JAM/NETMAIL.JAM:ehp2.
+:pd.Geben Sie den Pfad an, in dem die Dateien ECHOMAIL.JAM und NETMAIL.JAM
+erzeugt werden sollen. Lassen Sie das Eingabefeld frei, wenn die Dateien nicht
+erzeugt werden sollen.
+:p.Wenn Sie keine JAM-Areas verwenden oder Ihr Tosser diese Dateien nicht
+untersttzt, dann k”nnen Sie das Eingabefeld ebenfalls freilassen.
+:pt.:hp2.Lastread:ehp2.
+:pd.Dies ist der Offset in ein Lastread-File fr jede Nachrichten-Area. Die Nummer der
+zuletzt gelesenen Nachricht wird hier gespeichert (typischerweise *.SQL fr Squish-
+Nachrichtenareas). Jeder Benutzer einer Mailbox hat seinen eigenen Offset, der Sysop
+hat normalerweise den Offset 0. Einige Utilities benutzen auch einen eigenen Offset.
+:p.
+:hp8.Wenn Sie den Sinn dieser Einstellung nicht verstehen, dann lassen Sie sie einfach
+auf 0 stehen.:ehp8.
+:p.Die momentane Obergrenze fr diese Einstellung ist 500. Der Sysop hat also
+Zugriff auf die Lastread-Zeiger seiner ersten 500 User. Falls Sie wirklich mehr
+ben”tigen, lassen Sie uns ruhig eine Nachricht zukommen.
+:eparml.
+
+:h2 res=&PANEL_SU_NICKNAMES..Kurznamen
+:p.Bei FleetStreet ist es m”glich, Kurznamen fr Benutzer zu definieren, an die
+man h„ufig schreibt.
+:p.
+Um diese Kurznamen zu verwenden, geben Sie den Kurznamen einfach im Empf„nger-Feld
+ein und drcken Sie "Enter". Der Kurzname wird automatisch durch den echten Namen
+ersetzt, und die Adresse des Benutzers wird im Adreáfeld eingefgt. Falls sie ein
+Thema fr den Kurznamen definiert haben, wird dieses ebenfalls ins Thema-Feld
+eingefgt.
+:p.:hp2.Um einen Kurznamen zu definieren, tun Sie folgendes&colon.:ehp2.
+:ol compact.
+:li.Drcken Sie den "Hinzufgen"-Knopf,
+:li.Fllen Sie die Felder aus,
+:li.Drcken Sie "OK".
+:eol.
+:p.:hp2.Um einen Kurznamen zu „ndern, tun Sie folgendes&colon.:ehp2.
+:ol compact.
+:li.W„hlen Sie den Kurznamen in der Liste aus,
+:li.Drcken Sie den "ndern"-Knopf, oder Klicken Sie den Eintrag zweimal an,
+:li.Nehmen Sie die nderungen vor,
+:li.Drcken Sie "OK".
+:eol.
+:p.:hp2.Um einen Kurznamen zu l”schen, tun Sie folgendes&colon.:ehp2.
+:ol compact.
+:li.W„hlen Sie den Kurznamen in der Liste aus,
+:li.Drcken Sie den "L”schen"-Knopf.
+:eol.
+
+:h3 res=&PANEL_NICKENTRY..Kurzname
+:p.Geben Sie einen neuen Kurznamen ein oder „ndern Sie den bestehenden.
+:parml.
+:pt.:hp2.Kurzname:ehp2.
+:pd.Das, was Sie zur Verwendung des Kurznamens eintippen.
+:pt.:hp2.Echter Name:ehp2.
+:pd.Der Name des Benutzers, so wie Sie ihn sonst verwenden wrden.
+:pt.:hp2.Adresse:ehp2.
+:pd.Adresse des Benutzers. Verwenden Sie eine 3D- oder 4D-Adresse.
+:pt.:hp2.?:ehp2.
+:pd.Adresse des Benutzers wird in der Nodeliste gesucht.
+:pt.:hp2.Thema:ehp2.
+:pd.Voreingestelltes Thema. Ntzlich fr Pseudo-Benutzer wie Area-Manager.
+Lassen Sie dieses Feld leer, falls die kein Thema fr diesen Kurznamen haben
+wollen.
+:pt.:hp2.1. Zeile:ehp2.
+:pd.Erste Zeile im Message-Text. Wenn diese Zeile ein :hp2.%?:ehp2. enth„lt, k”nnen
+Sie bei der Verwendung des Kurznamen zus„tzlichen Text eingeben.
+:p.Dieses Feature ist fr die Verwendung in Verbindung mit einem UUCP-Gateway
+gedacht. Stellen Sie sich das folgende Beispiel vor&colon.
+:p.
+Kurzname&colon. :hp2.u:ehp2.
+.br
+Echter Name&colon. :hp2.UUCP:ehp2.
+.br
+Adresse&colon. :hp2.1&colon.234/567:ehp2.
+.br
+Thema&colon. :hp2.test:ehp2.
+.br
+Erste Zeile&colon. :hp2.TO: %?"UUCP-Addresse eingeben":ehp2.
+:p.
+Wenn Sie jetzt den Kurznamen "U" verwenden, wird der UUCP-Gateway angeschrieben,
+und Sie k”nnen die FQDA-Adresse des Benutzers angeben.
+:p.
+Sie k”nnen die Krzel :hp2.%?:ehp2. oder :hp2.%?"Prompt-Text":ehp2. verwenden.
+:pt.:hp2.Schablone nicht verwenden:ehp2.
+:pd.Wenn Sie diesen Kurznamen verwenden, dann wird die Message-Schablone nicht
+verarbeitet.
+:pt.:hp2.Attribute:ehp2.
+:pd.Voreingestellte :link refid=attrib reftype=hd.Message-Attribute:elink. Diese werden automatisch gesetzt, wenn Sie
+den Kurznamen verwenden.
+:eparml.
+:p.Drcken Sie "OK", um nderungen zu best„tigen. Drcken Sie "Abbrechen", um die
+Aktion abzubrechen.
+
+:h2 hide res=&PANEL_DELNICKNAME..Kurzname l”schen
+:p.Drcken Sie "Ja", wenn Sie den gew„hlten Kurznamen l”schen wollen. Drcken Sie
+"Nein", falls Sie ihn behalten wollen.
+
+:h2 hide res=&PANEL_HAVENICKNAME..Kurzname vorhanden
+:p.
+Es gibt bereits einen Eintrag mit dem gleichen Kurznamen. Kurznamen mssen
+eindeutig sein. ndern Sie den Eintrag.
+
+:h2 hide res=&PANEL_REPLACENICK..Kurzname ersetzen
+:p.Es gibt bereits einen Eintrag mit dem gleichen Kurznamen.
+:p.Drcken Sie :hp2.Ja:ehp2., um die alte Definition dieses Kurznamens zu ersetzen.
+:p.Drcken Sie :hp2.Nein:ehp2., um den Eintr„g zu „ndern.
+
+:h2 res=&PANEL_SU_MACROS..Tastatur-Makros
+:p.
+Wenn Sie eine Message editieren und F2 bis F12 drcken, wird der Text, der fr
+diese Taste eingegeben wurde, in das Message-Fenster eingefgt.
+:p.:hp8.Beachte&colon.:ehp8. F1 ist fr die Hilfe reserviert.
+:p.Ein Makro kann maximal 240 Zeichen lang sein.
+
+:h2 res=&PANEL_SU_DOMAINS..Domains
+:p.Domains sind n”tig, damit FleetStreet weiá, wo die compilierte(n) Nodeliste(n)
+zu finden ist.
+:parml.
+:pt.:hp2.Domains:ehp2.
+:pd.Liste der momentan definierten Domains.
+:pt.:hp2.Hinzufgen:ehp2.
+:pd.Ein neues Domain zur Liste hinzufgen.
+:pt.:hp2.ndern:ehp2.
+:pd.Informationen fr das gew„hlte Domain „ndern.
+:pt.:hp2.L”schen:ehp2.
+:pd.Das gew„hlte Domain l”schen.
+:eparml.
+
+:h3 res=&PANEL_DOMAINENTRY..Domain
+:p.Ein Domain hat drei Attribute&colon.
+:parml.
+:pt.:hp2.Domain-Name:ehp2.
+:pd.Name des Domains, muá eindeutig sein.
+:pt.:hp2.Sysop-Index-Datei:ehp2.
+:pd.Index-Datei der compilierten Nodeliste fr dieses Domain. Dies ist blicherweise
+:hp2.SYSOP.NDX:ehp2. fr Ihre prim„re Adresse. Der volle Pfad und Name der Datei
+muá eingegeben werden.
+:pt.:hp2.Nodelist-Daten-Datei:ehp2.
+:pd.Daten-Datei der compilierten Nodeliste fr dieses Domain. Dies ist blicherweise
+:hp2.NODEX.DAT:ehp2. fr Ihre prim„re Adresse. Der volle Pfad und Name der Datei
+muá eingegeben werden.
+:eparml.
+:p.Der Name der Node-Index-Datei ist der gleiche wie der der Daten-Datei, auáer
+daá die Extension .NDX verwendet wird. Dieser Dateiname muá nicht eingegeben
+werden.
+
+:h2 hide res=&PANEL_HAVEDOMAIN..Domain vorhanden
+:p.
+Sie haben bereits ein Domain mit diesem Namen definiert. Domain-Namen mssen
+eindeutig sein.
+:p.
+Geben Sie einen eindeutigen Domain-Namen ein und drcken Sie:hp2.OK:ehp2.
+
+:h2 hide res=&PANEL_DELDOMAIN..Domain l”schen
+:p.
+Sie sind gerade dabei, ein Domain zu l”schen.
+:p.
+Drcken Sie :hp2.Ja:ehp2., und das Domain zu l”schen, drcken Sie :hp2.Nein:ehp2.,
+um es zu behalten.
+
+:h2 res=&PANEL_SU_MODEMTYPES..Modem-Typen
+:p.Die compilierte Nodeliste enth„lt Informationen ber das Modem jedes Nodes.
+Diese Information ist in einem einzelnen Byte gespeichert.
+:p.Wenn Sie Ihre Nodeliste compilieren, belegt der Nodelist-Compiler dieses
+Feld entsprechend den Modem-Flags, die in der Distribution-Nodelist
+enthalten sind.
+:p.
+Es gibt zwei Arten, dieses Modem-Feld zu belegen&colon.
+:parml.
+:pt.:hp2.Bit-Typen:ehp2.
+:pd.Einem jedem Bit des Modem-Feldes wird ein Modem-Typ zugeordnet. Dadurch
+kann jeder Node bis zu 8 Modem-Typen gleichzeitig haben. Es k”nnen jedoch auch
+nicht mehr als 8 Modem-Typen insgesamt definiert werden.
+:pt.:hp2.Byte-Typen:ehp2.
+:pd.Das Modem-Feld wird als Zahl interpretiert. Dadurch sind 255 verschiedene
+Modem-Typen definierbar, ein Node kann jedoch nur ein Modem haben.
+:eparml.
+:p.
+Konfigurieren Sie Ihren Nodelist-Compiler und FleetStreet so, daá fr
+einen Node die entsprechenden Modem-Typen angezeigt werden.
+
+
+:h2 res=&PANEL_SU_OPTIONS..Optionen
+:p.
+Sie k”nnen bestimmte Optionen angeben, die steuern, wie FleetStreet arbeitet.
+:parml break=all.
+:pt.:hp2.Monospaced Font:ehp2.
+:pd.Verwendet immer den alternativen (monospaced) font.
+:pt.:hp2.^aPID verwenden:ehp2.
+:pd.Die ^aPID-Zeile wird anstatt der langen Tearline verwendet.
+:pt.:hp2.Tearline in Netmail verwenden:ehp2.
+:pd.Die Tearline wird auch in Netmail-Areas verwendet. Wenn diese Option
+abgeschaltet ist, wird die Tearline nur in Echomail-Areas verwendet.
+:pt.:hp2.Origin in Netmail verwenden:ehp2.
+:pd.Das Origin wird auch in Netmail-Areas verwendet. Wenn diese Option
+abgeschaltet ist, wird das Origin nur in Echomail-Areas verwendet.
+:pt.:hp2.Areas beim Start scannen:ehp2.
+:pd.Die Areas werden automatisch nach neuen Messages abgesucht, wenn FleetStreet
+gestartet wird.
+:pt.:hp2.Bei pers”nlicher Post piepsen:ehp2.
+:pd.FleetStreet piepst, wenn eine Message angezeigt wird, die an Sie adressiert ist.
+:pt.:hp2.Keine Hervorhebungen:ehp2.
+:pd.Es werden generell keine Hervorhebungen (Fettschrift und Unterstreichungen)
+im Text angezeigt.
+:pt.:hp2.^aFWDSUBJ erzeugen:ehp2.
+:pd.Beim Weiterleiten wird die FWDSUBJ-Kludge-Line erzeugt.
+:eparml.
+
+:h2 res=&PANEL_SU_STARTUP..Startarea
+:p.Gibt an, ob FleetStreet eine bestimmte Area beim Programmstart ”ffnet, oder ob
+die Area ge”ffnet wird, die offen war, als Sie FleetStreet zuletzt verwendet
+haben.
+
+:h2 res=&PANEL_SU_EDITOROPT..Editor
+:parml.
+:pt.:hp2.Quote-Farbe:ehp2.
+:pt.:hp2.Tearline-Farbe:ehp2.
+:pt.:hp2.Origin-Farbe:ehp2.
+:pd.W„hlen Sie eine Farbe fr den entprechenden Teil einer Message aus. :hp2.Beachte&colon.:ehp2.
+Diese Farben werden beim Schreiben einer Message nicht verwendet. Die Hintergrundfarbe
+und die normale Textfarbe mssen Sie mit Hilfe der Farbpalette einstellen.
+:pt.:hp2.Tabulatorgr”áe:ehp2.
+:pd.Anzahl der Leerzeichen, die im Message-Text eingefgt werden, wenn Sie beim
+Editieren die TAB-Taste drcken.
+:pt.:hp2.Max. Msg.-Gr”áe:ehp2.
+:pd.Maximale Gr”áe einer Message, die in der Messagebase gespeichert wird. L„ngere
+Messages werden in mehrere Teile aufgespaltet.
+:eparml.
+
+:h2 res=&PANEL_SU_SAFETY..Sicherheitsabfragen
+:parml.
+:pt.:hp2.Messages l”schen:ehp2.
+:pd.Sicherheitsabfrage vor dem L”schen von Messages
+:pt.:hp2.Messages schreddern:ehp2.
+:pd.Sicherheitsabfrage vor dem L”schen von Messages durch Ziehen der Message auf den Schredder
+:pt.:hp2.Aufholen:ehp2.
+:pd.Sicherheitsabfrage vor dem Aufholen
+:pt.:hp2.Gesendete Messages „ndern:ehp2.
+:pd.Sicherheitsabfrage vor dem ndern von Messages, die bereits gesendet wurden
+:pt.:hp2.Setup „ndern:ehp2.
+:pd.Sicherheitsabfrage vor signifikanten nderungen des Setups
+:pt.:hp2.Messages verwerfen:ehp2.
+:pd.Sicherheitsabfrage vor dem Verwerfen von Messages
+:eparml.
+
+:h2 res=&PANEL_SU_OPENWIN..Fenster
+:p.
+Auf dieser Seite k”nnen Sie bestimmen, welche Fenster beim Programmstart
+ge”ffnet werden sollen.
+:p.
+Bei einem :hp2.leeren:ehp2. Markierungsfeld wird das betreffende
+Fenster nicht ge”ffnet, bei einem :hp2.markierten:ehp2. Feld wird es ge”ffnet,
+und bei einem :hp2.grauen:ehp2. Feld wird es genau dann ge”ffnet, wenn es beim letzten
+Programmlauf offen war.
+
+:h2 hide res=&PANEL_CATCHUP..Aufholen
+:p."Aufholen" bedeutet, daá alle Messages als "gelesen" markiert werden, so daá sie
+in den verschiedenen Listen nicht mehr hervorgehoben werden.
+:p.Drcken Sie :hp2.Ja:ehp2., wenn Sie die Funktion ausfhren wollen.
+:p.Drcken Sie :hp2.Nein:ehp2., wenn Sie die Funktion nicht ausfhren wollen.
+
+:h2 res=&PANEL_SU_DRIVEREMAP..Umsetzung
+:p.
+Sie k”nnen Netzlaufwerken
+andere lokale Laufwerksbuchstaben zuweisen. FleetStreet ersetzt die Laufwerks-
+Buchstaben von Netzlaufwerken durch die zugewiesenen Buchstaben, bevor auf
+die Messagebase zugegriffen wird.
+:p.
+:parml.
+:pt.:hp2.Netzlaufwerke:ehp2.
+:pd.Laufwerksbuchstaben, wie sie in der Tosser-Konfigurationsdatei angegeben sind.
+
+:pt.:hp2.lokale Laufwerke:ehp2.
+:pd.Laufwerksbuchstaben, die FleetStreet beim Zugriff auf die Messagebase
+verwenden soll.
+:eparml.
+
+:h2 hide res=&PANEL_SU_NEWUSER..Neuer Benutzername
+:p.Geben Sie den neuen Namen ein oder „ndern Sie den bestehenden. Drcken Sie "OK",
+um die nderungen zu best„tigen. Drcken Sie "Abbrechen", falls sie keinen neuen
+Namen eingeben oder den alten Namen behalten wollen.
+
+:h2 hide res=&PANEL_DELUNAME..Name l”schen
+:p.Falls Sie den ausgew„hlten Namen l”schen wollen, drcken Sie "Ja". Drcken Sie
+"Nein", wenn Sie ihn behalten wollen.
+
+:h2 hide res=&PANEL_SU_NEWADDRESS..Neue Adresse
+:p.Geben Sie die neue Adresse ein oder „ndern Sie die bestehende. Drcken Sie "OK",
+um die nderungen zu best„tigen. Drcken Sie "Abbrechen", falls sie keine neue
+Adresse eingeben oder die alte Adresse behalten wollen.
+
+:h2 hide res=&PANEL_DELADDRESS..Adresse l”schen
+:p.Falls Sie die ausgew„hlte Adresse l”schen wollen, drcken Sie "Ja". Drcken Sie
+"Nein", wenn Sie sie behalten wollen.
+
+:h1 res=&PANEL_TOOLBARCONFIG..Toolbar
+:p.In der linken Liste werden die Buttons angezeigt, die in der Toolbar
+erscheinen. In der rechten Liste sind alle restlichen Buttons enthalten.
+:p.Der spezielle Button :artwork name='separator.bmp' runin. sorgt dafr,
+daá in der horizontalen Darstellung der Toolbar ein Abstand zwischen zwei
+Buttons erscheint.
+:p.Sie k”nnen die Reihenfolge der Buttons in der linken Liste durch
+Drag-Drop ver„ndern.
+:parml.
+:pt.:hp2.Hinzufgen:ehp2.
+:pd.Fgt den ausgew„hlten Button der rechten Liste zur linken Liste hinzu.
+Sie k”nnen einen Button auch per Drag-Drop von der rechten Liste zur gewnschten
+Position in der linken Liste ziehen.
+:pt.:hp2.Entfernen:ehp2.
+:pd.Entfernt den ausgew„hlten Button der linken Liste.
+:pt.:hp2.Default:ehp2.
+:pd.Setzt die Konfiguration der Toolbar auf die Defaultwerte zurck.
+:eparml.
+:p.
+Drcken Sie :hp2.OK:ehp2., um die nderungen wirksam zu machen. Drcken Sie
+:hp2.Abbrechen:ehp2., um die nderungen zu verwerfen.

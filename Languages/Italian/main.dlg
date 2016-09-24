@@ -1,0 +1,1897 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+DLGINCLUDE 1 "..\..\dialogids.h"
+
+DLGTEMPLATE IDD_ADDRESSES LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_ADDRESSES, 12, 6, 223, 131, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Indirizzi", 5291, 5, 24, 213, 99
+        LISTBOX         5292, 9, 29, 132, 85, LS_NOADJUSTPOS | WS_GROUP
+        PUSHBUTTON      "~Aggiungi...", 5293, 146, 92, 67, 14, WS_GROUP
+        PUSHBUTTON      "~Modifica...", 5294, 146, 74, 67, 14, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "~Cancella", 5295, 146, 56, 67, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "~Default", 5296, 146, 38, 67, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5297, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_AL_SETTINGS_COLORS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_AL_SETTINGS_COLORS, 12, 6, 224, 134, NOT FS_DLGBORDER |
+            NOT WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Colori", 7132, 5, 24, 210, 102
+        VALUESET        7134, 62, 36, 20, 74, VS_RGB | VS_BORDER |
+                        VS_ITEMBORDER
+                        CTLDATA 8, 0, 4, 1
+        CONTROL         "", 7133, 84, 31, 127, 83, "ColorSelect", 60 |
+                        WS_VISIBLE
+        PUSHBUTTON      "Guida", 7131, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+        RTEXT           "Sfondo", 7135, 8, 96, 49, 8
+        RTEXT           "Net area", 7136, 8, 77, 49, 8, NOT WS_GROUP
+        RTEXT           "Echo area", 7137, 8, 60, 49, 8, NOT WS_GROUP
+        RTEXT           "Area locale", 7138, 8, 42, 49, 8, NOT WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_CCFOLDER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Liste di carbon copy", IDD_CCFOLDER, 12, 6, 198, 88, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MINBUTTON | FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       7281, 0, 0, 198, 88, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_MINIRECORDCORE | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_CCLISTSELECT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Seleziona carbon copies", IDD_CCLISTSELECT, 11, 17, 141, 123, ,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LISTBOX         6281, 9, 26, 123, 92, LS_NOADJUSTPOS | LS_HORZSCROLL |
+                        WS_GROUP
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 28, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 37, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6282, 95, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_CURRENTNAMEADDR LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Nome attuale & indirizzo", IDD_CURRENTNAMEADDR, 16, 31, 194, 80,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Nome attuale", 5841, 14, 68, 130, 8
+        CONTROL         "", 5842, 14, 30, 162, 35, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP |
+                        WS_VISIBLE
+        LTEXT           "Indirizzo attuale", 5843, 14, 42, 118, 8
+        CONTROL         "", 5844, 14, 5, 162, 35, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP |
+                        WS_VISIBLE
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5845, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_DEFAULTORIGIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_DEFAULTORIGIN, 12, 6, 225, 61, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Origin di default", 6881, 5, 24, 210, 29
+        ENTRYFIELD      "", 6882, 13, 32, 193, 8, ES_MARGIN
+        PUSHBUTTON      "Guida", 6883, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_DOMAINENTRY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Domain", IDD_DOMAINENTRY, 38, 67, 201, 97, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Nome Domain", 6601, 10, 84, 180, 8
+        ENTRYFIELD      "", 6602, 12, 73, 176, 8, ES_MARGIN
+        LTEXT           "File indice sysop", 6603, 10, 62, 180, 8
+        ENTRYFIELD      "", 6604, 12, 51, 176, 8, ES_MARGIN
+        LTEXT           "File dati nodelist", 6605, 10, 40, 180, 8
+        ENTRYFIELD      "", 6606, 12, 29, 176, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP | WS_DISABLED
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6607, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_DOMAINS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_DOMAINS, 12, 6, 224, 130, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Domains", 6941, 5, 24, 210, 102, NOT WS_GROUP
+        LISTBOX         6943, 11, 29, 106, 86, LS_NOADJUSTPOS | WS_GROUP
+        PUSHBUTTON      "~Aggiungi", 6944, 134, 85, 60, 14, WS_GROUP
+        PUSHBUTTON      "~Modifica", 6945, 134, 64, 60, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "~Cancella", 6946, 134, 44, 60, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6942, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_DRIVEREMAP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_DRIVEREMAP, 13, 6, 223, 81, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Sostituzione drive", 7172, 5, 24, 210, 49
+        RTEXT           "Drive di rete", 7173, 27, 51, 60, 8
+        SPINBUTTON      7175, 39, 34, 48, 12, SPBS_READONLY | SPBS_MASTER
+        LTEXT           "Drive locale", 7174, 121, 51, 81, 8
+        SPINBUTTON      7176, 121, 34, 48, 12, SPBS_READONLY | SPBS_MASTER
+        PUSHBUTTON      "Guida", 7171, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_EXPORTFILE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Esporta file", IDD_EXPORTFILE, 17, 23, 238, 165, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_NOBYTEALIGN
+    BEGIN
+        LTEXT           "Nome file", 257, 9, 151, 106, 8
+        ENTRYFIELD      "", 258, 11, 139, 218, 8, ES_MARGIN
+        LTEXT           "Tipo file", 261, 9, 125, 107, 8
+        CONTROL         "", 262, 9, 99, 106, 25, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Drive", 259, 118, 126, 103, 8
+        CONTROL         "", 260, 118, 66, 113, 58, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "File", 265, 9, 102, 88, 8
+        LISTBOX         266, 9, 46, 104, 55, LS_HORZSCROLL
+        LTEXT           "Directory", 263, 118, 102, 80, 8
+        LISTBOX         264, 118, 46, 111, 55, LS_OWNERDRAW | LS_HORZSCROLL
+        AUTOCHECKBOX    "con ~header", 5971, 7, 33, 95, 10, WS_GROUP
+        AUTOCHECKBOX    "~Linea di separazione", 5974, 7, 22, 99, 10, NOT
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Allega", 5972, 114, 32, 111, 10, WS_GROUP |
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Sovrascrivi", 5973, 114, 23, 115, 10
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 267, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        PUSHBUTTON      "Applica", 268, 150, 4, 40, 14, NOT WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_FILEDLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "File", IDD_FILEDLG, 13, 4, 238, 159, WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_NOBYTEALIGN
+    BEGIN
+        LTEXT           "Nome file", 257, 9, 145, 106, 8
+        ENTRYFIELD      "", 258, 11, 133, 218, 8, ES_MARGIN
+        LTEXT           "Tipo file", 261, 9, 119, 107, 8
+        CONTROL         "", 262, 9, 93, 106, 25, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Drive", 259, 118, 120, 103, 8
+        CONTROL         "", 260, 118, 60, 113, 58, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "File", 265, 9, 96, 88, 8
+        LISTBOX         266, 9, 22, 104, 71, LS_HORZSCROLL
+        LTEXT           "Directory", 263, 118, 96, 80, 8
+        LISTBOX         264, 118, 22, 111, 73, LS_OWNERDRAW | LS_HORZSCROLL
+        DEFPUSHBUTTON   "OK", DID_OK, 9, 5, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 53, 5, 58, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 267, 114, 5, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        PUSHBUTTON      "Applica", 268, 158, 5, 51, 14, NOT WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_FINDRESULTS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Segnalibro", IDD_FINDRESULTS, 48, 40, 299, 139, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | NOT WS_SAVEBITS, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MINBUTTON
+    BEGIN
+        CONTAINER       5441, 0, 20, 298, 106, CCS_EXTENDSEL | CCS_READONLY |
+                        CCS_MINIRECORDCORE | WS_GROUP
+        DEFPUSHBUTTON   "~Al messaggio", 5442, 6, 4, 62, 14, WS_GROUP
+        PUSHBUTTON      "~Chiudi", DID_OK, 71, 4, 50, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Cancella ~tutti", 5444, 167, 4, 71, 14, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "Guida", 5443, 240, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        RTEXT           "Area:", 5447, 1, 127, 28, 10
+        CTEXT           "", 5448, 31, 127, 95, 10
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+        SLIDER          5449, 127, 127, 165, 11, SLS_SNAPTOINCREMENT |
+                        SLS_READONLY | SLS_RIBBONSTRIP | SLS_PRIMARYSCALE2 |
+                        WS_GROUP
+                        CTLDATA 12, 0, 20, 0, 20, 0
+        PUSHBUTTON      "S~top", 5450, 124, 4, 40, 14, NOT WS_TABSTOP |
+                        WS_DISABLED
+    END
+END
+
+DLGTEMPLATE IDD_GOTOMESSAGE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Vai a messaggio", IDD_GOTOMESSAGE, 12, 6, 140, 52, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        SPINBUTTON      7053, 78, 29, 48, 12, SPBS_NUMERICONLY | SPBS_MASTER |
+                        SPBS_JUSTRIGHT
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Cancella", DID_CANCEL, 49, 4, 40, 14, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "Guida", 7051, 92, 4, 40, 14, BS_HELP | NOT
+                        WS_TABSTOP
+        RTEXT           "Vai a messaggio", 7052, 7, 29, 67, 10
+    END
+END
+
+DLGTEMPLATE IDD_IMPORTCCLIST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Importa una lista di CC", IDD_IMPORTCCLIST, 18, 27, 238, 161,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR | FCF_NOBYTEALIGN
+    BEGIN
+        LTEXT           "Nome file", 257, 9, 147, 106, 8
+        ENTRYFIELD      "", 258, 11, 135, 218, 8, ES_MARGIN
+        LTEXT           "Tipo file", 261, 9, 121, 107, 8
+        CONTROL         "", 262, 9, 95, 106, 25, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Drive", 259, 118, 122, 103, 8
+        CONTROL         "", 260, 118, 62, 113, 58, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Directory", 263, 118, 98, 80, 8
+        LISTBOX         264, 118, 52, 111, 45, LS_OWNERDRAW | LS_NOADJUSTPOS |
+                        LS_HORZSCROLL
+        LTEXT           "File", 265, 9, 98, 88, 8
+        LISTBOX         266, 9, 52, 104, 45, LS_NOADJUSTPOS | LS_HORZSCROLL
+        GROUPBOX        "Nome prestabilito per  ""Visualizza nome""", 7191,
+                        8, 20, 222, 29
+        AUTORADIOBUTTON "Sç", 7192, 15, 31, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "No", 7193, 15, 22, 39, 10, WS_TABSTOP
+        DEFPUSHBUTTON   "OK", DID_OK, 8, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 51, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 267, 109, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        PUSHBUTTON      "Applica", 268, 152, 4, 40, 14, NOT WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_MACROS1 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_MACROS1, 7, 0, 221, 172, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Macro tastiera", 5321, 5, 24, 210, 144, NOT
+                        WS_GROUP
+        MLE             "", 5323, 30, 127, 180, 30, MLS_HSCROLL |
+                        MLS_VSCROLL | WS_GROUP
+        MLE             "", 5324, 30, 94, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        MLE             "", 5325, 30, 61, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        MLE             "", 5326, 30, 28, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        RTEXT           "F2", 5327, 9, 147, 18, 10
+        RTEXT           "F3", 5328, 9, 114, 18, 10
+        RTEXT           "F4", 5329, 9, 78, 18, 13, NOT WS_GROUP
+        RTEXT           "F5", 5330, 9, 47, 18, 11, NOT WS_GROUP
+        PUSHBUTTON      "Guida", 5322, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_MACROS2 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_MACROS2, 7, 0, 221, 172, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Macro tastiera", 6901, 5, 24, 210, 144, NOT
+                        WS_GROUP
+        MLE             "", 6903, 30, 127, 180, 30, MLS_HSCROLL |
+                        MLS_VSCROLL | WS_GROUP
+        MLE             "", 6904, 30, 94, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        MLE             "", 6905, 30, 61, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        MLE             "", 6906, 30, 28, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        RTEXT           "F6", 6907, 9, 147, 18, 10
+        RTEXT           "F7", 6908, 9, 114, 18, 10
+        RTEXT           "F8", 6909, 9, 78, 18, 13, NOT WS_GROUP
+        RTEXT           "F9", 6910, 9, 47, 18, 11, NOT WS_GROUP
+        PUSHBUTTON      "Guida", 6902, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_MACROS3 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_MACROS3, 7, 0, 221, 147, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Macro tastiera", 6921, 5, 24, 210, 114, NOT
+                        WS_GROUP
+        MLE             "", 6923, 30, 95, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        MLE             "", 6924, 30, 62, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        MLE             "", 6925, 30, 29, 180, 30, MLS_HSCROLL | MLS_VSCROLL |
+                        WS_GROUP
+        RTEXT           "F10", 6927, 9, 115, 18, 10
+        RTEXT           "F11", 6928, 9, 82, 18, 10
+        RTEXT           "F12", 6929, 9, 46, 18, 13, NOT WS_GROUP
+        PUSHBUTTON      "Guida", 6922, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_ML_SETTINGS_COLORS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_ML_SETTINGS_COLORS, 12, 6, 224, 134, NOT FS_DLGBORDER |
+            NOT WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Colori", 7222, 5, 24, 210, 102
+        CONTROL         "", 7223, 85, 34, 126, 78, "ColorSelect", 60 |
+                        WS_VISIBLE
+        PUSHBUTTON      "Guida", 7221, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+        VALUESET        7224, 62, 34, 22, 78, VS_RGB | VS_BORDER |
+                        VS_ITEMBORDER | WS_GROUP
+                        CTLDATA 8, 0, 5, 1
+        RTEXT           "Sfondo", 7225, 8, 100, 53, 8, DT_WORDBREAK | NOT
+                        WS_GROUP
+        RTEXT           "Testo", 7226, 8, 84, 53, 8, DT_WORDBREAK | NOT
+                        WS_GROUP
+        RTEXT           "Non letto", 7227, 8, 69, 53, 8, DT_WORDBREAK | NOT
+                        WS_GROUP
+        RTEXT           "Da me", 7228, 8, 54, 53, 8, DT_WORDBREAK | NOT
+                        WS_GROUP
+        RTEXT           "A me", 7229, 8, 39, 53, 8, DT_WORDBREAK | NOT
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_NEWADDRESS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Indirizzo nuovo", IDD_NEWADDRESS, 12, 37, 171, 61, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Inserisci indirizzo nuovo", 5721, 6, 47, 156, 8
+        ENTRYFIELD      "", 5722, 7, 33, 156, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Help", 5723, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_NEWUSER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Nuovo nome utente", IDD_NEWUSER, 12, 31, 168, 59, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Inserisci nuovo nome utente", 5501, 8, 43, 138, 8
+        ENTRYFIELD      "", 5502, 10, 29, 146, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP | WS_DISABLED
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5503, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_NICKPROMPT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Prompt", IDD_NICKPROMPT, 12, 21, 163, 58, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Testo", 6372, 8, 41, 147, 8
+        ENTRYFIELD      "", 6373, 10, 23, 143, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6371, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_RXHOOKS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_RXHOOKS, 13, 6, 219, 104, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        RTEXT           "Termina programma", 7551, 5, 72, 76, 8
+        CONTROL         "", 7552, 83, 24, 131, 58, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP |
+                        WS_VISIBLE
+        RTEXT           "Prima di salvare", 7553, 5, 43, 76, 8
+        CONTROL         "", 7554, 83, 4, 131, 48, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP |
+                        WS_VISIBLE
+        PUSHBUTTON      "Guida", 7555, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_RXMONITOR LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Esecuzione script", IDD_RXMONITOR, 12, 6, 363, 168, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        ENTRYFIELD      "", 7322, 2, 22, 359, 8, ES_MARGIN | WS_GROUP |
+                        WS_DISABLED
+        LISTBOX         7321, 0, 32, 362, 136, LS_NOADJUSTPOS |
+                        LS_HORZSCROLL | WS_GROUP
+        DEFPUSHBUTTON   "Chiudi", 7323, 6, 4, 50, 14, WS_GROUP | WS_DISABLED
+        PUSHBUTTON      "~Stop", 7324, 59, 4, 40, 14, NOT WS_TABSTOP |
+                        WS_DISABLED
+        PUSHBUTTON      "Guida", 7325, 102, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_RXSET_GENERAL LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_RXSET_GENERAL, 12, 6, 222, 130, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        LTEXT           "Nome script", 7342, 10, 92, 91, 8
+        ENTRYFIELD      "", 7343, 12, 80, 195, 8, ES_MARGIN
+        LTEXT           "Nome file", 7344, 10, 62, 57, 8, NOT WS_GROUP
+        ENTRYFIELD      "", 7345, 12, 48, 147, 8, ES_MARGIN
+        PUSHBUTTON      "~Cerca...", 7346, 164, 45, 45, 14
+        AUTOCHECKBOX    "Accesso ~rapido", 7347, 10, 28, 71, 10
+        PUSHBUTTON      "Guida", 7341, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_RXSET_MONITOR LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_RXSET_MONITOR, 12, 6, 228, 126, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        AUTORADIOBUTTON "~Monitor", 7361, 10, 49, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "~Nessun monitor", 7362, 10, 38, 129, 10
+        AUTOCHECKBOX    "~Chiudi automaticamente", 7363, 10, 24, 128, 10,
+                        WS_GROUP
+        PUSHBUTTON      "Guida", 7364, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_SAFETY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_SAFETY, 12, 6, 223, 134, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Domande di sicurezza", 7501, 5, 24, 210, 101
+        AUTOCHECKBOX    "~Cancella messaggi", 7502, 12, 104, 160, 10
+        AUTOCHECKBOX    "~Trincia messaggi", 7503, 12, 90, 160, 10, NOT
+                        WS_TABSTOP
+        AUTOCHECKBOX    "~Segna", 7504, 12, 76, 160, 10, NOT WS_TABSTOP
+        AUTOCHECKBOX    "~Modifica messaggi inviati", 7505, 12, 62, 160, 10,
+                        NOT WS_TABSTOP
+        AUTOCHECKBOX    "Modifica ~setup", 7506, 12, 48, 160, 10, NOT
+                        WS_TABSTOP
+        AUTOCHECKBOX    "~Rifiuta messaggi", 7507, 12, 34, 160, 10, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "Guida", 7508, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_SQUISHBASEPARAM LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Parametri base messaggi Squish", IDD_SQUISHBASEPARAM, 12, 33,
+            196, 87, WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        RTEXT           "Numero massimo messaggi", 6412, 7, 66, 103, 16,
+                        DT_WORDBREAK
+        RTEXT           "Numero messaggi saltati", 6413, 7, 45, 103, 16,
+                        DT_WORDBREAK | NOT WS_GROUP
+        RTEXT           "Numero giorni per cui tenere messaggi", 6414, 7, 24,
+                        103, 16, DT_WORDBREAK | NOT WS_GROUP
+        SPINBUTTON      6415, 121, 68, 48, 12, SPBS_NUMERICONLY |
+                        SPBS_MASTER | SPBS_JUSTRIGHT | WS_GROUP
+        SPINBUTTON      6416, 121, 47, 48, 12, SPBS_NUMERICONLY |
+                        SPBS_MASTER | SPBS_JUSTRIGHT
+        SPINBUTTON      6417, 121, 26, 48, 12, SPBS_NUMERICONLY |
+                        SPBS_MASTER | SPBS_JUSTRIGHT
+        DEFPUSHBUTTON   "Definisci", DID_OK, 6, 5, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 5, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6411, 107, 5, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_STARTUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_STARTUP, 12, 6, 229, 76, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Area d'avvio", 6962, 5, 24, 210, 38
+        AUTORADIOBUTTON "~Ultima area attiva", 6963, 13, 42, 117, 10,
+                        WS_GROUP | WS_TABSTOP
+        AUTORADIOBUTTON "~Area", 6964, 13, 28, 39, 10
+        ENTRYFIELD      "", 6965, 57, 29, 144, 8, ES_MARGIN
+        PUSHBUTTON      "Guida", 6961, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_THRLISTCOLORS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_THRLISTCOLORS, 12, 6, 224, 134, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Colori", 7422, 5, 24, 210, 102
+        VALUESET        7424, 63, 36, 20, 74, VS_RGB | VS_BORDER |
+                        VS_ITEMBORDER
+                        CTLDATA 8, 0, 4, 1
+        CONTROL         "", 7423, 85, 34, 126, 78, "ColorSelect", 60 |
+                        WS_VISIBLE
+        PUSHBUTTON      "Guida", 7421, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+        RTEXT           "Sfondo", 7425, 8, 96, 50, 8
+        RTEXT           "Letto", 7426, 8, 77, 50, 8, NOT WS_GROUP
+        RTEXT           "Non letto", 7427, 8, 60, 50, 8, NOT WS_GROUP
+        RTEXT           "Personale", 7428, 8, 42, 50, 8, NOT WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_USERNAMES LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_USERNAMES, 12, 28, 220, 129, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Nomi", 5221, 5, 24, 207, 100, NOT WS_GROUP
+        PUSHBUTTON      "Guida", 5227, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+        LISTBOX         5222, 11, 29, 131, 84, LS_NOADJUSTPOS | WS_GROUP
+        PUSHBUTTON      "~Aggiungi...", 5223, 146, 91, 61, 14, WS_GROUP
+        PUSHBUTTON      "~Modifica...", 5224, 146, 73, 61, 14, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "~Cancella", 5225, 146, 55, 61, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "~Default", 5226, 146, 37, 61, 14, NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_THREADLIST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Lista soggetti", IDD_THREADLIST, 12, 6, 199, 202, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | NOT WS_SAVEBITS, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MINBUTTON
+    BEGIN
+        CONTAINER       5921, 2, 1, 195, 200, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_EDITOROPT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_EDITOROPT, 12, 6, 226, 161, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Editor", 6982, 5, 24, 210, 28
+        SPINBUTTON      6984, 59, 29, 31, 12, SPBS_NUMERICONLY | SPBS_MASTER |
+                        SPBS_JUSTRIGHT | WS_GROUP
+        RTEXT           "Dimens. tab.", 6983, 7, 31, 50, 8, NOT WS_GROUP
+        SPINBUTTON      6994, 183, 29, 32, 12, SPBS_NUMERICONLY |
+                        SPBS_MASTER | SPBS_JUSTRIGHT
+        RTEXT           "Dim. mass. msg. (KB)", 6995, 90, 31, 89, 8, NOT
+                        WS_GROUP
+        PUSHBUTTON      "Guida", 6981, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+        CONTROL         "", 6985, 26, 64, 20, 16, WC_STATIC, SS_BKGNDRECT |
+                        WS_VISIBLE
+        GROUPBOX        "Colori", 6986, 5, 52, 210, 105
+        RTEXT           "Sfondo", 6987, 8, 136, 49, 8, NOT WS_GROUP
+        RTEXT           "Testo", 6988, 8, 122, 49, 8, NOT WS_GROUP
+        RTEXT           "Citazioni", 6989, 8, 108, 49, 8, NOT WS_GROUP
+        RTEXT           "Citazioni II", 6994, 8, 93, 49, 8, NOT WS_GROUP
+        RTEXT           "Tearline", 6990, 8, 79, 49, 8, NOT WS_GROUP
+        RTEXT           "Origin", 6991, 8, 65, 49, 8, NOT WS_GROUP
+        VALUESET        6992, 60, 59, 19, 89, VS_RGB | VS_BORDER |
+                        VS_ITEMBORDER | WS_GROUP
+                        CTLDATA 8, 0, 6, 1
+        CONTROL         "", 6993, 80, 60, 132, 87, "ColorSelect", WS_GROUP |
+                        WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_LOOKUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Nodelist", IDD_LOOKUP, 21, 28, 250, 100, NOT FS_DLGBORDER |
+            FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR |
+            FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       6463, 0, 23, 250, 76, CCS_SINGLESEL | CCS_READONLY |
+                        CCS_MINIRECORDCORE | WS_GROUP
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6464, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        AUTOCHECKBOX    "~Breve", 6465, 155, 5, 45, 10, WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_CCLIST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Carbon Copy", IDD_CCLIST, 12, 6, 287, 120, , FCF_SYSMENU |
+            FCF_TITLEBAR
+    BEGIN
+        CONTAINER       6011, 2, 32, 282, 88, CCS_EXTENDSEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+        DEFPUSHBUTTON   "Chiudi", DID_OK, 2, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Guida", 6012, 243, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        PUSHBUTTON      "~Aggiungi...", 6013, 44, 4, 52, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "~Cancella", 6014, 150, 4, 46, 14, NOT WS_TABSTOP |
+                        WS_DISABLED
+        PUSHBUTTON      "~Modifica...", 6015, 98, 4, 50, 14, WS_DISABLED
+        AUTOCHECKBOX    "~Tieni un solo messaggio", 6017, 2, 19, 128, 10
+        PUSHBUTTON      "~Importa...", 6016, 198, 4, 43, 14, NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_REXXERROR LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Errore Rexx", IDD_REXXERROR, 12, 6, 248, 108, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Guida", 7482, 49, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        LTEXT           "", 7483, 6, 20, 238, 85, DT_WORDBREAK | NOT
+                        WS_GROUP
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+                        PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    END
+END
+
+DLGTEMPLATE IDD_RXFOLDER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Rexx-scripts", IDD_RXFOLDER, 11, 6, 188, 91, NOT FS_DLGBORDER |
+            FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR |
+            FCF_MINBUTTON | FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       7301, 0, 0, 188, 91, CCS_EXTENDSEL |
+                        CCS_AUTOPOSITION | CCS_MINIRECORDCORE | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_CCOPY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_CCOPY, 12, 6, 220, 94, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Carbon Copy", 6251, 5, 19, 210, 36
+        ENTRYFIELD      "", 6253, 13, 27, 192, 8, ES_MARGIN | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        PUSHBUTTON      "Guida", 6252, 5, 3, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_DAREA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_DAREA, 12, 6, 220, 94, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Risposta in area diversa", 6191, 5, 19, 210, 36
+        ENTRYFIELD      "", 6193, 13, 27, 192, 8, ES_MARGIN | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        PUSHBUTTON      "Guida", 6192, 5, 3, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_FOOTER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_FOOTER, 12, 6, 220, 132, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Testo footer", 6151, 5, 19, 210, 100
+        MLE             "", 6153, 12, 24, 196, 86, MLS_HSCROLL | MLS_VSCROLL
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        PUSHBUTTON      "Guida", 6152, 5, 2, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_FORWARD LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_FORWARD, 12, 6, 220, 132, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Forward", 6211, 5, 19, 210, 100
+        MLE             "", 6213, 12, 24, 196, 86, MLS_HSCROLL | MLS_VSCROLL
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        PUSHBUTTON      "Guida", 6212, 5, 2, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_FORWARDFOOTER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_FORWARDFOOTER, 12, 6, 220, 132, NOT FS_DLGBORDER |
+            NOT WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Forward footer", 6581, 5, 19, 210, 100
+        MLE             "", 6583, 12, 24, 196, 86, MLS_HSCROLL | MLS_VSCROLL
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        PUSHBUTTON      "Guida", 6582, 5, 2, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_FORWARDORDER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_FORWARDORDER, 12, 6, 225, 74, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Forward", 7002, 5, 24, 210, 39
+        AUTORADIOBUTTON "Metti testo ~supplementare all'inizio", 7003, 16,
+                        41, 141, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Metti messaggio ~forwardato all'inizio", 7004, 16,
+                        30, 140, 10
+        PUSHBUTTON      "Guida", 7001, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_REPLY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_REPLY, 12, 6, 220, 132, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Testo risposta", 6171, 5, 19, 210, 100
+        MLE             "", 6173, 12, 24, 196, 86, MLS_HSCROLL | MLS_VSCROLL
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        PUSHBUTTON      "Guida", 6172, 5, 2, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_XPOST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_XPOST, 12, 6, 220, 94, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Testo crosspost", 6231, 5, 19, 210, 36
+        ENTRYFIELD      "", 6233, 13, 27, 192, 8, ES_MARGIN | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        PUSHBUTTON      "Guida", 6232, 5, 3, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_AS_GENERAL LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_AS_GENERAL, 24, 48, 234, 162, NOT FS_DLGBORDER |
+            WS_VISIBLE
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Configurazione generale", 5641, 5, 24, 210, 124
+        LTEXT           "Nome area", 5642, 8, 126, 74, 9
+        ENTRYFIELD      "", 5643, 10, 116, 198, 8, ES_MARGIN | WS_GROUP
+        LTEXT           "Descrizione", 5644, 8, 103, 102, 8
+        ENTRYFIELD      "", 5645, 10, 91, 198, 8, ES_MARGIN | WS_GROUP
+        CONTROL         "", 5649, 8, 24, 99, 51, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP |
+                        WS_VISIBLE
+        CONTROL         "", 5652, 108, 38, 104, 37, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP |
+                        WS_VISIBLE
+        LTEXT           "Indirizzo di default", 5648, 8, 77, 85, 8
+        PUSHBUTTON      "Guida", 5650, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+        LTEXT           "Nome di default dell'utente", 5651, 107, 77, 105, 8
+        LTEXT           "Template", 5653, 8, 52, 55, 8, NOT WS_GROUP
+        CONTROL         "", 5654, 9, 9, 202, 40, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_TE_ORIGIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_ORIGIN, 12, 6, 223, 103, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Linea di Origin", 7682, 5, 73, 210, 27
+        ENTRYFIELD      "", 7683, 12, 80, 196, 8, ES_MARGIN
+        GROUPBOX        "Origin casuale", 7684, 5, 22, 210, 48
+        AUTOCHECKBOX    "~Seleziona linea di Origin a caso", 7685, 10, 50,
+                        134, 10
+        LTEXT           "File con linee Origin", 7688, 10, 39, 117, 8, NOT
+                        WS_GROUP | WS_DISABLED
+        ENTRYFIELD      "", 7686, 12, 28, 152, 8, ES_MARGIN | WS_DISABLED
+        PUSHBUTTON      "~Cerca...", 7687, 168, 25, 43, 14, WS_DISABLED
+        PUSHBUTTON      "Guida", 7681, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_NLBROWSER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Nodelist-Browser", IDD_NLBROWSER, 12, 2, 315, 138, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MINBUTTON | FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       6681, 1, 27, 102, 110, CCS_SINGLESEL | CCS_READONLY |
+                        CCS_MINIRECORDCORE | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTAINER       6682, 104, 27, 210, 110, CCS_EXTENDSEL |
+                        CCS_READONLY | CCS_MINIRECORDCORE | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "Chiudi", 6683, 5, 7, 50, 14, WS_GROUP
+        PUSHBUTTON      "Guida", 6684, 57, 7, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        AUTOCHECKBOX    "~Icone", 6689, 101, 4, 40, 10, WS_GROUP
+        AUTOCHECKBOX    "niente ~Points", 6690, 142, 4, 66, 10
+        RTEXT           "Domain", 6685, 98, 16, 39, 8
+        CONTROL         "", 6686, 143, 1, 83, 25, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        AUTORADIOBUTTON "~Numeri nodi", 6687, 231, 15, 74, 10, WS_GROUP |
+                        WS_TABSTOP
+        AUTORADIOBUTTON "Nomi ~SysOp", 6688, 231, 4, 74, 10
+    END
+END
+
+DLGTEMPLATE IDD_ECHOMANAGER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Echo-Manager", IDD_ECHOMANAGER, 12, 6, 200, 133, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       7741, 0, 17, 200, 116, CCS_SINGLESEL | CCS_READONLY |
+                        CCS_MINIRECORDCORE | WS_GROUP
+        DEFPUSHBUTTON   "OK", DID_OK, 2, 1, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 45, 1, 52, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 7742, 100, 1, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_EMS_EXTDLL LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_EMS_EXTDLL, 12, 6, 194, 78, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        LTEXT           "Echo-Manager-DLL", 7801, 10, 63, 130, 8
+        ENTRYFIELD      "", 7802, 12, 49, 128, 8, ES_MARGIN
+        PUSHBUTTON      "~Cerca...", 7803, 143, 46, 40, 14
+        PUSHBUTTON      "C~onfigurazione...", 7804, 10, 26, 67, 14,
+                        WS_DISABLED
+        PUSHBUTTON      "Guida", 7805, 5, 5, 180, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_EMS_UPLINKS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_EMS_UPLINKS, 12, 6, 194, 119, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        LTEXT           "Uplinks", 7782, 5, 84, 45, 8
+        LISTBOX         7781, 5, 21, 81, 61, LS_NOADJUSTPOS
+        PUSHBUTTON      "Modifica...", 7783, 107, 56, 52, 14, WS_GROUP |
+                        WS_DISABLED
+        PUSHBUTTON      "~Cancella", 7784, 107, 34, 52, 14, WS_DISABLED
+        PUSHBUTTON      "Guida", 7787, 5, 5, 180, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_AREALISTSETTINGS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Configurazione lista aree", IDD_AREALISTSETTINGS, 12, 6, 315,
+            173, NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MAXBUTTON
+    BEGIN
+        NOTEBOOK        7071, 1, 0, 314, 172, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS | BKS_SPIRALBIND |
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_AREASETTINGS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Configurazione", IDD_AREASETTINGS, 17, 7, 325, 196, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR
+    BEGIN
+        NOTEBOOK        5621, 1, 0, 322, 194, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS |
+                        BKS_TABTEXTCENTER | BKS_SPIRALBIND | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_ECHOMGRSETTINGS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Impostazioni Echo-Manager", IDD_ECHOMGRSETTINGS, 12, 6, 268,
+            137, NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MAXBUTTON
+    BEGIN
+        NOTEBOOK        7761, 0, 0, 268, 137, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS | BKS_SPIRALBIND |
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_MLISTSETTINGS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Configurazione lista messaggi", IDD_MLISTSETTINGS, 12, 6, 295,
+            180, NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MAXBUTTON
+    BEGIN
+        NOTEBOOK        7211, 2, 0, 293, 179, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS | BKS_SPIRALBIND |
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_RENUMBER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Rinumera area", IDD_RENUMBER, 12, 6, 221, 81, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "Start", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6661, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        LTEXT           "", 6662, 8, 64, 202, 8
+        SLIDER          6663, 7, 32, 203, 21, SLS_READONLY | SLS_RIBBONSTRIP |
+                        SLS_PRIMARYSCALE2 | WS_GROUP | NOT WS_TABSTOP
+                        CTLDATA 12, 0, 10, 0, 20, 0
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+DLGTEMPLATE IDD_REPLYLIST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Alla risposta", IDD_REPLYLIST, 12, 73, 272, 73, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LISTBOX         5121, 5, 5, 204, 65, LS_NOADJUSTPOS | LS_HORZSCROLL |
+                        WS_GROUP
+        DEFPUSHBUTTON   "OK", DID_OK, 213, 48, 55, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 213, 30, 55, 14, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "Guida", 5122, 213, 12, 55, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_RXFOLDERSETTINGS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Scripts", IDD_RXFOLDERSETTINGS, 12, 6, 306, 151, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MAXBUTTON
+    BEGIN
+        NOTEBOOK        7541, 2, 0, 303, 151, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS | BKS_SPIRALBIND |
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_RXSETTINGS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Configurazione script", IDD_RXSETTINGS, 12, 6, 305, 142, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR
+    BEGIN
+        NOTEBOOK        7311, 0, 0, 305, 142, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS | BKS_SPIRALBIND |
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_SETUPOPTIONS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Installazione FleetStreet", IDD_SETUPOPTIONS, 21, 9, 320, 206,
+            NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE | NOT WS_SAVEBITS,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_MAXBUTTON
+    BEGIN
+        NOTEBOOK        5061, 0, 0, 318, 206, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS |
+                        BKS_STATUSTEXTCENTER | BKS_TABTEXTCENTER |
+                        BKS_SPIRALBIND | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TEMPLATE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Template di messagio", IDD_TEMPLATE, 12, 6, 331, 181, NOT
+            FS_DLGBORDER | FS_SIZEBORDER, FCF_SYSMENU | FCF_TITLEBAR |
+            FCF_MAXBUTTON
+    BEGIN
+        NOTEBOOK        6101, 1, 0, 328, 180, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS |
+                        BKS_STATUSTEXTCENTER | BKS_TABTEXTCENTER |
+                        BKS_SPIRALBIND | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_THRLISTSETTINGS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Configurazione lista threads", IDD_THRLISTSETTINGS, 12, 6, 279,
+            166, NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR
+    BEGIN
+        NOTEBOOK        7411, 1, 0, 278, 166, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS | BKS_SPIRALBIND |
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_NICKNAMES LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Nomi abbreviati", IDD_NICKNAMES, 8, 11, 206, 178, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | NOT WS_SAVEBITS, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       5306, 1, 20, 204, 157, CCS_SINGLESEL | CCS_READONLY |
+                        WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "OK", DID_OK, 2, 2, 27, 14, WS_GROUP
+        PUSHBUTTON      "~Aggiungi...", 5310, 32, 2, 50, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "~Modifica...", 5313, 85, 2, 45, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "~Cancella", 5311, 133, 2, 40, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5312, 176, 2, 29, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_PERSMAILOPT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Messaggi personali", IDD_PERSMAILOPT, 12, 6, 182, 85,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        AUTORADIOBUTTON "Tra messaggi ~nuovi", 7571, 6, 68, 151, 10,
+                        WS_GROUP | WS_TABSTOP
+        AUTORADIOBUTTON "Tra ~tutti i messaggi", 7572, 6, 57, 151, 10
+        AUTORADIOBUTTON "Cerca per tutti i no~mi", 7574, 6, 35, 151, 10,
+                        WS_GROUP | WS_TABSTOP
+        AUTORADIOBUTTON "Cerca per nome di ~default dell'area", 7575, 6, 24,
+                        168, 10
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 7576, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        CONTROL         "", 7573, 5, 50, 172, 1, WC_STATIC, SS_FGNDRECT |
+                        WS_GROUP | WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_ATTACHSTAT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Files allegati", IDD_ATTACHSTAT, 12, 6, 230, 104, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Guida", 6391, 49, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        CONTAINER       6392, 3, 21, 225, 81, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_READONLY | CCS_MINIRECORDCORE |
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TE_HEADER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_HEADER, 12, 6, 220, 132, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Header", 6131, 5, 46, 210, 73
+        MLE             "", 6133, 12, 49, 196, 61, MLS_HSCROLL | MLS_VSCROLL
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        GROUPBOX        "Sinonimo per ""Tutti""", 6134, 5, 20, 210, 24
+        PUSHBUTTON      "Guida", 6132, 5, 2, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+        ENTRYFIELD      "", 6135, 13, 25, 193, 8, ES_MARGIN
+    END
+END
+
+DLGTEMPLATE IDD_AL_SETTINGS_VIEW LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_AL_SETTINGS_VIEW, 12, 6, 223, 132, NOT FS_DLGBORDER |
+            NOT WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Visualizzazione", 7096, 5, 22, 210, 35
+        AUTORADIOBUTTON "~Descrizione area", 7097, 11, 36, 177, 10,
+                        WS_TABSTOP
+        AUTORADIOBUTTON "Area-~tag", 7098, 11, 25, 177, 10
+        PUSHBUTTON      "Guida", 7091, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_KLUDGEINFO LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Informazioni messaggio supplementari", IDD_KLUDGEINFO, 12, 6,
+            324, 95, NOT FS_DLGBORDER | FS_SIZEBORDER | NOT WS_SAVEBITS,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_MINBUTTON
+    BEGIN
+        MLE             "", 5481, 0, 20, 323, 75, MLS_READONLY | MLS_HSCROLL |
+                        MLS_VSCROLL | WS_GROUP
+        PUSHBUTTON      "Chiudi", DID_CANCEL, 6, 4, 50, 14, WS_GROUP
+        PUSHBUTTON      "~Copia", 5484, 59, 4, 46, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5483, 108, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        AUTOCHECKBOX    "Tieni in ~primo piano", 5482, 153, 6, 97, 10,
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_MSGLIST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Lista messaggi", IDD_MSGLIST, 27, 13, 326, 125, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MINBUTTON | FCF_MAXBUTTON
+    BEGIN
+        CONTROL         "", 5021, 0, 0, 326, 125, "MsgListBox", WS_GROUP |
+                        WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_SEARCH LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cerca", IDD_SEARCH, 12, 6, 184, 71, WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Testo da cercare", 8021, 6, 56, 51, 8
+        ENTRYFIELD      "", 8022, 8, 44, 167, 8, ES_MARGIN
+        AUTOCHECKBOX    "Considera ~ortografia", 8023, 6, 26, 119, 10
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP | WS_DISABLED
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 8024, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_TPLFOLDER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Template", IDD_TPLFOLDER, 12, 6, 232, 120, NOT FS_DLGBORDER |
+            FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR |
+            FCF_MINBUTTON | FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       7261, 0, 0, 232, 120, CCS_SINGLESEL |
+                        CCS_AUTOPOSITION | CCS_MINIRECORDCORE | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_UPLINK LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Uplink", IDD_UPLINK, 20, 13, 140, 77, WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Nome Echo-Manager", 7963, 6, 61, 88, 8
+        ENTRYFIELD      "", 7964, 8, 51, 123, 8, ES_MARGIN | WS_GROUP
+        LTEXT           "Password", 7961, 6, 36, 65, 8
+        ENTRYFIELD      "", 7962, 8, 25, 123, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 27, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 36, 4, 53, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 7969, 92, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_TOSSERPATHS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TOSSERPATHS, 12, 6, 226, 132, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Directory di default per tutti i files attaccati",
+                        6571, 5, 132, 210, 29
+        ENTRYFIELD      "", 6572, 12, 139, 194, 8, ES_MARGIN
+        GROUPBOX        "Lastread", 6567, 5, 24, 207, 38
+        SPINBUTTON      6569, 129, 41, 51, 12, SPBS_NUMERICONLY |
+                        SPBS_MASTER | SPBS_JUSTRIGHT | WS_GROUP
+        RTEXT           "Offset nel lastread-file", 6568, 13, 43, 111, 8
+        CTEXT           "Dovrebbe essere sempre 0. Attenzione!", 6570, 15,
+                        27, 185, 8
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00C80000L
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        GROUPBOX        "EchoToss.Log", 6562, 5, 94, 207, 38
+        AUTOCHECKBOX    "Crea ~ECHOTOSS-File", 6563, 10, 112, 139, 10,
+                        WS_GROUP
+        ENTRYFIELD      "", 6564, 12, 100, 194, 8, ES_MARGIN | WS_GROUP
+        GROUPBOX        "Path per ECHOMAIL.JAM/NETMAIL.JAM", 6565, 5, 64,
+                        207, 26
+        ENTRYFIELD      "", 6566, 12, 70, 194, 8, ES_MARGIN
+        PUSHBUTTON      "Guida", 6561, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_PRINTSETUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Imposta stampante", IDD_PRINTSETUP, 12, 6, 222, 139, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR | FCF_MAXBUTTON
+    BEGIN
+        NOTEBOOK        8041, 0, 0, 222, 139, BKS_BACKPAGESBR |
+                        BKS_MAJORTABRIGHT | BKS_ROUNDEDTABS | BKS_SPIRALBIND |
+                        WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_PS_BORDERS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_PS_BORDERS, 12, 9, 134, 86, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        RTEXT           "A sinistra", 8081, 12, 65, 34, 8
+        RTEXT           "A destra", 8082, 12, 53, 34, 8, NOT WS_GROUP
+        RTEXT           "In alto", 8083, 12, 41, 34, 8, NOT WS_GROUP
+        RTEXT           "In basso", 8084, 12, 29, 34, 8, NOT WS_GROUP
+        SPINBUTTON      8085, 53, 64, 48, 12, SPBS_READONLY | SPBS_MASTER |
+                        SPBS_JUSTRIGHT | WS_GROUP
+        SPINBUTTON      8086, 53, 52, 48, 12, SPBS_READONLY | SPBS_MASTER |
+                        SPBS_JUSTRIGHT
+        SPINBUTTON      8087, 53, 40, 48, 12, SPBS_READONLY | SPBS_MASTER |
+                        SPBS_JUSTRIGHT
+        SPINBUTTON      8088, 53, 28, 48, 12, SPBS_READONLY | SPBS_MASTER |
+                        SPBS_JUSTRIGHT
+        LTEXT           "cm", 8089, 106, 65, 20, 8
+        LTEXT           "cm", 8090, 106, 53, 20, 8, NOT WS_GROUP
+        LTEXT           "cm", 8091, 106, 41, 20, 8, NOT WS_GROUP
+        LTEXT           "cm", 8092, 106, 29, 20, 8, NOT WS_GROUP
+        PUSHBUTTON      "Guida", 8093, 5, 5, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_PS_FONTS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_PS_FONTS, 12, 6, 164, 93, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        LTEXT           "Header", 8101, 5, 73, 32, 8
+        LTEXT           "Testo", 8102, 5, 39, 32, 8
+        CONTROL         "", 8103, 5, 56, 152, 14, "FontDisplay", WS_GROUP |
+                        WS_VISIBLE
+        CONTROL         "", 8104, 5, 24, 152, 14, "FontDisplay", WS_GROUP |
+                        WS_VISIBLE
+        PUSHBUTTON      "Guida", 8105, 5, 5, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_PS_LIST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_PS_LIST, 12, 27, 170, 95, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        LTEXT           "Stampante", 8061, 5, 82, 67, 8
+        LISTBOX         8062, 5, 23, 155, 57
+        PUSHBUTTON      "~Configura...", 8063, 4, 5, 71, 14, WS_GROUP |
+                        WS_DISABLED
+        PUSHBUTTON      "Guida", 8064, 78, 5, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_PS_OUTPUT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_PS_OUTPUT, 12, 6, 174, 90, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        AUTOCHECKBOX    "Nome ~area", 8122, 5, 58, 137, 10, WS_GROUP | NOT
+                        WS_VISIBLE | WS_DISABLED
+        AUTOCHECKBOX    "~Data, ora", 8123, 5, 48, 137, 10, NOT WS_TABSTOP
+        AUTOCHECKBOX    "A~ttributi", 8124, 5, 38, 137, 10, NOT WS_TABSTOP
+        AUTOCHECKBOX    "Numero ~pagina", 8125, 5, 28, 137, 10, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "Guida", 8121, 5, 5, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_MODEMTYPES LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_MODEMTYPES, 12, 6, 225, 148, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        CONTAINER       6723, 12, 28, 119, 108, CCS_SINGLESEL | CCS_READONLY |
+                        CCS_MINIRECORDCORE | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        GROUPBOX        "Tipo modem", 6721, 5, 24, 210, 124, NOT WS_GROUP
+        LTEXT           "Modo", 6729, 137, 117, 49, 8
+        AUTORADIOBUTTON "Tipo bi~t", 6724, 137, 104, 68, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Tipo b~yte", 6725, 137, 94, 68, 10
+        LTEXT           "Nome nuovo", 6726, 134, 59, 76, 8
+        ENTRYFIELD      "", 6727, 136, 47, 72, 8, ES_MARGIN
+        DEFPUSHBUTTON   "~Modifica", 6728, 134, 28, 76, 14
+        PUSHBUTTON      "Guida", 6722, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_TOOLBARCONFIG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Toolbar", IDD_TOOLBARCONFIG, 12, 6, 263, 122, NOT FS_DLGBORDER |
+            FS_SIZEBORDER | WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR |
+            FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       8141, 0, 39, 131, 83, CCS_SINGLESEL | CCS_READONLY |
+                        CCS_MINIRECORDCORE | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTAINER       8142, 132, 39, 131, 83, CCS_SINGLESEL | CCS_READONLY |
+                        CCS_MINIRECORDCORE | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "<< ~Aggiungi", 8143, 107, 28, 48, 10, WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "~Cancella >>", 8144, 107, 19, 48, 10, WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 52, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "~Default", 8145, 104, 4, 40, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 8146, 147, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_AS_MSGBASE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_AS_MSGBASE, 8, 6, 234, 160, NOT FS_DLGBORDER |
+            WS_VISIBLE
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Formato base messaggi", 5661, 5, 107, 210, 48
+        AUTORADIOBUTTON "FTS *.~MSG", 5662, 17, 132, 114, 10, WS_GROUP |
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Squish (tm)", 5663, 17, 122, 114, 10
+        AUTORADIOBUTTON "~JAM", 5664, 17, 112, 114, 10
+        GROUPBOX        "Formato area", 5665, 5, 62, 210, 44
+        AUTORADIOBUTTON "~Netmail", 5666, 17, 86, 63, 10, WS_TABSTOP
+        AUTORADIOBUTTON "~Echomail", 5667, 17, 76, 63, 10
+        AUTORADIOBUTTON "~Locale", 5672, 17, 66, 63, 10
+        GROUPBOX        "Path area/nome file", 5668, 5, 24, 210, 37
+        ENTRYFIELD      "", 5669, 12, 35, 143, 8, ES_MARGIN
+        PUSHBUTTON      "~Cerca...", 5670, 162, 32, 45, 14
+        PUSHBUTTON      "Guida", 5671, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_REQ_SETPASS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Password", IDD_REQ_SETPASS, 12, 40, 154, 48, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Password", 8221, 4, 36, 55, 8
+        ENTRYFIELD      "", 8222, 6, 24, 142, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 8223, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_REQ_ADDLIST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Aggiungere lista file", IDD_REQ_ADDLIST, 15, 16, 173, 96,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "File", 8171, 3, 85, 27, 8
+        ENTRYFIELD      "", 8172, 5, 74, 120, 8, ES_MARGIN
+        PUSHBUTTON      "~Cerca...", 8173, 129, 71, 40, 14
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Numero nodo", 8174, 3, 61, 68, 8
+        ENTRYFIELD      "", 8175, 5, 51, 162, 8, ES_MARGIN
+        LTEXT           "Nome", 8176, 3, 39, 126, 8
+        ENTRYFIELD      "", 8177, 5, 29, 162, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_DISABLED
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 56, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 8178, 108, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_REQ_ADDFILE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Aggiungere file", IDD_REQ_ADDFILE, 12, 12, 185, 76, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "File", 8201, 4, 63, 20, 8
+        ENTRYFIELD      "", 8202, 6, 52, 173, 8, ES_MARGIN
+        LTEXT           "Password", 8203, 4, 36, 45, 8
+        ENTRYFIELD      "", 8204, 6, 26, 173, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP | WS_DISABLED
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 56, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 8205, 108, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_TE_QUOTE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_TE_QUOTE, 12, 6, 220, 103, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Lunghezza riga citazioni", 6115, 5, 58, 102, 33
+        SPINBUTTON      6116, 12, 65, 48, 12, SPBS_NUMERICONLY | SPBS_MASTER |
+                        SPBS_JUSTRIGHT
+        LTEXT           "Carattere", 6117, 62, 67, 39, 8, NOT WS_GROUP
+        GROUPBOX        "Lunghezza per l'unione", 6118, 111, 58, 104, 33
+        SPINBUTTON      6119, 119, 65, 48, 12, SPBS_NUMERICONLY |
+                        SPBS_MASTER | SPBS_JUSTRIGHT
+        LTEXT           "Carattere", 6120, 169, 67, 41, 8, NOT WS_GROUP
+        GROUPBOX        "Stile di citazione", 6111, 5, 20, 210, 35
+        AUTORADIOBUTTON "~AB>", 6112, 13, 35, 40, 10, WS_TABSTOP
+        AUTORADIOBUTTON "~>", 6113, 13, 25, 39, 10
+        RTEXT           "Carattere citazione", 6122, 94, 30, 60, 8
+        SPINBUTTON      6121, 157, 29, 28, 12, SPBS_READONLY | SPBS_MASTER |
+                        SPBS_JUSTLEFT | SPBS_JUSTRIGHT | SPBS_JUSTCENTER
+        PUSHBUTTON      "Guida", 6114, 5, 4, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_FINDTEXT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cerca", IDD_FINDTEXT, 16, 25, 255, 170, WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR
+    BEGIN
+        GROUPBOX        "Cosa", 5081, 3, 141, 247, 25
+        CONTROL         "", 5082, 6, 95, 239, 61, WC_COMBOBOX, CBS_DROPDOWN |
+                        WS_TABSTOP | WS_VISIBLE
+        GROUPBOX        "Quali aree", 5097, 3, 5, 121, 133
+        AUTORADIOBUTTON "Area a~ttuale", 5098, 7, 118, 77, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Tutte le a~ree", 5099, 7, 107, 77, 10, WS_TABSTOP
+        AUTORADIOBUTTON "T~ipi di area", 5107, 7, 96, 93, 10, WS_TABSTOP
+        AUTOCHECKBOX    "Aree di net~mail", 5101, 16, 84, 88, 10,
+                        WS_DISABLED
+        AUTOCHECKBOX    "Aree di ~echomail", 5102, 16, 73, 88, 10,
+                        WS_DISABLED
+        AUTOCHECKBOX    "Aree ~locali", 5103, 16, 62, 88, 10, WS_DISABLED
+        AUTOCHECKBOX    "Aree pri~vate", 5104, 16, 51, 88, 10, WS_DISABLED
+        AUTORADIOBUTTON "~definite", 5105, 7, 35, 57, 10, WS_TABSTOP
+        PUSHBUTTON      "Sele~zione...", 5108, 66, 35, 40, 11, WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        GROUPBOX        "Come", 5089, 129, 58, 122, 80
+        AUTORADIOBUTTON "Considera ~ortografia", 5090, 133, 120, 100, 10,
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Ignora ortografia", 5091, 133, 110, 103, 10,
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Appr., livello", 5092, 133, 100, 77, 10,
+                        WS_TABSTOP
+        SPINBUTTON      5095, 212, 100, 31, 12, SPBS_NUMERICONLY |
+                        SPBS_MASTER | WS_DISABLED
+        AUTORADIOBUTTON "Espressione re~golare", 5093, 133, 90, 100, 10,
+                        WS_TABSTOP
+        AUTORADIOBUTTON "Messaggi ~personali", 5094, 133, 80, 70, 10,
+                        WS_TABSTOP
+        PUSHBUTTON      "~Opzioni...", 5096, 206, 80, 42, 11, WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTORADIOBUTTON "Messaggi ~non inviati", 5100, 133, 70, 115, 10,
+                        WS_TABSTOP
+        AUTOCHECKBOX    "Messaggi non letti", 5109, 133, 60, 116, 10
+        GROUPBOX        "Dove", 5084, 130, 5, 61, 50
+        AUTOCHECKBOX    "~Da", 5085, 134, 37, 50, 10
+        AUTOCHECKBOX    "~A", 5086, 134, 27, 50, 10
+        AUTOCHECKBOX    "~Soggetto", 5087, 134, 17, 50, 10
+        AUTOCHECKBOX    "Te~sto", 5088, 134, 7, 50, 10
+        DEFPUSHBUTTON   "Start", DID_OK, 195, 36, 55, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 195, 21, 55, 14, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "Guida", 5083, 195, 6, 55, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_REQUESTER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Richiedere files", IDD_REQUESTER, 20, 24, 346, 183, NOT
+            FS_DLGBORDER | FS_SIZEBORDER, FCF_SYSMENU | FCF_TITLEBAR |
+            FCF_MAXBUTTON
+    BEGIN
+        LTEXT           "Files", 5272, 98, 172, 36, 8
+        CONTROL         "", 5273, 97, 34, 247, 138, "ExtListBox", WS_GROUP |
+                        WS_VISIBLE
+        PUSHBUTTON      "A~ggiungi...", 5274, 97, 20, 43, 12
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "Ce~rca...", 5275, 142, 20, 35, 12
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      ">>", 5279, 179, 20, 18, 12
+        PUSHBUTTON      "~Password...", 5276, 199, 20, 44, 12
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "~Tutti", 5277, 245, 20, 31, 12
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "~Nessuna", 5278, 278, 20, 35, 12
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Liste files", 5262, 2, 172, 62, 8
+        LISTBOX         5263, 2, 99, 90, 73, LS_NOADJUSTPOS | LS_HORZSCROLL |
+                        WS_GROUP
+        PUSHBUTTON      "~Aggiungi...", 5264, 2, 85, 48, 12, WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "~Cancella", 5265, 52, 85, 40, 12
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Richiedere da", 5266, 2, 73, 87, 8
+        ENTRYFIELD      "", 5267, 4, 62, 71, 8, ES_MARGIN
+        PUSHBUTTON      "?", 5280, 79, 60, 13, 12
+        LTEXT           "Area", 5268, 2, 50, 50, 8
+        CONTROL         "", 5269, 2, 11, 90, 38, WC_COMBOBOX,
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP |
+                        WS_VISIBLE
+        PUSHBUTTON      "A~ttributi", 5270, 2, 21, 47, 12
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~diretta", 5271, 51, 22, 41, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 61, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5261, 113, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_THREADSETUP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_THREADSETUP, 12, 6, 220, 153, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Visualizzazione", 6261, 5, 74, 210, 32
+        GROUPBOX        "Contenuto", 6262, 5, 24, 210, 47
+        AUTOCHECKBOX    "Nome mittente", 6264, 12, 87, 147, 10, WS_GROUP
+        AUTOCHECKBOX    "Visualizzazione ~compatta", 6268, 12, 77, 161, 10
+        AUTORADIOBUTTON "Tutti i soggetti", 6265, 12, 50, 162, 10, WS_GROUP |
+                        WS_TABSTOP
+        AUTORADIOBUTTON "Soggetti con messaggi non letti", 6266, 12, 40, 162,
+                        10
+        AUTORADIOBUTTON "Messaggi non letti", 6267, 12, 30, 162, 10
+        PUSHBUTTON      "Guida", 6263, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_SQUISHOPTIONS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_SQUISHOPTIONS, 13, 17, 220, 168, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "File di configurazione esterno", 5401, 5, 21, 207,
+                        144
+        AUTOCHECKBOX    "~leggere automaticamente", 5402, 11, 142, 127, 10
+        LTEXT           "Formato", 5406, 11, 127, 36, 8
+        LISTBOX         5407, 10, 47, 196, 79, LS_NOADJUSTPOS | WS_DISABLED
+        ENTRYFIELD      "", 5403, 11, 26, 147, 8, ES_MARGIN | WS_GROUP
+        LTEXT           "Path e nome del file", 5404, 10, 37, 88, 8
+        PUSHBUTTON      "~Cerca...", 5405, 162, 23, 45, 14
+        PUSHBUTTON      "Guida", 5396, 5, 5, 208, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS
+    END
+END
+
+DLGTEMPLATE IDD_HELPABOUT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Informazioni", IDD_HELPABOUT, 16, 16, 283, 150, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 121, 4, 40, 14
+        CTEXT           "Vers. 1.27.1", 5001, 111, 102, 60, 13, DT_VCENTER
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+        CTEXT           "FleetStreet ä un Message-Reader ed un editor per ba"
+                        "si di messaggio del tipo SQUISH (tm), JAM e FTS",
+                        5002, 13, 82, 255, 18, DT_WORDBREAK
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+                        PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+        CTEXT           "Open Source version", 5003, 8, 50, 269, 11,
+                        DT_WORDBREAK
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CTEXT           "Squish e MsgAPI sono copyright 1990, 1994 by Lanius"
+                        " Corporation", 5004, 4, 20, 276, 11, DT_VCENTER
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL         11, 5005, 57, 116, 21, 16, WC_STATIC, SS_BITMAP |
+                        WS_GROUP | WS_VISIBLE
+        CTEXT           "JAM(mbp) - Copyright 1993 Joaquim Homrighausen, And"
+                        "rew Milner, Mats Birch, Mats Wallin. ALL RIGHTS RES"
+                        "ERVED.", 5007, 13, 30, 258, 18, DT_WORDBREAK
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+DLGTEMPLATE IDD_NICKENTRY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Soprannomi", IDD_NICKENTRY, 12, 18, 188, 161, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        ENTRYFIELD      "", 6341, 67, 147, 112, 8, ES_MARGIN | WS_GROUP
+        ENTRYFIELD      "", 6342, 67, 129, 112, 8, ES_MARGIN
+        ENTRYFIELD      "", 6343, 67, 111, 89, 8, ES_MARGIN
+        PUSHBUTTON      "~?", 6357, 160, 109, 21, 12
+        ENTRYFIELD      "", 6344, 67, 94, 112, 8, ES_MARGIN
+        ENTRYFIELD      "", 6356, 67, 77, 112, 8, ES_MARGIN
+        RTEXT           "Soprannome", 6345, 5, 147, 56, 8
+        RTEXT           "Nome vero", 6346, 6, 129, 55, 8, NOT WS_GROUP
+        RTEXT           "Indirizzo", 6347, 22, 111, 39, 8, NOT WS_GROUP
+        RTEXT           "Soggetto", 6348, 5, 93, 56, 8, NOT WS_GROUP
+        RTEXT           "Prima riga", 6355, 10, 76, 48, 8, NOT WS_GROUP
+        AUTOCHECKBOX    "Non usare ~template", 6358, 6, 61, 168, 10,
+                        WS_GROUP
+        CONTROL         "", 6351, 1, 19, 185, 42, "AttribSelect", WS_GROUP |
+                        WS_TABSTOP | WS_VISIBLE
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP | WS_DISABLED
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6349, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_SU_OPENWIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_SU_OPENWIN, 12, 6, 222, 115, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Finestre da aprire", 8262, 5, 24, 210, 66
+        CONTROL         "Lista ~aree", 8263, 12, 71, 144, 10, WC_BUTTON,
+                        BS_AUTO3STATE | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "~Kludge-lines", 8264, 12, 61, 144, 10, WC_BUTTON,
+                        BS_AUTO3STATE | WS_VISIBLE
+        CONTROL         "Lista ~segnalibro", 8265, 12, 51, 144, 10,
+                        WC_BUTTON, BS_AUTO3STATE | WS_VISIBLE
+        CONTROL         "Lista ~argomenti", 8266, 12, 41, 144, 10, WC_BUTTON,
+                        BS_AUTO3STATE | WS_VISIBLE
+        CONTROL         "Lista m~essaggi", 8267, 12, 31, 144, 10, WC_BUTTON,
+                        BS_AUTO3STATE | WS_VISIBLE
+        PUSHBUTTON      "Guida", 8261, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_REPLY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Rispondi", IDD_REPLY, 54, 36, 167, 105, WS_VISIBLE, FCF_SYSMENU |
+            FCF_TITLEBAR
+    BEGIN
+        AUTORADIOBUTTON "Rispondi al ~mittente", 5141, 9, 91, 142, 10,
+                        WS_GROUP | WS_TABSTOP
+        AUTORADIOBUTTON "Rispondi al ~destinatario", 5142, 9, 78, 144, 10
+        AUTORADIOBUTTON "Rispondi al mittente ~originale", 5147, 9, 65, 154,
+                        10, WS_DISABLED
+        AUTOCHECKBOX    "Non ~unire linee", 5146, 9, 51, 131, 10, WS_GROUP
+        AUTOCHECKBOX    "Rispondi in un'a~ltra area", 5143, 9, 37, 143, 10
+        AUTOCHECKBOX    "Risposta senza ~citazione", 5145, 9, 24, 125, 10
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5144, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_AREALIST LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Seleziona area", IDD_AREALIST, 17, 5, 159, 166, NOT
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE | NOT WS_SAVEBITS,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_MINBUTTON | FCF_MAXBUTTON
+    BEGIN
+        CONTAINER       5041, 69, 17, 89, 149, CCS_SINGLESEL | WS_GROUP
+        CONTAINER       5044, 0, 17, 67, 149, CCS_SINGLESEL |
+                        CCS_MINIRECORDCORE | WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "OK", DID_OK, 5, 1, 35, 12, WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "Annulla", DID_CANCEL, 43, 1, 35, 12, NOT WS_TABSTOP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "~Scan", 5042, 81, 1, 35, 12, BS_NOPOINTERFOCUS |
+                        NOT WS_TABSTOP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "Guida", 5043, 119, 1, 35, 12, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+DLGTEMPLATE IDD_ATTRIB LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Attributi", IDD_ATTRIB, 23, 16, 248, 115, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        AUTOCHECKBOX    "~Privato", 5181, 5, 100, 81, 10, WS_GROUP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Crash", 5182, 5, 90, 81, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Ricevuto", 5183, 5, 80, 81, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Spedito", 5184, 5, 70, 81, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "File ~allegato", 5185, 5, 60, 81, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "In ~transito", 5186, 5, 50, 81, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Orfano", 5187, 5, 40, 81, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Cancella dopo l'invio", 5188, 5, 30, 81, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "L~ocale", 5189, 5, 20, 81, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Hold", 5190, 86, 100, 87, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Letto", 5191, 86, 90, 87, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~File request", 5192, 86, 80, 87, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "R~ichiesta di ricevuta di r.", 5193, 86, 70, 87, 10,
+                        NOT WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Ricevuta di ritorno", 5194, 86, 60, 87, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Au~dit Request", 5195, 86, 50, 87, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "File ~Update Request", 5196, 86, 40, 87, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Scanned", 5197, 86, 30, 87, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Archivia dopo l'invio", 5198, 86, 20, 87, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Diretto", 5199, 176, 100, 70, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Taglia file", 5200, 176, 90, 70, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Cancella file", 5201, 176, 80, 70, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Immediato", 5202, 176, 70, 70, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Gate-Routing", 5203, 176, 60, 70, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "Forza richiesta", 5204, 176, 50, 70, 10, NOT
+                        WS_TABSTOP | WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Tenere", 5206, 176, 40, 70, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        AUTOCHECKBOX    "~Monospaced", 5207, 170, 24, 70, 10, NOT WS_TABSTOP |
+                        WS_DISABLED
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 55, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5219, 107, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_CCLISTENTRY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Inserimento", IDD_CCLISTENTRY, 12, 20, 205, 115, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Nome", 6035, 7, 103, 114, 8
+        ENTRYFIELD      "", 6032, 9, 93, 184, 8, ES_MARGIN
+        LTEXT           "Indirizzo", 6036, 7, 80, 125, 8, NOT WS_GROUP
+        ENTRYFIELD      "", 6033, 9, 70, 154, 8, ES_MARGIN
+        PUSHBUTTON      "~?", 6037, 168, 68, 27, 12
+        LTEXT           "Prima riga", 6038, 7, 57, 73, 8, NOT WS_GROUP
+        ENTRYFIELD      "", 6039, 9, 46, 184, 8, ES_MARGIN
+        AUTOCHECKBOX    "Visualizza ~nome nelle righe CC", 6034, 7, 30, 177,
+                        10, WS_GROUP
+        DEFPUSHBUTTON   "OK", DID_OK, 6, 4, 40, 14, WS_GROUP | WS_DISABLED
+        PUSHBUTTON      "Annulla", DID_CANCEL, 49, 4, 54, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 6031, 106, 4, 40, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+    END
+END
+
+DLGTEMPLATE IDD_AS_ATTRIB LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_AS_ATTRIB, 12, 6, 234, 147, NOT FS_DLGBORDER |
+            WS_VISIBLE
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Attributi messaggio", 5681, 5, 78, 210, 61
+        CONTROL         "", 5682, 8, 81, 203, 49, "AttribSelect", WS_VISIBLE
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        GROUPBOX        "Opzioni speciali", 5686, 5, 24, 210, 52
+        AUTOCHECKBOX    "~Monospaced Font", 5683, 15, 56, 186, 10, WS_GROUP
+        AUTOCHECKBOX    "Permessi ~caratteri speciali", 5689, 15, 46, 137,
+                        10, NOT WS_TABSTOP
+        AUTOCHECKBOX    "~Linea di separazione", 5690, 15, 36, 122, 10, NOT
+                        WS_TABSTOP
+        AUTOCHECKBOX    "Non mettere in eviden~za", 5691, 15, 26, 179, 10,
+                        NOT WS_TABSTOP
+        PUSHBUTTON      "Guida", 5688, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+
+DLGTEMPLATE IDD_MSGOPT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", IDD_MSGOPT, 18, 9, 220, 153, NOT FS_DLGBORDER | NOT
+            WS_SAVEBITS
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Opzioni", 5362, 5, 24, 210, 125
+        AUTOCHECKBOX    "~Monospaced font", 5367, 12, 129, 193, 10, NOT
+                        WS_TABSTOP
+        AUTOCHECKBOX    "Usa ^aP~ID", 5365, 12, 115, 165, 10, NOT WS_TABSTOP
+        AUTOCHECKBOX    "Usa ~tearline in netmail", 5366, 12, 101, 165, 10,
+                        NOT WS_TABSTOP
+        AUTOCHECKBOX    "Usa ~origin in netmail", 5361, 12, 87, 165, 10, NOT
+                        WS_TABSTOP
+        AUTOCHECKBOX    "~Scan aree durante l'invio", 5368, 12, 73, 165, 10,
+                        NOT WS_TABSTOP
+        AUTOCHECKBOX    "S~uono in caso di posta personale", 5370, 12, 59,
+                        165, 10, NOT WS_TABSTOP
+        AUTOCHECKBOX    "Non mettere in ~evidenza", 5363, 12, 45, 136, 10,
+                        NOT WS_TABSTOP
+        AUTOCHECKBOX    "Crea ^a~FWDSUBJ", 5364, 12, 31, 141, 10, NOT
+                        WS_TABSTOP
+        PUSHBUTTON      "Guida", 5373, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END

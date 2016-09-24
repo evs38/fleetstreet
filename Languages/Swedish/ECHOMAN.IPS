@@ -1,0 +1,141 @@
+.***************************************************************************
+.* Echo-Manager - M”teshanterare
+.* 1996-07-22
+
+:h1 res=&PANEL_ECHOMANAGER..M”teshanteraren
+:p.I m”teshanteraren visas en lista ”ver de m”ten som finns tillg„nliga
+hos Din uppl„nk. Du kan anv„nda m”tenas till„ggsmenyer f”r att best„lla
+eller avbest„lla m”ten.
+:p.Anv„nd listans till„ggsmeny f”r att beg„ra en ny lista fr†n uppl„nken,
+f”r att s„tta alla m”ten "inaktiva" eller tillbaka p† "aktiva", eller f”r
+att ”ppna m”teshanterarens inst„llningar.
+:p.Klicka p† :hp2.OK:ehp2. f”r att skicka ett meddelande till uppl„nken.
+:p.Klicka p† :hp2.Abbrechen:ehp2. f”r att st„nga f”nstret utan att g”ra
+n†gra f”r„ndringar.
+
+:h2 res=&PANEL_EMS_UPLINKS..Uppl„nkar
+:p.Denna sida inneh†ller en lista ”ver de uppl„nkar f”r vilka det finns
+m”teslistor.
+:p.V„lj en uppl„nk och klicka p† :hp2.Žndra:ehp2. f”r att „ndra
+informationen om denna uppl„nks echomailhanterarprogram.
+:p.Klicka p† :hp2.Ta bort:ehp2. f”r att ta bort denna uppl„nks m”teslista.
+
+
+:h2 res=&PANEL_UPLINK..Uppl„nk
+:p.Denna sida inneh†ller information om Din uppl„nks
+m”teshanteringsprogram.
+:parml.
+:pt.:hp2.Namn p† m”teshanterare:ehp2.
+:pd.Det namn som ska anv„ndas f”r att anropa echomailhanterarprogrammet hos
+Din uppl„nk.
+:pt.:hp2.L”senord:ehp2.
+:pd.L”senord f”r m”teshanteraren.
+:eparml.
+
+:h2 res=&PANEL_EMS_EXTDLL..Ut”knings-DLL
+:p.N„r Du (av)best„ller m”ten hos din uppl„nk kan FleetStreet anropa
+rutiner i en DLL. Denna DLL kan l„gga till resp. ta bort det best„llda
+m”tet i tosserns konfigurationsfil.
+:parml.
+:pt.:hp2.Echomailhanterar-DLL:ehp2.
+:pd.Fullst„ndig s”kv„g och filnamn (inkluderande filnamnstill„gg) f”r den
+DLL som FleetStreet ska anv„nda.
+:pt.:hp2.S”k:ehp2.
+:pd.™ppnar en fildialogruta f”r att v„lja DLL.
+:pt.:hp2.Konfigurera:ehp2.
+:pd.St„ller in de parametrar som ska anv„ndas mad DLL&colon.en vid
+infogande eller borttagande av m”ten.
+:eparml.
+:p.
+Filen :hp2.FLTCF_SQ.DLL:ehp2., vilken medf”ljer FleetStreet, kan anv„ndas som
+ut”knings-DLL d† (och endast d†) Du anv„nder Squish som tosser tillsammans
+med en standard-SQUISH.CFG.
+
+
+:h2 hide res=&PANEL_NOUPLINKAREAS..Inga m”testitlar hittades
+:p.Meddelandet inneh†ller inga m”testitlar. Den tidigare listan kommer att
+beh†llas.
+
+:h2 hide res=&PANEL_NOACTIONS..Inga kommandon
+:p.Inga kommandon med enskilda m”ten „r beg„rda, och Du har inte heller beg„rt
+n†got globalt kommando.
+:p.Inget meddelande kommer att skapas.
+
+:h2 hide res=&PANEL_DOEXTRACT..H„mta m”testitlar
+:p.Meddelandet kommer att avs”kas efter en lista ”ver m”ten som finns
+hos Din uppl„nk. Om en s†dan lista hittas kommer den att ers„tta den
+tidigare.
+
+:h2 hide res=&PANEL_EM_DLLLOAD..DLL&colon.en kunde inte laddas
+:p.Ut”knings-DLL&colon.en kunde inte laddas.
+:p.M”jliga orsaker&colon.
+:ul compact.
+:li.Filen kunde inte hittas, t.ex p† grund av att filnamnet inte „r
+korrekt.
+:li.Filen „r inte en DLL.
+:li.Filens fullst„ndiga s”kv„g och namn har inte angivits.
+:li.Filen „r skadad.
+:eul.
+:p.
+Korrigera felet, eller kontakta DLL&colon.ens tillverkare.
+
+:h2 hide res=&PANEL_EM_DLLVER..DLL&colon.en kan inte anv„ndas
+:p.Ut”knings-DLL&colon.en skapades f”r en version av FleetStreet som inte
+„r kompatibel med den aktuella versionen. Kontakta DLL&colon.ens tillverkare
+och fr†ga efter en uppdatering.
+
+:h2 hide res=&PANEL_EM_DLLFUNC..Ingen ut”knings-DLL
+:p.Den angivna DLL&colon.en „r inte en FleetStreet-ut”knings-DLL.
+
+:h2 hide res=&PANEL_EM_DLLINT..Internt fel i DLL&colon.en
+:p.Ut”knings-DLL&colon.en arbetar inte korrekt. Kontakta DLL&colon.ens
+tillverkare.
+
+:h2 hide res=&PANEL_EM_CFGNOTF..Konfigurationsfilen kunde inte hittas
+:p.Ut”knings-DLL&colon.en kunde inte hitta eller ”ppna tosserns
+konfigurationsfil.
+
+:h2 hide res=&PANEL_EM_INIT..Parametrar inte angivna
+:p.Ut”knings-DLL&colon.en kan inte anv„ndas f”rr„n Du har konfigurerat
+den. ™ppna inst„llningarna f”r m”teshanteraren, g† till
+:hp2.Ut”knings-DLL:ehp2.-sidan och klicka p†
+:hp2.Konfigurera:ehp2.-knappen.
+
+:h2 hide res=&PANEL_EM_CFGREAD..Fel vid l„sning av konfigurationsfilen
+:p.Ut”knings-DLL&colon.en kan inte l„sa konfigurationsfilen.
+
+:h2 hide res=&PANEL_EM_CFGWRITE..Fel vid skrivning av konfigurationsfilen
+:p.Ut”knings-DLL&colon.en kan inte „ndra konfigurationsfilen. Filen kan
+eventuellt vara skrivskyddad, eller befinna sig p† ett skrivskyddat media.
+
+:h2 hide res=&PANEL_EM_CFGFORMAT..Ogiltigt format p† konfigurationsfilen
+:p.Ut”knings-DLL&colon.en kan inte bearbeta tosserns konfigurationsfil,
+eftersom den har ett inkompatibelt format.
+:p.Kontakta DLL&colon.ens tillverkare och fr†ga efter en uppdatering.
+
+:h2 hide res=&PANEL_EM_CFGLINKED..M”te redan p†slaget
+:p.Vid f”rs”k att l„gga in m”tet i tosserns konfigurationsfil, fanns m”tet
+redan d„r. Det ska egentligen aldrig ske (n†ja!).
+
+:h2 hide res=&PANEL_EM_CFGUNLINKED..M”te inte p†slaget
+:p.Vid f”rs”k att ta bort m”tet fr†n tosserns konfigurationsfil kunde inte
+m”tet hittas. Det ska egentligen aldrig ske (men tydligen gjorde det det i
+alla fall!?).
+
+:h2 hide res=&PANEL_EM_NOPASS..Namn eller l”senord saknas
+:p.F”r att skapa ett meddelande till uppl„nken kr„vs ett namn och ett
+l”senord. En av dessa tv† (eller b†da) har inte angivits f”r den aktuella
+uppl„nken.
+:p.™ppna m”teshanterarens inst„llningar och skriv in beh”vliga data f”r
+uppl„nken.
+
+:h2 hide res=&PANEL_DELUPLINK..Ta bort uppl„nk
+:p.Klicka p† :hp2.Ja:ehp2. f”r att ta bort den valda uppl„nken. Klicka p†
+:hp2.Nej:ehp2. om Du vill beh†lla data f”r uppl„nken.
+
+:h2 hide res=&PANEL_EM_APPENDAREAS..L„gga till m”ten
+:p.Det finns redan en m”teslista f”r denna uppl„nk.
+:p.Klicka p† :hp2.Ja:ehp2. f”r att l„gga till den nya listan till den gamla.
+:p.Klicka p† :hp2.Nej:ehp2. f”r att ers„tta den gamla m”teslistan med den nya.
+:p.Klicka p† :hp2.Avbryt:ehp2. f”r att avbryta importeringen.
+

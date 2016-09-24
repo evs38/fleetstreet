@@ -1,0 +1,356 @@
+.* ************************ Area-Liste *************************************
+
+:h2 id=arealist res=&PANEL_AREALIST..Lista delle aree
+:p.
+La lista delle aree contiene tutte le aree messaggi accessibili da FleetStreet.
+E' possibile passare ad una di queste aree, crearne, cancellarne e mettere gli
+attributi di aree specifiche.
+:p.
+Bisogna fare un click sull'area in questione oppure premere :hp2.ENTER:ehp2. per
+passarci.
+:p.
+Bisogna premere :hp2.Scan:ehp2. per avviare lo scan di tutte le aree.
+
+:h2 hide res=&PANEL_DELETEAREA..Cancella area
+:p.Hai deciso di cancellare l'area selezionata. Premendo :hp2.S:ehp2.
+l'area in questione viene cancellata dalla lista. I files dati della base
+messaggi per• restano sul disco fisso in modo da poter essere riutilizzati.
+
+:p.Bisogna premere :hp2.No:ehp2. nel caso che non desideri cancellare l'area.
+
+:h2 hide res=&PANEL_HAVEAREA..Area gi… definita
+:p.Esiste gi… un'area con questo areatag. Areatags devono essere univoci.
+Bisogna selezionare un altro areatag per l'area in questione.
+
+:h2 hide res=&PANEL_NOAREATAG..Nessun areatag
+:p.Non hai indicato un areatag per l'area nuova oppure per un area da modificare.
+Ogni area deve possedere un areatag univoco per identificare l'area in questione.
+
+:h2 hide res=&PANEL_NOPATHFILE..Nessun nome path
+:p.Non hai indicato il path e/o il nome file per un'area nuova o da modificare.
+
+
+.***************************************************************************
+.* Area-Setup                                                              *
+.***************************************************************************
+
+:h2 res=&PANEL_AREASETTINGS..Configurazione aree
+:p.Soggetti&colon.
+:p.:link reftype=hd refid=gensett.Configurazione generale:elink.
+:p.:link reftype=hd refid=mbase.Configurazione della base messaggi:elink.
+:p.:link reftype=hd refid=areaattrib.Attributi delle aree:elink.
+
+:h3 id=gensett res=&PANEL_AS_GENERAL..Configurazione generale
+:p.Sotto questa voce vengono inseriti la descrizione, l'areatag e l'indirizzo di
+default per l'area in questione. Nel caso che l'areatag non sia modificabile l'area
+in questione Š stata configurata nel file di configurazione esterno: bisogna modificare
+l'areatag in questo file.
+
+:h3 id=mbase res=&PANEL_AS_MSGBASE..Configurazione della base messaggi
+:parml.
+:pt.:hp2.Tipo di base messaggi:ehp2.
+:pd.Bisogna indicare il tipo di base messaggi sul disco fisso.
+:pt.:hp2.Tipo area:ehp2.
+:pd.Bisogna indicare come FleetStreet deve trattare l'area.
+:pt.:hp2.Path area/Filename:ehp2.
+:pd.Bisogna indicare dove si salvano i messaggi sul disco fisso. Per aree
+*.MSG bisogna inserire il path alla directory che contiene i files *.MSG.
+Per aree del tipo Squish bisogna indicare il path e il nome (otto lettere) degli
+area files.
+:eparml.
+:p.Nel caso che queste impostazioni non siano modificabili, l'area Š stata letta
+dal file di configurazione di tosser: bisogna modificare la configurazione nel file
+di cui sopra.
+
+:h3 id=areaattrib res=&PANEL_AS_ATTRIB..Attributi delle aree
+:p.Ogni area messaggi pu• ottenere alcuni attributi di messaggio prestabiliti, oltre
+ad altre impostazioni che riguardano l'area in questione.
+:parml.
+:pt.:hp2.Attributi di messaggi:ehp2.
+:pd.Messaggi inseriti in questa area possiedono come configurazione prestabilita
+gli attributi indicati. Si veda :link refid=attrib reftype=hd.Attributi di messaggi:elink.
+per una spiegazione dei diversi attributi.
+:pt.:hp2.Monospaced Font:ehp2.
+:pd.The alternative font is generally used for this area.
+:pt.:hp2.Permessi caratteri speciali:ehp2.
+:pd.Indica che l'uso di caratteri speciali (valori ASCII superiori a 127) Š concesso
+nell'area in questione. Nel caso che segni speciali non siano permessi, FleetStreet
+li trasforma in segni concessi. Si veda :link reftype=hd refid=transtbl.
+"Tabella di traduzione":elink..
+:pt.:hp2.Linea di separazione:ehp2.
+:pd.Viene inserita una linea di separazione sotto l'area in questione.
+:pt.:hp2.Non mettere in evidenza:ehp2.
+:pd.Sottolineature (_) e stelline (*) vengono interpretate come scritte nel testo,
+e non considerate come indicazioni per testo sottolineato oppure scritto con
+caratteri grassi. Questa opzione pu• diventare utile in aree echo in cui l'algoritmo
+fallisce spesso (per esempio in aree echo dedicate ai programmatori con molto
+codice sorgente).
+:eparml.
+
+:h4 id=transtbl.Tabella di traduzione
+:p.Nel caso che segni speciali (8-Bit-ASCII) non siano concessi in un'area,
+FleetStreet usa la tabella di traduzione successiva per trasformare i segni
+speciali in segni permessi durante la scrittura.&colon.
+:table cols='3 10'.
+:row.
+:c.&aa.
+:c.a
+:row.
+:c.&ac.
+:c.a
+:row.
+:c.&ae.
+:c.ae
+:row.
+:c.&Ae.
+:c.Ae
+:row.
+:c.&ag.
+:c.a
+:row.
+:c.&aelig.
+:c.ae
+:row.
+:c.&AElig.
+:c.Ae
+:row.
+:c.&Alpha.
+:c.a
+:row.
+:c.&angstrom.
+:c.A
+:row.
+:c.&ao.
+:c.a
+:row.
+:c.&Ao.
+:c.A
+:row.
+:c.&Beta.
+:c.ss
+:row.
+:c.&cc.
+:c.c
+:row.
+:c.&Cc.
+:c.C
+:row.
+:c.&cdqf.
+:c.>>
+:row.
+:c.&degree.
+:c.deg
+:row.
+:c.&divide.
+:c./
+:row.
+:c.&dot.
+:c..
+:row.
+:c.&darrow.
+:c.|
+:row.
+:c.&ea.
+:c.e
+:row.
+:c.&Ea.
+:c.E
+:row.
+:c.&ec.
+:c.e
+:row.
+:c.&ee.
+:c.e
+:row.
+:c.&eg.
+:c.e
+:row.
+:c.&fnof.
+:c.f
+:row.
+:c.&house.
+:c.
+:row.
+:c.&ia.
+:c.i
+:row.
+:c.&ic.
+:c.i
+:row.
+:c.&ie.
+:c.i
+:row.
+:c.&ig.
+:c.i
+:row.
+:c.&inve.
+:c.!
+:row.
+:c.&invq.
+:c.?
+:row.
+:c.&larrow.
+:c.<-
+:row.
+:c.&lnot.
+:c.-|
+:row.
+:c.&mu.
+:c.mc
+:row.
+:c.&nt.
+:c.n
+:row.
+:c.&Nt.
+:c.N
+:row.
+:c.&oa.
+:c.o
+:row.
+:c.&oc.
+:c.o
+:row.
+:c.&og.
+:c.o
+:row.
+:c.&oe.
+:c.oe
+:row.
+:c.&Oe.
+:c.Oe
+:row.
+:c.&frac14.
+:c.1/4
+:row.
+:c.&frac12.
+:c.1/2
+:row.
+:c.&odqf.
+:c.<<
+:row.
+:c.&plusmin.
+:c.+-
+:row.
+:c.&Lsterling.
+:c.PS
+:row.
+:c.&sup2.
+:c.qd
+:row.
+:c.&ua.
+:c.u
+:row.
+:c.&uc.
+:c.u
+:row.
+:c.&ug.
+:c.u
+:row.
+:c.&ue.
+:c.ue
+:row.
+:c.&Ue.
+:c.Ue
+:row.
+:c.&aus.
+:c.a
+:row.
+:c.&ous.
+:c.o
+:row.
+:c.&ye.
+:c.y
+:etable.
+
+
+.* ************************* Area list settings ****************************
+
+:h2 res=&PANEL_AREALISTSETT..Configurazione delle liste delle aree
+:p.Seleziona una pagina&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_ALS_VIEW..Visualizzazione di default:elink.
+:li.:link reftype=hd res=&PANEL_ALS_COLORS..Colori:elink.
+:esl.
+
+:h3 res=&PANEL_ALS_VIEW..Ansicht
+:p.Opzioni di visualizzazione&colon.
+:parml.
+:pt.:hp2.Descrizione dell'area:ehp2.
+:pd.Si visualizzano nella lista le descrizioni dell'area.
+:pt.:hp2.Area-tag:ehp2.
+:pd.Si visualizzano nella lista le area-tags.
+:eparml.
+
+
+:h3 res=&PANEL_ALS_COLORS..Colori
+:p.Si possono selezionare diversi colori per i diversi tipi di aree.
+:p.Bisogna selezionare il colore di base con il cerchio dei colori. Il colore
+attuale viene messo in evidenza con un mirino.
+:p.La luminosit… del colore si imposta con lo slider a destra del cerchio dei
+colori.
+
+
+.***************************************************************************
+.* Squish-Parameter                                                        *
+.***************************************************************************
+
+:h2 res=&PANEL_SQPARAMS..Parametri della base messaggi Squish
+:p.Ci sono tre parametri che stabiliscono l'amministrazione dei files della
+base messaggi di Squish da parte della Squish-API.
+:parml.
+:pt.:hp2.Numero massimo di messaggi:ehp2.
+:pd.Numero massimo di messaggi che si possono salvare nell'area in questione.
+Nel caso che si tossino messaggi ulteriori in questa area oppure si scrivano messaggi
+nuovi, si cancellano automaticamente messaggi pi— vecchi, per evitare che si superi
+il limite stabilito da questo valore.
+:pt.:hp2.Numero dei messaggi saltati:ehp2.
+:pd.Nel caso che si cancellino messaggi come descritto sopra, all'inizio della
+base messaggi si salta il numero di messaggi stabilito sotto questa voce .
+:p.Attenzione&colon. Se si stabilisce un valore diverso da zero, bisogna
+indicare un numero massimo di messaggi.
+:pt.:hp2.Numero giorni per cui tenere messaggi:ehp2.
+:pd.Indica i giorni per cui si tengono messaggi.
+Messaggi pi— vecchi del numero di giorni prestabilito si cancellano quando si
+usa SQPACK.
+:eparml.
+:p.
+Mettendo tutti i numeri a 0, nessun messaggio viene cancellato automaticamente.
+
+:h2 hide res=&PANEL_ERRREADSQPARAM..Errore Lettura Parametri
+:p.Non Š stato possibile leggere i parametri dell'area Squish. Ci possono essere
+le seguenti cause&colon.
+:ul.
+:li.Un altro processo usa il file in modo esclusivo
+:li.L'utente non ha diritto ad accedere il file
+:li.Il file non esiste
+:eul.
+
+:h2 hide res=&PANEL_ERRWRITESQPARAM..Errore Scrittura Parametri
+:p.Non Š stato possibile scrivere i parametri dell'area Squish. Ci possono essere
+le seguenti cause&colon.
+:ul.
+:li.Un altro processo usa il file in modo esclusivo
+:li.Non ha diritto ad accedere il file
+:li.Il file non esiste
+:li.Il file Š protetto da scrittura
+:eul.
+
+:h2 hide res=&PANEL_SQPARAMVALUES..Parametri non validi
+:p.Mettendo :hp2."Numero messaggi saltati":ehp2. ad un valore diverso da
+0 setzen, bisogna anche mettere:hp2."Numero massimo messaggi":ehp2.
+ad un valore diverso da 0.
+
+.***************************************************************************
+.* Area-Renumber                                                           *
+.***************************************************************************
+
+:h2 res=&PANEL_RENUMBER..Renumerare area
+:p.*.Durante l'uso le aree *.MSG si "spezzano" pi— o meno. E' perci• opportuno renumerarle
+di tanto in tanto, dopodich‚ i Message-Files ricominciano da 1 ed esse risultano numerate in ordine.
+:parml.
+:pt.:hp2.Start:ehp2.
+:pd.Avvia la renumerazione dell'area
+:pt.:hp2.Annulla:ehp2.
+:pd.Non renumerare l'area
+:eparml.
+

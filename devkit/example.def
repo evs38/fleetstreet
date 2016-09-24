@@ -1,0 +1,15 @@
+; Definitions file for EXAMPLE.C
+LIBRARY EXAMPLE INITINSTANCE TERMINSTANCE
+PROTMODE
+DATA MULTIPLE NONSHARED
+
+; Export our functions
+
+EXPORTS
+   QueryVersion
+   QueryParamBlockSize
+   SetupParams
+   AddEcho
+   RemoveEcho
+
+

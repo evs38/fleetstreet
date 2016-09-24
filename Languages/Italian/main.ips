@@ -1,0 +1,628 @@
+.im languages\help.names
+.***************************************************************************
+.***************************************************************************
+.*    FLTSTRT.IPF, Helpfile per Fleet Street                               *
+.***************************************************************************
+.***************************************************************************
+:userdoc.
+:docprof toc=1234.
+
+.***************************************************************************
+.* Help-panello della finestra principale                                  *
+.***************************************************************************
+
+:h1 res=&PANEL_MAIN..FleetStreet
+:p.
+:lines align=center.
+Benvenuti da
+
+:font facename='Tms Rmn' size=24x18.:color fc=red.
+FleetStreet 1.27.1
+:font facename=default size=0x0.:color fc=default.
+:elines.
+:p.
+FleetStreet ä un editor FTS compatibile di messaggi per OS/2 2.x PM.
+FleetStreet puï trattare *.MSG e basi di messaggio Squish e JAM.
+:p.
+Argomenti&colon.
+:ul.
+:li.:link reftype=launch object='view.exe' data='FLTSTRT.INF'.Istruzioni per l'utente:elink.
+:eul.
+:i1 id=squish.Squish(tm)
+
+.****************************************************************
+.* Guida per tasti
+.****************************************************************
+
+:h1 res=&PANEL_KEYS..Guida per tasti
+:p.Ci sono alcune combinazioni di tasti, i quali dipendono dal fatto se si
+leggono o scrivono messaggi.
+:ul.
+:li.:link reftype=hd refid=genkeys.Tasti generalmente disponibili:elink.
+:li.:link reftype=hd refid=readkeys.Combinazioni di tasti durante la lettura:elink.
+:li.:link reftype=hd refid=editkeys.Combinazioni di tasti durante la scrittura:elink.
+:eul.
+
+:h2 id=genkeys.Tasti generalmente disponibili
+:p.Le combinazioni di tasti successive sono generalmente disponibili&colon.
+:parml compact tsize=20 break=none.
+:pt.Alt-X
+:pd.Termina FleetStreet
+:pt.F1
+:pd.Guida
+:pt.Ctrl-F1
+:pd.Guida sulla tastiera
+:pt.Ctrl-D
+:pd.Modifica nome ed indirizzo attuali
+:pt.Ctrl-W
+:pd.Apri Nodelist-Browser
+:pt.Ctrl-K
+:pd.Visualizza Kludge-Lines
+:eparml.
+
+:h2 id=readkeys.Combinazioni di tasti durante la lettura di messaggi
+:p.Le combinazioni di tasti successive sono disponibili&colon.
+:parml compact tsize=20 break=none.
+:pt.Ctrl-R
+:pd.Risposta al mittente
+:pt.Ctrl-Shift-R
+:pd.Scrivi risposta al mittente, non unire righe
+:pt.Ctrl-N
+:pd.Risposta al mittente in un'area diversa
+:pt.Ctrl-Shift-N
+:pd.Risposta al mittente, perï in un'area diversa, non unire righe
+:pt.Ctrl-E
+:pd.Modifica messaggio
+:pt.Ctrl-A
+:pd.Seleziona area
+:pt.Ctrl-B
+:pd.Apri finestra di segnalibro
+:pt.Ctrl-L
+:pd.Lista messaggi
+:pt.Shift-PrintScr
+:pd.Stampa messaggio
+:pt.Ctrl-T
+:pd.Lista threads
+:pt.Ctrl-M
+:pd.Sposta messaggio
+:pt.Ctrl-C
+:pd.Copia messaggio
+:pt.Ctrl-F
+:pd.Forward messaggio
+:pt.Ctrl-Q
+:pd.Richiedi files
+:pt.Ctrl-X
+:pd.Esporta messaggio
+:pt.Ins
+:pd.Inserisci messaggio nuovo
+:pt.Del
+:pd.Cancella messaggio
+:pt.Ctrl-I
+:pd.Cerca messaggio
+:pt.Ctrl-O
+:pd.Aggiungi il mittente del messaggio attuale al lista dei nomi abbreviati
+:pt.Ctrl-Z
+:pd.Aggiungi il mittente del messaggio attuale ad una lista di carbon copy
+:pt.Cursor left
+:pd.Visualizza messaggio precedente
+:pt.Cursor right
+:pd.Visualizza messaggio successivo
+:pt.Ctrl-Cursor left
+:pd.Passa alla risposta precedente
+:pt.Ctrl-Cursor right
+:pd.Passa alla risposta successiva
+:pt.Ctrl-Home
+:pd.Passa al primo messaggio dell'area in questione
+:pt.Ctrl-End
+:pd.Passa all'ultimo messaggio dell'area in questione
+:pt.Shift-Home
+:pd.Passa al messaggio che ä stato esportato come ultimo da Squish
+:pt.Shift-Right
+:pd.Passa all'area successiva di cui ä stato fatto uno scan, e la quale contiene messaggi nuovi
+:pt.SPACE
+:pd.Segna messaggio attuale/togli segno
+:pt.Ctrl-P
+:pd.Segna tutti i messaggi come "letti"
+.* @@
+:pt.Ctrl-J
+:pd.Toggle primary and alternative font
+:pt.Ctrl-H
+:pd.Toggle highlighting
+:eparml.
+
+:h2 id=editkeys.Combinazioni di tasti durante la scrittura
+:p.Le combinazioni di tasti successive sono disponibili&colon.
+:parml compact tsize=20 break=none.
+:pt.Ctrl-Y, Ctrl-Backspace
+:pd.Cancella riga attuale
+:pt.Alt-Backspace
+:pd.Annulla l'ultima modifica
+:pt.Ctrl-S
+:pd.Salva messaggio
+:pt.Ctrl-I
+:pd.Importa file
+:pt.Ctrl-X
+:pd.Manda messaggio in alcune aree
+:pt.Ctrl-C
+:pd.Manda copie ad altri
+:pt.F2...F12
+:pd.Esegui macro di tastiera
+:pt.Esc
+:pd.Interrompi inserzione
+:pt.Ctrl-A, Ctrl-Shift-F
+:pd.Modifica attributi del messaggio
+:pt.Ctrl-Shift-K
+:pd.Metti l'attributo "Kill/Sent"
+:pt.Ctrl-Shift-C
+:pd.Metti l'attributo "Crash"
+:pt.Ctrl-Shift-A
+:pd.Metti l'attributo "File attached"
+:pt.Ctrl-Shift-R
+:pd.Metti l'attributo "File request"
+:pt.Ctrl-Shift-P
+:pd.Metti l'attributo "Privato"
+:pt.Ctrl-Shift-H
+:pd.Metti l'attributo "Hold"
+:pt.Ctrl-Shift-D
+:pd.Metti l'attributo "Direct"
+.* @@
+:pt.Ctrl-J
+:pd.Toggle primary and alternative font
+:eparml.
+
+.***************************************************************************
+.* Help-Panels des Menues                                                  *
+.***************************************************************************
+
+.im languages\italian\menu.ips
+
+
+.***************************************************************************
+.* Setup                                                                   *
+.***************************************************************************
+
+.im languages\italian\setup.ips
+.im languages\italian\psetup.ips
+
+.im languages\italian\echoman.ips
+
+.***************************************************************************
+.* Template-Setup                                                          *
+.***************************************************************************
+
+.im languages\italian\template.ips
+
+
+.***************************************************************************
+.* Carbon-Copy-Listen                                                      *
+.***************************************************************************
+
+.im languages\italian\ccopy.ips
+
+
+.***************************************************************************
+.* Help-Panels der Dialoge                                                 *
+.***************************************************************************
+
+:h1.Dialoghi
+
+.***************************************************************************
+.* Message-Attribute                                                       *
+.***************************************************************************
+
+:h2 id=attrib res=&PANEL_ATTRIB..Attributi
+:p.Bisogna mettere gli attributi per questo messaggio.
+:p.Descrizione dettagliata degli attributi di messaggio&colon.
+:parml.
+:pt.:hp2.Privato:ehp2.
+:pd.Questo attributo si mette se il messaggio ä di carattere privato, cioä
+deve essere letto solo dal destinatario. Attenzione: questo attributo ha
+importanza esclusivamente per netmail. Nella gran parte delle aree di echomail
+messaggi privati non sono ammessi. Anche se si usa l'attributo in questione
+nelle aree echomail, tutti saranno capaci di leggere il messaggio.
+:pt.:hp2.Crash:ehp2.
+:pd.Il messaggio viene inviato direttamente al sistema indirizzato, cioä non
+viene routato attraverso il proprio uplink. Possibilimente il mailer farÖ una
+chiamata per consegnare il messaggio.
+:pt.:hp2.Ricevuto:ehp2.
+:pd.Si tratta di un messaggio personale giÖ letto.
+:pt.:hp2.Inviato:ehp2.
+:pd.Il messaggio ä stato inviato al uplink.
+:pt.:hp2.File attaccato:ehp2.
+:pd.La riga del soggetto contiene il nome di un file da inviare al destinatario,
+insieme con il messaggio. Combina questo attributo sempre con l'attributo "crash",
+dato che la maggioranza dei sisteme non permette il routing di un file.
+:pt.:hp2.Di transito:ehp2.
+:pd.Il messaggio non ä indirizzato al tuo sistema e non deriva dal tuo sistema.
+Invece viene routato ad un altro sistema. La soluzione migliore sarÖ, non modificare
+questo attributo.
+:pt.:hp2.Orfano:ehp2.
+:pd.L'indirizzo del destinatario ä sconosciuto oppure il sistema destinatario ä
+elencato come "hold" oppure "down" nella nodelist. La soluzione sarÖ, non modificare
+questo attributo.
+:pt.:hp2.Cancella dopo l'invio:ehp2.
+:pd.Il messaggio viene cancellato da Squish dopo la compattazione.
+:pt.:hp2.Locale:ehp2.
+:pd.Il messaggio ä stato inserito localmente, cioä da te.
+:pt.:hp2.Hold:ehp2.
+:pd.Il messaggio non viene inviato.
+:pt.:hp2.File Request:ehp2.
+:pd.La linea del soggetto consiste di nomi di files da richiedere dal sistema
+destinatario. Il tosser utilizzato ne crea un request-file, appena si compattano i messaggi.
+L'attributo in questione puï essere usato esclusivamente nelle aree di netmail.
+:pt.:hp2.Richiesta di ricevuta di ritorno:ehp2.
+:pd.Indica che si desidera una conferma dell'arrivo del messaggio presso il destinatario.
+:pt.:hp2.Conferma:ehp2.
+:pd.Questo messaggio rappresenta una tale conferma di arrivo.
+:pt.:hp2.Audit Request:ehp2.
+:pd.Questo attributo viene usato da SEAdog. Conviene non modificare questo attributo.
+:pt.:hp2.File Update Request:ehp2.
+:pd.Come File-Request, tranne che i files si trasmettono esclusivamente se sono
+pió recenti di quelli giÖ esistenti sul tuo sistema.
+:pt.:hp2.Archiva dopo l'invio:ehp2.
+:pd.Il messaggio viene spostato in un'altra area dopo essere stato tossato.
+:pt.:hp2.Diretto:ehp2.
+:pd.Il messaggio viene inviato direttamente al destinatario (non routato).
+:pt.:hp2.Taglia file:ehp2.
+:pd.Files attaccati vengono tagliati dopo l'invio (la lunghezza viene messa a 0).
+:pt.:hp2.Cancella file:ehp2.
+:pd.Files attaccati vengono cancellati dopo l'invio.
+:pt.:hp2.Immediato:ehp2.
+:pd.Il messaggio viene inviato direttamente al destinatario (non routato). Il
+messaggio viene inviato il pió presto possibile.
+:pt.:hp2.Gate-Routing:ehp2.
+:pd.Il messaggio viene routato attraverso un Gateway-Node.
+:pt.:hp2.Chiamata forzata:ehp2.
+:pd.Chiamata forzata.
+:pt.:hp2.Hub-Routing:ehp2.
+:pd.Il messaggio viene routato attraverso il tuo Hub-Node.
+:pt.:hp2.Salvare:ehp2.
+:pd.Il messaggio non viene cancellato durante la compattazione dell'area. :hp2.Attenzione&colon.:ehp2.
+Non funziona con SqPack!
+:pt.:hp2.Monospaced:ehp2.
+:pd.Il messaggio viene visualizzato durante la lettura con caratteri non proporzionali.
+:eparml.
+:i1 id=message.Messaggio
+:i2 refid=message.Attributi
+
+
+:h2 res=&PANEL_REPLY..Reply
+:p.E' possibile rispondere al mittente o al destinatario del messaggio (anche
+conosciuto come "Followup Reply").
+:parml.
+:pt.:hp2.Risposta al mittente:ehp2.
+:pd.Risposta al mittente del messaggio
+:pt.:hp2.Risposta al destinatario:ehp2.
+:pd.Risposta al destinatario del messaggio
+:pt.:hp2.Risposta al mittente originale:ehp2.
+:pd.Risposta al mittente del messaggio forwardato. Questa opzione ä
+disponibile esclusivamente con messaggi forwardati.
+:pt.:hp2.Risposta in un'area diversa:ehp2.
+:pd.Il messaggio nuovo viene salvato in un'area diversa, per esempio in un'area
+di netmail.
+:pt.:hp2.Risposta senza citazione:ehp2.
+:pd.La risposta non deve contenere delle citazioni.
+:eparml.
+
+.im languages\italian\find.ips
+
+.im languages\italian\area.ips
+
+
+.* ****************************** Message liste ******************************
+:h2 id=msglist res=&PANEL_MSGLIST..Lista dei messaggi
+:p.
+La lista dei messaggi visualizza tutti i messaggi dell'area in questione. I messaggi
+vengono visualizzati nello stesso ordine come si trovano nella base di messaggi.
+:p.
+Il proprio nome viene rispettivamente visualizzato in un coloro diverso. Messaggi
+letti e non letti hanno un numero di messaggio i colori diversi. Il colore corrispondente
+puï essere stabilito nella notebook di configurazione della lista di messaggi.
+:p.
+E' possibile selezionare e manipolare pió messaggi con il mouse oppure con la tastiera.
+Le possibilitÖ di manipolazione sono&colon.
+:ul compact.
+:li.Cancella
+:li.Copia
+:li.Muovi
+:li.Stampa
+:li.Esporta
+:eul.
+
+:h3 hide res=&PANEL_MLISTSETT..Ooops
+:p.Empty panel, should not happen. Please tell us!
+
+:h3 res=&PANEL_MLS_COLORS..Colori
+:p.Si possono selezionare colori distinti per i diversi campi.
+:p.Bisogna selezionare il colore di base dal cerchio di colori. Il colore attuale
+viene messo in evidenza con un mirino.
+:p.La luminositÖ del colore viene stabilito con lo slider a destra del cerchio di
+colori.
+
+
+:h2 res=&PANEL_ABOUTDLG..Informazione
+:p.FleetStreet ä stato sviluppato da Harry Herrmannsdîrfer e Michael Hohner.
+
+:h2 res=&PANEL_FILEDLG..Dialogo file
+:p.Bisogna selezionare un file e premere :hp2.OK:ehp2.
+
+:h2 res=&PANEL_KLUDGEINFO..Ulteriori informazioni sul messaggio
+:p.Questa finestra contiene tutte le Kludge-Lines e SEEN-BYs del messaggio
+attuale. E' possibile copiarne il contenuto nel clipboard.
+:p.Bisogna premere :hp2.Chiudi:ehp2. per chiudere la finestra.
+:p.Bisogna premere :hp2.Copia:ehp2. per copiare il testo messo in evidenza nella clipboard.
+Senza testo messo in evidenza si copia tutto il contenuto nella clipboard.
+:p.E' possibile lasciare aperta questa finestra durante la lettura. Si rinfresca
+automaticamente quando si passa ad un altro messaggio.
+:p.Bisogna fare click su :hp2.Tieni in primo piano:ehp2. per tenere la finestra
+in questione sempre sopra la finestra principale di FleetStreet.
+
+.im languages\italian\request.ips
+
+:h2 res=&PANEL_REPLYLIST..Alla risposta
+:p.Ci sono pió di una risposta a questo messaggio. Le risposte vengono elencate
+insieme con il loro numero di messaggio e il nome del mittente. Bisogna selezionare
+il messaggio da leggere e premere :hp2.OK:ehp2. Premi :hp2.Annulla:ehp2. se non
+vuoi leggere nessuno di questi messaggi.
+
+:h2 hide res=&PANEL_ERRORINIFILE..Errore di lettura della configurazione
+:p.Durante la lettura della configurazione ä avvenuto un errore. Questo potrebbe
+risultare da un errore di lettura dal disco (supporto protetto da scrittura, accessi
+negati ecc.).
+:p.FleetStreet usa i valori di default, cioä "senza setup".
+
+:h2 hide res=&PANEL_NOINIFILE..Nessuna configurazione
+:p.Non ä stato possibile trovare la configurazione salvata, oppure la configurazione
+non ä valida. Il file FLTSTRT.INI si deve trovare nella stessa directory come
+FLTSTRT.EXE.
+:p.Se FleetStreet ä stato avviato per la prima volta bisogna continuare con l'impostazione
+del programma. La configurazione viene salvata quando si termina FleetStreet.
+
+:h2 hide res=&PANEL_OLDINIFILE..Configurazione vecchia
+:p.La configurazione ä stata presa da una vecchia versione di FleetStreet. Le
+impostazioni del file FLTSTRT.INI non si possono usare con la versione presente.
+Si crea un file nuovo quando si termina FleetStreet.
+:p.Bisogna premere :hp2.Annulla:ehp2. per terminare FleetStreet senza modifica.
+
+:h2 hide res=&PANEL_DELETE..Cancella messaggio
+:p.Stai cancellando il messaggio attuale. Messaggi cancellati non si possono
+ricostruire.
+:p.Bisogna premere :hp2.Sç:ehp2. per cancellare il messaggio, :hp2.No:ehp2.se si desidera
+mantenerlo.
+
+:h2 hide res=&PANEL_BEENSENT..Edita messaggio
+:p.Il messaggio ä giÖ stato processato e inviato al destinatario da Squish. Il
+messaggio inviato non viene toccato dalle modifiche. Bisogna leggere nella
+documentazione di Squish come effettuare un rescan dell'area..
+:p.Se il messaggio non ä locale, i downlinks eventualmente ricevono messaggi
+modificati: nella gran parte dei casi si cerca di evitare una cosa
+del genere.
+:p.Bisogna premere :hp2.Sç:ehp2. se si desidera modificare lo stesso il messaggio,
+:hp2.No:ehp2. se non lo si desidera.
+
+:h2 hide res=&PANEL_DISCARD..Annulla messaggio
+:p.Premendo :hp2.Sç:ehp2., il messaggio appena scritto non viene salvato.
+Il testo del messaggio viene perso.
+:p.Bisogna premere :hp2.No:ehp2. se si desidera continuare a scrivere il
+messaggio.
+
+:h2 hide res=&PANEL_EXITNOSAVE..Annulla messaggio
+:p.Stai per terminare FleetStreet senza aver salvato il messaggio appena scritto.
+Lasciando FleetStreet, il messaggio non viene salvato e il testo del messaggio
+viene perso.
+:p.Bisogna premere :hp2.No:ehp2. se si desidera continuare a scrivere il
+messaggio.
+:p.Bisogna premere :hp2.Sç:ehp2. se si desidera terminare FleetStreet.
+
+:h2 hide res=&PANEL_INFOMISSING..Dati di header non validi
+:p.Il messaggio deve contenere almeno&colon.
+:ul.
+:li.Nome e indirizzo del destinatario
+:li.Testo nella riga del soggetto
+:eul.
+:p.Se ne manca qualcosa il messaggio non puï essere salvato.
+
+:h2 hide res=&PANEL_TOOLONG..Testo di messaggio troppo lungo
+:p.Il messaggio ä pió lungo della dimensione prestabilita di split. Non ä possibile
+splittare il messaggio un'altra volta dopo una modifica.
+
+:h2 hide res=&PANEL_ERRORMSGSAVE..Errore di salvare il messaggio
+:p.E' avvenuto un errore durante il tentativo di salvare il messaggio. Nella
+gran parte dei casi questo si deve ad un errore di disco, per esempio violazioni
+di accesso, medi protetti da scrittura o spazio insufficiente di memoria.
+:p.Si potrebbe tentare a risolvere il problema e provare un'altra volta a
+salvare il messaggio. Se il problema non si potesse risolvere bisogna interompere
+l'editing.
+
+:h2 res=&PANEL_CURRENTNAME..Nome attuale &amp. Indirizzo
+:p.Bisogna selezionare un nome e/o un indirizzo e premere :hp2.OK:ehp2..
+L'indirizzo attuale viene visualizzato nell'angolo in alto a destra della
+finestra principale.
+:p.Se vuoi avere pió indirizzi e nomi bisogna aggiungerne nel setup.
+:p.Se si desidera modificare il nome e l'indirizzo prestabiliti per una determinata
+area, bisogna aprire la lista delle aree, fare un click con il tasto destro del
+mouse sull'area in questione, fare un click su "Configurazione", selezionare un
+nome e/o un indirizzo diversi e chiudere la configurazione.
+
+.im languages\italian\thlist.ips
+
+:h2 hide res=&PANEL_INVALIDFILE..Non posso caricare file
+:p.FleetStreet non ä capace di caricare il file indicato per una delle ragioni successive
+laden&colon.
+:ul.
+:li.Il file non esiste
+:li.Non hai diritti d'accesso al file in questione
+:li.Il nome del file ä il nome di una directory oppure di un device, ma non di
+si tratta di un nome di un file
+:eul.
+
+:h2 hide res=&PANEL_ERRORLOAD..Errore di lettura del file
+:p.E' avvenuto un errore di lettura durante il caricamento del file. Il file non ä stato
+importato.
+
+:h2 res=&PANEL_EXPORTFILE..Esporta file
+:p.Bisogna selezionare la directory di destinazione e indicare un nome di file.
+:parml.
+:pt.:hp2.con header:ehp2.
+:pd.Bisogna selezionare questa opzione per salvare anche lo header. Se non si
+seleziona questa opzione, si salva esclusivamente il testo del messaggio.
+:pt.:hp2.Linea di separazione:ehp2.
+:pd.Bisogna selezionare questa opzione per aggiungere una linea di separazione
+dopo ogni messaggio esportato.
+:pt.:hp2.aggiungi:ehp2.
+:pd.Il messaggio viene aggiunto al file nel caso che esista giÖ.
+:pt.:hp2.trascrivi:ehp2.
+:pd.Un file esistente viene trascritto.
+:eparml.
+
+:h2 hide res=&PANEL_ERRORSAVE..Errore di scrittura
+:p.FleetStreet non ä stato capace di scrivere il file per una delle ragioni successive&colon.
+:ul.
+:li.Il drive oppure il path non esistono
+:li.Non possiedi diritti di accesso al file o alla directory in questione
+:eul.
+
+:h2 hide res=&PANEL_INVALIDFILENAME..Nome di file non valido
+:p.FleetStreet non ä stato capace di scrivere il file per una delle ragioni successive&colon.
+:ul.
+:li.Il nome del file contiene caratteri non ammessi
+:li.Il nome del file ä riservato
+:eul.
+
+:h2 hide res=&PANEL_RESEND..Rimanda messaggio
+:p.Il messaggio modificato ä giÖ stato inviato un'altra volta.
+Bisogna premere :hp2.Sç:ehp2. per mandare il messaggio modificato di nuovo.
+Bisogna premere :hp2.No:ehp2. se desideri di non inviare il messaggio in questione.
+
+.***************************************************************************
+.* Nodelist-Lookup                                                         *
+.***************************************************************************
+
+:h2 hide res=&PANEL_LOOKUPMEM..Memoria insufficiente
+:p.Per mancanza di memoria non ä stato possibile effetturare la ricerca di nodelist.
+:p.Lo stesso: si tratta di un errore strano!
+
+:h2 hide res=&PANEL_IDXOPENERR..Errore di caricare il file indice
+:p.Non ä stato possibile aprire il file indice della nodelist. Di solito questo
+errore avviene per una delle ragioni successive&colon.
+:ul.
+:li.Il file indice non esiste
+:li.Il nome del file oppure il path non sono corretti
+:li.Non hai diritti di accesso al file in questione
+:li.Un altro programma usa il file in modo esclusivo
+:eul.
+:p.Bisogna correggere l'errore e fare un altro tentativo.
+
+:h2 hide res=&PANEL_DATOPENERR..Errore di caricare il file dati
+:p.Non ä stato possibile aprire il file dati della nodelist. Di solito questo
+si deve ad una delle ragioni successive&colon.
+:ul.
+:li.Il file dati non esiste
+:li.Il nome del file oppure il path non sono corretti
+:li.Non hai diritti di accesso al file in questione
+:li.Un altro programa usa il file in modo esclusivo
+:eul.
+:p.Bisogna correggere l'errore e fare un altro tentativo.
+
+:h2 hide res=&PANEL_IDXREADERR..Errore di caricare il file indice
+:p.E' avvenuto un errore durante la lettura del file indice. Di solito questo
+si deve ad una delle ragioni successive&colon.
+:ul.
+:li.Un altro programma usa il file in modo esclusivo
+:li.Il file ä difettoso
+:eul.
+:p.Bisogna correggere l'errore e fare un altro tentativo.
+
+:h2 hide res=&PANEL_DATREADERR..Errore durante la lettura del file dati
+:p.E' avvenuto un errore durante la lettura del file dati. Di solito questo
+si deve ad una delle ragioni successive&colon.
+:ul.
+:li.Un altro programma usa il file in modo esclusivo
+:li.Il file ä difettoso
+:eul.
+:p.Bisogna correggere l'errore e fare un altro tentativo
+
+:h2 res=&PANEL_LOOKUP..Ricerca nodelist
+:p.Sono stati trovati diversi indirizzi per l'utente in questione. Bisogna
+selezionare un indirizzo dalla lista.
+:p.Prima si visualizza un breve riassunto delle inserzioni trovate.
+E' possibile guardare inserzioni complete della nodelist deattivando
+:hp2.Breve:ehp2..
+
+.im languages\italian\browser.ips
+
+:h2 res=&PANEL_ATTACHSTAT..Files attaccati
+:p.Si visualizzano i files attaccati al messaggio.
+Si visualizzano nome e dimensione del file.
+:p.Nel caso che un file non dovesse esistere, si visualizza "* non trovato *"
+nel campo di stato. In questo caso bisogna correggere il nome del file nel campo
+di soggetto.
+
+:h2 hide res=&PANEL_NEXTAREA..All'area successiva
+:p.Nel caso che si desideri passare all'area successiva con messaggi non letti,
+bisogna premere :hp2.Sç:ehp2., e :hp2.No:ehp2. se si vuole restare nell'area momentanea.
+
+:h2 hide res=&PANEL_NONEXTAREA..Nessun area successiva
+:p.FleetStreet non ha trovato nessun area di cui fosse stato effettuato uno scan
+e che contenesse messaggi non letti. E' possibile tentare di effettuare un ulteriore
+scan.
+
+:h2 hide res=&PANEL_WORKERROR..Errore di esecuzione&dot.&dot.&dot.
+:p.E' avvenuto un errore mentre FleetStreet processava i messaggi selezionati.
+Questo puï essere ridotto a diverse ragioni&colon.
+:ul compact.
+:li.Il messaggio non ä stato trovato nella base di messaggi. E' possibile
+che un altro processo possa averlo cancellato in precedenza.
+:li.La base di messaggi ä stata danneggiata.
+:li.E' avvenuto un errore di lettura oppure di scrittura.
+:li.Non ä possibile scrivere sul disco fisso, dato che non ä possibile
+scrivere sul file oppure sul supporto.
+:eul.
+:p.
+Bisogna premere :hp2.Annulla:ehp2. per interrompere l'elaborazione dei messaggi
+segnati.
+:p.
+Bisogna premere :hp2.Ripeti:ehp2. per ripetere l'ultima azione. Questo non puï
+risolvere tutti i problemi in tutte le situazioni!
+:p.
+Bisogna premere :hp2.Ignora:ehp2. per ignorare l'errore e per continuare con il
+prossimo messaggio.
+
+:h2 hide res=&PANEL_LOCKERROR..Non posso eseguire l'azione
+:p.L'azione selezionata non puï essere eseguita, dato che viene momentaneamente
+usata. Non ä possibile rinumerare un'area oppure modificarne le impostazioni se
+essa ä aperta. Bisogna passare prima ad un'area diversa oppure farne un altro
+tentativo.
+
+:h2 hide res=&PANEL_BCDELERROR..Errore di cancellazione di broadcast
+:p.Non si ä potuto creare il messaggio necessario per la cancellazione di broadcast.
+Bisogna controllare la base di messaggi e farne un altro tentativo.
+
+:h2 hide res=&PANEL_ETOSSERROR..Errore di scrittura del Echotoss.Log
+:p.Durante la scrittura del file Echotoss.Log ä avvenuto un errore.
+Questo puï essere ridotto a diverse ragioni&colon.
+:ul compact.
+:li.Il file oppure il disco fisso sono protetti da scrittura.
+:li.Un'altra applicazione usa il file in questione in modo esclusivo.
+:li.Il nome del file contiene caratteri non concessi dal sistema di file usato.
+:li.E' stato indicato un drive oppure una directory che non esistono.
+:li.E' stato indicato solamente il nome di una directory e non un path o
+nome di file completi.
+:li.Il disco fisso ä pieno.
+:eul.
+:p.Bisogna controllare i dischi fissi e il setup di FleetStreet-Setup prima di fare un
+altro tentativo.
+
+:h2 hide res=&PANEL_INITERROR..Errore di lettura del file di configurazione
+:p.Durante la lettura del file di configurazione del tosser ä avvenuto un errore.
+:p.Si possono perdere dati se ti decidi di continuare nonostante la visualizzazione
+del messaggio d'errore dopo l'avvio del programma (per esempio impostazioni aree).
+Si consiglia di terminare FleetStreet premendo il pulsante :hp2.Annulla:ehp2.. Bisogna
+coreggere l'errore e riavviare FleetStreet. Nel caso che il problema non si possa
+risolvere, bisogna fare una copia di sicurezza dei files INI di FleetStreet, prima
+di continuare.
+
+.im languages\italian\rexx.ips
+
+:euserdoc.
+

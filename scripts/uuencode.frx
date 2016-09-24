@@ -1,0 +1,76 @@
+/****************************************************************************/
+/*                      FleetStreet example script                          */
+/*                                                                          */
+/*                             UUENCODE.FRX                                 */
+/*                                                                          */
+/* UUENCODE.FRX asks for a file name, encodes the file and appends the      */
+/* result to the current message text.                                      */
+/*                                                                          */
+/* This example script demonstrates accessing the predefined Rexx array,    */
+/* which holds the text of the current message.                             */
+/*                                                                          */
+/****************************************************************************/
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+/* ask for file to encode */
+say 'Enter file name of file to encode:'
+parse pull filename .
+
+if filename = '' then
+do
+   say 'No file name given'
+   exit
+end
+
+/* start encoding the file */
+if stream(filename, 'c', 'open read') = 'READY:' then
+do
+   say 'Encoding...'
+
+   /* build header */
+   filelen = stream(filename, 'c', 'query size')
+   i = FleetMsg.Text.0 +1
+
+   FleetMsg.Text.i = '--- UUEncode - Start -' filespec('Name', filename) '-' filelen 'Bytes -'
+   i=i+1
+   FleetMsg.Text.i = 'begin 644' filespec('Name', filename)
+
+   /* encode full lines */
+   do while chars(filename) >= 45
+      origdata = charin(filename,, 45)
+      i= i + 1
+      FleetMsg.Text.i = FSEncodeLine(origdata)
+   end
+
+   /* encode non-full line at end of file */
+   if chars(filename) > 0 then
+   do
+      linelen = chars(filename)
+      origdata = charin(filename,, linelen)
+      i= i + 1
+      FleetMsg.Text.i = FSEncodeLine(origdata)
+   end
+
+   /* append footer */
+   i = i + 1
+   FleetMsg.Text.i = 'end'
+   i = i + 1
+   FleetMsg.Text.i = 'size' filelen
+   i=i+1
+   FleetMsg.Text.i = '--- UUEncode - End -'
+   FleetMsg.Text.0 = i
+
+   /* close file */
+   call stream filename, 'c', 'close'
+
+   /* now pass the new text to FleetStreet */
+   say FSSetText('FleetMsg.Text')
+end
+else
+   say 'Can''t open file'
+
+exit
+

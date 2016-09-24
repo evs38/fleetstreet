@@ -1,0 +1,799 @@
+/* Schwedische Language Resourcen
+   1996-10-10                     */
+
+
+#include <os2.h>
+#include "..\..\dialogids.h"
+#include "..\..\resids.h"
+#include "..\..\setupdlg.h"
+#include "..\..\areasettings.h"
+
+MENU IDM_MENU
+BEGIN
+  SUBMENU "~Arkiv", IDM_FILE
+  BEGIN
+    MENUITEM "~Importera fil...\tCtrl-I", IDM_FILEIMPORT
+    MENUITEM "~Exportera fil...\tCtrl-X", IDM_FILEEXPORT
+    MENUITEM SEPARATOR
+    MENUITEM "Skriv Echo~toss nu", IDM_FILEECHOTOSS
+    MENUITEM SEPARATOR
+    MENUITEM "Starta ~kommandosession", IDM_FILESHELL
+    MENUITEM SEPARATOR
+    MENUITEM "Skriv ~ut\tSkift-Print", IDM_FILEPRINT
+    MENUITEM "~Skrivare...", IDM_FILEPRINTSETUP
+    MENUITEM SEPARATOR
+    MENUITEM "~Avsluta\tAlt-X", IDM_EXIT
+  END
+  SUBMENU "~Redigera", IDM_EDIT
+  BEGIN
+    MENUITEM "~èngra\tAlt-Backspace", IDM_EDITUNDO
+    MENUITEM SEPARATOR
+    MENUITEM "Klipp ~ut\tSkift-Del", IDM_EDITCUT
+    MENUITEM "~Kopiera\tCtrl-Ins", IDM_EDITCOPY
+    MENUITEM "Klistra ~in\tSkift-Ins", IDM_EDITPASTE
+    MENUITEM SEPARATOR
+    MENUITEM "~Ta bort\tDel", IDM_EDITCLEAR
+    MENUITEM SEPARATOR
+    MENUITEM "Ta bort ~rad\tCtrl-Y", IDM_EDITDELLINE
+    MENUITEM SEPARATOR
+    MENUITEM "~Sîk...",              IDM_EDITSEARCH
+  END
+  SUBMENU "~Meddelande", IDM_MESSAGE
+  BEGIN
+    MENUITEM "~Flytta meddelande...\tCtrl-M",     IDM_MSGMOVE
+    MENUITEM "~Kopiera meddelande...\tCtrl-C",    IDM_MSGCOPY
+    MENUITEM "~Vidarebefordra meddelande...\tCtrl-F", IDM_MSGFORWARD
+    MENUITEM SEPARATOR
+    MENUITEM "~Nytt meddelande\tIns", IDM_MSGNEW
+    MENUITEM "~Redigera\tCtrl-E",      IDM_MSGCHANGE
+    MENUITEM "Sv~ara...",   IDM_MSGREPLY
+    MENUITEM "~Ta bort\tDel",       IDM_MSGDELETE
+    MENUITEM "~Sîk...\tCtrl-I",      IDM_MSGFIND
+    MENUITEM SEPARATOR
+    SUBMENU  "FjÑrr~beordning", IDM_MSGBCAST
+    BEGIN
+      MENUITEM "~Ta bort",   IDM_MSGBCDELETE
+      MENUITEM "~Uppdatera", IDM_MSGBCMODIFY
+    END
+    MENUITEM SEPARATOR
+    MENUITEM "~Markera meddelande",   IDM_MSGMARKMSG
+    MENUITEM "Avmarkera m~eddelande", IDM_MSGUNMARKMSG
+  END
+  SUBMENU "~Special", IDM_SPECIAL
+  BEGIN
+    MENUITEM "~Korsposta meddelande...\tCtrl-X",  IDM_MSGXPOST
+    MENUITEM "~EfterfrÜga filer...\tCtrl-Q",      IDM_MSGREQUEST
+    MENUITEM SEPARATOR
+    MENUITEM "~Skicka med sÑndlista...\tCtrl-C",  IDM_MSGCCOPY
+    MENUITEM "Sn~abbsÑndlista...",                IDM_MSGQUICKCC
+    MENUITEM SEPARATOR
+    MENUITEM "~èterhÑmta...\tCtrl-P",      IDM_MSGMARK
+    MENUITEM SEPARATOR
+    MENUITEM "~LÑgg till som kortnamn...\tCtrl-O", IDM_SPCADDTONICK
+    MENUITEM "LÑgg till ~i sÑndlista...\tCtrl-Z",  IDM_SPCADDTOCC
+    MENUITEM SEPARATOR
+    MENUITEM "~Nodlistevisare...\tCtrl-W",            IDM_SPCBROWSER
+  END
+  SUBMENU "Rexx~program", IDM_REXX
+  BEGIN
+    MENUITEM "~Program", IDM_RXSCRIPTS
+    MENUITEM SEPARATOR
+  END
+  SUBMENU "Alternati~v", IDM_OPTIONS
+  BEGIN
+    MENUITEM "AllmÑnna ~instÑllningar...", IDM_OPCONFIG
+    MENUITEM "~Meddelandemallar...",       IDM_OPTEMPLATE
+    MENUITEM "~SÑndlistor...",             IDM_OPCCLISTS
+    MENUITEM "~Kortnamn...",               IDM_OPNICKNAMES
+    MENUITEM "Knapp~rad...",               IDM_TB_ADD
+    MENUITEM SEPARATOR
+    MENUITEM "Mîtes~hanteraren...",        IDM_OPECHOMAN
+    MENUITEM "HÑmta mîtes~titlar",         IDM_OPADDAREAS
+    MENUITEM SEPARATOR
+    MENUITEM "~Aktuellt namn/adress...\tCtrl-D", IDM_OPNAMEADDR
+    MENUITEM SEPARATOR
+    MENUITEM "~Spara instÑllningar", IDM_OPSAVE
+  END
+  SUBMENU "~Fînster", IDM_WINDOWS
+  BEGIN
+    MENUITEM "~Kludgerader\tCtrl-K",    IDM_WINKLUDGES
+    MENUITEM "~MeddelandetrÑd\tCtrl-T", IDM_WINTHREADS
+    MENUITEM "~émneslista\tCtrl-L",     IDM_WINMSGLIST
+    MENUITEM "~Mîteslista\tCtrl-A",     IDM_WINAREAS
+    MENUITEM "~BokmÑrken\tCtrl-B",      IDM_WINRESULTS
+  END
+  SUBMENU "~HjÑlp", IDM_HELP
+  BEGIN
+    MENUITEM "~HjÑlpindex",                      IDM_HELPINDEX
+    MENUITEM "~AllmÑn hjÑlp\tF1",                IDM_HELPGENERAL
+    MENUITEM "~InnehÜll",                        IDM_HELPCONTENTS
+    MENUITEM "~Om hjÑlpfunktionen",              IDM_HELPUSING
+    MENUITEM "~Tangentbordsfunktioner\tCtrl-F1", IDM_HELPKEYS
+    MENUITEM SEPARATOR
+    MENUITEM "~Produktinformation", IDM_HELPABOUT
+  END
+END
+
+MENU IDM_AREAPOPUP
+BEGIN
+  MENUITEM "Mîtesin~stÑllningar...",    IDM_AP_SETTINGS
+  MENUITEM SEPARATOR
+  MENUITEM "~Omnumrera...",       IDM_AP_RENUMBER
+  MENUITEM "~éndra SquishinstÑllningar...", IDM_AP_SQPARAMS
+  MENUITEM "~èterhÑmta",           IDM_AP_CATCHUP
+  MENUITEM "~Avsîk",               IDM_AP_SCAN
+  MENUITEM SEPARATOR
+  MENUITEM "Skapa ~ny...",         IDM_AP_CREATE
+  MENUITEM "~Ta bort",             IDM_AP_DELETE
+END
+
+MENU IDM_SAREAPOPUP
+BEGIN
+  MENUITEM "In~stÑllningar...", IDM_SAP_SETTINGS
+  MENUITEM SEPARATOR
+  MENUITEM "Skapa ~ny...",         IDM_SAP_CREATE
+  MENUITEM "Avsîk alla ~mîten",    IDM_SAP_SCANALL
+  MENUITEM SEPARATOR
+  MENUITEM "~Alltid îverst",       IDM_SAP_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fînster", 1
+END
+
+MENU IDM_FOLDERPOPUP
+BEGIN
+  MENUITEM "~ôppna",             IDM_FP_OPEN
+  MENUITEM SEPARATOR
+  SUBMENU  "~Sortera",           IDM_FP_SORT
+  BEGIN
+    MENUITEM "~Osorterat",       IDM_FP_SORT_NONE
+    MENUITEM "~Namn",            IDM_FP_SORT_NAME
+    MENUITEM "~Antal nya meddelanden", IDM_FP_SORT_UNR
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "~Automatisk avsîkning", IDM_FP_SCAN
+  MENUITEM SEPARATOR
+  MENUITEM "~Skapa ny...",       IDM_FP_CREATE
+  MENUITEM "~Ta bort",           IDM_FP_DELETE
+END
+
+MENU IDM_SFOLDERPOPUP
+BEGIN
+  SUBMENU "~Ikoner",         IDM_SFP_ICONS
+  BEGIN
+    MENUITEM "~Ikoner",      IDM_SFP_ICONS_LARGE
+    MENUITEM "~Miniikoner",  IDM_SFP_ICONS_SMALL
+    MENUITEM "~Enbart text", IDM_SFP_ICONS_NONE
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "~Skapa ny...",   IDM_SFP_CREATE
+END
+
+MENU IDM_MSGLISTPOPUP
+BEGIN
+  MENUITEM "~Ta bort",        IDM_MP_DELETE
+  MENUITEM "~Exportera...",   IDM_MP_EXPORT
+  MENUITEM "Skriv ~ut",       IDM_MP_PRINT
+  MENUITEM SEPARATOR
+  MENUITEM "~Kopiera...",     IDM_MP_COPY
+  MENUITEM "~Flytta...",      IDM_MP_MOVE
+  MENUITEM SEPARATOR
+  SUBMENU  "~Markera",        IDM_MP_SELECT
+  BEGIN
+     MENUITEM "~Alla\tCtrl-/",        IDM_MP_SELECTALL
+     MENUITEM "~Inget\tCtrl-\\",      IDM_MP_SELECTNONE
+  END
+END
+
+MENU IDM_SMLISTPOPUP
+BEGIN
+  MENUITEM "In~stÑllningar...", IDM_SMP_SETTINGS
+  MENUITEM SEPARATOR
+  MENUITEM "~Alltid îverst", IDM_SMP_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fînster", 1
+END
+
+MENU IDM_EDITPOPUP
+BEGIN
+  MENUITEM "~èngra",       IDM_EP_UNDO
+  MENUITEM SEPARATOR
+  MENUITEM "Klipp ~ut",    IDM_EP_CUT
+  MENUITEM "~Kopiera",     IDM_EP_COPY
+  MENUITEM "Klistra ~in",  IDM_EP_PASTE
+  MENUITEM SEPARATOR
+  MENUITEM "~Ta bort",     IDM_EP_CLEAR
+  MENUITEM SEPARATOR
+  MENUITEM "Ta bort ~rad", IDM_EP_DELLINE
+  MENUITEM SEPARATOR
+  MENUITEM "~Betoningar\tCtrl-H",     IDM_EP_HIGHLIGHT
+  MENUITEM "~Fast breddsteg\tCtrl-J", IDM_EP_MONO
+END
+
+MENU IDM_TPLF_POPUP
+BEGIN
+  MENUITEM "~ôppna",    IDM_TPLF_OPEN
+  MENUITEM SEPARATOR
+  MENUITEM "Skapa ~ny", IDM_TPLF_CREATE
+  MENUITEM "~Kopiera",  IDM_TPLF_COPY
+  MENUITEM SEPARATOR
+  MENUITEM "~Ta bort",  IDM_TPLF_DELETE
+END
+
+MENU IDM_TPLF_POPUP2
+BEGIN
+  MENUITEM "Skapa ~ny",     IDM_TPLF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Alltid îverst", IDM_TPLF_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fînster", 1
+END
+
+MENU IDM_TL_POPUP
+BEGIN
+  MENUITEM "In~stÑllningar",  IDM_TLP_SETTINGS
+  MENUITEM SEPARATOR
+  SUBMENU  "~Visa",         IDM_TLP_VIEW
+  BEGIN
+    MENUITEM "~Alla trÑd",                   IDM_TLP_VIEWALL
+    MENUITEM "~TrÑd med olÑsta meddelanden", IDM_TLP_VIEWTHR
+    MENUITEM "Endast ~olÑsta meddelanden",   IDM_TLP_VIEWUNR
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "AvsÑndar~namn",  IDM_TLP_SENDER
+  MENUITEM "~Alltid îverst", IDM_TLP_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fîrnya nu",     IDM_TLP_REFRESH
+  MENUITEM SEPARATOR
+  MENUITEM "~èterhÑmta",     IDM_TLP_CATCHUP
+  MENUITEM SEPARATOR
+  MENUITEM "~Fînster", 1
+END
+
+MENU IDM_TH_POPUP
+BEGIN
+  MENUITEM "~Ta bort",          IDM_THP_DELETE
+  MENUITEM SEPARATOR
+  MENUITEM "~Flytta....",       IDM_THP_MOVE
+  MENUITEM "~Kopiera...",       IDM_THP_COPY
+  MENUITEM SEPARATOR
+  MENUITEM "~Exportera...",     IDM_THP_EXPORT
+  MENUITEM "Skriv ~ut",         IDM_THP_PRINT
+  MENUITEM SEPARATOR
+  MENUITEM "~Markera som lÑst", IDM_THP_MARK
+  MENUITEM "E~xpandera gren",   IDM_THP_EXPAND
+END
+
+MENU IDM_CCF_POPUP
+BEGIN
+  MENUITEM "~ôppna",        IDM_CCF_OPEN
+  MENUITEM SEPARATOR
+  MENUITEM "Skapa ~ny",     IDM_CCF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Ta bort",      IDM_CCF_DELETE
+END
+
+MENU IDM_CCF_POPUP2
+BEGIN
+  MENUITEM "Skapa ~ny",      IDM_CCF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Alltid îverst", IDM_CCF_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fînster", 1
+END
+
+MENU IDM_RXF_POPUP
+BEGIN
+  SUBMENU  "~ôppna", IDM_RXF_OPEN
+  BEGIN
+    MENUITEM "In~stÑllningar", IDM_RXF_OPEN_SET
+    MENUITEM "~Program",       IDM_RXF_OPEN_SCR
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "Skapa ~ny",  IDM_RXF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Ta bort",   IDM_RXF_DELETE
+END
+
+MENU IDM_RXF_POPUP2
+BEGIN
+  MENUITEM "In~stÑllningar", IDM_RXF_SETTINGS
+  MENUITEM SEPARATOR
+  MENUITEM "Skapa ~ny",      IDM_RXF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Alltid îverst", IDM_RXF_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fînster", 1
+END
+
+MENU IDM_BM_POPUP
+BEGIN
+  MENUITEM "~Ta bort",        IDM_BMP_DELETE
+  MENUITEM SEPARATOR
+  MENUITEM "~Exportera...",   IDM_BMP_EXPORT
+  MENUITEM "Skriv ~ut",       IDM_BMP_PRINT
+  MENUITEM SEPARATOR
+  MENUITEM "~Flytta...",      IDM_BMP_MOVE
+  MENUITEM "~Kopiera...",     IDM_BMP_COPY
+  MENUITEM SEPARATOR
+  MENUITEM "~Rensa",          IDM_BMP_REMOVE
+  MENUITEM SEPARATOR
+  SUBMENU  "~Markera",        IDM_BMP_SELECT
+  BEGIN
+     MENUITEM "~Alla\tCtrl-/",        IDM_BMP_SELECTALL
+     MENUITEM "~Inget\tCtrl-\\",      IDM_BMP_SELECTNONE
+  END
+END
+
+MENU IDM_BMF_POPUP
+BEGIN
+  SUBMENU "~Visa",                 IDM_BMFP_VIEW
+  BEGIN
+     MENUITEM "~Sîkresultat",            IDM_BMFP_VIEW_FIND
+     MENUITEM "~Personliga meddelanden", IDM_BMFP_VIEW_PERS
+     MENUITEM "~Markerade meddelanden",  IDM_BMFP_VIEW_MARK
+     MENUITEM "~OsÑnda meddelanden",     IDM_BMFP_VIEW_UNSENT
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "~Spara innehÜll",    IDM_BMFP_SAVE
+  MENUITEM SEPARATOR
+  MENUITEM "~Alltid îverst",     IDM_BMFP_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fînster",    1
+END
+
+MENU IDM_TB_POPUP
+BEGIN
+  SUBMENU "~Position",     IDM_TB_POSITION
+  BEGIN
+     MENUITEM "~ôverst",   IDM_TB_TOP
+     MENUITEM "~Nederst",  IDM_TB_BOTTOM
+     MENUITEM "~VÑnster",  IDM_TB_LEFT
+     MENUITEM "~Hîger",    IDM_TB_RIGHT
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "~SmÜ knappar", IDM_TB_SMALL
+  MENUITEM "~InstÑllningar...", IDM_TB_ADD
+END
+
+MENU IDM_EMF_POPUP
+BEGIN
+   MENUITEM "~InstÑllningar", IDM_EMF_SETTINGS
+   SUBMENU "~UpplÑnk", IDM_EMF_UPLINK
+   BEGIN
+   /* leer */
+   END
+   MENUITEM SEPARATOR
+   MENUITEM "~Fîrnya nu", IDM_EMF_REFRESH
+   MENUITEM SEPARATOR
+   MENUITEM "SÑtt ~passiv", IDM_EMF_PAUSE
+   MENUITEM "SÑtt ~aktiv", IDM_EMF_RESUME
+   MENUITEM SEPARATOR
+   MENUITEM "~èngra val", IDM_EMF_RESET
+END
+
+MENU IDM_EM_POPUP
+BEGIN
+   MENUITEM "~BestÑll mîte", IDM_EM_LINK
+   MENUITEM "~AvbestÑll mîte", IDM_EM_UNLINK
+   MENUITEM "~Rescanna mîte", IDM_EM_RESCAN
+   MENUITEM SEPARATOR
+   MENUITEM "~èngra val", IDM_EM_RESET
+   MENUITEM "~Ta bort",       IDM_EM_REMOVE
+END
+
+STRINGTABLE
+BEGIN
+IDST_HLP_NEXTMSG      "GÜ till nÑsta meddelande"
+IDST_HLP_PREVMSG      "GÜ till fîregÜende meddelande"
+IDST_HLP_NEXTREPLY    "GÜ till nÑsta kommentar"
+IDST_HLP_PREVREPLY    "GÜ till fîregÜende kommentar"
+IDST_HLP_FIRSTMSG     "GÜ till fîrsta meddelande i mîtet"
+IDST_HLP_LASTMSG      "GÜ till sista meddelandet i mîtet"
+IDST_HLP_FIND         "Sîk text"
+IDST_HLP_MSGTREE      "MeddelandetrÑd"
+IDST_HLP_NEWMSG       "Skriv nytt meddelande"
+IDST_HLP_REPLY        "Svara"
+IDST_HLP_IMPORT       "Importera ASCII-fil"
+IDST_HLP_EXPORT       "Skriv meddelande till ASCII-fil"
+IDST_HLP_DELMSG       "Ta bort meddelandet"
+IDST_HLP_EDITMSG      "FîrÑndra meddelandet"
+IDST_HLP_AREA         "GÜ till annat mîte"
+IDST_HLP_MSGLIST      "émneslista"
+IDST_HLP_PRINTMSG     "Skriv ut meddelandet"
+IDST_HLP_SHOWKLUDGES  "Visa kludge- och SEEN-BY-rader"
+IDST_HLP_OK           "Spara meddelandet"
+IDST_HLP_CANCEL       "Spara ej meddelandet"
+IDST_HLP_CHANGEATTR   "éndra meddelandeattribut"
+IDST_HLP_FI_FILE      "Meny fîr filhantering"
+IDST_HLP_FI_IMPORT    "Importera en textfil till redigeraren"
+IDST_HLP_FI_EXPORT    "Exportera meddelandet till en textfil"
+IDST_HLP_FI_ECHOTOSS  "Skriv Echotoss.Log-filen nu"
+IDST_HLP_FI_EXIT      "Avsluta FleetStreet"
+IDST_HLP_ED_EDIT      "Meny fîr manipulation av meddelanden"
+IDST_HLP_ED_UNDO      "èngra det senaste utfîrda kommandot"
+IDST_HLP_ED_CUT       "Kopiera markering till Urklipp, och ta sedan bort den"
+IDST_HLP_ED_COPY      "Kopiera markering till Urklipp"
+IDST_HLP_ED_PASTE     "Infoga innehÜllet i Urklipp till markîrens nuvarande position"
+IDST_HLP_ED_CLEAR     "Ta bort markering"
+IDST_HLP_ED_CLRLINE   "Ta bort aktuell rad"
+IDST_HLP_MS_MESSAGE   "Meny fîr handhavande av meddelanden"
+IDST_HLP_MS_MOVE      "Flytta meddelandet till ett annat mîte"
+IDST_HLP_MS_XPOST     "Spara meddelandet i mer Ñn ett mîte"
+IDST_HLP_MS_REQ       "EfterfrÜga filer frÜn det aktuella meddelandet"
+IDST_HLP_MS_CCOPY     "Skicka meddelandet till mer Ñn en mottagare"
+IDST_HLP_MS_MARK      "Markera alla meddelanden som ""lÑsta"""
+IDST_HLP_SU_SETUP     "Meny fîr att stÑlla in FleetStreet"
+IDST_HLP_SU_OPTIONS   "AllmÑnna instÑllningar fîr FleetStreet"
+IDST_HLP_SU_TEMPL     "InstÑllningar av meddelandemallar"
+IDST_HLP_SU_CCLIST    "Redigera sÑndlistor, och deras innehÜll"
+IDST_HLP_SU_NAMEAD    "Byt aktuellt namn och/eller adress"
+IDST_HLP_SU_SAVE      "Spara instÑllningar"
+IDST_HLP_WI_WINDOWS   "Meny fîr att hantera FleetStreets fînster"
+IDST_HLP_WI_KLUDGE    "VÑxla till kludgeradfînstret"
+IDST_HLP_WI_THREAD    "VÑxla till ÑmnestrÑdsfînstret"
+IDST_HLP_WI_RESULTS   "VÑxla till bokmÑrkesfînstret"
+IDST_HLP_HE_HELP      "Meny fîr FleetStreets hjÑlpsystem"
+IDST_HLP_HE_INDEX     "Visa hjÑlpindex"
+IDST_HLP_HE_USING     "Information hur Du anvÑnder online-hjÑlpen"
+IDST_HLP_HE_KEYS      "Lista îver FleetStreets tangentbordskombinationer"
+IDST_HLP_HE_ABOUT     "Information om programmet"
+IDST_HLP_HE_GENERAL   "AllmÑn hjÑlp fîr FleetStreet"
+IDST_HLP_FI_PRINT     "Skriv ut aktuellt meddelande"
+IDST_HLP_MS_FIND      "Sîk efter text i meddelanden"
+IDST_HLP_MS_DELETE    "Ta bort det aktuella meddelandet"
+IDST_HLP_MS_REPLY     "Kommentera det aktuella meddelandet"
+IDST_HLP_MS_CHANGE    "éndra det aktuella meddelandet"
+IDST_HLP_MS_NEW       "Skriv ett nytt meddelande"
+IDST_HLP_FI_SHELL     "Starta en ny kommandoprompt"
+IDST_HLP_HOMEMSG      "GÜ till tidigare Lastreadpekare"
+IDST_HLP_NEXTAREA     "GÜ till nÑsta mîte med olÑst post"
+IDST_HLP_MS_COPY      "Kopiera det aktuella meddelandet till annat mîte"
+IDST_HLP_MS_FORWARD   "Vidarebefordra det aktuella meddelandet till annat mîte"
+IDST_HLP_WI_AREAS     "VÑxla till mîteslistan"
+IDST_HLP_WI_MLIST     "VÑxla till Ñmneslistan"
+IDST_HLP_HE_CONTENTS  "Visa online-hjÑlpens innehÜllsfîrteckning"
+IDST_HLP_MS_BCAST     "Funktioner fîr fjÑrrbeordning"
+IDST_HLP_MS_BCDELETE  "Beordra radering av detta meddelande"
+IDST_HLP_MS_BCMODIFY  "Beordra uppdatering av detta meddelande"
+IDST_HLP_SP_SPECIAL   "Specialfunktioner"
+IDST_HLP_MS_QUICKCC   "Skicka meddelandet till mer Ñn en mottagare"
+IDST_HLP_REXX         "Rexxstîd"
+IDST_HLP_RXSCRIPTS    "Rexxprogram"
+IDST_HLP_ADDTONICK    "LÑgg till avsÑndaren av det aktuella meddelandet som ett kortnamn"
+IDST_HLP_ADDTOCC      "LÑgg till avsÑndaren av det aktuella meddelandet i sÑndlista"
+IDST_HLP_MARKMSG      "Markera aktuellt meddelande"
+IDST_HLP_UNMARKMSG    "Avmarkera aktuellt meddelande"
+IDST_HLP_SPCBROWSER   "Visa innehÜllet i nodlistan/-listorna"
+IDST_HLP_OPNICKNAMES  "ôppna listan îver kortnamn"
+IDST_HLP_OPECHOMAN    "BestÑll mîten frÜn upplÑnken"
+IDST_HLP_OPADDAREAS   "HÑmta lista îver mîten hos upplÑnken frÜn det aktuella meddelandet"
+IDST_HLP_ED_SEARCH    "Sîk efter text i det aktuella meddelandet"
+IDST_HLP_FI_PRINTSETUP "VÑlj skrivare och stÑll in alternativ"
+IDST_HLP_TB_ADD       "LÑgg till eller ta bort knappar i knappraden"
+
+IDST_TAB_USER          "Namn"
+IDST_TAB_ADDRESSES     "Adresser"
+IDST_TAB_DEFORIGIN     "Origin"
+IDST_TAB_DOMAINS       "DomÑner"
+IDST_TAB_MODEMTYPES    "Modemtyper"
+IDST_TAB_MACROS        "Makron 1"
+IDST_TAB_MACROS2       "Makron 2"
+IDST_TAB_MACROS3       "Makron 3"
+IDST_TAB_MSGOPT        "Alternativ"
+IDST_TAB_STARTUP       "Startmîte"
+IDST_TAB_EDITOROPT     "Editor"
+IDST_TAB_REGISTER      "Registrering"
+IDST_TAB_SQUISHOPT     "Tosser"
+IDST_TAB_DRIVEREMAP    "Omdirigering"
+IDST_TAB_SAFETY        "SÑkerhet"
+IDST_TAB_TOSSERPATHS   "SîkvÑgar"
+IDST_TAB_SU_OPENWIN    "Fînster"
+
+IDST_TAB_AS_GENERAL    "AllmÑnt"
+IDST_TAB_AS_MSGBASE    "Meddelandebas"
+IDST_TAB_AS_ATTRIB     "Attribut"
+
+IDST_TAB_QUOTE         "Citat"
+IDST_TAB_HEADER        "Huvud"
+IDST_TAB_FOOTER        "Fot"
+IDST_TAB_REPLY         "Svar"
+IDST_TAB_DAREA         "Annat mîte"
+IDST_TAB_FORWARD       "Vidarebefordran"
+IDST_TAB_XPOST         "Korspostning"
+IDST_TAB_CCOPY         "SÑndlista"
+IDST_TAB_FORWARDFOOTER "Vidarebefordran, fot"
+IDST_TAB_FORWARDORDER  "Ordning"
+IDST_TAB_ORIGIN        "Origin"
+
+IDST_TAB_AL_VIEW       "Visning"
+IDST_TAB_AL_SORT       "Sortering"
+IDST_TAB_AL_COLORS     "FÑrger"
+
+IDST_TAB_RXGENERAL     "AllmÑnt"
+IDST_TAB_RXMONITOR     "Visning"
+IDST_TAB_RXHOOKS       "Hooks"
+
+IDST_TAB_THREADS       "Visning"
+IDST_TAB_THREADCOLORS  "FÑrger"
+
+IDST_TAB_DLLEXT        "Utîknings-DLL"
+IDST_TAB_UPLINKS       "UpplÑnkar"
+
+IDST_TAB_PS_LIST       "Skrivare"
+IDST_TAB_PS_BORDERS    "Marginaler"
+IDST_TAB_PS_FONTS      "Typsnitt"
+IDST_TAB_PS_OUTPUT     "Utdata"
+
+IDST_MSG_DELETE        "Varning! Vill Du verkligen ta bort det hÑr meddelandet?"
+IDST_MSG_CANCEL        "Vill Du verkligen avbryta redigeringen av det hÑr meddelandet?"
+IDST_MSG_NORMALEXIT    "Vill Du verkligen avsluta FleetStreet?"
+IDST_MSG_EXITNOSAVE    "Meddelandet har inte sparats. Vill Du verkligen avsluta FleetStreet?"
+IDST_MSG_BEENSENT      "Meddelandet har redan skickats, eller Ñr ej ett lokalt meddelande. Vill Du verkligen redigera meddelandet?"
+IDST_MSG_ERRORLOAD     "Vid inladdningen av filen uppstod ett fel"
+IDST_MSG_INVALIDFILE   "Kan ej ladda frÜn filen"
+IDST_MSG_INVALIDFILENAME "Kan ej skriva till filen"
+IDST_MSG_EMPTYFILE     "Filen Ñr tom"
+IDST_MSG_ERRORSAVE     "Vid sparandet av filen uppstod ett fel"
+IDST_MSG_ERRORAREA     "Mîtet kunnde inte îppnas"
+IDST_MSG_NOTFOUND      "Texten hittades inte i mîtet"
+IDST_MSG_FALSEADDRESS  "Den angivna adressen Ñr ogiltig"
+IDST_MSG_FALSEREGISTER "Registreringskoden Ñr ogiltig!"
+IDST_MSG_DUPAREAS      "Tosserns konfigurationsfilen innehÜller mîten vilka redan "
+                       "har definierats lokalt."
+IDST_MSG_NODELISTNF    "Indexfilen fîr nodlistan kunde ej hittas"
+IDST_MSG_ERRREADINGCFG "Ett fel uppstod vid lÑsning av %s"
+IDST_MSG_ERRORINIFILE  "Ett fel uppstod vid lÑsning av konfigurationsfilen"
+IDST_MSG_NOINIFILE     "Ingen INI-fil hittades. StandardvÑrdena anvÑnds"
+IDST_MSG_OLDINIFILE    "INI-filen skapades av en inkompatibel version av "
+                       "FleetStreet. StandardvÑrdena anvÑnds"
+IDST_MSG_ALREADYHAVEAREA "Det finns redan ett mîte med denna mîtestag"
+IDST_MSG_NOHELP        "HjÑlphanteraren kunde ej initialiseras. Detta betyder vanligtvis "
+                       "att HLP-filen ej kan hittas. HjÑlpen Ñr ej fîrfogbar."
+IDST_MSG_DELAREA       "Vill Du verkligen ta bort detta mîte?"
+IDST_MSG_DELADDRESS    "Vill Du verkligen ta bort denna adress?"
+IDST_MSG_DELUNAME      "Vill Du verkligen ta bort detta namn?"
+IDST_MSG_DELNICKNAME   "Vill Du verkligen ta bort detta kortnamn?"
+IDST_MSG_INFOMISSING   "Du har inte fyllt i alla nîdvÑndiga fÑlt i detta meddelande"
+IDST_MSG_TEXTTOOLONG   "Meddelandet Ñr fîr lÜngt. Fatta Dig kort, och fîrsîk en gÜng till."
+IDST_MSG_ERRORMSGSAVE  "Ett fel uppstod vid skrivning av meddelandet."
+IDST_MSG_DELCCLIST     "Vill Du verkligen ta bort denna sÑndlista?"
+IDST_MSG_DELCCENTRY    "Vill Du verkligen ta bort denna post?"
+IDST_MSG_RESEND        "Vill Du sÑnda meddelandet igen?"
+IDST_MSG_HAVENICKNAME  "Kortnamnet existerar redan"
+IDST_MSG_LOOKUPMEM     "Ej tillrÑckligt minne"
+IDST_MSG_IDXOPENERR    "Indexfilen fîr domÑn '%s' kunde ej îppnas"
+IDST_MSG_DATOPENERR    "Datafilen fîr domÑn '%s' kunde ej îppnas"
+IDST_MSG_IDXREADERR    "Fel vid lÑsning av indexfilen fîr domÑn '%s'"
+IDST_MSG_DATREADERR    "Fel vid lÑsning av datafilen fîr domÑn '%s'"
+IDST_MSG_ERRREADSQPARAM "Kan ej lÑsa SquishinstÑllningar"
+IDST_MSG_ERRWRITESQPARAM "Kan ej skriva SquishinstÑllningar"
+IDST_MSG_SQPARAMVALUES "SquishinstÑllningarna Ñr felaktiga"
+IDST_MSG_LOOKUPHANDLE  "Sîk-""handlen"" fîr nodlistsîkningen Ñr ogiltig. Var vÑnlig meddela fîrfattaren detta."
+IDST_MSG_DELDOMAIN     "Vill Du verkligen ta bort denna domÑn?"
+IDST_MSG_HAVEDOMAIN    "DomÑnnamnet existerar redan"
+IDST_MSG_NEXTAREA      "Till nÑsta mîte med olÑsta meddelanden?"
+IDST_MSG_NONEXTAREA    "Det finns inga fler avsîkta mîten med olÑsta meddelanden"
+IDST_MSG_WORKERROR     "Fel vid bearbetning av markerade meddelanden"
+IDST_MSG_LOCKERROR     "Detta kommando kan inte utfîras, eftersom mîtet fîr "
+                       "tillfÑllet anvÑnds."
+IDST_MSG_BCDELERROR    "FjÑrrbeordningsmeddelandet kunde ej skapas."
+IDST_MSG_DELTEMPLATE   "Vill Du verkligen ta bort denna mall?"
+IDST_MSG_NOCCLIST      "SÑndlistan existerar inte lÑngre. Var god vÑlj "
+                       "en annan lista."
+IDST_MSG_DELSCRIPT     "Vill Du verkligen ta bort detta program?"
+IDST_MSG_NOCCENTRIES   "SÑndlistan har inga poster. Redigera listan igen."
+IDST_MSG_MODQUICKCC    "Vill Du Ñndra den existerande listan?"
+IDST_MSG_DOINGWORK     "Bearbetning pÜgÜr redan. Var god vÑnta tills dess att "
+                       "den har avslutats."
+IDST_MSG_REPLACENICK   "Detta kortnamn existerar redan. Vill Du ersÑtta den "
+                       "gamla definitionen?"
+IDST_MSG_CATCHUP       "Vill Du verkligen utfîra funktionen ""èterhÑmta""?"
+IDST_MSG_FINDNOPARTS   "Du har inte markerat nÜgon del av meddelandet"
+IDST_MSG_FINDNOAREAS   "Du har inte valt nÜgra mîten"
+IDST_MSG_FINDNOTEXT    "Du har inte angett nÜgon text"
+IDST_MSG_NOTTHERE      "Meddelandet eller mîtet existerar inte lÑngre"
+IDST_MSG_ETOSSERROR    "Ett fel uppstod vid skrivning av Echotoss.Log-filen"
+IDST_MSG_NOAREATAG     "Du har inte angett nÜgon mîtestag."
+IDST_MSG_NOPATHFILE    "Du har inte angett nÜgon sîkvÑg till arean."
+
+IDST_MSG_NOUPLINKAREAS "Inga mîtestitlar hittades i meddelandet."
+IDST_MSG_NOACTIONS     "Inga kommandon har utfîrts pÜ mîtet."
+IDST_MSG_DOEXTRACT     "Vill du verkligen hÑmta mîtestitlar frÜn meddelandet?"
+IDST_MSG_EM_DLLLOAD    "DLL:en kunde inte laddas."
+IDST_MSG_EM_DLLVER     "DLL:en kan inte anvÑndas med denna version av FleetStreet."
+IDST_MSG_EM_DLLFUNC    "DLL:en Ñr ingen utîknings-DLL."
+IDST_MSG_EM_DLLINT     "Ett internt fel har uppstÜtt i DLL:en."
+IDST_MSG_EM_CFGNOTF    "Konfigurationsfilen kunde inte hittas."
+IDST_MSG_EM_INIT       "Parametrarna fîr utîknings-DLL:en har inte angivits. Konfigurera DLL:en pÜ nytt."
+IDST_MSG_EM_CFGREAD    "Vid lÑsning av konfigurationsfilen uppstod ett fel."
+IDST_MSG_EM_CFGWRITE   "Vid skrivning av konfigurationsfilen uppstod ett fel."
+IDST_MSG_EM_CFGFORMAT  "Konfigurationsfilens format eller version stîds inte av utîknings-DLL:en."
+IDST_MSG_EM_CFGLINKED  "Ett bestÑllt mîte var redan pÜkopplat."
+IDST_MSG_EM_CFGUNLINKED "Ett avbestÑllt mîte var inte pÜkopplat."
+IDST_MSG_EM_NOPASS     "Namn eller lîsenord fîr upplÑnken saknas."
+IDST_MSG_DELUPLINK     "Vill Du verkligen ta bort denna upplÑnk?"
+
+IDST_MSG_INITBASE      "Fel vid lÑsning av konfigurationsfilen:\x0d\x0a%s."
+IDST_MSG_INITBASE+1    "Filen kunde inte hittas, eller kunde inte îppas"
+IDST_MSG_INITBASE+2    "LÑsfel"
+IDST_MSG_INITBASE+3    "OkÑnd version av konfigurationsfilen."
+IDST_MSG_INITBASE+4    "Fel i de allmÑnna konfigurationsdata."
+IDST_MSG_INITBASE+5    "Fel i mîtesdefinitionen."
+IDST_MSG_INITBASE+6    "Inga mîten har definierats i filen"
+IDST_MSG_APPENDAREAS   "UpplÑnken finns redan. Vill du lÑgga till detta meddelandes mîteslista?"
+IDST_MSG_REGONLY       "Detta kommando Ñr endast tillgÑngligt i den registrerade versionen."
+IDST_MSG_REQ_NOTF      "Fillistan kunde inte hittas, eller sÜ kan den inte kommas Üt."
+IDST_MSG_REQ_READERR   "Vid lÑsning av fillistan uppstod ett fil."
+IDST_MSG_REQ_DELLIST   "Vill Du verkligen ta bort listan?"
+
+IDST_MSG_CFGDLLBASE    "Fel vid inlÑsningen av CFG-DLL:en:\x0d\x0a%s."
+IDST_MSG_CFGDLLBASE+1  "DLL:en kunde inte laddas"
+IDST_MSG_CFGDLLBASE+2  "Funktionen saknas i DLL:en"
+IDST_MSG_CFGDLLBASE+3  "Felaktig DLL-version"
+IDST_MSG_CFGDLLBASE+4  "Tossern stîds ej"
+
+IDST_RX_NEWSCRIPT      "Nytt program"
+IDST_RX_NOHOOK         "<inget>"
+IDST_RX_ACCEL          "\tCtrl-"
+
+IDST_AL_AREADESC       "Mîte"
+IDST_AL_UNREAD         "nya"
+IDST_AL_TOTAL          "totalt"
+IDST_AL_DELETE         "Ta bort mîte"
+IDST_AL_DEFAULT        "Standard"
+IDST_AL_NEWFOLDER      "Ny mapp"
+
+IDST_FD_AREA           "Mîte"
+IDST_FD_NUMBER         "Nr."
+IDST_FD_FROM           "FrÜn"
+IDST_FD_SUBJECT        "émne"
+
+IDST_TITLE_DISCARD     "Ta bort meddelande"
+IDST_TITLE_MARKALL     "Markera alla meddelanden"
+IDST_TITLE_DELETE      "Ta bort meddelande(n)"
+IDST_TITLE_BEENSENT    "éndra meddelande"
+IDST_TITLE_CANCEL      "Avbryt meddelandet"
+IDST_TITLE_DELUNAME    "Ta bort namn"
+IDST_TITLE_DELADDRESS  "Ta bort adress"
+IDST_TITLE_DELNICKNAME "Ta bort kortnamn"
+IDST_TITLE_DELCCLIST   "Ta bort sÑndlista"
+IDST_TITLE_DELCCENTRY  "Ta bort post"
+IDST_TITLE_RESEND      "Spara meddelande"
+IDST_TITLE_DELDOMAIN   "Ta bort domÑn"
+IDST_TITLE_NEXTAREA    "Till nÑsta mîte"
+IDST_TITLE_BCDELERROR  "FjÑrradering"
+IDST_TITLE_AL_COPY     "MÜlmîte fîr 'kopiera'"
+IDST_TITLE_AL_MOVE     "MÜlmîte fîr 'flytta'"
+IDST_TITLE_AL_FORWARD  "MÜlmîte fîr 'vidarebefordra'"
+IDST_TITLE_AL_XPOST    "MÜlmîte(n) fîr 'korsposta'"
+IDST_TITLE_AL_REPLY    "MÜlmîte fîr 'svara'"
+IDST_TITLE_DELTEMPLATE "Ta bort mall"
+IDST_TITLE_DELSCRIPT   "Ta bort program"
+IDST_TITLE_MODQUICKCC  "SnabbsÑndlista"
+IDST_TITLE_REPLACENICK "ErsÑtt kortnamn"
+IDST_TITLE_CATCHUP     "èterhÑmta"
+IDST_TITLE_DOEXTRACT   "HÑmta mîtestitlar"
+IDST_TITLE_DELUPLINK   "Ta bort upplÑnk"
+IDST_TITLE_ATTACHFILES "Bifoga filer"
+IDST_TITLE_REGONLY     "Endast i den registrerade versionen"
+IDST_TITLE_REQ_DELLIST "Ta bort fillista"
+
+IDST_FORMAT_SCANNING   "Avsîker %s ..."
+IDST_FORMAT_RANGE      "%lu av %lu"
+IDST_FORMAT_REG        "registrerad till: %s"
+
+IDST_MW_NOAREA         "* inga mîten *"
+IDST_MW_AREA           "Mîte:"
+IDST_MW_FROM           "FrÜn:"
+IDST_MW_TO             "Till:"
+IDST_MW_SUBJ           "émne:"
+IDST_MW_ATTRIB         "Attrib:"
+
+IDST_ML_WORKING        "Arbetar..."
+IDST_ML_UNREAD         "TrÑd med olÑsta meddelanden"
+IDST_ML_ALLTHREADS     "Alla trÑd"
+IDST_ML_UNREADONLY     "Endast olÑsta meddelanden"
+IDST_ML_NUMBER         "Medd.nr."
+IDST_ML_FROM           "FrÜn"
+IDST_ML_TO             "Till"
+IDST_ML_SUBJECT        "émne"
+IDST_ML_UNREADBT       "OlÑsta meddelanden"
+IDST_ML_ALLMSGBT       "Alla meddelandet"
+IDST_ML_NOSUBJ         "* Inget Ñmne *"
+IDST_ML_DATEWRITTEN    "Skapandedatum"
+
+IDST_CC_NAME           "AnvÑndarnamn"
+IDST_CC_ADDRESS        "Adress"
+IDST_CC_SHOW           "Visa namn i sÑndtext"
+IDST_CC_YES            "Ja"
+IDST_CC_NO             "Nej"
+IDST_CC_NEWNAME        "Ny sÑndlista"
+IDST_CC_QUICKCC        "SnabbsÑndlista"
+
+IDST_TPL_HEADER        "Hej %Z!\x0d\x0a"
+IDST_TPL_FOOTER        "\x0d\x0a\x0d\x0aHÑlsningar, %I!\x0d\x0a"
+IDST_TPL_REPLY         "Svarar pÜ ett meddelande frÜn %F till %T:\x0d\x0a"
+IDST_TPL_DAREA         "* Svar pÜ ett meddelande frÜn %A"
+IDST_TPL_FORWARD       "======================================================\x0d\x0a"
+                       "* Ursprungligen i mîtet %A\x0d\x0a"
+                       "* Ursprungligen frÜn %F %J\x0d\x0a"
+                       "* Ursprungligen till %T %R\x0d\x0a"
+                       "* Ursprungligt Ñmne ""%S""\x0d\x0a"
+                       "======================================================\x0d\x0a\x0d\x0a"
+IDST_TPL_XPOST         "* Korspostat i %A"
+IDST_TPL_CCOPY         "* Mottagare: %C"
+IDST_TPL_FORWARDFOOTER "\x0d\x0a================ Slut pÜ vidaresÑndningen ================\x0d\x0a"
+IDST_TPL_DEFNAME       "Standard"
+IDST_TPL_NEWNAME       "Ny mall"
+IDST_TPL_ALLSYN        "Alla"
+
+IDST_NOT_XPDESELECT    "Korspostning avbruten"
+IDST_NOT_CCDESELECT    "SÑndlistefunktionen avbruten"
+IDST_NOT_MOVED         "Meddelandet har flyttats"
+IDST_NOT_COPIED        "Meddelandet har kopierats"
+IDST_NOT_REQUESTED     "ônskad filbegÑran har skapats"
+IDST_NOT_EXPORTED      "Meddelandet har exporterats"
+IDST_NOT_MARKALL       "Markerar meddelanden, var god vÑnta"
+IDST_NOT_PRINTED       "Meddelandet har skrivits ut"
+IDST_NOT_EXTRACTED     "Mîtestitlarna har hÑmtats"
+IDST_NOT_STRINGNOTFOUND "Sîktexten kunde inte hittas i meddelandet"
+
+IDST_NICK_NICKNAME     "Kortnamn"
+IDST_NICK_REALNAME     "Riktigt namn"
+IDST_NICK_ADDRESS      "Adress"
+
+IDST_RENUM_STAGE1      "Anpassar lÑnkar..."
+IDST_RENUM_STAGE2      "Omnumrerar..."
+
+IDST_AP_TITLE          "InstÑllningar fîr mîtet %s"
+IDST_AP_EMPTYTITLE     "InstÑllningar"
+IDST_AP_CANCEL         "~Avbryt mîtesinstÑllningar"
+
+IDST_LU_SYSOP          "Sysop"
+IDST_LU_ADDRESS        "Adress"
+IDST_LU_SYSTEM         "Systemnamn"
+IDST_LU_LOCATION       "Ort"
+IDST_LU_PHONE          "Telefonnr"
+IDST_LU_MODEM          "Modemtyp"
+IDST_LU_BAUD           "Antal bps"
+IDST_LU_CALLCOST       "Samtalskostnad"
+IDST_LU_USERCOST       "Meddelandekostnad"
+IDST_LU_FLAGS          "Attribut"
+IDST_LU_TITLE          "Adresser fîr: "
+
+IDST_ATT_TITLEFILE     "Fil"
+IDST_ATT_TITLESIZE     "Storlek"
+IDST_ATT_TITLESTATUS   "Status"
+IDST_ATT_OK            "OK"
+IDST_ATT_NOTF          "* ej funnen *"
+
+IDST_BRS_NODESTPL      "%d noder"
+IDST_BRS_NAMESTPL      "%d sysopnamn"
+IDST_BRS_ZONETPL       "Zon %d"
+IDST_BRS_NETTPL        "NÑt %d"
+IDST_BRS_OTHERNAME     "Diverse"
+IDST_BRS_WORKING       "Arbetar, var god vÑnta..."
+
+IDST_EM_ECHO           "Mîtestitel"
+IDST_EM_STATUS         "Status"
+IDST_EM_ACTION         "Kommando"
+IDST_EM_LINKED         "pÜslaget"
+IDST_EM_UNLINKED       "avslaget"
+IDST_EM_LINK           "BestÑll mîte"
+IDST_EM_UNLINK         "AvbestÑll mîte"
+IDST_EM_RESCAN         "Rescanna mîte"
+IDST_EM_REFRESH        "Fîrnya listan"
+IDST_EM_PAUSE          "SÑtt alla mîten passiva"
+IDST_EM_RESUME         "SÑtt alla mîten aktiva"
+
+IDST_MT_BIT            "Bitnummer"
+IDST_MT_BYTE           "Typnummer"
+IDST_MT_DESC           "Beteckning"
+
+IDST_TBC_DISP          "Visade knappar"
+IDST_TBC_AVAIL         "TillgÑngliga knappar"
+IDST_TBC_SEPARATOR     "----------"
+
+END
+
+RCINCLUDE "languages\swedish\main.dlg"

@@ -1,0 +1,21 @@
+IDs for configuration file formats. Every tosser support DLL returns a
+unique ID which is stored in the INI file.
+
+Add new IDs here.
+
+#define CFGTYPE_SQUISH    0UL
+#define CFGTYPE_FASTECHO  1UL
+#define CFGTYPE_IMAIL     2UL
+#define CFGTYPE_GECHO     3UL
+#define CFGTYPE_LORA      4UL
+#define CFGTYPE_FMAIL     5UL
+#define CFGTYPE_TERMAIL   6UL
+#define CFGTYPE_WMAIL     7UL
+#define CFGTYPE_XBBS      8UL
+#define CFGTYPE_NEWSWAVE  9UL
+#define CFGTYPE_CISGATE  10UL
+#define CFGTYPE_NWPM     11UL
+#define CFGTYPE_BBTOSS   12UL
+#define CFGTYPE_SOS      13UL
+#define CFGTYPE_SHOTGUN  14UL
+#define CFGTYPE_HPT      15UL

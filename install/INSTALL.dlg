@@ -1,0 +1,45 @@
+DLGINCLUDE 1 "F:\DATEN\C\READER\install\install.h"
+
+DLGTEMPLATE IDD_README LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ReadMe", IDD_README, 2, 6, 368, 181, WS_VISIBLE, FCF_SYSMENU | 
+            FCF_TITLEBAR
+    BEGIN
+        LISTBOX         201, 1, 17, 364, 161, LS_NOADJUSTPOS | LS_HORZSCROLL
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+                        PRESPARAMS PP_BACKGROUNDCOLOR, 0x00FFFFFFL
+                        PRESPARAMS PP_FONTNAMESIZE, "10.System Monospaced"
+        DEFPUSHBUTTON   "Close", IDIC_MAIN, 1, 1, 40, 14, WS_GROUP | 
+                        WS_DISABLED
+    END
+END
+
+DLGTEMPLATE IDD_MAIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "FleetStreet Install", IDD_MAIN, 12, 6, 313, 126, NOT 
+            FS_DLGBORDER | FS_BORDER | FS_SCREENALIGN, FCF_SYSMENU | 
+            FCF_TITLEBAR
+    BEGIN
+        CTEXT           "Welcome to", 109, 18, 116, 281, 9, DT_WORDBREAK
+        CONTROL         IDBM_MAIN, IDBM_MAIN, 74, 82, 20, 16, WC_STATIC, 
+                        SS_BITMAP | WS_VISIBLE
+        RTEXT           "Destination directory", 104, 8, 53, 91, 8
+        ENTRYFIELD      "", 105, 105, 53, 154, 8, ES_MARGIN | WS_DISABLED
+        PUSHBUTTON      "~Select...", 108, 263, 50, 43, 14, WS_GROUP | NOT 
+                        WS_VISIBLE | WS_DISABLED
+        RTEXT           "Language", 106, 53, 39, 46, 8
+        CONTROL         "", 107, 104, 37, 156, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_READONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTDEFAULT | WS_TABSTOP | 
+                        WS_VISIBLE | WS_DISABLED
+        AUTOCHECKBOX    "Create WPS ~Objects", 111, 103, 24, 136, 10, 
+                        WS_GROUP | WS_DISABLED
+        PUSHBUTTON      "Show ~ReadMe", 101, 9, 6, 69, 14, WS_GROUP | 
+                        WS_DISABLED
+        PUSHBUTTON      "~Install", 102, 83, 6, 40, 14, WS_DISABLED
+        PUSHBUTTON      "~Close", 103, 126, 6, 40, 14
+        CTEXT           "Text", 110, 13, 65, 285, 14, DT_VCENTER
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv"
+    END
+END

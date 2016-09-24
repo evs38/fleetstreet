@@ -1,0 +1,630 @@
+.im languages\help.names
+.***************************************************************************
+.***************************************************************************
+.*    FLTSTRT.IPF, Helpfile fuer Fleet Street                              *
+.***************************************************************************
+.***************************************************************************
+:userdoc.
+:docprof toc=1234.
+
+.***************************************************************************
+.* Help-Panels des Hauptfensters - huvudf”nstret
+.* 1997-10-22
+
+:h1 res=&PANEL_MAIN..FleetStreet
+:p.
+:lines align=center.
+V„lkommen till
+
+:font facename='Tms Rmn' size=24x18.:color fc=red.
+FleetStreet 1.27.1
+:font facename=default size=0x0.:color fc=default.
+:elines.
+:p.
+FleetStreet „r en FTS-kompatibel meddelanderedigerare f”r OS/2 2.x PM.
+FleetStreet kan bearbeta meddelandebaser i *.MSG-, Squish och JAM-format.
+:p.
+mnen&colon.
+:ul.
+:li.:link reftype=launch object='view.exe' data='FLTSTRT.INF'.Anv„ndarhandbok:elink.
+:eul.
+:i1 id=squish.Squish(tm)
+
+.****************************************************************
+.* Hilfe fuer Tasten - Tangentfunktioner
+.*
+
+:h1 res=&PANEL_KEYS..Tangentfunktioner
+:p.Det finns vissa tangentkombinationer som beror p† om Du f”r tillf„llet
+l„ser eller skriver ett meddelande.
+:ul.
+:li.:link reftype=hd refid=genkeys.Generellt tillg„ngliga tangentfunktioner:elink.
+:li.:link reftype=hd refid=readkeys.Tangentfunktioner vid l„sning:elink.
+:li.:link reftype=hd refid=editkeys.Tangentfunktioner vid skrivning:elink.
+:eul.
+
+:h2 id=genkeys.Generellt tillg„ngliga tangentfunktioner
+:p.F”ljande tangentkombinationer finns alltid till f”rfogande&colon.
+:parml compact tsize=20 break=none.
+:pt.Alt-X
+:pd.Avsluta FleetStreet
+:pt.F1
+:pd.Hj„lp
+:pt.Ctrl-F1
+:pd.Hj„lp f”r tangentfunktioner
+:pt.Ctrl-D
+:pd.Byte av aktuellt namn och adress
+:pt.Ctrl-W
+:pd.™ppna nodlistevisaren
+:pt.Ctrl-K
+:pd.Visa kludgeraderna
+:eparml.
+
+:h2 id=readkeys.Tangentfunktioner vid l„sning
+:p.F”ljande tangentfunktioner finns till f”rfogande vid l„sning av
+meddelanden&colon.
+:parml compact tsize=20 break=none.
+:pt.Ctrl-R
+:pd.Skriv ett svar till avs„ndaren
+:pt.Ctrl-Skift-R
+:pd.Skriv ett svar till avs„ndaren, men foga ej samman rader
+:pt.Ctrl-N
+:pd.Skriv ett svar till avs„ndaren, men i ett annat m”te
+:pt.Ctrl-Skift-N
+:pd.Skriv ett svar till avs„ndaren, i ett annat m”te, men foga ej samman
+rader
+:pt.Ctrl-E
+:pd.ndra ett meddelande
+:pt.Ctrl-A
+:pd.V„lj m”te
+:pt.Ctrl-B
+:pd.™ppna bokm„rkesf”nstret
+:pt.Ctrl-L
+:pd.mneslista
+:pt.Skift-PrintScreen
+:pd.Skriv ut meddelandet
+:pt.Ctrl-T
+:pd.Tr„dlista
+:pt.Ctrl-M
+:pd.Flytta meddelandet
+:pt.Ctrl-C
+:pd.Kopiera meddelandet
+:pt.Ctrl-F
+:pd.Vidarebefordra meddelandet
+:pt.Ctrl-Q
+:pd.Efterfr†ga filer
+:pt.Ctrl-X
+:pd.Exportera meddelandet
+:pt.Ins
+:pd.Skriv ett nytt meddelande
+:pt.Del
+:pd.Ta bort meddelandet
+:pt.Ctrl-I
+:pd.S”k meddelande
+:pt.Ctrl-O
+:pd.Foga avs„ndaren av det aktuella meddelandet till listan ”ver kortnamn
+:pt.Ctrl-Z
+:pd.Foga avs„ndaren av det aktuella meddelandet till en s„ndlista
+:pt.V„nsterpil
+:pd.Visa f”reg†ende meddelande
+:pt.H”gerpil
+:pd.Visa n„sta meddelande
+:pt.Ctrl-v„nsterpil
+:pd.G† till det meddelande, p† vilket detta „r ett svar
+:pt.Ctrl-h”gerpil
+:pd.G† till det meddelande, vilket svarar p† detta brev
+:pt.Ctrl-Home
+:pd.G† till f”rsta meddelandet i detta m”te
+:pt.Ctrl-End
+:pd.G† till sista meddelandet i detta m”te
+:pt.Skift-Home
+:pd.G† till tidigarevarande Lastread
+:pt.Skift-h”gerpil
+:pd.G† till n„sta m”te som „r avs”kt och inneh†ller nya meddelanden
+:pt.Mellanslag
+:pd.Markera/avmarkera det aktuella meddelandet
+:pt.Ctrl-P
+:pd.Markera alla meddelande som "l„sta"
+.* @@
+:pt.Ctrl-J
+:pd.Toggle primary and alternative font
+:pt.Ctrl-H
+:pd.Toggle highlighting
+:eparml.
+
+:h2 id=editkeys.Tangentfunktioner vid skrivning
+:p.F”ljande tangentfunktioner finns till f”rfogande vid skrivning av
+meddelande&colon.
+:parml compact tsize=20 break=none.
+:pt.Ctrl-Y, Ctrl-Baksteg
+:pd.Ta bort aktuell rad
+:pt.Alt-Baksteg
+:pd.ngra senaste redigeringen
+:pt.Ctrl-S
+:pd.Spara meddelandet
+:pt.Ctrl-I
+:pd.Importera en fil
+:pt.Ctrl-X
+:pd.Skriv meddelandet i flera m”ten
+:pt.Ctrl-C
+:pd.Skicka meddelandet till flera personer
+:pt.F2...F12
+:pd.Utf”r ett tangentbordsmakro
+:pt.Esc
+:pd.Avbryt inmatningen
+:pt.Ctrl-A, Ctrl-Skift-F
+:pd.ndra meddelandets attribut
+:pt.Ctrl-Skift-K
+:pd.V„xla "Radera efter s„ndning"-attributet
+:pt.Ctrl-Skift-C
+:pd.V„xla "Crash"-attributet
+:pt.Ctrl-Skift-A
+:pd.V„xla "Fil bifogad"-attributet
+:pt.Ctrl-Skift-R
+:pd.V„xla "Efterfr†ga filer"-attributet
+:pt.Ctrl-Skift-P
+:pd.V„xla "Privat"-attributet
+:pt.Ctrl-Skift-H
+:pd.V„xla "Hold"-attributet
+:pt.Ctrl-Skift-D
+:pd.V„xla "Direkt"-attributet
+.* @@
+:pt.Ctrl-J
+:pd.Toggle primary and alternative font
+:eparml.
+
+.***************************************************************************
+.* Help-Panels des Menues                                                  *
+.***************************************************************************
+
+.im languages\swedish\menu.ips
+
+.***************************************************************************
+.* Setup                                                                   *
+.***************************************************************************
+.im languages\swedish\setup.ips
+.im languages\swedish\psetup.ips
+.im languages\swedish\echoman.ips
+
+.***************************************************************************
+.* Template-Setup                                                          *
+.***************************************************************************
+.im languages\swedish\template.ips
+
+
+.***************************************************************************
+.* Carbon-Copy-Listen                                                      *
+.***************************************************************************
+.im languages\swedish\ccopy.ips
+
+.***************************************************************************
+.* Help-Panels der Dialoge                                                 *
+.***************************************************************************
+
+:h1.Dialog
+
+.***************************************************************************
+.* Message-Attribute                                                       *
+.***************************************************************************
+
+:h2 id=attrib res=&PANEL_ATTRIB..Attribut
+:p.St„ller in detta meddelandes attribut.
+:p.Detaljerad information om meddelandeattributen&colon.
+:parml.
+:pt.:hp2.Privat:ehp2.
+:pd.S„tt detta attribut om ditt meddelande „r av privat natur, d.v.s. om bara
+mottagaren ska f† l„sa det. Observera&colon. detta attribut saknar betydelse f”r
+n†got annat „n netmail. I merparten av echomailm”ten „r inte privata
+meddelanden till†tna. Om Du anv„nder privatattributet d„r kommer alla „nd†
+att kunna l„sa det.
+:pt.:hp2.Crash:ehp2.
+:pd.Meddelandet kommer att skickas direkt till det system, till
+vilket det „r adresserat, d.v.s. det kommer inte att routas till din vanliga
+uppl„nk. Mailern kommer om m”jligt att ringa upp och f”rs”ka skicka
+meddelandet.
+:pt.:hp2.Mottaget:ehp2.
+:pd.Meddelandet „r ett personligt meddelande och har redan l„sts.
+:pt.:hp2.S„nt:ehp2.
+:pd.Meddelandet har s„nts till din uppl„nk.
+:pt.:hp2.Fil bifogad:ehp2.
+:pd.mnesraden inneh†ller namnet p† en fil, som ska skickas tillsammans med
+meddelandet till mottagaren. Kombinera alltid detta attribut med
+"Crash"-attributet. De flesta system routar inte filer †t Dig.
+:pt.:hp2.In transit:ehp2.
+:pd.Detta meddelande „r inte addresserat till Ditt system, och kommer ej
+heller fr†n det. Det kommer att vidares„ndas till ett annat system. L†t
+detta attribut vara som det „r.
+:pt.:hp2.Orphan:ehp2.
+:pd.(Vilse) Destinationsadressen „r ok„nd, eller s† „r mottagaren flaggad som
+"Hold" eller "Down" i nodlistan. L†t detta attribut vara som det „r.
+:pt.:hp2.Radera efter s„ndning:ehp2.
+:pd.Detta meddelande kommer att raderas efter packning av tossern.
+:pt.:hp2.Lokalt:ehp2.
+:pd.Meddelandet har skrivits in lokalt, d.v.s. p† Ditt system.
+:pt.:hp2.Hold:ehp2.
+:pd.Meddelandet kommer inte att s„ndas
+:pt.:hp2.Beg„r fil:ehp2.
+:pd.renderaden inneh†ller namn p† filer som ska beg„ras (freq) hos det
+mottagande systemet. Tossern kommer av detta att skapa en requestfil n„r
+meddelandena packas. Anv„nd endast detta attribut i netmail.
+:pt.:hp2.Beg„r kvitto:ehp2.
+:pd.Betyder att Du vill ha ett kvitto p† att mottagaren har f†tt
+meddelandet.
+:pt.:hp2.r kvitto:ehp2.
+:pd.Det h„r meddelandet „r ett s†dant kvitto.
+:pt.:hp2.Audit Request:ehp2.
+:pd.Detta attribut anv„nds av SEAdog. L†t detta attribut vara som det „r.
+:pt.:hp2.File update request:ehp2.
+:pd.(Beg„r uppdaterad fil) Som Beg„r fil, men bara de filer som „r nyare „n
+de Du redan har kommer att skickas.
+:pt.:hp2.Arkivera efter s„ndning:ehp2.
+:pd.Meddelandet kommer att flyttas till en annat m”te efter packningen.
+:pt.:hp2.Direkt:ehp2.
+:pd.Meddelandet kommer att skickas direkt till mottagaren (ej omdirigerat).
+:pt.:hp2.Trunkera fil:ehp2.
+:pd.Bifogade filer kommer att trunkeras (l„ngden kommer att s„ttas till 0)
+efter s„ndning.
+:pt.:hp2.Ta bort fil:ehp2.
+:pd.Bifogade filer kommer att tas bort efter s„ndning.
+:pt.:hp2.Immediate:ehp2.
+:pd.(Omedelbart) Meddelandet kommer att skickas direkt till mottagaren (ej
+omdirigerat). Det kommer att skickas s† snart som m”jligt.
+:pt.:hp2.S„nd via gateway:ehp2.
+:pd.Meddelandet kommer att dirigeras via en gateway.
+:pt.:hp2.Tvinga h„mtning:ehp2.
+:pd.Tvinga h„mtning
+:pt.:hp2.S„nd via Hub:ehp2.
+:pd.Meddelandet kommer att s„ndas via din hub-nod.
+:pt.:hp2.L†s:ehp2.
+:pd.Meddelandet kommer inte att raderas vid packning av arean.
+:hp2.Varning&colon.:ehp2. Fungerar inte med SqPack!
+:pt.:hp2.Fast bredsteg:ehp2.
+:pd.Meddelandet ska visas med ett icke-proportionellt typsnitt.
+:eparml.
+:i1 id=message.Meddelande
+:i2 refid=message.Attribut
+
+
+:h2 res=&PANEL_REPLY..Svara
+:p.Du kan antingen svara till meddelandets avs„ndare, eller till dess
+mottagare (brukar ben„mnas "followup reply").
+:parml.
+:pt.:hp2.Svara till avs„ndaren:ehp2.
+:pd.Svara till meddelandets avs„ndare
+:pt.:hp2.Svara till mottagaren:ehp2.
+:pd.Svara till meddelandets mottagare
+:pt.:hp2.Svara till den ursprunglige avs„ndaren:ehp2.
+:pd.Svara till den ursprunligen s„ndaren av ett vidares„nt meddelande.
+Detta val „r bara tillg„ngligt f”r vidares„nda meddelanden.
+:pt.:hp2.Foga ej samman rader:ehp2.
+:pd.Raderna kommer inte att fogas samman i citatet. Detta „r anv„ndbart om
+Du citerar breda tabeller eller uppr„kningar, eller n„r rader som redan „r
+citat inte ska sammanfogas.
+:pt.:hp2.Svara i annat m”te:ehp2.
+:pd.Det nya meddelandet kommer att sparas i ett annant m”te, t.ex i ett
+netmailm”te.
+:pt.:hp2.Svara utan citat:ehp2.
+:pd.Svaret ska inte inneh†lla n†gra citat.
+:eparml.
+
+.im languages\swedish\find.ips
+
+.im languages\swedish\area.ips
+
+.***************************************************************************
+.* Message liste - mneslista
+.*
+:h2 id=msglist res=&PANEL_MSGLIST..mneslista
+:p.
+mneslista visar samtliga meddelanden i m”tet. Meddelandena kommer att
+visas i samma ordning som de st†r i meddelandebasen.
+:p.
+Ditt egen namn kommer att visas i en avvikande f„rg. L„sta och ol„sta
+meddelanden har sina meddelandenummer i olika f„rger. De exakta f„rgerna
+kan st„llas in i „mneslistans inst„llningsf”nster.
+:p.
+Du kan v„lja flera meddelanden med musen eller med tangentbordet och
+manipulera dessa. Dessa manipulationsm”jligheter finns&colon.
+:ul compact.
+:li.Ta bort
+:li.Kopiera
+:li.Flytta
+:li.Skriv ut
+:li.Exportera
+:eul.
+
+:h3 hide nosearch res=&PANEL_MLISTSETT..Ooops
+:p.Tom panel, detta ska inte h„nda. Ber„tta det f”r oss!
+
+:h3 res=&PANEL_MLS_COLORS..F„rg
+:p.Du kan v„lja olika f„rger f”r de olika f„lten.
+:p.V„lj grundf„rgen med f„rgcirkeln. Den aktuella f„rgen markeras med ett
+h†rkors.
+:p.St„ll in f„rgens ljusstyrka med reglaget till h”ger om f„rgcirkeln.
+
+:h2 res=&PANEL_ABOUTDLG..Information
+:p.FleetStreet utvecklades av Harry Herrmannsd”rfer och Michael Hohner.
+
+:h2 res=&PANEL_FILEDLG..Fildialog
+:p.V„lj filen och klicka p† :hp2.OK:ehp2..
+
+
+:h2 res=&PANEL_KLUDGEINFO..Ut”kad meddelandeinformation
+:p.Detta f”nster inneh†ller samtliga kludgerader och SEEN-BYs som finns i
+det aktuella meddelandet. Du kan kopiera inneh†llet till Urklipp.
+:p.Klicka p† :hp2.St„ng:ehp2. f”r att st„nga f”nstret.
+:p.Klicka p† :hp2.Kopiera:ehp2. f”r att kopiera den markerade texten till
+Urklipp. Om ingen text „r markerad kommer hela inneh†ller att kopieras till
+Urklipp.
+:p.Du kan l„mna det h„r f”nstret ”ppet vid l„nsning. Det kommer automatiskt
+att uppdateras n„r Du hoppar till ett annat meddelande.
+:p.Klicka p† :hp2.Alltid ”verst:ehp2. f”r att att alltid h†lla detta
+f”nster framf”r FleetStreets huvudf”nster.
+
+.im languages\swedish\request.ips
+
+:h2 res=&PANEL_REPLYLIST..Till svar
+:p.Det finns mer „n ett svar till det h„r meddelandet. Meddelandena listas
+med sina meddelandenummer och namn p† avs„ndaren. V„lj ut det meddelande
+som du vill l„sa och klicka p† :hp2.OK:ehp2.. Klicka p† :hp2.Avbryt:ehp2.,
+om du inte vill l„sa n†got av dessa meddelanden.
+
+:h2 hide res=&PANEL_ERRORINIFILE..Fel vid l„sning av konfigurationsfilen
+:p.Vid inl„sning av konfigurationsfilen uppstod ett fel. Detta kan bero p†
+ett l„sfel (kan „ven bero p† att mediat „r skrivskyddat, eller att du inte
+har l„sr„ttigheter osv.).
+:p.FleetStreet kommer att anv„nda standardinst„llningarna, allts† "utan
+inst„llningar".
+
+:h2 hide res=&PANEL_NOINIFILE..Ingen INI-fil hittades
+:p.De sparade inst„llningarna kunde inte hittas, eller inst„llningarna „r
+inte giltiga. Filen FLTSTRT.INI m†ste finnas i samma katalog som
+FLTSTRT.EXE.
+:p.Om du startar FleetStreet f”r f”rsta g†ngen forts„tter Du med
+installationen av FleetStreet. Inst„llningarna kommer att sparas n„r Du
+avslutar FleetStreet.
+
+:h2 hide res=&PANEL_OLDINIFILE..INI-filen inkompatibel
+:p.Inst„llningarna sparades med en „ldre version av FleetStreet.
+Inst„llningarna i FLTSTRT.INI kan inte anv„ndas med denna version. En ny
+fil kommer att skapas n„r Du avslutar FleetStreet.
+:p.Tryck p† :hp2.Avbryt:ehp2. f”r att avsluta FleetStreet utan att genomf”ra
+n†gra f”r„ndringar.
+
+:h2 hide res=&PANEL_DELETE..Ta bort meddelande
+:p.Du har valt att ta bort det aktuella meddelandet. Borttagna meddelanden
+kan inte †terskapas.
+:p.Klicka :hp2.Ja:ehp2. f”r att ta bort meddelandet, eller :hp2.Nej:ehp2.
+f”r att beh†lla meddelandet.
+
+:h2 hide res=&PANEL_BEENSENT..Redigera s„nt meddelande
+:p.Meddelandet har redan behandlats av tossern och har skickats till sin
+destinationsadress. Det s„nda meddelandet kommer inte att ber”ras av de
+f”r„ndringar du g”r. L„s i tosserns dokumentation om hur du utf”r en
+"rescan" av m”tet.
+:p.Om meddelandet inte „r lokalt kommer dina ev. nerl„nkar f”r„ndrade
+meddelanden, och det „r oftast inte ”nskv„rt.
+:p.Klicka :hp2.Ja:ehp2., om du „nd† vill „ndra meddelandet, klicka
+:hp2.Nej:ehp2., om du inte vill „ndra meddelandet.
+
+:h2 hide res=&PANEL_DISCARD..Avbryt meddelande
+:p.Om du klickar p† :hp2.Ja:ehp2. kommer det meddelande Du nyss skrev inte
+att sparas. Meddelandetexten kommer att g† f”rlorad.
+:p.Klicka p† :hp2.Nej:ehp2. f”r att forts„tta skriva.
+
+:h2 hide res=&PANEL_EXITNOSAVE..Meddelandet har inte sparats
+:p.Du har angett att du vill avsluta FleetStreet, men Du har inte sparat
+undan det meddelande Du h†ller p† att skriva. Om Du avsluta FleetStreet
+kommer Ditt meddelande inte att sparas. Meddelandetexten kommer att g†
+f”rlorad.
+:p.Klicka p† :hp2.Nej:ehp2. f”r att forts„tta skriva.
+:p.Klicka p† :hp2.Ja:ehp2. om Du „nd† vill avsluta FleetStreet.
+
+:h2 hide res=&PANEL_INFOMISSING..Du har inte fyllt i alla n”dv„ndiga f„lt
+:p.Ditt meddelande m†ste †tminstone inneh†lla f”ljande&colon.
+:ul.
+:li.Namn och adress f”r mottagaren
+:li.Text i „mnesraden
+:eul.
+:p.Om n†got av detta saknas kan inte meddelandet sparas.
+
+:h2 hide res=&PANEL_TOOLONG..Meddelandet „r f”r l†ngt
+:p.Meddelandet „r l„ngre „n den inst„llda delningsl„ngden. Det
+„r inte m”jligt att dela upp meddelandet ytterligare en g†ng efter
+redigeringen.
+
+:h2 hide res=&PANEL_ERRORMSGSAVE..Fel uppstod vid skrivning
+:p.N„r meddelandet skulle skrivas uppstod ett fel. Detta beror oftast p†
+diskfel, t.ex †tkomstfel, skrivskyddade media eller f”r lite utrymme.
+:p.Du kan f”rs”ka l”sa problemet och f”rs”ka att spara meddelandet en g†ng
+till. Om problemet inte kan l”sas m†ste du avbryta redigeringen.
+
+:h2 res=&PANEL_CURRENTNAME..Aktuellt namn &amp. adress
+:p.V„lj ett namn och/eller en adress och klicka p† :hp2.OK:ehp2.. Den
+aktuella adressen visas i det nedre h”gra h”rnet i huvudf”nstret.
+:p.Om du har fler namn och adresser „n vad Du kan v„lja ska Du g† till
+inst„llningarna och l„gga till fler namn och adresser.
+:p.Om Du vill „ndra standardnamn och -adress f”r ett speciellt m”te ”ppnar
+du m”teslistan och klickar med musknapp 2 p† m”testiteln, sedan v„ljer Du
+"Inst„llningar", och markerar ett annat namn och/eller en annan adress.
+Sedan st„nger Du inst„llningsf”nstret igen.
+
+.im languages\swedish\thlist.ips
+
+:h2 hide res=&PANEL_INVALIDFILE..Kan ej ladda fr†n filen
+:p.FleetStreet kan p† grund av en av f”ljande anledningar inte ladda den
+angivna filen&colon.
+:ul.
+:li.Filen existerar inte
+:li.Du har inte l„sr„ttigheter f”r filen
+:li.Filnamnet „r inte namnet p† en fil, utan p† en katalog eller en
+enhet
+:eul.
+
+:h2 hide res=&PANEL_ERRORLOAD..Problem vid inladdning av fil
+:p.Vid inladdningen uppstod det ett l„sfel. Filen har inte importerats.
+
+:h2 res=&PANEL_EXPORTFILE..Exportera fil
+:p.V„lj destinationskatalog och ange ett filnamn.
+:parml.
+:pt.:hp2.Med huvud:ehp2.
+:pd.Markera detta val f”r att „ven spara meddelandehuvudet. Om Du inte
+markerar detta val kommer endast meddelandetexten att sparas.
+:pt.:hp2.Separatorlinje:ehp2.
+:pd.Markera dett val f”r att skriva till en separatorlinje efter varje
+exporterat meddelande.
+:pt.:hp2.L„gg till:ehp2.
+:pd.Meddelandet kommer att l„ggas till i filen, i de fall d† den redan
+existerar.
+:pt.:hp2.Skriv ”ver:ehp2.
+:pd.Om filen redan existerar kommer den att skrivas ”ver.
+:eparml.
+
+:h2 hide res=&PANEL_ERRORSAVE..Fel vid sparande av filen
+:p.FleetStreet kan p† grund av en av f”ljande anledningar inte skriva den
+angivna filen&colon.
+:ul.
+:li.Enheten eller s”kv„gen existerar inte
+:li.Du har inte skrivr„ttigheter till den filen, katalogen eller
+enheten
+:eul.
+
+:h2 hide res=&PANEL_INVALIDFILENAME..Ogiltigt filnamn
+:p.FleetStreet kan p† grund av en av f”ljande anledningar inte skriva den
+angivna filen&colon.
+:ul.
+:li.Filen inneh†ller tecken som inte „r till†tna i filnamn
+:li.Filnamnet „r reserverat
+:eul.
+
+:h2 hide res=&PANEL_RESEND..S„nda meddelande igen
+:p.Meddelandet som Du har „ndrat har redan skickats en g†ng. Klicka p†
+:hp2.Ja:ehp2. om du vill skicka meddelandet en g†ng. Klicka p†
+:hp2.Nej:ehp2. om Du inte vill skicka meddelandet igen.
+
+.***************************************************************************
+.* Nodelist-Lookup
+.*
+
+:h2 hide res=&PANEL_LOOKUPMEM..Ej tillr„ckligt minne
+:p.Nodlistes”kningen kunde inte genomf”ras, eftersom det inte finns
+tillr„ckligt mycket ledigt minne.
+:p.Det h„r „r ett ovanligt fel!
+
+:h2 hide res=&PANEL_IDXOPENERR..Indexfilen kunde ej ”ppnas
+:p.Nodlisteindexfilen kunde inte ”ppnas. Detta beror antagligen p† n†gon av
+f”ljande orsaker&colon.
+:ul.
+:li.Indexfilen existerar inte
+:li.S”kv„gen/filnamnet „r felaktigt
+:li.Du har inte l„sr„ttigheter f”r filen
+:li.Ett annat program anv„nder filen exklusivt
+:eul.
+:p.R„tta till felet och f”rs”k igen.
+
+:h2 hide res=&PANEL_DATOPENERR..Datafilen kunde ej ”ppnas
+:p.Nodlistedatafilen kunde inte ”ppnas. Detta beror antagligen p† n†gon av
+f”ljande orsaker&colon.
+:ul.
+:li.Datafilen existerar inte
+:li.S”kv„gen/filnamnet „r felaktigt
+:li.Du har inte l„sr„ttigheter f”r filen
+:li.Ett annat program anv„nder filen exklusivt
+:eul.
+:p.R„tta till felet och f”rs”k igen.
+
+:h2 hide res=&PANEL_IDXREADERR..Fel vid l„sning av indexfilen
+:p.Vid l„sning av indexfilen har ett fel uppst†t. Detta beror antagligen p†
+n†gon av f”ljande orsaker&colon.
+:ul.
+:li.Ett annat program anv„nder filen exklusivt
+:li.Filen „r defekt
+:eul.
+:p.R„tta till felet och f”rs”k igen.
+
+:h2 hide res=&PANEL_DATREADERR..Fel vid l„sning av datafilen
+:p.Vid l„sning av datafilen har ett fel uppst†t. Detta beror antagligen p†
+n†gon av f”ljande orsaker&colon.
+:ul.
+:li.Ett annat program anv„nder filen exklusivt
+:li.Filen „r defekt
+:eul.
+:p.R„tta till felet och f”rs”k igen.
+
+:h2 res=&PANEL_LOOKUP..Nodlistes”kningsresultat
+:p.Vid s”kning hittades mer „n en adress f”r anv„ndarnamnet. V„lj en av
+adresserna fr†n listan.
+:p.En kort sammanfattning av de funna posterna visas. Du kan visa den
+kompletta nodlisteposten genom att deaktivera :hp2.Kort:ehp2..
+
+.im languages\swedish\browser.ips
+
+:h2 res=&PANEL_ATTACHSTAT..Bifogade filer
+:p.Filnamn och storlek f”r de filer som Du har bifogat med meddelandet visas.
+:p.Om en av filerna inte existerar visas "* ej funnen *". Korrigera d†
+filnamnet p† „mnesraden.
+
+:h2 hide res=&PANEL_NEXTAREA..Till n„sta m”te
+:p.Om Du vill v„xla till n„sta m”te d„r Du har ol„sta meddelanden klickar
+Du :hp2.Ja:ehp2.. Klicka p† :hp2.Nej:ehp2., f”r att vara kvar i detta m”te.
+
+:h2 hide res=&PANEL_NONEXTAREA..Inga fler m”ten med ol„sta meddelanden
+:p.FleetStreet kunde inte hitta n†got m”te som „r avs”kt och som inneh†ller
+ol„sta meddelanden. Du kan f”rs”ka att avs”ka m”tena p† nytt.
+
+:h2 hide res=&PANEL_WORKERROR..Fel vid&dot.&dot.&dot.
+:p.N„r FleetStreet bearbetade de utvalda meddelandena uppstod ett fel. Det
+bero p† olika saker&colon.
+:ul compact.
+:li.Meddelandet hittades inte i meddelandebasen. En annan process
+kan ha hunnit raderat det.
+:li.Meddelandebasen „r skadad.
+:li.Ett l„s- eller skrivfel uppstod.
+:li.Det g†r inte att skriva p† disken, eftersom filen eller mediat
+inte „r skrivbart.
+:eul.
+:p.
+Klicka p† :hp2.Avbryt:ehp2. f”r att avbryta bearbetningen av de markerade
+meddelandena.
+:p.
+Klicka p† :hp2.F”rs”k igen:ehp2. f”r att f”rs”ka utf”ra den senaste
+operationen en g†ng till. Detta fungerar inte i alla situationer!
+:p.
+Klicka p† :hp2.Ignorera:ehp2. f”r att ignorera felet och forts„tta med
+n„sta meddelande.
+
+:h2 hide res=&PANEL_LOCKERROR..Kommandot kan inte utf”ras
+:p.Kommandot Du valde kan inte utf”ras p† det valda m”tet, eftersom det f”r
+tillf„llet anv„nds. Du kan inte omnumrera eller „ndra inst„llningarna f”r
+ett m”te n„r det „r ”ppet. V„xla f”rst till ett annat m”te och f”rs”k en
+g†ng till.
+
+:h2 hide res=&PANEL_BCDELERROR..Fel vid fj„rradering
+:p.Meddelandet som „r n”dv„ndigt f”r fj„rrbeordran av radering kunde inte
+skapas. Kontrollera meddelandebasen och f”rs”k igen.
+
+:h2 hide res=&PANEL_ETOSSERROR..Fel vid skrivning av Echotoss.Log
+:p.Vid skrivning av Echotoss.Log-filen uppstod ett fel. Det kan bero p†
+olika saker&colon.
+:ul compact.
+:li.Filen eller disken „r skrivskyddad.
+:li.Ett annat program anv„nder filen exklusivt
+:li.Filnamnet inneh†ller tecken som inte „r till†tna i filsystemet.
+:li.Du har inte angett en existerande enhet eller katalog.
+:li.Du har bara angett ett katalognamn, inte en fullst„ndig s”kv„g
+och filnamn.
+:li.Disken „r full.
+:eul.
+:p.Kontrollera disken och FleetStreets inst„llningar och f”rs”k igen.
+
+:h2 hide res=&PANEL_INITERROR..Fel vid l„sning av konfigurationsfilen
+:p.Vid l„sning av tosserns konfigurationsfil uppstod ett fel.
+:p.Om detta meddelande visas vid programstart och Du „nd† forts„tter, kan
+Du f”rlora data (ex.vis m”tesinst„llningar). Det rekommenderas d„rf”r att
+Du avslutar FleetStreet genom att klicka p† :hp2.Avbryt:ehp2.-knappen.
+Avhj„lp felet och starta FleetStreet p† nytt. Om Du inte avhj„lper felet p† en
+g†ng, „r det en bra id‚ att s„kerhetskopiera FleetStreets INI-filer.
+
+.im languages\swedish\rexx.ips
+
+:euserdoc.

@@ -1,0 +1,100 @@
+/* ------------------------------------------------------------------- */
+/* NEWSWRAP.FRX                                      Stand: 20.12.1995 */
+/* Autor: Joerg Desch, 2:244/1121.12     EMail: jd@anene.rhein-main.de */
+/* ------------------------------------------------------------------- */
+/* Setzt man FleetStreet als NewsReader ein, so kÑmpft man im          */
+/* allgemeinen mit der EinschrÑnkung des Usenet, da· Zeilen nicht      */
+/* lÑnger als 80 Zeichen sein dÅrfen. Viele Gateway's unterstÅtzen     */
+/* leider keinen WordWrap. Dieses Manko versucht das Makro NEWSWRAP    */
+/* zu beseitigen. Im nicht gequoteten Bereich werden die Zeilen so     */
+/* umgebrochen, da· das letzte Wort den rechten Rand von <RMargin>     */
+/* nicht Åberschreitet. Der ideale Platz fÅr den Aufruf von NEWSWRAP   */
+/* ist der SAVE-Hook. Das Makro benîtigt keinen Monitor!               */
+/* NEWSWRAP hÑngt an eine geteile Zeile (als Soft-Return) den String   */
+/* <Suffix> an. Dieser ist per Default leer, kann aber z.B. auf "="    */
+/* gesetzt werden. Auf diese Weise werden SoftReturns im MIME-Standard */
+/* dargestellt. ACHTUNG: Die so erzeugten News entsprechen bei weitem  */
+/* nicht dem MIME-Standard, da hierfÅr der entsprechende Header fehlt. */
+/* Manche GateWays fÅgen diesen aber ein, ohne den eigentlich Text zu  */
+/* verÑndern. So kommt dann wenigsten ein bichen MIME-Feeling auf ;)   */
+/* An dieser Stelle mîchte ich darum bitten énderungen und Bugs an     */
+/* per Mail weiterzugeben. Ansonsten viel Spa·...                      */
+/* ------------------------------------------------------------------- */
+
+/* === Setup variables and library calls === */
+RMargin = 73           /* rigth margin for word wrap */
+LMargin = "  "         /* left margin for quoted text */
+Suffix  = ""           /* optional string to mark soft returns */
+
+
+/* === Don't modify the code below this line! === */
+AddTo = 0
+call RxFuncAdd 'RxMessageBox', 'RexxUtil', 'RxMessageBox'
+
+/* === First, make a copy of the mail === */
+MyText.0 = FleetMsg.Text.0
+do i=1 to FleetMsg.Text.0
+  MyText.i = FleetMsg.Text.i
+end i
+
+/* === Now, Wrap every paragraph and put it  === */
+/* === into FleetMsg.Text                    === */
+do LineNo=1 to MyText.0
+  FirstWord = word(MyText.LineNo,1)
+  if pos('>',FirstWord) = 0 then
+    Call WriteParagraph MyText.LineNo
+  else
+  do
+    AddTo = AddTo + 1
+    FleetMsg.Text.AddTo = LMargin || Strip(MyText.LineNo)
+    FleetMsg.Text.0 = AddTo
+  end
+end  /* do LineNo */
+
+rc = FSSetText( 'FleetMsg.Text' )
+if rc \= "OK" then
+do
+call RxMessageBox 'Error: FSSetText failed', 'ReturnCode:' || rc ,,
+                  'OK', 'EXCLAMATION'
+end
+
+Exit
+
+
+/* Procedure: WriteParagraph CurrPara                                 */
+/*                                                                    */
+/* WordWrap the current Paragraph and add the Lines to FleetMsg.Text  */
+/* The current line number is given in AddTo.                         */
+
+WriteParagraph:
+  parse arg CurrPara
+  if length( CurrPara ) > RMargin then
+  do
+    CurrLine = ""
+    do i=1 to words( CurrPara )
+      if length(CurrLine)+length(word(CurrPara,i)) > RMargin then
+      do
+        AddTo = AddTo + 1
+        FleetMsg.Text.AddTo = CurrLine || Suffix
+        FleetMsg.Text.0 = AddTo
+        CurrLine = ""
+      end
+      if CurrLine = "" then
+        CurrLine = word( CurrPara, i )
+      else
+        CurrLine = CurrLine word( CurrPara, i )
+    end
+    if CurrLine <> "" then
+    do
+      AddTo = AddTo + 1
+      FleetMsg.Text.AddTo = CurrLine || " "
+      FleetMsg.Text.0 = AddTo
+    end
+  end
+  else
+  do
+    AddTo = AddTo + 1
+    FleetMsg.Text.AddTo = CurrPara
+    FleetMsg.Text.0 = AddTo
+  end
+RETURN

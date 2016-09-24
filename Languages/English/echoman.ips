@@ -1,0 +1,128 @@
+.* Echo-Manager
+
+:h1 res=&PANEL_ECHOMANAGER..Echo Manager
+:p.The echo manager window displays a list of areas available from your uplink.
+You can use the context menu of the echos to link to an area or to unlink from
+an echo.
+:p.Use the context menu of the list to request an update from your uplink,
+set all echos to "inactive" or back to "active", or to open the settings
+notebook of the echo manager.
+:p.Press :hp2.OK:ehp2. to generate the message for your uplink.
+:p.Press :hp2.Cancel:ehp2. to close the window without changes.
+
+:h2 res=&PANEL_EMS_UPLINKS..Uplinks
+:p.This page contains a list of all uplinks for which there is an echo list.
+:p.Select an uplink and press :hp2.Change:ehp2. to change information
+about the echo manager program of this uplink.
+:p.Press :hp2.Delete:ehp2. to delete the echo list of this uplink.
+
+:h2 res=&PANEL_UPLINK..Uplink
+:p.This page contains information about the echo manager program at your uplink.
+:parml.
+:pt.:hp2.Echo manager name:ehp2.
+:pd.The user name to be used for addressing the echo manager program at your
+uplink.
+:pt.:hp2.Password:ehp2.
+:pd.Password for the echo manager.
+:eparml.
+
+:h2 res=&PANEL_EMS_EXTDLL..Extension DLL
+:p.When linking to an echo or unlinking from an echo, FleetStreet can
+call functions in a DLL. This DLL can then add requested echos to
+your tosser configuration file or remove them respectively.
+:parml.
+:pt.:hp2.Echo manager DLL:ehp2.
+:pd.Full path and file name (with file name extension) of the DLL that is
+to be used by FleetStreet.
+:pt.:hp2.Locate:ehp2.
+:pd.Pop up a file dialog to select the DLL.
+:pt.:hp2.Configure:ehp2.
+:pd.Configure parameters that are used by the DLL when adding or removing
+echos.
+:eparml.
+:p.
+The file :hp2.FLTCF_SQ.DLL:ehp2. that comes with FleetStreet can be used
+as extension DLL if (and only if) you're using Squish as your tosser with
+a standard SQUISH.CFG file.
+
+:h2 hide res=&PANEL_NOUPLINKAREAS..No areas found
+:p.The message does not contain any areas. The previous list is retained.
+
+:h2 hide res=&PANEL_NOACTIONS..No actions
+:p.No action is performed on any area. There also isn't a global action.
+:p.No message is generated.
+
+:h2 hide res=&PANEL_DOEXTRACT..Extract areas
+:p.The message is scanned for a list of areas available at your uplink.
+If such a list is found, it replaces your previous list.
+
+:h2 hide res=&PANEL_EM_DLLLOAD..DLL could not be loaded
+:p.The extension DLL could not be loaded.
+:p.Possible reasons&colon.
+:ul compact.
+:li.The file was not found, e.g. because the file name is not correct.
+:li.The file isn't a DLL file.
+:li.The full path and name of the file wasn't specified.
+:li.The file is corrupt.
+:eul.
+:p.
+Correct the error and retry, or contact the supplier of the DLL.
+
+:h2 hide res=&PANEL_EM_DLLVER..DLL can not be used
+:p.The extension DLL was written for an incompatible version of
+FleetStreet. It can not be used with this version. Ask the
+supplier of the DLL for an update.
+
+:h2 hide res=&PANEL_EM_DLLFUNC..Not an extension DLL
+:p.The DLL you specified is not a FleetStreet extension DLL.
+
+:h2 hide res=&PANEL_EM_DLLINT..Internal error in DLL
+:p.The extension DLL is not working correctly. Contact the
+supplier of the DLL.
+
+:h2 hide res=&PANEL_EM_CFGNOTF..CFG file not found
+:p.The extension DLL can't find or open the tosser configuration
+file.
+
+:h2 hide res=&PANEL_EM_INIT..Parameters not initialized
+:p.The extension DLL can't be used without configuring it. Open
+the settings notebook of the echo manager, go to the :hp2.Extension DLL:ehp2.
+page and press the :hp2.Configure:ehp2. button to configure the parameters
+for the DLL.
+
+:h2 hide res=&PANEL_EM_CFGREAD..Error reading CFG file
+:p.The extension DLL can't read the CFG file.
+
+:h2 hide res=&PANEL_EM_CFGWRITE..Error writing CFG file
+:p.The extension DLL can't modify the CFG file. The file may be set
+read-only or may be on a read-only medium.
+
+:h2 hide res=&PANEL_EM_CFGFORMAT..Invalid CFG format
+:p.The extension DLL can't handle the tosser configuration file because
+it was generated in an incompatible format or version.
+:p.Ask the supplier of the DLL for an update.
+
+:h2 hide res=&PANEL_EM_CFGLINKED..Echo already linked
+:p.When trying to add an echo to the tosser configuration file, the
+echo was found to already exist. This shouldn't happen (oh well!).
+
+:h2 hide res=&PANEL_EM_CFGUNLINKED..Echo not linked
+:p.When trying to remove an echo from the tosser configuration file, the
+echo was not found. This shouldn't happen (well, obviously it does happen!?).
+
+:h2 hide res=&PANEL_EM_NOPASS..No name or password
+:p.FleetStreet needs the name and password to create the message to
+the uplink. One of them (or both) is missing.
+:p.Open the settings notebook of the echo manager and enter name
+and password for the uplink.
+
+:h2 hide res=&PANEL_DELUPLINK..Delete uplink
+:p.Press :hp2.Yes:ehp2. to delete the selected uplink. Press :hp2.No:ehp2.
+if you want to keep this uplink.
+
+:h2 hide res=&PANEL_EM_APPENDAREAS..Append echos
+:p.There already is an echo list from this uplink.
+:p.Press :hp2.Yes:ehp2. to append the new echo list to the old one.
+:p.Press :hp2.No:ehp2. to replace the old echo list with the new one.
+:p.Press :hp2.Cancel:ehp2. to discard the extracted areas.
+

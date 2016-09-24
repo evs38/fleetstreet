@@ -1,0 +1,54 @@
+                             Format INSTALL.FIL
+                             ==================
+
+Gr”áe     Name             Bedeutung
+===================================================
+ULONG     ulFormat         Format-Kennung, derzeit 1150.
+          File-Eintrag     File-Info s.u.
+          End              Ende-Kennung. s.u.
+
+
+File-Eintrag:
+  ULONG   File-Typ
+  *       File-Info
+  FDATE   File-Datum
+  FTIME   File-Zeit
+  ULONG   Flags
+  ULONG   File-Laenge
+  *       File-Daten
+
+
+File-Typ:
+      FILETYPE_NONE      0  Ende-Kennung
+      FILETYPE_FILE      1  Normale Datei, ins Haupt-Dir
+      FILETYPE_SCRIPT    2  Script-Datei, in Dir \SCRIPTS
+      FILETYPE_LANG      3  Language-File, ins Haupt-Dir als FLEETLNG.DLL
+      FILETYPE_HLP       4  Help-File, ins Haupt-Dir als FLTSTRT.HLP
+      FILETYPE_READ      5  Readme, ins Haupt-Dir
+      FILETYPE_DOC       6  User-Doku, ins Haupt-Dir als FLTSTRT.INF
+      FILETYPE_OBSFILE   7  Ueberfluessiges File aus alter Version (w/ Wildcards)
+
+
+Flags:
+      1                  Link erzeugen
+
+File-Info FILE:
+      File-Name, 0-term
+
+File-Info SCRIPT:
+      File-Name, 0-term
+      Script-Name, 0-term
+
+File-Info LANG:
+      Sprachen-Name, 0-term
+
+File-Info HLP:
+      Sprachen-Name, 0-term
+
+File-Info READ:
+      File-Name, 0-term
+      Sprachen-Name, 0-term
+
+File-Info OBSFILE:    (es folgen _keine_ Filedaten!)
+      File-Name, 0-term
+

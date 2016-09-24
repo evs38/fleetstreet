@@ -1,0 +1,43 @@
+.***************************************************************************
+.* Printer-Setup - Skrivarinst„llningar
+.* 1996-07-22
+
+:h1 res=&PANEL_PRINTSETUP..Skrivarinst„llningar
+:p.
+:p.V„lj en av sidorna&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_PS_LIST..Skrivare:elink.
+:li.:link reftype=hd res=&PANEL_PS_BORDERS..Marginaler:elink.
+:li.:link reftype=hd res=&PANEL_PS_FONTS..Typsnitt:elink.
+:li.:link reftype=hd res=&PANEL_PS_OUTPUT..Utdata:elink.
+:esl.
+
+:h2 res=&PANEL_PS_LIST..Skrivare
+:p.
+V„lj ur listan den skrivare, p† vilken Du ”nskar att FleetStreet ska skriva ut.
+:p.
+Genom att dubbelklicka p† en skrivare, eller genom att trycka p† knappen
+:hp2.Konfigurera:ehp2. kan du st„lla in ytterligare inst„llningar f”r
+hur utskriften ska ske.
+
+:h2 res=&PANEL_PS_BORDERS..Marginaler
+:p.
+St„ll in marginalerna f”r utskriften. Du kan st„lla in avst†ndet fr†n
+den v„nstra, h”gra, ”vre och undre papperskanten.
+
+:h2 res=&PANEL_PS_FONTS..Typsnitt
+:p.
+St„ll in de typsnitt med vilka utskriften ska ske. Typsnitt f”r
+meddelandehuvudet och -texten kan st„llas in separat.
+:p.
+Du kan v„lja ett nytt typsnitt genom att du drar ett typsnitt fr†n
+fontpaletten till det f„lt du ”nskar „ndra. Genom att dubbelsklicka p†
+ett f„lt kan du st„lla in typsnittet i en speciell dialogruta.
+
+:h2 res=&PANEL_PS_OUTPUT..Utdata
+:p.
+H„r st„ller du in vilka delar av meddelandet som ska skrivas ut.
+:p.
+Med inst„llningen :hp2.Sidnummer:ehp2. kommer det att p† den andra, och de p†
+den f”ljande, sidorna tryckas en titelrad med sidnumret.
+

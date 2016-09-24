@@ -1,0 +1,129 @@
+.* Echo-Manager
+
+:h1 res=&PANEL_ECHOMANAGER..Echo-Manager
+:p.Nell'Echo-Manager viene visualizzata una lista delle aree che sono disponibili
+dall'uplink. Per agganciare o sganciare aree, bisogna usare il menu contestuale
+delle aree in questione.
+:p.Il menu contestuale della lista offre la possibilitÖ di ordinare una lista
+attualizzata dall'uplink, di mettere tutti gli echos a "inattivi" oppure "attivi",
+di aprire il taccuino delle impostazione del Echo-Manager.
+:p.Bisogna premere :hp2.OK:ehp2. per creare il messaggio all'uplink.
+:p.Bisogna premere :hp2.Annulla:ehp2. per chiudere la finestra senza nessuna
+modifica.
+
+:h2 res=&PANEL_EMS_UPLINKS..Uplinks
+:p.Questa pagina contiene una lista di tutti gli uplinks per i quali esiste una
+lista degli echos disponibili.
+:p.Bisogna selezionare un'uplink e premere :hp2.Modifica:ehp2. per modificare le
+informazioni che riguardano il programma Echo-Manager dell'uplink in questione.
+:p.Bisogna premere :hp2.Cancella:ehp2. per cancellare la lista echos dell'uplink
+in questione.
+
+
+:h2 res=&PANEL_UPLINK..Uplink
+:p.Questa pagina contiene informazioni sul programma Echo-Manager dell'uplink in
+questione.
+:parml.
+:pt.:hp2.Nome Echo-Manager:ehp2.
+:pd.Il nome da usare, per accedere al programma Echo-Manager dell'uplink in questione.
+:pt.:hp2.Password:ehp2.
+:pd.Password per l'Echo-Manager.
+:eparml.
+
+:h2 res=&PANEL_EMS_EXTDLL..DLL di ampliamento
+:p.Quando si aggancia oppure sgancia un echo dall'uplink, FleetStreet puï avviare
+funzioni in una DLL. Questa DLL puï inserire l'echo agganciato nel file di configurazione
+del tosser, oppure cancellarlo.
+:parml.
+:pt.:hp2.Echo-Manager-DLL:ehp2.
+:pd.Path completo e nome file (con estensione) della DLL da usare da
+FleetStreet.
+:pt.:hp2.Cerca:ehp2.
+:pd.Dialogo file per selezionare la DLL.
+:pt.:hp2.Configura:ehp2.
+:pd.Impostazione dei parametri da usare dalla DLL agganciando o sganciando echos.
+:eparml.
+:p.
+Il file :hp2.FLTCF_SQ.DLL:ehp2. fornito con FleetStreet puï essere utilizzato come DLL di
+ampliamento se (e solamente se) Squish viene usato come tosser con una SQUISH.CFG standard.
+
+:h2 hide res=&PANEL_NOUPLINKAREAS..Non ä stata trovata nessun area
+:p.Il messaggio non contiene nessun area. La lista precedente viene usata ancora.
+
+:h2 hide res=&PANEL_NOACTIONS..Nessun azione
+:p.Non viene lanciata nessun azione con un'area. E' non c'ä nemmeno un'azione globale.
+:p.Es wird keine Message erzeugt.
+
+:h2 hide res=&PANEL_DOEXTRACT..Estrai aree
+:p.Si cerca una list di aree nel messaggio attuale, disponibili presso l'uplink.
+Nel caso che venga trovata una tale lista sostituirÖ quella precedente.
+
+:h2 hide res=&PANEL_EM_DLLLOAD..Non ä stato possibile caricare la DLL
+:p.La DLL di ampliamento non si poteva caricare.
+:p.Possibili cause&colon.
+:ul compact.
+:li.Non ä stato trovato il file, per esempio per via di un nome sbagliato del file in questione.
+:li.Il file indicato non ä una DLL.
+:li.Non sono stati indicati path completo e nome file.
+:li.Il file ä danneggiato.
+:eul.
+:p.
+Bisogna correggere l'errore oppure chiedere consiglio al produttore della DLL.
+
+:h2 hide res=&PANEL_EM_DLLVER..DLL non utilizzabile
+:p.La DLL di ampliamento ä stata creata per una versione di FleetStreet non
+compatibile con quella precedente. Bisogna chiedere un aggiornamento al produttore
+della DLL.
+
+:h2 hide res=&PANEL_EM_DLLFUNC..Non si tratta di una DLL di ampliamento
+:p.La DLL indicata non ä una DLL di ampliamento per FleetStreet.
+
+:h2 hide res=&PANEL_EM_DLLINT..Errore interno nella DLL
+:p.La DLL di ampliamento non lavora in modo corretto. Bisogna chiedere consiglio al
+produttore della DLL.
+
+:h2 hide res=&PANEL_EM_CFGNOTF..Non ä stato trovato il file di configurazione
+:p.La DLL di ampliamento non puï trovare oppure aprire il file di configurazione del tosser
+
+:h2 hide res=&PANEL_EM_INIT..Parametri non impostati
+:p.La DLL di ampliamento non puï essere utilizzata senza essere stata configurata.
+Bisogna aprire il taccuino delle impostazione dell'Echo-Manager, passare alla pagina della
+:hp2.DLL di ampliamento:ehp2. e premere il pulsante :hp2.Configura:ehp2..
+
+:h2 hide res=&PANEL_EM_CFGREAD..Errore di lettura del file di configurazione
+:p.La DLL di ampliamento non puï leggere il file di configurazione.
+
+:h2 hide res=&PANEL_EM_CFGWRITE..Errore di scrittura del file di configurazione
+:p.La DLL di ampliamento non puï modificare il file di configurazione. Eventualmente
+il file ä indicato come di "sola lettura" oppure si trova su un media su cui non ä
+possibile scrivere.
+
+:h2 hide res=&PANEL_EM_CFGFORMAT..Formato non valido del file di configurazione
+:p.La DLL di ampliamenteo non puï aggiornare il file di configurazione del tosser,
+dato che il suo formato non ä compatibile.
+:p.Bisogna chiedere al produttore della DLL un aggiornamento.
+
+:h2 hide res=&PANEL_EM_CFGLINKED..Echo giÖ agganciato
+:p.Durante il tentativo di inserire l'echo nel file di configurazione del tosser,
+l'echo c'era giÖ. Una cosa del genere non dovrebbe succedere (perï!).
+
+:h2 hide res=&PANEL_EM_CFGUNLINKED..Echo non agganciato
+:p.Durante il tentativo di cancellare l'echo dal file di configurazione del tosser,
+l'echo non ä stato trovato. Una cosa del genere non dovrebbe succedere (ma succede
+lo stesso!?).
+
+:h2 hide res=&PANEL_EM_NOPASS..Nessun nome o password
+:p.Per creare un messaggio all'uplink ci vogliono il nome e la password.
+Ne manca l'uno o l'altro, oppure tutti e due per l'uplink in questione.
+:p.Bisogna aprire il taccuino delle impostazioni dell'Echo-Manager e inserirci i dati
+per l'uplink in questione.
+
+:h2 hide res=&PANEL_DELUPLINK..Cancella uplink
+:p.Bisogna premere :hp2.Sç:ehp2. per cancellare l'uplink selezionato.
+Bisogna premere :hp2.No:ehp2. per mantenere i dati dell'uplink.
+
+:h2 hide res=&PANEL_EM_APPENDAREAS..Aggiungi echos
+:p.Esiste giÖ una lista echos dell'uplink in questione.
+:p.Bisogna premere :hp2.Sç:ehp2. per aggiungere la lista nuova a quella vecchia.
+:p.Bisogna premere :hp2.No:ehp2. per sostituire la lista echos da quella nuova.
+:p.Bisogna premere :hp2.Annulla:ehp2. per cancellare le aree estratte.

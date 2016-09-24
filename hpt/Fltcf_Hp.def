@@ -1,0 +1,10 @@
+LIBRARY FLTCF_HP INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet hpt CFG'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+  QueryFormatID   @1
+  QueryFormatName @2
+  QueryVer        @4
+  ReadHptCfg      @3
+

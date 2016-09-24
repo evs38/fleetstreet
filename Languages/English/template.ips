@@ -1,0 +1,193 @@
+.***************************************************************************
+.* Template-Setup                                                          *
+.***************************************************************************
+
+:h1 res=&PANEL_TEMPLATE..Template
+:p.Select a page&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_TE_QUOTE..Quotes:elink.
+:li.:link reftype=hd res=&PANEL_TE_HEADER..Header:elink.
+:li.:link reftype=hd res=&PANEL_TE_FOOTER..Footer:elink.
+:li.:link reftype=hd res=&PANEL_TE_REPLY..Reply:elink.
+:li.:link reftype=hd res=&PANEL_TE_DAREA..Reply in different Area:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARD..Forward:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARDFOOTER..Forward footer:elink.
+:li.:link reftype=hd res=&PANEL_TE_FORWARDORDER..Forward order:elink.
+:li.:link reftype=hd res=&PANEL_TE_XPOST..Crosspost:elink.
+:li.:link reftype=hd res=&PANEL_TE_CCOPY..Carbon copy:elink.
+:li.:link reftype=hd res=&PANEL_TE_ORIGIN..Origin line:elink.
+:esl.
+
+:h1 hide res=&PANEL_DELTEMPLATE..Delete template
+:p.
+Press :hp2.Yes:ehp2. to delete this template. All areas which are associated with
+this template, will then use the default template.
+:p.
+Press :hp2.No:ehp2. to keep this template.
+
+.* ****************************** Template-Folder *****************************
+:h1 res=&PANEL_TPLFOLDER..Templates folder
+:p.
+The templates folder contains all message templates.
+:p.
+There is one special template, the default template. It has a blue :hp2."M":ehp2. on its
+icon instead of a red :hp2."M":ehp2..
+:p.
+The default template is used&colon.
+:ul compact.
+:li.for new areas (until a different template is assigned to the new area)
+:li.for areas with a different template assigned, when this other template
+does no longer exist.
+:eul.
+:p.
+You can assign a template to a message area in two ways&colon.
+:ol compact.
+:li.Open the settings notebook of the area and select a template on the
+"General" page.
+:li.Drag the template icon to the area list and drop it on the desired area.
+:eol.
+:p.
+Use the context menu of a template to
+:ul compact.
+:li.open it to edit the various fields
+:li.create another template
+:li.copy the template
+:li.delete the template (except when it's the default template)
+:eul.
+:p.
+Change the name of the template by clicking on the icon while holding down
+the ALT key.
+:p.
+You can copy the template by holding down the CTRL key while dragging
+it over the templates folder.
+
+
+:h2 res=&PANEL_TE_QUOTE..Quotes
+:p.Quoting messages is influenced by the following settings&colon.
+:parml.
+:pt.:hp2.Quoted line length:ehp2.
+:pd.Length of the lines measured in characters when the message is converted
+to quoted text.
+:pt.:hp2.Join length:ehp2.
+:pd.Line length for joining two successive lines. When the first line is longer
+than this number, the lines are joined.
+:pt.:hp2.Quoting style:ehp2.
+:pd.Either use the writer's initials and a ">" as indicator of quoted lines, or
+use ">" only.
+:pt.:hp2.Quote symbol:ehp2.
+:pd.Select the character symbol to use for marking quotes.
+:eparml.
+
+:h2 res=&PANEL_TE_HEADER..Header
+:p.The header template is inserted at the top of the message.
+:p.Available :link reftype=hd refid=tokens.tokens:elink.&colon.
+:p.%T, %Z
+:p.:hp2.Synonym for "All":ehp2.
+:p.When the recipient's name is the same as this entry, the name is not used
+when replacing the tokens in the header template.
+
+:h2 res=&PANEL_TE_FOOTER..Footer
+:p.The footer template is inserted at the bottom of the message. It is used when
+you write new messages or reply to a message.
+:p.Available :link reftype=hd refid=tokens.tokens:elink.&colon.
+:p.%U, %I
+
+:h2 id=reptempl res=&PANEL_TE_REPLY..Reply
+:p.The reply template is inserted at the top of the message after the header
+template. It is only used when ypu reply to a message.
+:p.Available :link reftype=hd refid=tokens.tokens:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %D, %M, %O, %P, %J, %R, %S, %E
+
+:h2 res=&PANEL_TE_DAREA..Reply in different Area
+:p.The reply-in-different-area template is inserted above the header template. It is
+only used when you reply to a message and place the reply in a different area.
+:p.Available :link reftype=hd refid=tokens.tokens:elink.&colon.
+:p.%A, %E
+
+:h2 res=&PANEL_TE_FORWARD..Forward
+:p.The forward template is inserted at the top of the message. It is only used when
+you forward a message.
+:p.Available :link reftype=hd refid=tokens.tokens:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %U, %I, %J, %R, %S, %E, %D, %M, %W
+
+:h2 res=&PANEL_TE_FORWARDFOOTER..Forward footer
+:p.The forward footer template is inserted after the original message text. It is only
+used when you forward a message.
+:p.Available :link reftype=hd refid=tokens.tokens:elink.&colon.
+:p.%F, %G, %T, %Z, %A, %U, %I
+
+:h2 res=&PANEL_TE_FORWARDORDER..Forward order
+:parml.
+:pt.:hp2.Additional text first:ehp2.
+:pd.Your comments to a forwarded message appear before the forwarded message.
+:pt.:hp2.Forwarded message first:ehp2.
+:pd.The forwarded message appears before your comments.
+:eparml.
+
+:h2 res=&PANEL_TE_XPOST..Crosspost
+:p.The crosspost template is inserted at the top of the message. It is used when
+you crosspost a message in several areas.
+:p.Available :link reftype=hd refid=tokens.tokens:elink.&colon.
+:p.%A, %E
+
+:h2 res=&PANEL_TE_CCOPY..Carbon copy
+:p.The carbon copy template is inserted at the top of the message. It is used when
+you use a carbon copy list to send a message to more than one addressee.
+:p.Available :link reftype=hd refid=tokens.tokens:elink.&colon.
+:p.%C
+
+:h2 res=&PANEL_TE_ORIGIN..Origin line
+:p.The text specified here is inserted into the origin line of new messages.
+:p.
+:hp2.Select origin line randomly&colon.:ehp2.
+:p.
+When you check :hp2."Select origin line randomly":ehp2., the origin text is
+selected randomly for every new message. The origin lines are taken from a
+file. This file is a simple text file that contains one origin per line.
+:p.
+Specify the name of the file or press the :hp2."Locate":ehp2. button to
+select the file.
+
+:h2 id=tokens hide.Tokens
+:p.The following tokens are available in message templates&colon.
+:parml break=none.
+:pt.:hp2.%T:ehp2.
+:pd.Name of the addressed user (original message)
+:pt.:hp2.%Z:ehp2.
+:pd.First name of the addressed user (original message)
+:pt.:hp2.%R:ehp2.
+:pd.Address of the addressed user (original message). When replying to echomail
+or when forwarding echomail, this token is ignored.
+:pt.:hp2.%O:ehp2.
+:pd.Name of the addressed user (new message)
+:pt.:hp2.%P:ehp2.
+:pd.First name of the addressed user (new message)
+:pt.:hp2.%F:ehp2.
+:pd.Name of the sending user
+:pt.:hp2.%G:ehp2.
+:pd.First name of the sending user
+:pt.:hp2.%J:ehp2.
+:pd.Address of the sending user
+:pt.:hp2.%A:ehp2.
+:pd.Area tag. When crossposting a message, this is the destination area. When
+replying in a different area or forwarding a message, this is the original area.
+:pt.:hp2.%E:ehp2.
+:pd.Area description. When crossposting a message, this is the destination area. When
+replying in a different area or forwarding a message, this is the original area.
+:pt.:hp2.%U:ehp2.
+:pd.Your own name
+:pt.:hp2.%I:ehp2.
+:pd.Your first name
+:pt.:hp2.%W:ehp2.
+:pd.Your own address
+:pt.:hp2.%C:ehp2.
+:pd.Names of the users in the carbon copy list
+:pt.:hp2.%D:ehp2.
+:pd.Date of the message you are replying to
+:pt.:hp2.%M:ehp2.
+:pd.Time of the message you are replying to
+:pt.:hp2.%S:ehp2.
+:pd.Subject of the message you area replying to
+:pt.:hp2.%%:ehp2.
+:pd.A literal %
+:eparml.

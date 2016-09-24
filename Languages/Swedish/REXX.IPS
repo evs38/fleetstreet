@@ -1,0 +1,110 @@
+.***************************************************************************
+.* Rexx-Erweiterung, schwedisch - Rexxst”d
+.* 1996-07-22
+
+:h1.Rexxprogram
+:p.FleetStreet kan utf”ra program (scripts) i spr†ket Rexx, vilket
+medf”ljer OS/2. Rexxspr†ket har ut”kats med :hp2.f”rdefinierade
+variabler:ehp2. samt extra :hp2.funktioner:ehp2.
+
+:h2 res=&PANEL_RXFOLDER..Rexxprogramhanteraren
+:p.Rexxprogramhanteraren inneh†ller samtliga Rexxprogram (scripts).
+:p.Du kan anv„nda programmens till„gsmenyer f”r att
+:ul compact.
+:li.”ppna inst„llningarna f”r programmet
+:li.utf”ra programmet
+:li.skapa ett nytt program
+:li.ta bort programmet.
+:eul.
+:p.
+Om du vill „ndra programmets namn klickar du p† ikonen samtidigt som du
+h†ller ned Alt-tangenten.
+:p.Du kan ta bort ett program genom att dra det till tuggen.
+:artwork align=center name='shredscr.bmp'.
+:p.Du kan skriva ut ett program genom att dra det till ett skrivarobjekt.
+:artwork align=center name='printscr.bmp'.
+:p.Det „r „ven m”jligt att redigera ett program genom att dra det till ett
+programobjekt p† WPS, eller till ett ”ppet EPM-f”nster.
+:artwork align=center name='editscr.bmp'.
+:p.Ett Rexxprogramobjekt kan enkelt skapas genom att du drar programmets
+fil fr†n ett WPS-f”nster till Rexxprogramhanterarf”nstret.
+:artwork align=center name='makescr.bmp'.
+
+
+:h2 res=&PANEL_RXSETTINGS..Inst„llningar
+:p.Var god v„lj ett „mne&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_RXSETTINGS_GEN..Inst„llningar f”r Rexxprogram:elink.
+:li.:link reftype=hd res=&PANEL_RXSETTINGS_MONI..Program”vervakningsinst„llningar:elink.
+:esl.
+
+:h3 res=&PANEL_RXSETTINGS_GEN..Inst„llningar f”r Rexxprogram
+:parml.
+:pt.:hp2.Programtitel:ehp2.
+:pd.Ett beskrivande namn p† programmet. Det „r detta namn som kommer att
+visas under ikonen i Rexxprogramhanteraren och p† Rexxmenyn.
+:pt.:hp2.Filnmamn:ehp2.
+:pd.Programmets filnamn. Du kan „ven klicka p† :hp2.S”k:ehp2.-knappen f”r
+att v„lja en fil. Du kan „ven dra en fil fr†n ett WPS-f”nster till
+inmatningsf„ltet.
+:pt.:hp2.P† menyn:ehp2.
+:pd.Om du v„ljer "p† menyn" kommer detta program att visas i Rexxmenyn, och
+kan enkelt startas d„rifr†n, utan att ”ppna Rexxprogramhanteraren.
+:eparml.
+
+:h3 res=&PANEL_RXSETTINGS_MONI..Program”vervakningsinst„llningar
+:p.Ett program kan startas med eller utan ett program”vervakningsf”nster.
+Ett ”vervakningsf”nster visar programmets utmatning, och ger ett
+inmatningsf„lt f”r eventuella indata.
+:p.Om Du markerar :hp2.™vervakning:ehp2., s† kan Du „ven v„lja om f”nstret
+automatiskt ska st„ngas n„r Rexxprogrammet avslutats, eller om det ska
+bibeh†llas ”ppet.
+:p.:hp8.Observera&colon.:ehp8. V„lj inte :hp2.Ingen ”vervakning:ehp2. om
+programmet, eller program som startas fr†n det, kr„ver inmatning fr†n
+anv„ndaren. Programmet kan d† inte forts„tta. Det g†r :hp8.inte:ehp8. att ta
+sig ur denna situation p† n†got s„tt, programmet kan inte stoppas fr†n
+FleetStreet!
+
+:h2 res=&PANEL_RXMONITOR..Program”vervakning
+:p.™vervakningsf”nstret visar programmets utmatning, och ger ett
+inmatningsf„lt f”r eventuella indata.
+:p.Tryck p† :hp2.Stoppa:ehp2. f”r att avbryta programmet. Om programmet
+v„ntar p† inmatning fr†n anv„ndaren kommer det inte att avbrytas f”rr„n Du
+har angivit n†got.
+:p.Tryck p† :hp2.St„ng:ehp2. f”r att st„nga ”vervakningsf”nstret efter det
+att programmet har avslutats.
+
+:h2 hide res=&PANEL_DELSCRIPT..Ta bort program
+:p.Om Du vill ta bort programmet trycker Du :hp2.Ja:ehp2.. Tryck p†
+:hp2.Nej:ehp2. om programmet inte ska tas bort.
+
+:h2 hide res=&PANEL_REXXERROR..Rexxfel
+:p.Ett fel uppstod vid utf”randet av programmet. En beskrivning av felet
+visas.
+:p.:hp8.Observera&colon.:ehp8. Beskrivningen tillhandah†lls av systemet,
+spr†ket p† beskrivningen beror allts† p† din OS/2-version.
+
+
+.***************************************************************************
+.* Hooks
+.*
+
+:h2 res=&PANEL_RXHOOKS..Hooks
+:p.FleetStreet kan automatiskt starta specifika program i olika
+situationer.
+:p.F”r n„rvarande finns f”ljande "hooks"&colon.
+:parml.
+:pt.:hp2.Programslut:ehp2.
+:pd.Denna "hook" anropas n„r FleetStreet „r p† v„g att st„ngas. Den
+speciella variabeln :hp2.NewMail:ehp2. har d† ett v„rde som anger vilken
+typ av meddelanden som har skrivits under den aktuella sessionen. N„r denna
+hook anropas har filen :hp2.Echotoss.Log:ehp2. redan skrivits till
+h†rddisken. Det g†r allts† bra att anropa ex.vis :hp2.Squish:ehp2. f”r att
+exportera de nya meddelandena.
+
+:pt.:hp2.Innan sparande:ehp2.
+:pd.Denna hook anropas f”re ett nytt meddelande sparas i ett m”te. Den
+kommer „ven att anropas innan „ndringar av ett existerande meddelande
+sparas.
+:eparml.
+

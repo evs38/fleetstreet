@@ -1,0 +1,137 @@
+.* Echo-Manager
+
+:h1 res=&PANEL_ECHOMANAGER..Echo-Manager
+:p.Im Echo-Manager wird eine Liste der Areas angezeigt, die beim Uplink
+verfÅgbar sind. Sie kînnen das Kontext-MenÅ der Areas verwenden, um Areas zu
+bestellen oder abzubestellen.
+:p.Verwenden Sie das KontextmenÅ der Liste, um eine neue Liste beim Uplink
+anzufordern, alle Echos auf "inaktiv" oder zurÅck auf "aktiv" zu setzen, oder
+um das Einstellungs-Notebook des Echo-Managers zu îffnen.
+:p.DrÅcken Sie :hp2.OK:ehp2., um die Message an den Uplink zu erzeugen.
+:p.DrÅcken Sie :hp2.Abbrechen:ehp2., um das Fenster ohne énderungen zu
+schlie·en.
+
+:h2 res=&PANEL_EMS_UPLINKS..Uplinks
+:p.Diese Seite enthÑlt eine Liste aller Uplinks, fÅr die eine Echo-Liste
+existiert.
+:p.WÑhlen Sie einen Uplink und drÅcken Sie :hp2.éndern:ehp2., um die
+Informationen zum Echo-Manager-Programm dieses Uplinks zu Ñndern.
+:p.DrÅcken Sie :hp2.Lîschen:ehp2., um die Echo-Liste dieses Uplinks
+zu lîschen.
+
+
+:h2 res=&PANEL_UPLINK..Uplink
+:p.Diese Seite enthÑlt Informationen Åber das Echo-Manager-Programm bei
+Ihrem Uplink.
+:parml.
+:pt.:hp2.Echo-Manager-Name:ehp2.
+:pd.Der Name, der verwendet werden soll, um das Echo-Manager-Programm bei
+Ihrem Uplink anzusprechen.
+:pt.:hp2.Passwort:ehp2.
+:pd.Passwort fÅr den Echo-Manager.
+:eparml.
+
+:h2 res=&PANEL_EMS_EXTDLL..Erweiterungs-DLL
+:p.Wenn Sie ein Echo beim Uplink bestellen oder abbestellen, kann FleetStreet
+Funktionen in einer DLL aufrufen. Diese DLL kann dann das bestellte Echo in
+der Konfigurations-Datei des Tossers eintragen bzw. dort austragen.
+:parml.
+:pt.:hp2.Echo-Manager-DLL:ehp2.
+:pd.VollstÑndiger Pfad und Dateiname (mit Dateinamenserweiterung) der DLL, die
+FleetStreet verwenden soll.
+:pt.:hp2.Suchen:ehp2.
+:pd.Datei-Dialog zur Auswahl der DLL îffnen.
+:pt.:hp2.Konfigurieren:ehp2.
+:pd.Einstellen der Parameter, die von der DLL beim HinzufÅgen oder Entfernen
+der Echos verwendet werden.
+:eparml.
+:p.
+Die Datei :hp2.FLTCF_SQ.DLL:ehp2., die mit FleetStreet mitgeliefert wird, kann
+als Erweiterungs-DLL verwendet werden, wenn (und nur wenn) Sie Squish als
+Tosser mit einer Standard-SQUISH.CFG verwenden.
+
+
+:h2 hide res=&PANEL_NOUPLINKAREAS..Keine Areas gefunden
+:p.Die Message enthÑlt keine Areas. Die bisherige Liste wird beibehalten.
+
+:h2 hide res=&PANEL_NOACTIONS..Keine Aktionen
+:p.Es wird keine Aktion mit einer Area ausgefÅhrt. Es gibt auch keine globale
+Aktion.
+:p.Es wird keine Message erzeugt.
+
+:h2 hide res=&PANEL_DOEXTRACT..Areas extrahieren
+:p.Die Message wird nach einer Liste von Area durchsucht, die beim Uplink
+verfÅgbar sind. Wenn eine solche Liste gefunden wird, ersetzt sie die bisherige.
+
+:h2 hide res=&PANEL_EM_DLLLOAD..DLL konnte nicht geladen werden
+:p.Die Erweiterungs-DLL konnte nicht geladen werden.
+:p.Mîgliche GrÅnde&colon.
+:ul compact.
+:li.Die Datei wurde nicht gefunden, z.B. weil der Dateiname nicht korrekt ist.
+:li.Die Datei ist keine DLL.
+:li.Es wurde kein vollstÑndiger Pfad und Name der Datei angegeben.
+:li.Die Datei ist beschÑdigt.
+:eul.
+:p.
+Korrigieren Sie den Fehler, oder befragen Sie den Hersteller der DLL.
+
+:h2 hide res=&PANEL_EM_DLLVER..DLL nicht verwendbar
+:p.Die Erweiterungs-DLL wurde fÅr eine FleetStreet-Version erstellt, die
+mit dieser Version nicht kompatibel ist. Fragen Sie den Hersteller der DLL
+nach einem Update.
+
+:h2 hide res=&PANEL_EM_DLLFUNC..Keine Erweiterungs-DLL
+:p.Die angegebene DLL ist keine FleetStreet-Erweiterungs-DLL.
+
+:h2 hide res=&PANEL_EM_DLLINT..Interner Fehler in der DLL
+:p.Die Erweiterungs-DLL arbeitet nicht korrekt. Befragen Sie den Hersteller
+der DLL.
+
+:h2 hide res=&PANEL_EM_CFGNOTF..Konfigurationsdatei nicht gefunden
+:p.Die Erweiterungs-DLL kann die Konfigurationsdatei des Tossers nicht finden
+oder îffnen.
+
+:h2 hide res=&PANEL_EM_INIT..Parameter nicht eingestellt
+:p.Die Erweiterungs-DLL kann nicht verwendet werden ohne sie zu konfigurieren.
+ôffenen Sie das Einstellungs-Notebook des Echo-Managers, wechseln Sie auf die
+:hp2.Erweiterungs-DLL:ehp2.-Seite und drÅcken Sie den :hp2.Konfigurieren:ehp2.-Knopf.
+
+:h2 hide res=&PANEL_EM_CFGREAD..Fehler beim Lesen der Konfigurationsdatei
+:p.Die Erweiterungs-DLL kann die Konfigurationsdatei nicht lesen.
+
+:h2 hide res=&PANEL_EM_CFGWRITE..Fehler beim Schreiben der Konfigurationsdatei
+:p.Die Erweiterungs-DLL kann die Konfigurationsdatei nicht verÑndern. Die
+Datei ist eventuell als "nur lesen" kennzeichnet oder befindet sich auf
+einem nicht-beschreibbaren Medium.
+
+:h2 hide res=&PANEL_EM_CFGFORMAT..UngÅltiges Konfigurations-Datei-Format
+:p.Die Erweiterungs-DLL kann die Konfigurationsdatei des Tossers nicht
+bearbeiten, da sie ein einem inkompatiblen Format vorliegt.
+:p.Fragen Sie den Hesteller der DLL nach einem Update.
+
+:h2 hide res=&PANEL_EM_CFGLINKED..Echo bereits bestellt
+:p.Beim Versuch, das Echo in der Konfigurationsdatei des Tossers einzutragen,
+wurde das Echo bereits vorgefunden. Das sollte nicht passieren (naja!).
+
+:h2 hide res=&PANEL_EM_CFGUNLINKED..Echo nicht bestellt
+:p.Beim Versuch, das Echo in der Konfigurationsdatei des Tossers auszutragen,
+wurde das Echo nicht gefunden. Das sollte nicht passieren (passiert aber
+offenbar doch!?).
+
+:h2 hide res=&PANEL_EM_NOPASS..Kein Name oder Passwort
+:p.Um eine Message an den Uplink zu erzeugen, wird der Name und das Passwort
+benîtigt. Eines der beiden (oder beide) sind fÅr diesen Uplink nicht
+bekannt.
+:p.ôffnen Sie das Einstellungs-Notebook des Echo-Managers und tragen
+Sie die Daten fÅr den Uplink ein.
+
+:h2 hide res=&PANEL_DELUPLINK..Uplink lîschen
+:p.DrÅcken Sie :hp2.Ja:ehp2., um den ausgewÑhlten Uplink zu lîschen.
+DrÅcken Sie :hp2.Nein:ehp2., wenn Sie die Uplink-Daten behalten wollen.
+
+:h2 hide res=&PANEL_EM_APPENDAREAS..Echos anhÑngen
+:p.Es existiert bereits eine Echo-Liste von diesem Uplink.
+:p.DrÅcken Sie :hp2.Ja:ehp2., um die neue Liste an die alte anzuhÑngen.
+:p.DrÅcken Sie :hp2.Nein:ehp2., um die alte Echo-Liste durch die neue zu ersetzen.
+:p.DrÅcken Sie :hp2.Abbrechen:ehp2., um die extrahierten Areas zu verwerfen.
+

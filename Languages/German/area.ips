@@ -1,0 +1,299 @@
+.* ***************************** Area-List **********************************
+
+:h2 id=arealist res=&PANEL_AREALIST..Area-Liste
+:p.
+Die Arealiste enth„lt alle Message-Areas, die fr FleetStreet zug„nglich sind.
+Sie k”nnnen zu einer dieser Areas umschalten, Areas erstellen und l”schen und
+Attribute von Areas setzen.
+:p.
+Klicken Sie auf eine der Areas oder drcken Sie :hp2.ENTER:ehp2., um zu dieser
+Area umzuschalten.
+:p.
+Drcken Sie :hp2.Scannen:ehp2., um das Scannen aller Areas zu starten.
+
+:h2 hide res=&PANEL_DELETEAREA..Area l”schen
+:p.Sie haben beschlossen, die ausgew„hlte Area zu l”schen. Wenn Sie :hp2.Ja:ehp2.
+drcken, wir die Area aus der Liste entfernt. Die Datenfiles der Message-Base
+bleiben jedoch auf der Festplatte, so daá sie sp„ter wiederverwendet werden k”nnen.
+:p.Drcken Sie :hp2.Nein:ehp2., wenn Sie die Area nicht l”schen wollen.
+
+:h2 hide res=&PANEL_HAVEAREA..Area schon definiert
+:p.Es gibt bereits eine Area mit dieser Area-Kennung. Area-Kennungen mssen
+eindeutig sein. W„hlen Sie eine andere Area-Kennung fr die neue Area.
+
+:h2 hide res=&PANEL_NOAREATAG..Kein Area-Tag
+:p.Sie haben fr eine neue Area oder fr eine zu „ndernde Area keinen Area-Tag
+angegeben. Jede Area muá einen eindeutigen Area-Tag haben, um die Area zu
+identifizieren.
+
+:h2 hide res=&PANEL_NOPATHFILE..Kein Pfadname
+:p.Sie haben fr eine neue Area oder fr eine zu „ndernde Area keinen Pfad und/oder
+Dateinamen angegegeben.
+
+.***************************************************************************
+.* Area-Setup                                                              *
+.***************************************************************************
+
+:h2 res=&PANEL_AREASETTINGS..Area-Einstellungen
+:p.Themen&colon.
+:p.:link reftype=hd refid=gensett.Allgemeine Einstellungen:elink.
+:p.:link reftype=hd refid=mbase.Message-Base-Einstellungen:elink.
+:p.:link reftype=hd refid=areaattrib.Area-Attribute:elink.
+
+:h3 id=gensett res=&PANEL_AS_GENERAL..Allgemeine Einstellungen
+:p.Setzen Sie die Beschreibung, die Area-Kennung und die Default-Adresse
+fr diese Area ein. Wenn die Area-Kennung
+nicht ver„nderbar ist, dann wurde die Area aus der externen Konfigurations-Datei
+eingelesen. Die Area-Kennung muá dort ge„ndert werden.
+
+:h3 id=mbase res=&PANEL_AS_MSGBASE..Message-Base-Einstellungen
+:parml.
+:pt.:hp2.Message-Base-Format:ehp2.
+:pd.Geben Sie das Format der Message-Base auf der Platte an.
+:pt.:hp2.Area-Typ:ehp2.
+:pd.Geben Sie an, wie FleetStreet die Area behandeln soll.
+:pt.:hp2.Area-Pfad/Filename:ehp2.
+:pd.Geben Sie an, wo die Messages auf der Festplatte gespeichert sind. Geben Sie
+fr *.MSG-Areas den Pfad zu dem Verzeichnis an, das die *.MSG-Files enth„lt.
+Geben Sie fr Squish- und JAM-Areas den Pfad und den Stammnamen (acht Buchstaben) der
+Area-Files an.
+:eparml.
+:p.Wenn diese Einstellungen nicht „nderbar sind, dann wurde die Area aus der
+Tosser-Konfigurations-Datei eingelesen, und Sie mssen die Einstellungen
+dort „ndern.
+
+:h3 id=areaattrib res=&PANEL_AS_ATTRIB..Area-Attribute
+:p.Jede Message-Area kann einige voreingestellte Message-Attribute haben, sowie
+weitere Einstellungen, die die Area betreffen.
+:parml.
+:pt.:hp2.Message-Attribute:ehp2.
+:pd.Messages, die in dieser Area eingegeben werden, haben per Voreinstellung
+die angegebenen Attribute. Siehe :link refid=attrib reftype=hd.Message-Attribute:elink.
+fr eine Erkl„rung der verschiedenen Attribute.
+:pt.:hp2.Monospaced Font:ehp2.
+:pd.Es wird generell der alternative Font fr diese Area verwendet.
+:pt.:hp2.Umlaute erlaubt:ehp2.
+:pd.Zeigt an, daá die Verwendung von Umlauten (ASCII-Werte gr”áer als 127)
+in dieser Area erlaubt ist. Wenn Umlaute nicht erlaubt sind, wandelt FleetStreet
+diese beim Tippen in erlaubte Zeichen um. Siehe :link reftype=hd refid=transtbl.
+"šbersetzungstabelle":elink..
+:pt.:hp2.Trennlinie:ehp2.
+:pd.Eine Trennlinie wird unter diese Area gezeichnet.
+:pt.:hp2.Keine Hervorhebungen:ehp2.
+:pd.Unterstriche (_) und Sternchen (*) werden nicht als Zeichen fr
+unterstrichenen bzw. fettgeschriebenen Text interpretiert, sondern so
+dargestellt wie sie im Text stehen. Diese Option is ntzlich in Echos, in
+denen der Algorithmus oft fehlschl„gt (z.B. in Programmier-Echos mit viel
+Quellcode).
+:eparml.
+
+:h4 id=transtbl.šbersetzungstabelle
+:p.Wenn Umlaute (8-Bit-ASCII) in einer Area nicht erlaubt sind, verwendet
+FleetStreet folgende šbersetzungstabelle, um die Umlaute beim Tippen in
+erlaubte Zeichen umzuwandeln&colon.
+:table cols='3 10'.
+:row.
+:c.&aa. :c.a
+:row.
+:c.&ac. :c.a
+:row.
+:c.&ae. :c.ae
+:row.
+:c.&Ae. :c.Ae
+:row.
+:c.&ag. :c.a
+:row.
+:c.&aelig. :c.ae
+:row.
+:c.&AElig. :c.Ae
+:row.
+:c.&Alpha. :c.a
+:row.
+:c.&angstrom. :c.A
+:row.
+:c.&ao. :c.a
+:row.
+:c.&Ao. :c.A
+:row.
+:c.&Beta. :c.ss
+:row.
+:c.&cc. :c.c
+:row.
+:c.&Cc. :c.C
+:row.
+:c.&cdqf. :c.>>
+:row.
+:c.&degree. :c.deg
+:row.
+:c.&divide. :c./
+:row.
+:c.&dot. :c..
+:row.
+:c.&darrow. :c.|
+:row.
+:c.&ea. :c.e
+:row.
+:c.&Ea. :c.E
+:row.
+:c.&ec. :c.e
+:row.
+:c.&ee. :c.e
+:row.
+:c.&eg. :c.e
+:row.
+:c.&fnof. :c.f
+:row.
+:c.&house. :c.
+:row.
+:c.&ia. :c.i
+:row.
+:c.&ic. :c.i
+:row.
+:c.&ie. :c.i
+:row.
+:c.&ig. :c.i
+:row.
+:c.&inve. :c.!
+:row.
+:c.&invq. :c.?
+:row.
+:c.&larrow. :c.<-
+:row.
+:c.&lnot. :c.-|
+:row.
+:c.&mu. :c.mc
+:row.
+:c.&nt. :c.n
+:row.
+:c.&Nt. :c.N
+:row.
+:c.&oa. :c.o
+:row.
+:c.&oc. :c.o
+:row.
+:c.&og. :c.o
+:row.
+:c.&oe. :c.oe
+:row.
+:c.&Oe. :c.Oe
+:row.
+:c.&frac14. :c.1/4
+:row.
+:c.&frac12. :c.1/2
+:row.
+:c.&odqf. :c.<<
+:row.
+:c.&plusmin. :c.+-
+:row.
+:c.&Lsterling. :c.PS
+:row.
+:c.&sup2. :c.qd
+:row.
+:c.&ua. :c.u
+:row.
+:c.&uc. :c.u
+:row.
+:c.&ug. :c.u
+:row.
+:c.&ue. :c.ue
+:row.
+:c.&Ue. :c.Ue
+:row.
+:c.&aus. :c.a
+:row.
+:c.&ous. :c.o
+:row.
+:c.&ye. :c.y
+:etable.
+
+.* ************************* Area list settings ****************************
+
+:h2 res=&PANEL_AREALISTSETT..Arealisten-Einstellungen
+:p.W„hlen Sie eine Seite&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_ALS_VIEW..Default-Ansicht:elink.
+:li.:link reftype=hd res=&PANEL_ALS_COLORS..Farben:elink.
+:esl.
+
+:h3 res=&PANEL_ALS_VIEW..Ansicht
+:p.Anzeige-Optionen&colon.
+:parml.
+:pt.:hp2.Area-Beschreibung:ehp2.
+:pd.Es werden die Area-Beschreibungen in der Liste angezeigt
+:pt.:hp2.Area-Tag:ehp2.
+:pd.Es werden die Area-Tags in der Liste angezeigt.
+:eparml.
+
+:h3 res=&PANEL_ALS_COLORS..Farben
+:p.Sie k”nnen unterschiedliche Farben fr die verschiedenen Area-Typen w„hlen.
+:p.W„hlen Sie die Grundfarbe mit dem Farbkreis aus. Die aktuelle Farbe wird mit
+einem Fadenkreuz markiert.
+:p.Stellen Sie die Helligkeit der Farbe mit dem Slider rechts neben dem
+Farbkreis ein.
+
+
+.***************************************************************************
+.* Squish-Parameter                                                        *
+.***************************************************************************
+
+:h2 res=&PANEL_SQPARAMS..Squish Message-Base-Parameter
+:p.Es gibt drei Parameter, die steuern, wie Squish-Message-Base-Files von der
+Squish-API verwaltet werden.
+:parml.
+:pt.:hp2.Maximale Anzahl der Messages:ehp2.
+:pd.Maximale Anzahl der Messages, die in in dieser Area gespeichert werden
+k”nnen. Wenn zus„tzliche Messages in diese Area getosst werden, oder wenn
+Sie selbst neue Messages schreiben, werden „ltere Messages automatisch gel”scht,
+falls das Limit, dargestellt durch diesen Wert, berschritten wird.
+:pt.:hp2.Anzahl der bersprungenen Messages:ehp2.
+:pd.Wenn Messages wie oben beschrieben gel”scht werden, wird diese Anzahl von
+Messages am Anfang der Message-Base bersprungen.
+:p.Beachte&colon. Wenn Sie diesen Wert auf eine andere Zahl als 0 setzen, mssen
+Sie auch eine Maximalzahl von Messages angeben.
+:pt.:hp2.Anzahl der Tage, Messages zu behalten:ehp2.
+:pd.Gibt die Anzahl der Tage an, wie lange Messages aufbewahrt werden sollen.
+Messages, die „lter sind als diese Anzahl von Tagen, werden gel”scht, wenn
+Sie SQPACK laufen lassen.
+:eparml.
+:p.
+Wenn Sie alle Zahlen auf 0 setzen, l”scht Squish keine Message automatisch.
+
+:h2 hide res=&PANEL_ERRREADSQPARAM..Fehler Lesen Parameter
+:p.Die Squish-Area-Parameter konnten nicht gelesen werden. Dies kann folgende
+Ursachen haben&colon.
+:ul.
+:li.Ein anderer Prozeá verwendet die Datei exklusiv
+:li.Sie haben keine Zugriffsrechte auf die Datei
+:li.Die Datei existiert nicht
+:eul.
+
+:h2 hide res=&PANEL_ERRWRITESQPARAM..Fehler Schreiben Parameter
+:p.Die Squish-Area-Parameter konnten nicht geschrieben werden. Dies kann folgende
+Ursachen haben&colon.
+:ul.
+:li.Ein anderer Prozeá verwendet die Datei exklusiv
+:li.Sie haben keine Zugriffsrechte auf die Datei
+:li.Die Datei existiert nicht
+:li.Die Datei ist schreibgeschtzt
+:eul.
+
+:h2 hide res=&PANEL_SQPARAMVALUES..Ungltige Parameter
+:p.Wenn Sie :hp2."Anzahl der bersprungenen Messages":ehp2. auf einen Wert
+ungleich 0 setzen, mssen Sie auch :hp2."Maximale Anzahl der Messages":ehp2.
+auf einen Wert ungleich 0 setzen.
+
+.***************************************************************************
+.* Area-Renumber                                                           *
+.***************************************************************************
+
+:h2 res=&PANEL_RENUMBER..Area umnumerieren
+:p.*.MSG-Areas werden beim Gebrauch mehr und mehr "zerstckelt". Es ist daher
+wnschenswert, sie von Zeit zu Zeit neu zu numerieren. Nachdem eine Area neu
+numeriert wurde, beginnen die Message-Files wieder bei 1 und sind fortlaufend
+numeriert.
+:parml.
+:pt.:hp2.Start:ehp2.
+:pd.Startet die Umnumerierung der Area
+:pt.:hp2.Abbrechen:ehp2.
+:pd.Area nicht umnumerieren.
+:eparml.

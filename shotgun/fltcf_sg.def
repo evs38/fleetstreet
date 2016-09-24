@@ -1,0 +1,10 @@
+LIBRARY FLTCF_SG INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet Shotgun CFG'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+  ReadSGCfg       @3
+  QueryFormatID   @1
+  QueryFormatName @2
+  QueryVer        @4
+

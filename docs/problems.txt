@@ -1,0 +1,100 @@
+                        FleetStreet known problems etc.
+                        ===============================
+
+This file is in no way complete. I rather fix known problems than documenting
+them :-)
+
+1. Question: When FleetStreet is minimized and I click on the program object
+             to restore it, nothing happens.
+   Answer: This is a problem due to how OS/2 manages the window list. When
+           sub-windows of FleetStreet are open, they are inserted into the
+           window list. However, the system adds the new entries _before_
+           the main window. So when you double click on the program object,
+           the system tries to restore one of the sub-windows instead of the
+           main window. This fails because all sub-windows are hidden at that
+           moment.
+   Solution: I don't know a solution at this time, it's being investigated.
+   Workaround: Use the window list itself.
+
+2. Q: Squish 1.1x (SQ386P) doesn't run correctly when started from a Rexx
+      script. It fails to start the archiver.
+   A: This may be a bug in Squish 1.1x. It's being investigated.
+   S: none
+   W: Don't start Squish 1.1x from within FleetStreet or use the START
+      command to let Squish run in a separate session.
+
+3. Q: When FleetStreet and Squish run in parallel and messages are tossed
+      to the current area, FleetStreet doesn't update its display.
+   A: FleetStreet doesn't have a chance to recognize that something has
+      changed in the message area. The MsgAPI isn't _really_ "multitasking
+      aware", processes that update a message area simultanously may even
+      destroy the index file of the area! This is _not_ a FleetStreet bug!
+   S: None
+   W: Close FleetStreet while Squish is tossing messages.
+
+4. Q: I sometimes don't get the correct help panel when I press F1.
+   A: This may happen when a spin button in a notebook has the focus. OS/2
+      Warp Beta II and 3.0 have a bug that prevents FleetStreet to show
+      the correct help panel. It also happens with drop-down lists.
+      This is an official APAR, PJ17235 and PJ17293
+   S: Install Warp FixPack #6 or newer.
+
+5. Q: FleetStreet crashes when accessing the message base via TCP/IP 2.0 NFS.
+   A: The MSGAPI32.DLL and NFS of TCP/IP 2.0 don't like each other. This is
+      because NFS doesn't support record locking.
+   S: none.
+   W: Other network systems (e.g. Lan Server, OS/2 Peer, Client Connect) don't
+      have that problem.
+
+6. Q: After using Drag-Drop, icons or bitmaps are sometimes corrupted, e.g.
+      the buttons of the toolbar.
+   A: This is a bug of OS/2 Warp 3.0. It's APAR number is PJ17913.
+   S: none, IBM needs to fix this
+   W: Either use OS/2 2.x or get used to it until it's fixed in OS/2 3.x
+
+7. Q: I can't select pages of text in the editor (SHIFT-PgDown etc.)
+   A: The MLE control doesn't support such a function.
+   S: None, IBM must implement this.
+   W: None. Ask IBM to do something about their MLE control.
+
+8. Q: I need more than one level of "Undo" in the editor.
+   A: Again, the MLE control allows only one level.
+   S: None, IBM must implement this.
+   W: None. Ask IBM to do something about their MLE control.
+
+9. Q: Squish doesn't use some message attributes like "direct" or "hub route".
+   A: These nonstandard attributes are not handled by Squish. Other tosser
+      programs like Fastecho do handle them.
+
+10. Q: The nodelist lookup doesn't find some entries
+    A: This function doesn't work correctly when FeelX is running.
+    S: Close FeelX.
+
+11. Q: When replying to an Echomail message by Netmail and selecting to reply
+       to TO, the wrong destination address is used for the Netmail message.
+    A: Fidonet Echomail doesn't contain the recipient's address, simply because
+       there is no single recipient. The address field is usually filled with
+       the downlink's address (depending on the tosser). Consequently,
+       FleetStreet can't insert the correct address automatically.
+    S: Insert the correct address manually.
+
+12. Q: The area list scrolls to the top when switching to it.
+    A: This is a bug introduced with Fixpack #17. It's still present in Merlin.
+       It's not FleetStreet's fault.
+    S: Uninstall FP #17 or install Warp 4.0 FP #1.
+
+13. Q: The thread list isn't drawn correctly sometimes.
+    A: This is a known problem. I don't know what's causing it.
+    S: none, at this time.
+
+14. Q: FleetStreet doesn't save its settings when shutting down the OS using
+       the WarpCenter.
+    S: Use the shutdown function in the desktop's context menu.
+
+15. Q: I can't select a print border. FleetStreet always prints with border 0.
+    A: This is a problem of the spin button control in Warp fixpacks 10 and up.
+    S: None, IBM must fix this.
+    W: The current version switches to a default value of 1 cm when it fails
+       to query the actual value from the spin buttons in the setup dialog.
+
+06/03/2000

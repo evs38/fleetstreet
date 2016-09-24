@@ -1,0 +1,108 @@
+.* Rexx-Erweiterung, deutsch
+
+:h1.Rexx scripts
+:p.FleetStreet hat die FÑhigkeit, Skripts in der Sprache Rexx auszufÅhren. Die Sprache
+Rexx wird durch :hp2.vordefinierte Variablen:ehp2. und zusÑtzliche :hp2.Funktionen:ehp2.
+und :hp2.Befehle:ehp2. erweitert.
+
+:h2 res=&PANEL_RXFOLDER..Skript-Ordner
+:p.Der Skript-Ordner enthÑlt alle Skripts.
+:p.Verwenden Sie das KontextmenÅ eines Skripts, um
+:ul compact.
+:li.das Einstellungs-Notebook des Skripts zu îffnen
+:li.das Skript auszufÅhren
+:li.ein neues Skript zu erzeugen
+:li.das Skript zu lîschen.
+:eul.
+:p.
+éndern Sie den Namen des Skripts, indem Sie auf das Icon klicken und
+gleichzeitig die ALT-Taste festhalten.
+:p.Sie kînnen ein Skript lîschen, indem Sie es auf den Schredder ziehen.
+:p.
+:artwork align=center name='shredscr.bmp'.
+:p.Sie kînnen ein Skript drucken, indem Sie es auf ein Druckerobjekt ziehen.
+:p.
+:artwork align=center name='printscr.bmp'.
+:p.Es ist auch mîglich, ein Skript zu editieren, indem Sie es auf ein Programm-
+Objekt der WPS oder auf ein offenes EPM-Fenster ziehen.
+:p.
+:artwork align=center name='editscr.bmp'.
+:p.Ein Skript-Objekt kann einfach erzeugt werdem, indem Sie die zugehîrige
+Datei aus einem WPS-Ordner in den Skript-Ordner ziehen.
+:p.
+:artwork align=center name='makescr.bmp'.
+
+
+:h2 res=&PANEL_RXSETTINGS..Skript-Einstellungen
+:p.WÑhlen Sie eine Seite&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_RXSETTINGS_GEN..Allgemeine Skript-Einstellungen:elink.
+:li.:link reftype=hd res=&PANEL_RXSETTINGS_MONI..Skript-Monitor-Einstellungen:elink.
+:esl.
+
+
+:h3 res=&PANEL_RXSETTINGS_GEN..Allgemeine Skript-Einstellungen
+:parml.
+:pt.:hp2.Skript-Name:ehp2.
+:pd.Beschreibender Name des Skripts. Dieser Name taucht unter dem Skript-Icon und
+im Rexx-MenÅ auf.
+:pt.:hp2.Dateiname:ehp2.
+:pd.Dateiname des Skripts. Sie kînnen auf den :hp2.Suchen:ehp2.-Knopf drÅcken, um
+eine Datei auszuwÑhlen. Sie kînnen auch eine Datei aus einem WPS-Ordner ins
+Eingabefeld ziehen.
+:pt.:hp2.Schnellzugriff:ehp2.
+:pd.Wenn Sie Schnellzugriff wÑhlen, dann taucht dieses Skript im Rexx-MenÅ auf
+und kann gestartet werden, ohne den Skript-Ordner zu îffnen.
+:eparml.
+
+:h3 res=&PANEL_RXSETTINGS_MONI..Skript-Monitor-Einstellungen
+:p.Ein Skript kann mit oder ohne ein Skript-Monitor-Fenster gestartet werden. Ein
+Monitor-Fenster zeigt Ausgaben des Skripts an und bietet ein Eingabefeld fÅr Eingaben
+an.
+:p.Wenn Sie :hp2.Monitor:ehp2. auswÑhlen, dann kînnen Sie au·erdem wÑhlen, ob das
+Fenster nach dem Beenden des Skripts offen bleiben soll, oder ob es automatisch
+geschlossen werden soll.
+:p.:hp8.Achtung&colon.:ehp8. WÑhlen Sie nicht :hp2.Kein Monitor:ehp2., wenn das
+Skript oder Programme, die durch das Skript gestartet werden, Benutzer-Eingaben
+erwarten. Das Skript wird dann nicht weiterlaufen. Diese Situation kann von
+FleetStreet :hp8.nicht:ehp8. vermieden werden, das Skript kann nicht
+angehalten werden!
+
+:h2 res=&PANEL_RXMONITOR..Skript-Monitor
+:p.Das Monitor-Fenster zeigt Augaben des Skripts an und bietet ein Eingabefeld
+fÅr Skript-Eingaben.
+:p.DrÅcken Sie :hp2.Stop:ehp2., um das Skript anzuhalten. Wenn das Skript auf
+Benutzer-Eingaben wartet, wird es erst anhalten, wenn Sie etwas eingegeben haben.
+:p.DrÅcken Sie :hp2.Schlie·en:ehp2., um das Monitor-Fenster zu schlie·en, nachdem
+das Script beendet wurde.
+
+:h2 hide res=&PANEL_DELSCRIPT..Skript lîschen
+:p.Wenn Sie das Skript lîschen wollen, dann drÅcken Sie :hp2.Ja:ehp2.. DrÅcken Sie
+:hp2.Nein:ehp2., wenn Sie das Skript nicht lîschen wollen.
+
+:h2 hide res=&PANEL_REXXERROR..Rexx-Fehler
+:p.Ein Fehler ist wÑhrend der AusfÅhrung des Skripts aufgetreten. Die Fehlerbeschreibung
+wird angezeigt.
+:p.:hp8.Beachte&colon.:ehp8. Die Beschreibung wird vom System zur VerfÅgung
+gestellt, die Sprache der Beschreibung hÑngt also von Ihrer OS/2-Version ab.
+
+.* ******************************** Hooks ***********************************
+
+:h2 res=&PANEL_RXHOOKS..Hooks
+:p.FleetStreet kann bestimmte Skripts in bestimmten Situationen automatisch
+starten.
+:p.Momentan existieren folgende Hooks&colon.
+:parml.
+:pt.:hp2.Programmende:ehp2.
+:pd.Dieser Hook wird aufgerufen, wenn FleetStreet geschlossen wird. Die spezielle
+Variable :hp2.NewMail:ehp2. hat dann einen Wert, der angibt, welche Art
+von Messages wÑhrend dieser Sitzung eingegeben wurden. Wenn dieser Hook aufgerufen wird,
+ist die Datei :hp2.Echotoss.Log:ehp2. bereits auf die Platte geschrieben worden.
+Man kann also :hp2.Squish:ehp2. problemlos aufrufen, um die neuen Messages zu exportieren.
+
+:pt.:hp2.Vor dem Speichern:ehp2.
+:pd.Dieser Hook wird aufgerufen, bevor eine neue Message in der Area gespeichert
+wird. Er wird ebenfalls aufgerufen, bevor énderungen an einer existierenden Message
+gespeichert werden.
+:eparml.
+

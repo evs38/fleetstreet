@@ -1,0 +1,350 @@
+WMAIL 3.0 - Copyright 1990-95 by Silvan Calarco -
+
+    컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+    Structures of files managed by WMAIL 3.0
+    컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+The following structures have been made for Turbo Pascal language;
+look at following table for type compatibility.
+
+Turbo Pascal  C language    Length
+컴컴컴컴컴컴  컴컴컴컴컴컴  컴컴컴�
+Byte          Char          1 byte
+Char          Char          1 byte
+Integer       Int           2 bytes
+Word          Unsigned Int  2 bytes
+Longint       Long          4 bytes
+컴컴컴컴컴컴  컴컴컴컴컴컴  컴컴컴�
+
+String[] format uses a byte more than the number specified in brackets, as
+the first one (String[0]) contains string length.
+
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+
+
+{ ***** Configuration file structures *********************************** }
+
+   SetRec=Record       { >>>>> file WMAIL.PRM <<<<< }
+             Version:Word;      { 4: WMail 2.0
+                                  5: WMail 2.1
+                                  9: WMail 2.2
+                                 10: WMail 2.3
+                                 11: WMail 2.4
+                                 12: WMail 3.0 }
+             Sysop:String[30];
+             Key:String[16];
+             Aka:Array[0..10] of  { Aka 0 is primary address }
+                 Record
+                    Zone,Net,Node,Point:Integer;
+                    Domain:String[20];
+                 end;
+             PointNet:Word;
+             AreasCreate:Byte; { Bit mapped:
+                                    Bit 0: Create new areas
+                                    Bits 1-2-3: New areas base
+                                                (like in AreasRecord.General) }
+             Filler1:Array[1..39] of Byte;
+             Active_Options:Byte; { Bit mapped:
+                                        0: Import dupes
+                                        1: Import bad messages
+                                        2: Do statistics
+                                        3: Use log file
+                                        4: Use nodelist files
+                                        5: Distribute netmail
+                                        6: Remove 'Re:' strings from subjects
+                                        7: Binkley mode on }
+             Swap:Byte;           { 0: No swap;
+                                    1: Disk swap;
+                                    2: EMS swap
+                                    3: XMS swap }
+             MinSpace:Word;
+             Filler2:Array[1..61] of Byte;
+             FilesDir,OutDir,ArcMailDir,QuickBBSDir:String[60];
+             Filler3:Array[1..183] of Byte;
+             StatsDir,NewAreasDir,NodelistDir:String[60];
+             Origin:Array[1..10] of String[65];
+             AreaListFile:String[60];
+             LogFile:String[60];
+             LogLevel:Byte;        { 0: Important messages
+                                     1: Important+normal messages
+                                     2: Important+normal+detailed messages
+                                     3: Debug mode (all sort of messages) }
+             LogStyle:Byte;        { 0: Binkley Term; 1: FrontDoor }
+             MiscFlags:Byte;       { Bit mapped:
+                                       0: GoldBase mode
+                                       1: Create new areas
+                                       2-3: unused
+                                       4: Check Dupes
+                                       5: Link tear line
+                                       6: Honour RRQs
+                                       7: Kill packed messages }
+             C_WindowBorder,       { Video attributes }
+             C_WindowTitle,
+             C_WindowNorm,
+             C_WindowHi,
+             C_SelBar,
+             C_ShowField,
+             C_EditField,
+             C_MenuDeny,
+             C_MessageNorm,
+             C_Griglia,
+             C_TopBar,
+             C_BottomBar,
+             C_InfoBar,
+             C_WMailText:Byte;
+             SquishDir,JamDir:String[60];
+             Packers:Array[1..12] of
+                     Record
+                        Name:String[10];
+                        PackCmd:String[40];
+                        UnPackCmd:String[40];
+                        Offset:Byte;
+                        IdString:String[6];
+                     end;
+             Filler4:Array[1..1402] of Byte;
+             RouteFile:String[60];
+             Filler5:Array[1..476] of Byte;
+             DefPacker:Byte;        { Default packer number (1-12) }
+             Def_Misc:Byte;         { Bit mapped:
+                                         0: Change\Put origin
+                                         1: Change\Put tear line
+                                         2: Hide SEEN-BY
+                                         3: Strip 4d address
+                                         4: Add AKA's
+                                         5: Put domain
+                                         6: Force Public
+                                         7: Force Private  }
+             Rescan_File:String[60];
+             TrackFile:String[60];
+             Filler6:Array[1..109] of Char;
+             Def_Group:Char;
+             Def_Aka:Byte;
+             Def_KeepDays,
+             Def_KeepRecv,
+             Def_KeepMsgs,
+             Def_WMKFlags:Word;
+             Def_Origin:Byte;
+             Def_General:Byte;
+             Af_DefLevel:Byte;
+             Af_Misc:Byte;          { Bit mapped: (for areafix)
+                                         0: Kill processed messages
+                                         1: Sort nodes
+                                         2: Write nodes in short form
+                                         3: Allow rescan
+                                         7: Notify operations }
+             Def_Misc2:Byte;        { Bit mapped:
+                                         0: 4d point infos }
+             RRRFlags:Byte;         { Bit mapped:
+                                         0: Set Crash bit on
+                                         1: Set Hold bit on
+                                         2: Set Kill/Sent bit on }
+             AfFlags:Byte;          { Bit mapped, see RRRFlags }
+             TrackFlags:Byte;       { Bit mapped:
+                                         0: Msg Tracking on }
+             RemapFlags:Byte;       { Bit mapped:
+                                         0: Msg Remapper on }
+             Filler7:Array[1..8] of Char;
+             WMKHudsonFlags:Word;   { These flags apply to Hudson msg.
+                                      base; see AreasRecord.WMKFlags }
+             WMKFlags:Word;         { Unused at this time }
+             Unused:Array[1..738] of Byte;
+          end;
+
+   AreasRecord=Record { >>>>> File AREAS.PRM <<<<< }
+                  Title    : String[40];
+                  Path     : String[80];
+                  Kind     : Byte;  { Local=1
+                                      EchoMail=2
+                                      NetMail=3
+                                      BadEcho=4
+                                      Dupes=5
+                                      Virtual_Netmail=6
+                                      Personal_Mail=7 }
+                  WEdOrigin: Byte;  { Used by WEdit }
+                  Tag      : String[40];
+                  Def_Attr : Byte;  { Bit Mapped (used by WEdit):
+                                         Bit 0: Pvt
+                                         Bit 1: Crash
+                                         Bit 4: F/A
+                                         Bit 7: Kill/Sent }
+                  ForwardTo: Array[1..3] Of String[60];
+                  Aka      : Byte;
+                  Misc     : Byte;  { Bits: see SetRec.Def_Misc }
+                  Level    : Byte;
+                  WMOrigin : Byte;
+                  WEd_Aka  : Byte;  { Used by WEdit }
+                  General  : Byte;  { Bit mapped:
+                                         Bit 0: Inactive area
+                                         Bit 1-2-3: 000 = Fido
+                                                    001 = Jam
+                                                    100 = QuickBBS
+                                                    011 = GoldBase
+                                                    010 = Squish
+                                                    110 = PassThru }
+                  Misc2    : Byte;  { Bits: see SetRec.Def_Misc2 }
+                  Fill     : Char;
+                  IsExtRec : Word;  { If $F00F record is EXTENDED }
+                  RecSize  : Word;  { Size of the whole record, consider
+                                      only if record is extended }
+                  Version  : Word;  { 1 for WMail 3.0 }
+                  KeepDays,
+                  KeepRecv,
+                  KeepMsgs : Word;
+                  WMKFlags : Word;  { Bit mapped:
+                                         Bit 0: Do not manage
+                                         Bit 1: Do not purge
+                                         Bit 2: Do not relink
+                                         Bit 3: Do not pack
+                                         Bit 4: Do not sort }
+                  Group    : Char;  { Area group identifier (@,A-Z) }
+                  Reserved : Array[1..501] of Byte;
+               end;
+
+   { Note: To preserve compatibility with all previous and (maybe) future
+           version of WMail, just read first record of file till 'RecSize'
+           and then, if record is extended, consider size of all records
+           in file equal to value in 'RecSize'.
+           For editors, please set as Echomail any area with a 'Kind' flag
+           other than valid ones. }
+
+   NodesRecord=Record  { >>>>> file NODES.PRM <<<<< }
+                  Version:Word;       { 1 for WMail 3.0 }
+                  Zona,Net,Nodo,Point:Integer;
+                  Packer:Byte;        { Like in SetRec.Def_Packer }
+                  PktInPw:String[8];
+                  PktOutPw:String[8];
+                  Filler1:Array[1..3] of Byte;
+                  AfPw:String[20];
+                  Level:Byte;         { The level assigned to the node
+                                        for areafix operations }
+                  Misc:Integer;       { Bit mapped:
+                                          0: Daily packets
+                                          1: Alert node
+                                          2: Link node
+                                          3: Creating node }
+                  Aka:Byte;
+                  RemapName1:String[32];
+                  RemapName2:String[32];
+                  Groups:Longint;     { Bit mapped: (bit on=group on
+                                           0: group '@'
+                                           1: group 'A'
+                                          ..
+                                          26: group 'Z' }
+                  Filler2:Array[1..91] of Byte;
+               end;
+
+
+{ ***** Statistics files structures ************************************* }
+
+   Stat1=Record         { >>>>> file WMSTAT1.DAT <<<<< }
+            TagArea:String[30];
+            F:Array[1..3] of
+              Record
+                 ImpMsg,ExpMsg:Word;
+              end;
+         end;
+
+{ TagArea contains the name of the area to which statistics refer.
+  Record F contains number of imported (ImpMsg) and exported (ExpMsg) messages.
+  F[1] contains yearly informations, F[2] monthly ones and F[3] weekly ones.
+  From first record it is possible to obtain informations about the period
+  for which statistics refer.
+  F[1].ImpMsg contains a 4 digit number indicating the concerned year
+  F[2].ImpMsg contains a number in {1,2,...12} indicating the concerned month
+  F[3].ImpMsg contains number of days between 1970 and concerned period.
+  Weekly statistics are made after first Monday import. }
+
+   Stat2=Record         { >>>>> file WMSTAT2.DAT <<<<< }
+            Net,Node,Point:Integer;
+            F:Array[1..3] of
+              Record
+                 NumPktImp:Integer;
+                 NumMsgImp,NumBytesImp:Longint;
+                 NumPktExp:Integer;
+                 NumMsgExp,NumBytesExp:Longint;
+              end;
+         end;
+
+{ Net,Node,Point contain the address of node to which statistics refer.
+  Record F contains informations about number of imported packets (NumPktImp),
+  number of imported messages (NumMsgImp) and total dimension in bytes of
+  imported packets (NumBytesImp). The same informations are also present in
+  export (NumPktExp, NumMsgExp,NumBytesExp). F[1] contains yearly informations
+  F[2] the monthly ones and F[3] the weekly ones.
+  First record contains reserved informations and must be therefore skipped. }
+
+
+{ ***** W-Nodelist files structures **************************************** }
+
+These four files are created by WNode:
+
+*FileDat.WNL contains pathnames and dates of all nodelist source files
+
+   FileDatRec=Record             { Record of FileDat.WNL }
+                 Name:PathStr;
+                 Date:Longint;
+              end;
+
+
+*NodeLoc.WNL contains the position of concerned field, and the number of
+             the nodelist containing informations about node
+
+   NodeLocRec=Record             { Record of NodeLoc.WNL }
+                 NodeType:Byte;  { 1:Zone coordinator
+                                   2:Region coordinator
+                                   4:Host
+                                   8:Hub
+                                  16:Pvt
+                                  32:Hold
+                                  64:Down
+                                 128:Boss [from pointlist] }
+                 Zone,
+                 Net,
+                 Node,
+                 Point:Integer;
+                 FileNum:Byte;    { 1: Primary nodelist
+                                    2..20: Alternative nodelists as in
+                                           file FileDat.WNL }
+                 FilePos:Longint; { Contains absolute node position in
+                                    nodelist file }
+              end;
+
+
+*SysList.WNL contains an alphabetically sorted list of all Sysops and the
+             location of relative node in file NodeLoc.WNL.
+
+   SysopRec=Record               { Record of SysList.WNL }
+               Name:String[20];
+               BBSRecord:Longint;{ Position of node record in NodeLoc.WNL }
+            end;
+
+
+*NodeIdx.WNL contains indexes to obtain a quick search inside NodeLoc.WNL and
+             SysList.WNL. First nodes for each zone and net, and first sysop
+             matching a 4 letter field are in this file.
+
+   NodeIdx=Record                { Record of NodeIdx.WNL }
+              NodeType:Byte;     { For mapping, see NodeLocRec.NodeType.
+                                   Nodes reported in this field are only of
+                                   the following types:
+                                   Zone coordinator
+                                   Region coordinator
+                                   Host
+                                   Boss }
+              Zone,
+              Net,
+              Node:Integer;
+              BBSRecord:Longint; { Position of node record in NodeLoc.WNL }
+              Match:Array[1..4] of Char;
+                                 { The first 4 character of some of the
+                                   sorted sysop names. One out of about 30
+                                   names is taken. }
+              SysopRecord:Longint;
+                                 { Position of sysop record in SysList.WNL }
+           end;
+
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+Note: The author reserves for himself right to change this document without
+advice.
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+End of file.

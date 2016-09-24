@@ -1,0 +1,91 @@
+.* REQUEST.IPS
+
+:h2 res=&PANEL_REQUESTER..Files requesten
+:p.Es wird entweder die aktuelle Message oder eine File-Liste angezeigt.
+Sie k”nnen Dateien aus dieser Liste requesten.
+:p.
+Markieren Sie die Zeilen mit den Files, die Sie requesten wollen. Wenn Sie
+:hp2.OK:ehp2. drcken, wird der Request fr die Files erzeugt.
+:p.
+:hp2.Verwalten von File-Listen:ehp2.
+:p.
+Die meisten Nodes stellen Textfiles zur Verfgung, die eine Liste der
+requestbaren Files des Nodes enthalten. Sie k”nnen diese File-Listen in
+FleetStreet eintragen, anzeigen lassen und daraus Files requesten. Mit
+:hp2.Hinzufgen:ehp2. tragen Sie eine weitere File-Liste in die Auswahlbox
+ein. Mit :hp2.L”schen:ehp2. k”nnen Sie den Eintrag wieder l”schen. Mit einem
+Doppelklick auf eine Liste wird diese geladen und angezeigt.
+:p.
+:hp2.Auswahl der Files:ehp2.
+:p.
+In der File-Liste k”nnen Sie die Files ausw„hlen, die requestet werden sollen.
+klicken Sie dazu einfach auf die Zeile, in der das File steht (oder drcken Sie
+die Leertaste). Mit :hp2.Alle:ehp2. werden alle Zeilen ausgew„hlt, mit :hp2.Keine:ehp2.
+wird eine Auswahl rckg„ngig gemacht.
+:p.
+Mit :hp2.Suchen:ehp2. kann nach einem beliebigen Text in der Liste gesucht
+werden. Wird der Text gefunden, so wird er in der ersten Zeile der Liste
+angezeigt.
+:p.
+:hp2.Hinzufgen von Files, Passw”rter:ehp2.
+:p.
+Manche requestbaren Files sind in einer File-Liste nicht aufgefhrt, z.B.
+Magic Files. Diese k”nnen Sie mit :hp2.Hinzufgen:ehp2. zu den angezeigten
+Files hinzufgen. Diese Files erscheinen am Ende der Liste.
+:p.
+Manche Files k”nnen nur mit Angabe eines Passwortes requestet werden. Beim
+manuellen Hinzufgen von Files kann man dieses direkt angeben. Bei den anderen
+Files kann man ebenfalls ein Passwort angeben. Dazu stellt man den Cursor in
+der Liste auf das entsprechende File und drckt :hp2.Passwort:ehp2.. Das
+eingegebene Passwort wird dann als Passwort fr dieses Files verwendet.
+:p.
+:hp2.Weitere Einstellungen:ehp2.
+:parml.
+:pt.:hp2.Requesten von:ehp2.
+:pd.Adresse des Nodes, von dem die Dateien requestet werden.
+:pt.:hp2.Area:ehp2.
+:pd.Area, in der die Request-Messages erzeugt werden. Es werden nur nichtlokale
+Netmail-Areas angeboten.
+:pt.:hp2.direkt:ehp2.
+:pd.Es wird keine Request-Message erzeugt, sondern eine REQ-Datei direkt im
+Outbound-Verzeichnis angelegt.
+:pt.:hp2.Attribute:ehp2.
+:pd.Stellt die Message-Attribute ein, mit der die Request-Messages erzeugt
+werden. Sinnvollerweise sollte das "File Request"-Attribut immer gesetzt sein.
+:eparml.
+
+:h3 res=&PANEL_REQ_ADDLIST..Liste hinzufgen
+:p.Geben Sie die Daten fr die neue File-Liste ein. Es werden ben”tigt&colon.
+:parml.
+:pt.:hp2.Filename:ehp2.
+:pd.Der Filename der File-Liste (incl. Pfad). Sie k”nnen auch den
+:hp2.Suchen:ehp2.-Knopf verwenden, um den Namen per Dialog auszuw„hlen.
+:pt.:hp2.Node-Nummer:ehp2.
+:pd.Die Node-Nummer des Nodes, bei dem Files aus dieser Liste requestet werden
+k”nnen.
+:pt.:hp2.Bezeichnung:ehp2.
+:pd.Eine Bezeichnung fr die Liste, z.B. der Name des Sysops oder der Mailbox.
+Diese Bezeichnung wird in der Auswahl-Liste angezeigt.
+:eparml.
+
+:h3 res=&PANEL_REQ_DELLIST..Liste l”schen
+:p.Drcken Sie :hp2.Ja:ehp2., wenn Sie die Liste l”schen wollen. Drcken
+Sie :hp2.Nein:ehp2., wenn Sie die Liste behalten wollen.
+:p.:hp8.Beachte&colon.:ehp8. Es wird nicht die File-Liste auf der Platte
+gel”scht, sondern nur der Verweis darauf.
+
+:h3 res=&PANEL_REQ_ADDFILE..File hinzufgen
+:p.Geben Sie den Namen des Files an, das Sie zus„tzlich requesten wollen.
+Dies kann auch ein sog. Magic Name sein.
+:p.Sie k”nnen optional ein Passwort fr das File angeben.
+:p.Nach dem Drcken von :hp2.OK:ehp2. erscheint das File am Ende des
+File-Auswahl-Fensters.
+
+:h3 res=&PANEL_REQ_SETPASS..Passwort setzen
+:p.Geben Sie das Passwort fr den Request des Files an. Bei einem leeren
+Eingabefeld wird kein Passwort beim Request verwendet.
+
+:h3 hide res=&PANEL_REQ_ERROR..Fehler File-Liste
+:p.Beim Lesen der File-Liste von der Platte ist ein Fehler aufgetreten.
+Beheben Sie den Fehler und probieren Sie es nochmal.
+

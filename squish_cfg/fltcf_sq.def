@@ -1,0 +1,16 @@
+LIBRARY FLTCF_SQ INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet Squish CFG'
+PROTMODE
+DATA MULTIPLE NONSHARED
+
+EXPORTS
+     ReadSquishCfg           @3
+     QueryVersion            @5
+     QueryParamBlockSize     @6
+     SetupParams             @7
+     AddEcho                 @8
+     RemoveEcho              @9
+     QueryFormatID           @1
+     QueryFormatName         @2
+     QueryVer                @4
+

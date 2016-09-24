@@ -1,0 +1,110 @@
+.***************************************************************************
+.* Carbon-Copy-Listen                                                      *
+.***************************************************************************
+
+:h1.Verteilerlisten
+:p.Themen&colon.
+:p.:link reftype=hd refid=ccsetup.Verteilerlisten-Ordner:elink.
+:p.:link reftype=hd refid=cclist.Verteilerlisten:elink.
+:p.:link reftype=hd refid=ccentry.Eintrag:elink.
+:p.:link reftype=hd refid=ccselect.Verteilerliste ausw„hlen:elink.
+
+:h2 id=ccsetup res=&PANEL_CCLISTSETUP..Verteilerlisten-Ordner
+:p.Der Verteilerlisten-Ordner enth„lt alle Verteilerlisten.
+:p.Sie k”nnen eine Liste
+:ul compact.
+:li.™ffnen,
+:li.Erstellen, or
+:li.L”schen,
+:eul.
+:p.indem Sie den entsprechenden Menpunkt in Kontextmen einer Liste
+ausw„hlen.
+:p.Sie k”nnen eine Liste auch l”schen, indem Sie sie auf den Schredder ziehen.
+:p.
+ndern Sie den Namen der Liste, indem Sie auf das Icon klicken und
+gleichzeitig die ALT-Taste festhalten.
+
+:h2 id=cclist res=&PANEL_CCLIST..Verteilerliste
+:p.Die Eintr„ge der ausgew„hlten Verteilerliste werden angezeigt. Sie k”nnen Eintr„ge
+hinzufgen, „ndern oder l”schen.
+:parml.
+:pt.:hp2.Hinzufgen:ehp2.
+:pd.Einen neuen Eintrag hinzufgen.
+:pt.:hp2.ndern:ehp2.
+:pd.ndern des ausgew„hlten Eintrags. Sie k”nnen den Eintrag auch „ndern, indem
+Sie zweimal auf den Eintrag klicken.
+:pt.:hp2.L”schen:ehp2.
+:pd.L”schen des ausgew„hlten Eintrags. Sie k”nnen einen Eintrag auch l”schen, indem
+Sie ihn zum Schredder ziehen.
+:pt.:hp2.Import:ehp2.
+:pd.Importieren von Namen und Adressen aus einer Textdatei.
+:eparml.
+:p.Sie k”nnen Eintr„ge von einer Liste zur anderen verschieben oder kopieren, indem
+Sie zwei Listen ”ffnen und einen Eintrag von einer Liste zur anderen ziehen. Halten
+Sie die CTRL-Taste gedrckt, um den Eintrag zu kopieren anstatt ihn zu verschieben.
+:p.
+:artwork align=center name='movecc.bmp'.
+
+:h2 id=ccentry res=&PANEL_CCLISTENTRY..Eintrag
+:p.Geben Sie einen neuen Eintrag ein, oder „ndern sie den existierenden.
+:parml.
+:pt.:hp2.Name:ehp2.
+:pd.Benutzername des Empf„ngers. Sie k”nnen hier auch einen Kurznamen verwenden.
+Geben Sie den Kurznamen ein und drcken Sie :hp2.TAB:ehp2.. Der Kurzname wird durch
+den richtigen Namen ersetzt, und die Adresse des Empf„ngers wird im Adreá-Feld
+eingefgt.
+:pt.:hp2.Adresse:ehp2.
+:pd.Netz-Adresse des Empf„ngers.
+:pt.:hp2.?:ehp2.
+:pd.Adresse des Empf„ngers wird in der Nodeliste gesucht.
+:pt.:hp2.Erste Zeile:ehp2.
+:pd.Die erste Zeile des Messagetextes. Hier k”nnen Sie mit "TO: xxx" die
+Internet-Adresse des Empf„ngers angeben, wenn die Message ber ein Gateway
+geschickt werden soll.
+:pt.:hp2.Name in CC-Zeilen anzeigen:ehp2.
+:pd.Geben Sie an, ob der Name des Benutzers in der Liste der Namen erscheinen soll,
+die durch eine Message-Schablone der Message hinzugefgt wird.
+:eparml.
+
+:h2 id=ccselect res=&PANEL_CCLISTSELECT..Verteilerliste ausw„hlen
+:p.W„hlen Sie eine der definierten Verteilerlisten aus. Drcken Sie :hp2.OK:ehp2.
+um die Auswahl zu best„tigen. Drcken Sie :hp2.Abbrechen:ehp2., falls sie keine
+Verteilerliste verwenden wollen.
+
+:h2 res=&PANEL_IMPORTCCLIST..Importieren
+:p.W„hlen Sie die Datei aus, die importiert werden soll.
+:parml.
+:pt.:hp2.Vorgabe fr "Namen anzeigen":ehp2.
+:pd.Stellen Sie hier die Vorgabe fr das Feld "Namen anzeigen" ein. Die
+Vorgabe wird bei jedem eingelesenen Eintrag verwendet.
+:eparml.
+
+:h2 hide res=&PANEL_DELCCLIST..Verteilerliste l”schen
+:p.Drcken Sie :hp2.Ja:ehp2., wenn Sie die ausgew„hlte Verteilerliste l”schen wollen.
+Drcken Sie :hp2.Nein:ehp2., wenn Sie die Liste behalten wollen.
+
+:h2 hide res=&PANEL_DELCCENTRY..Eintrag l”schen
+:p.Drcken Sie :hp2.Ja:ehp2., wenn Sie den ausgew„hlten Eintrag l”schen wollen.
+Drcken Sie :hp2.Nein:ehp2., wenn Sie ihn behalten wollen.
+
+:h2 hide res=&PANEL_NOCCLIST..Verteilerliste nicht mehr vorhanden
+:p.Die Verteilerliste, die Sie ausgew„hlt haben, wurde vor dem Speichern der
+Message gel”scht. Die Message kann mit dieser Verteilerliste nicht gespeichert
+werden.
+:p.Sie k”nnen die Message an einen einzelnen Empf„nger schicken, eine andere
+Verteilerliste ausw„hlen oder die gesamte Message verwerfen.
+
+:h2 hide res=&PANEL_NOCCENTRIES..Message speichern
+:p.Der Schnellverteiler ist momentan aktiv. Die Liste enth„lt jedoch keine
+Eintr„ge, d.h. FleetStreet hat keine Empf„nger, an die die Message geschickt
+werden soll.
+:p.Fgen Sie Eintr„ge in die Liste ein oder schalten Sie den Schnellverteiler
+ab.
+
+:h2 hide res=&PANEL_MODQUICKCC..Schnellverteiler
+:p.Der Schnellverteiler ist momentan aktiv und Sie haben den Menpunkt ein
+zweites Mal ausgew„hlt.
+:p.Drcken Sie :hp2.Ja:ehp2., um die bestehende Liste zu „ndern.
+:p.Drcken Sie :hp2.Nein:ehp2., um den Schnellverteiler abzuschalten.
+:p.Drcken Sie :hp2.Abbrechen:ehp2., um die Message weiter zu bearbeiten.
+

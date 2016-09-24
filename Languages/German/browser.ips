@@ -1,0 +1,29 @@
+.* **********************************************************************
+.* Nodelist browser
+.* **********************************************************************
+
+:h2 res=&PANEL_NLBROWSER..Nodelist-Browser
+:p.
+Der Nodelisten-Browser erlaubt Ihnen, durch die Nodelisten zu bl„ttern, die
+Sie im Setup-Notebook eingetragen haben.
+:p.
+W„hlen Sie die Nodeliste, die Sie anschauen wollen, in der Liste aus.
+:p.
+Sie k”nnen entweder nach Node-Nummern oder nach einem Sysop-Namen suchen&colon.
+:p.
+:hp2.Node-Nummer:ehp2.
+:p.
+Wenn Sie nach :hp2.Node-Nummern:ehp2. suchen, wird die Nodeliste in :hp2.Zonen:ehp2.
+und :hp2.Netze:ehp2. eingeteilt. Die Zonen und Netze werden auf der linken Seite
+als Icons dargestellt. Wenn Sie auf ein Netz-Icon klicken, werden die Nodes
+des Netzes auf der rechten Seite angezeigt.
+:p.
+:hp2.Sysop-Namen:ehp2.
+:p.
+Wenn Sie nach :hp2.Sysop-Namen:ehp2. suchen, wird die Nodeliste :hp2.alphabetisch
+sortiert:ehp2.. Die Buchstaben des Alphabets werden auf der linken Seite dargestellt.
+Wenn es zu einem Buchstaben keinen Namen in der Nodeliste gibt, erscheint der
+Buchstabe nicht. Wenn Sie auf einen Buchstaben klicken, werden die
+Nodelist-Eintr„ge, die mit diesem Buchstaben anfangen, auf der rechten
+Seite dargestellt.
+

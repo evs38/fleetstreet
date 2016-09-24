@@ -1,0 +1,9 @@
+LIBRARY FLTCF_NP INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet NewsWave PM CFG'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+  QueryFormatID   @1
+  QueryFormatName @2
+  ReadNewsWaveCfg @3
+  QueryVer        @4

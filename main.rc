@@ -1,0 +1,269 @@
+/* MAIN.RC */
+#include <os2.h>
+#include "resids.h"
+#include "dialogids.h"
+#include "setupdlg.h"
+#include "areadlg.h"
+
+ICON ID_WINDOW           resources\mailer.ico
+BITMAP IDBMP_ABOUT       resources\logo2.bmp
+BITMAP IDBMP_CHECK       resources\check.bmp
+
+BITMAP IDBMP_SHOWKLUDGES     resources\showkludges.bmp
+BITMAP IDBMP_DELMSG          resources\delmsg.bmp
+BITMAP IDBMP_PREVMSG         resources\prevmsg.bmp
+BITMAP IDBMP_NEXTMSG         resources\nextmsg.bmp
+BITMAP IDBMP_PREVREPLY       resources\prevreply.bmp
+BITMAP IDBMP_NEXTREPLY       resources\nextreply.bmp
+BITMAP IDBMP_FIRSTMSG        resources\firstmsg.bmp
+BITMAP IDBMP_LASTMSG         resources\lastmsg.bmp
+BITMAP IDBMP_FIND            resources\find.bmp
+BITMAP IDBMP_MSGTREE         resources\msgtree.bmp
+BITMAP IDBMP_NEWMSG          resources\newmsg.bmp
+BITMAP IDBMP_REPLY           resources\reply2.bmp
+BITMAP IDBMP_IMPORT          resources\importfile.bmp
+BITMAP IDBMP_EXPORT          resources\exportfile.bmp
+BITMAP IDBMP_EDITMSG         resources\edit2.bmp
+BITMAP IDBMP_AREA            resources\area.bmp
+BITMAP IDBMP_MSGLIST         resources\msglist.bmp
+BITMAP IDBMP_PRINTMSG        resources\printmsg.bmp
+BITMAP IDBMP_OK              resources\ok.bmp
+BITMAP IDBMP_CANCEL          resources\cancel.bmp
+BITMAP IDBMP_HOMEMSG         resources\home.bmp
+BITMAP IDBMP_NEXTAREA        resources\nextarea.bmp
+BITMAP IDBMP_SEPARATOR       resources\separator.bmp
+BITMAP IDBMP_BOOKMARKS       resources\bookm.bmp
+BITMAP IDBMP_HELP            resources\help.bmp
+
+BITMAP IDBMP_SHOWKLUDGES_S   resources\showkludges_small.bmp
+BITMAP IDBMP_DELMSG_S        resources\delmsg_small.bmp
+BITMAP IDBMP_PREVMSG_S       resources\prevmsg_small.bmp
+BITMAP IDBMP_NEXTMSG_S       resources\nextmsg_small.bmp
+BITMAP IDBMP_PREVREPLY_S     resources\prevreply_small.bmp
+BITMAP IDBMP_NEXTREPLY_S     resources\nextreply_small.bmp
+BITMAP IDBMP_FIRSTMSG_S      resources\firstmsg_small.bmp
+BITMAP IDBMP_LASTMSG_S       resources\lastmsg_small.bmp
+BITMAP IDBMP_FIND_S          resources\find_small.bmp
+BITMAP IDBMP_MSGTREE_S       resources\msgtree_small.bmp
+BITMAP IDBMP_NEWMSG_S        resources\newmsg_small.bmp
+BITMAP IDBMP_REPLY_S         resources\reply2_small.bmp
+BITMAP IDBMP_IMPORT_S        resources\importfile_small.bmp
+BITMAP IDBMP_EXPORT_S        resources\exportfile_small.bmp
+BITMAP IDBMP_EDITMSG_S       resources\edit2_small.bmp
+BITMAP IDBMP_AREA_S          resources\area_small.bmp
+BITMAP IDBMP_MSGLIST_S       resources\msglist_small.bmp
+BITMAP IDBMP_PRINTMSG_S      resources\printmsg_small.bmp
+BITMAP IDBMP_OK_S            resources\ok_small.bmp
+BITMAP IDBMP_CANCEL_S        resources\cancel_small.bmp
+BITMAP IDBMP_HOMEMSG_S       resources\home_small.bmp
+BITMAP IDBMP_NEXTAREA_S      resources\nextarea_small.bmp
+BITMAP IDBMP_BOOKMARKS_S     resources\bookm_small.bmp
+BITMAP IDBMP_HELP_S          resources\help_small.bmp
+BITMAP IDBMP_COPYMSG         resources\copymsg.bmp
+BITMAP IDBMP_COPYMSG_S       resources\copymsg_small.bmp
+BITMAP IDBMP_COPY            resources\copy.bmp
+BITMAP IDBMP_COPY_S          resources\copy_small.bmp
+BITMAP IDBMP_CUT             resources\cut.bmp
+BITMAP IDBMP_CUT_S           resources\cut_small.bmp
+BITMAP IDBMP_PASTE           resources\paste.bmp
+BITMAP IDBMP_PASTE_S         resources\paste_small.bmp
+BITMAP IDBMP_SHELL           resources\shell.bmp
+BITMAP IDBMP_SHELL_S         resources\shell_small.bmp
+BITMAP IDBMP_SCRIPTS         resources\script.bmp
+BITMAP IDBMP_SCRIPTS_S       resources\script_small.bmp
+BITMAP IDBMP_MOVEMSG         resources\movemsg.bmp
+BITMAP IDBMP_MOVEMSG_S       resources\movemsg_small.bmp
+BITMAP IDBMP_BROWSER         resources\browser.bmp
+BITMAP IDBMP_BROWSER_S       resources\browser_small.bmp
+BITMAP IDBMP_FORWARD         resources\fwdmsg.bmp
+BITMAP IDBMP_FORWARD_S       resources\fwdmsg_small.bmp
+BITMAP IDBMP_CATCHUP         resources\catchup.bmp
+BITMAP IDBMP_CATCHUP_S       resources\catchup_small.bmp
+BITMAP IDBMP_REQUEST         resources\request.bmp
+BITMAP IDBMP_REQUEST_S       resources\request_small.bmp
+
+ICON IDB_SHOWKLUDGES     resources\showkludges.ico
+ICON IDB_FIND            resources\find.ico
+ICON IDB_MSGTREE         resources\msgtree.ico
+ICON IDB_AREA            resources\area.ico
+ICON IDB_MSGLIST         resources\msglist.ico
+
+ICON IDIC_PLUS           resources\plus.ico
+ICON IDIC_MINUS          resources\minus.ico
+
+ICON IDIC_CCENTRY        resources\ccentry.ico
+ICON IDIC_CCLIST         resources\cclist.ico
+ICON IDIC_CCFOLDER       resources\ccfolder.ico
+
+ICON IDIC_MESSAGE        resources\message.ico
+
+ICON IDIC_TEMPLATE       resources\template.ico
+ICON IDIC_DEFTEMPLATE    resources\deftemplate.ico
+ICON IDIC_TEMPLATEFOLDER resources\templatefolder.ico
+
+ICON IDIC_RXSCRIPT       resources\script.ico
+ICON IDIC_SCRIPTFOLDER   resources\scriptfolder.ico
+
+ICON IDIC_NETFOLDER      resources\routing.ico
+ICON IDIC_ONENODE        resources\net2.ico
+
+ICON IDIC_AREAFOLDER         resources\folder_closed.ico
+ICON IDIC_AREAFOLDER_OPEN    resources\folder_open.ico
+ICON IDIC_AREAFOLDER_UNREAD  resources\folder_unread.ico
+
+
+ACCELTABLE ID_ACCEL1
+BEGIN
+"x",      IDA_END,         ALT, CHAR
+"X",      IDA_END,         ALT, CHAR
+VK_F1,    IDA_KEYSHELP,    CONTROL, VIRTUALKEY
+"d",      IDA_DEFAULTADDR, CONTROL
+"D",      IDA_DEFAULTADDR, CONTROL
+"r",      IDA_REPLY,       CHAR, CONTROL
+"R",      IDA_REPLY,       CHAR, CONTROL
+"R",      IDA_REPLYNOJOIN, CHAR, CONTROL, SHIFT
+"n",      IDA_REPLYNET,    CHAR, CONTROL
+"N",      IDA_REPLYNET,    CHAR, CONTROL
+"N",      IDA_REPLYNETNOJOIN, CHAR, CONTROL, SHIFT
+"a",      IDA_AREA,        CHAR, CONTROL
+"A",      IDA_AREA,        CHAR, CONTROL
+"l",      IDA_MSGLIST,     CHAR, CONTROL
+"L",      IDA_MSGLIST,     CHAR, CONTROL
+VK_PRINTSCRN, IDA_PRINT,   SHIFT, VIRTUALKEY
+"t",      IDA_THREADLIST,  CHAR, CONTROL
+"T",      IDA_THREADLIST,  CHAR, CONTROL
+"m",      IDA_MOVE,        CHAR, CONTROL
+"M",      IDA_MOVE,        CHAR, CONTROL
+"q",      IDA_REQUEST,     CHAR, CONTROL
+"Q",      IDA_REQUEST,     CHAR, CONTROL
+"+",      IDA_NEXTUNREAD,  CHAR, CONTROL
+VK_INSERT,IDA_ENTER,       VIRTUALKEY
+VK_DELETE,IDA_DELMSG,      VIRTUALKEY
+"x",      IDA_EXPORT,      CHAR, CONTROL
+"X",      IDA_EXPORT,      CHAR, CONTROL
+"e",      IDA_CHANGEMSG,   CHAR, CONTROL
+"E",      IDA_CHANGEMSG,   CHAR, CONTROL
+VK_LEFT,  IDA_PREVMSG,     VIRTUALKEY
+VK_RIGHT, IDA_NEXTMSG,     VIRTUALKEY
+VK_LEFT,  IDA_PREVREPLY,   CONTROL, VIRTUALKEY
+VK_RIGHT, IDA_NEXTREPLY,   CONTROL, VIRTUALKEY
+VK_HOME,  IDA_FIRSTMSG,    CONTROL, VIRTUALKEY
+VK_END,   IDA_LASTMSG,     CONTROL, VIRTUALKEY
+"i",      IDA_FIND,        CHAR, CONTROL
+"I",      IDA_FIND,        CHAR, CONTROL
+VK_HOME,  IDA_HOMEMSG,     SHIFT, VIRTUALKEY
+VK_RIGHT, IDA_NEXTAREA,    SHIFT, VIRTUALKEY
+"k",      IDA_KLUDGES,     CHAR, CONTROL
+"K",      IDA_KLUDGES,     CHAR, CONTROL
+"c",      IDA_COPY,        CHAR, CONTROL
+"C",      IDA_COPY,        CHAR, CONTROL
+"f",      IDA_FORWARD,     CHAR, CONTROL
+"F",      IDA_FORWARD,     CHAR, CONTROL
+"o",      IDA_ADDTONICK,   CHAR, CONTROL
+"O",      IDA_ADDTONICK,   CHAR, CONTROL
+"z",      IDA_ADDTOCC,     CHAR, CONTROL
+"Z",      IDA_ADDTOCC,     CHAR, CONTROL
+VK_SPACE, IDA_MARKTOGGLE,  VIRTUALKEY
+"b",      IDA_BOOKMARKS,   CHAR, CONTROL
+"B",      IDA_BOOKMARKS,   CHAR, CONTROL
+"1",      IDA_RXQUICK1,    CHAR, CONTROL
+"2",      IDA_RXQUICK2,    CHAR, CONTROL
+"3",      IDA_RXQUICK3,    CHAR, CONTROL
+"4",      IDA_RXQUICK4,    CHAR, CONTROL
+"5",      IDA_RXQUICK5,    CHAR, CONTROL
+"6",      IDA_RXQUICK6,    CHAR, CONTROL
+"7",      IDA_RXQUICK7,    CHAR, CONTROL
+"8",      IDA_RXQUICK8,    CHAR, CONTROL
+"9",      IDA_RXQUICK9,    CHAR, CONTROL
+"0",      IDA_RXQUICK10,   CHAR, CONTROL
+"w",      IDA_NLBROWSER,   CHAR, CONTROL
+"W",      IDA_NLBROWSER,   CHAR, CONTROL
+"p",      IDA_CATCHUP,     CHAR, CONTROL
+"P",      IDA_CATCHUP,     CHAR, CONTROL
+VK_NEWLINE, IDA_BACKWIN,   VIRTUALKEY
+VK_ENTER, IDA_BACKWIN,     VIRTUALKEY
+VK_ESC,   IDA_CANCEL,      VIRTUALKEY
+"j",      IDA_MONO,        CHAR, CONTROL
+"J",      IDA_MONO,        CHAR, CONTROL
+"h",      IDA_HIGHLIGHT,   CHAR, CONTROL
+"H",      IDA_HIGHLIGHT,   CHAR, CONTROL
+END
+
+ACCELTABLE ID_ACCEL2
+BEGIN
+"x",      IDA_END,         ALT, CHAR
+"X",      IDA_END,         ALT, CHAR
+VK_F1,    IDA_KEYSHELP,    CONTROL, VIRTUALKEY
+"d",      IDA_DEFAULTADDR, CONTROL
+"D",      IDA_DEFAULTADDR, CONTROL
+"y",      IDA_DELLINE,     CHAR, CONTROL
+"Y",      IDA_DELLINE,     CHAR, CONTROL
+VK_BACKSPACE, IDA_DELLINE, CONTROL, VIRTUALKEY
+VK_BACKSPACE, IDA_UNDO,    ALT, VIRTUALKEY
+VK_F2,    IDA_F2,          VIRTUALKEY
+VK_F3,    IDA_F3,          VIRTUALKEY
+VK_F4,    IDA_F4,          VIRTUALKEY
+VK_F5,    IDA_F5,          VIRTUALKEY
+VK_F6,    IDA_F6,          VIRTUALKEY
+VK_F7,    IDA_F7,          VIRTUALKEY
+VK_F8,    IDA_F8,          VIRTUALKEY
+VK_F9,    IDA_F9,          VIRTUALKEY
+VK_F10,   IDA_F10,         VIRTUALKEY
+VK_F11,   IDA_F11,         VIRTUALKEY
+VK_F12,   IDA_F12,         VIRTUALKEY
+VK_ESC,   IDA_CANCEL,      VIRTUALKEY
+"s",      IDA_SAVE,        CHAR, CONTROL
+"S",      IDA_SAVE,        CHAR, CONTROL
+"i",      IDA_IMPORT,      CHAR, CONTROL
+"I",      IDA_IMPORT,      CHAR, CONTROL
+"x",      IDA_CROSSPOST,   CHAR, CONTROL
+"X",      IDA_CROSSPOST,   CHAR, CONTROL
+"c",      IDA_CCOPY,       CHAR, CONTROL
+"C",      IDA_CCOPY,       CHAR, CONTROL
+"a",      IDA_ATTRIB,      CHAR, CONTROL
+"A",      IDA_ATTRIB,      CHAR, CONTROL
+"F",      IDA_ATTRIB,      CHAR, CONTROL, SHIFT
+"K",      IDA_TOGGLE_KILL,  CHAR, CONTROL, SHIFT
+"C",      IDA_TOGGLE_CRASH, CHAR, CONTROL, SHIFT
+"A",      IDA_TOGGLE_FILE,  CHAR, CONTROL, SHIFT
+"R",      IDA_TOGGLE_REQ,   CHAR, CONTROL, SHIFT
+"P",      IDA_TOGGLE_PRIV,  CHAR, CONTROL, SHIFT
+"H",      IDA_TOGGLE_HOLD,  CHAR, CONTROL, SHIFT
+"D",      IDA_TOGGLE_DIRECT, CHAR, CONTROL, SHIFT
+"1",      IDA_RXQUICK1,     CHAR, CONTROL
+"2",      IDA_RXQUICK2,     CHAR, CONTROL
+"3",      IDA_RXQUICK3,     CHAR, CONTROL
+"4",      IDA_RXQUICK4,     CHAR, CONTROL
+"5",      IDA_RXQUICK5,     CHAR, CONTROL
+"6",      IDA_RXQUICK6,     CHAR, CONTROL
+"7",      IDA_RXQUICK7,     CHAR, CONTROL
+"8",      IDA_RXQUICK8,     CHAR, CONTROL
+"9",      IDA_RXQUICK9,     CHAR, CONTROL
+"0",      IDA_RXQUICK10,    CHAR, CONTROL
+"w",      IDA_NLBROWSER,    CHAR, CONTROL
+"W",      IDA_NLBROWSER,    CHAR, CONTROL
+"k",      IDA_KLUDGES,      CHAR, CONTROL
+"K",      IDA_KLUDGES,      CHAR, CONTROL
+"j",      IDA_MONO,         CHAR, CONTROL
+"J",      IDA_MONO,         CHAR, CONTROL
+END
+
+/* Tabelle Dialoge */
+ACCELTABLE ID_ACCEL3
+BEGIN
+"a",      IDA_AREA,      CHAR, CONTROL
+"A",      IDA_AREA,      CHAR, CONTROL
+"l",      IDA_MSGLIST,   CHAR, CONTROL
+"L",      IDA_MSGLIST,   CHAR, CONTROL
+"t",      IDA_THREADLIST,CHAR, CONTROL
+"T",      IDA_THREADLIST,CHAR, CONTROL
+"k",      IDA_KLUDGES,   CHAR, CONTROL
+"K",      IDA_KLUDGES,   CHAR, CONTROL
+"b",      IDA_BOOKMARKS, CHAR, CONTROL
+"B",      IDA_BOOKMARKS, CHAR, CONTROL
+"w",      IDA_NLBROWSER, CHAR, CONTROL
+"W",      IDA_NLBROWSER, CHAR, CONTROL
+VK_DELETE,IDA_DELMSG,    VIRTUALKEY
+END
+
+RCINCLUDE "help.rc"

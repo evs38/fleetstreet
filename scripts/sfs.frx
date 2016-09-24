@@ -1,0 +1,58 @@
+/****************************************************************************/
+/*                      FleetStreet example script                          */
+/*                                                                          */
+/*                                SFS.FRX                                   */
+/*                                                                          */
+/* SFS.FRX asks for file name(s) to search for, starts SFSOS2.EXE and       */
+/* inserts the result at the current cursor position.                       */
+/*                                                                          */
+/* You may need to adjust the path to SFSOS2.EXE to match your setup.       */
+/*                                                                          */
+/* Please contact Holger Walz 2:2474/400.12 for more information about      */
+/* the "SWIFT FILELIST-SEARCHER 3.0", SFS.                                  */
+/*                                                                          */
+/****************************************************************************/
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+/* Only perform the search when editing a message */
+if word(FleetStatus.Mode, 1) \= "Edit" then
+do
+   say 'Need to be in Edit mode!!'
+   exit
+end
+
+say 'Enter keyword(s)'
+parse pull keywords
+
+/* start SFS, !!!!!!!!! adjust the path here */
+address cmd 'e:\fido\sfs\sfsos2 *' keywords '| RXQUEUE'
+
+/* read results */
+i=0
+do while queued()>0
+   i=i+1
+   parse pull foundline.i
+end
+foundline.0=i
+
+/* insert results at cursor position */
+do i=FleetMsg.Text.0 to word(FleetStatus.Cursor, 1)+1 by -1
+   j=i+foundline.0
+   FleetMsg.Text.j = FleetMsg.Text.i
+end
+
+j=word(FleetStatus.Cursor, 1)
+do i=1 to foundline.0
+   z=j+i
+   FleetMsg.Text.z = foundline.i
+end
+
+FleetMsg.Text.0 = FleetMsg.Text.0 + foundline.0
+
+/* Display new text */
+say FSSetText('FleetMsg.Text')
+
+exit

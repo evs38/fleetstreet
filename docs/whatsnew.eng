@@ -1,0 +1,334 @@
+                               Release notes
+                               =============
+
+(* = fixed bug, + = new feature, # = change, - = eliminated)
+
+Version 1.27.1:
+
+* Name field and node number field in header were overlapping.
+
+
+Version 1.27:
+
+* Keyboard accelerators did not work.
+# Names of requested files may be up to 50 characters long. Request passwords
+  may be up to 20 characters long.
+* Slightly changed appearance of header (for italian version).
+# Attempt to work around print border selection problem with latest fixpacks.
+  IBM still needs to fix the spin button control.
++ Support for LoraBBS 2.42
+
+
+Version 1.26:
+
+# Changed keyboard accelerators (problems with international keyboards).
++ Added support for BBToss 2.40 [parts by Burkhard Buelte]
+* Year numbers >= 2000 may be displayed incorrectly when an old MSGAPI32.DLL
+  is used. A workaround corrects this. (the error is actually in MSGAPI32.DLL,
+  not in FleetStreet)
+  A new MSGAPI32.DLL is shipped with this version.
+
+
+Version 1.25.1:
+
+* When first message displayed had NPD flag on, monospaced display was
+  permanently enabled.
+
+
+Version 1.25:
+
++ Keyboard shortcuts to toggle fonts and highlighting.
+  [Alexander Batalov, 2:5015/88@FidoNet]
++ Global option to use the alternative (monospaced) font.
+  [Alexander Batalov, 2:5015/88@FidoNet]
++ Area option to use the alternative (monospaced) font for the area.
+  [Alexander Batalov, 2:5015/88@FidoNet]
++ Support for HPT [Alexander Batalov, 2:5015/88@FidoNet]
++ Two-colored quote highlighting. Every other quote level is displayed with
+  a different color. [Alexander Batalov, 2:5015/88@FidoNet]
++ Support for FMail version later than 1.02.
+  [Alexander Batalov, 2:5015/88@FidoNet]
+
+
+Version 1.24.1:
+
+* Missing line break between tearline and origin line
+
+
+Version 1.24:
+
+* When changing the size of the message list it sometimes was redrawn
+  incorrectly.
+# Open source version. All registration-related features were removed.
+
+
+Version 1.23:
+
+* During Find operation the results window could be closed, leading to
+  strange behaviour.
+* Trying to delete a message in a corrupted message area could cause
+  FleetStreet to crash.
++ In Fastecho's configuration file, environment variables in path names are
+  supported.
+# Up to 100 addresses possible
+
+
+Version 1.22:
+
+* Possibly wrong arrival date displayed in message list for self-written
+  messages in JAM areas.
+* Possible confusion when switching between monospaced and proportional
+  font while a message with NPD flag was displayed.
+# A four-digit year is inserted for %D template token.
+* NPD attribute was not stored in JAM areas.
+* INTL kludge may have appeared twice in MSG netmail areas.
+* Kludge lines in *.MSG files longer than 2KB may have caused a lockup.
+
+
+Version 1.21:
+
+* ShotgunBBS support DLL was missing
+* Grunged dates in *.MSG and Squish areas
+* *.DTP file remained open after closing the nodelist browser.
+* First line in carbon copy entries was too short.
+* Problem with INTL kludge not changed on reply.
+* Entry field for "first line" in carbon copy list entries were missing in
+  non-german language versions.
+# Inserted space between file name and password in non-direct file requests.
+  The missing space was a workaround for some broken tossers which otherwise
+  would treat the password as the next file name. Now I think there was
+  enough time to fix these tossers.
+  If you're using a Binkley-style outbound, I still recommend using the
+  "direct" option for file requests.
+* Current thread was not expanded in the thread list when compact view was
+  used.
+# Removed all minor pages from notebooks.
+# Monospaced setting is kept when switching between reading and writing; can
+  now be changed when writing.
++ Support for NPD (Non-Proportional Display) flag. When message contains this
+  flag, the display is temporarily switched to monospaced.
+* When replying from echo area to netmail area, the Rexx variable
+  FleetMsg.Header.ToAddress contained 0:0/0.0 instead of real destination
+  address.
+* Display update caused by Rexx function FSSetHeader was incorrect.
+* Calling FSSetText before completion of template processing may have caused
+  lockup.
+# Frame is printed around header again when using Warp 4. With the old method,
+  Warp 4 refuses to print the previous frame. This obviously is a bug in the
+  GPI that's still not fixed with FP #4. The new method prints a slightly
+  uglier frame.
+
+
+Version 1.20:
+
+# Little change in JAM support.
+* Import to carbon copy list failed for lines having trailing whitespace
+* Read messages in thread list were painted black
++ Support for Shotgun BBS. Thanks to August Abolins for his assistance.
+* "Print" menu item was not disabled when editing
++ Supports V7+ nodelists (partially). Use FastLst to generate such nodelists.
++ You can now specify a "first line" in carbon copy list entries.
+* Wrong template name was displayed in area settings notebook.
+* ENTER key was ignored when list box in request dialog had focus.
+# Changed focus chain in request dialog
+* *.JAM files were not written when changing message.
+
+
+Version 1.19:
+
+* Crash after using the context menu in the threadlist.
+* It was possible to move the rightmost separator in the message list too far
+  to the left.
+* Double areas in echo manager.
+* Area list title was not refreshed when folder was renamed.
++ Support for IMail 1.85 (Beta!)
+# "Scan all areas" in the area list context menu now really scans all areas.
+* Extension DLL was not called if echo was added and rescanned at the same time.
+* Folders of areas were lost if the tosser configuration was re-read in the
+  setup.
++ Support for NewsWave 0.99.5 (including mailing lists)
+* Message list was closed if FleetStreet was busy and DEL was pressed.
+# Folder of target area for Copy, Move or Forward is opened automatically.
+* Some nodes were not found in V7 nodelists.
+* Copied and moved messages had wrong CHRS kludge line.
++ Displays MO flag for V7 nodelist entries. This non-standard flag must be
+  explicitly set by the nodelist compiler. For FastLst, you can accomplish
+  this with the following entry in FASTLST.CFG:
+
+     FlagDef
+       MO    D
+     End
+
+* *.MSG areas in root directories (e.g. D:\) were not handled correctly.
+* "Deleted" attribute was not displayed correctly
+
+
+Version 1.18:
+
++ Introduced "Keep" attribute for JAM and Squish areas. Read the section about
+  Squish areas in the User's Guide!
++ Toolbar buttons for "Bookmarks window", "Help", "Copy message", "Move
+  Message", "Forward message", "Copy", "Cut", "Paste", "Shell", "Scripts folder",
+  "Nodelist browser", "Request", "Catchup"
+# Changed icon for "Reply"
+- Eliminated "included/excluded" flag for areas
++ Introduced area folders. See User's Guide for details.
+# Read personal messages are now displayed with the "normal" color in the
+  thread list.
+# The echo manager now allows to link and rescan an echo at the same time.
+# CTRL-TAB and ALT-TAB are now ignored by the editor.
++ Added timestamps to message list.
++ Default directory for file attaches.
+* Reversed logic for "Don't join lines" in reply dialog.
+* Incorrect address matching when entering point number only (e.g. ".3")
++ The "Logo" system setting is used
+# New notebooks with Merlin
+* Possible problem loading NewsWave's configuration file ("wrong version").
+# Ensured that tosser configuration DLLs are always loaded from the startup
+  directory.
+# Workaround for OS/2 bug: FS might crash if the default print job properties
+  are not yet set.
+# Made generation of FWDSUBJ optional.
+# Workaround for 16-Bit-Limit in OS/2: Using the Edit/Copy menu at the end of
+  messages >64K didn't work (nothing was copied to the clipboard).
+* In the threadlist's compact view, the top level entry was not removed when
+  all threads of that entry were deleted.
+# FleetStreet replies to the forwarder by default.
+* When moving or copying messages from the message list, thread list or
+  bookmarks list, the current area was always preselected.
+* Crash when quoting strange message.
+# Monospaced font is no longer simulated. FleetStreet now simply uses an
+  alternative font.
+* Crash when dragging nodes from the nodelist browser to the address fields.
+* Copied and moved messages were not recorded in ECHOMAIL.JAM/NETMAIL.JAM.
+
+
+Version 1.17:
+
++ New kludges FWDFROM, FWDTO, FWDORIG, FWDDEST, FWDSUBJ, FWDAREA and FWDMSGID.
+  See User's Guide for details.
+* Empty user name when using the Squish tosser.
+* Possible crash after starting FS (sounds vague? Well, the bug is more
+  difficult to explain than to fix).
+* Incorrect error message when switching tossers.
+* Kludge lines with no space between kludge name and contents (esp. @AREA)
+  were not recognized.
+# Refined highlighting algorithm
+* Printed with incorrect code page
+- NewWave (the VIO version) is no longer supported
++ Support for NewsWave PM 0.99
+# Recognize personal mail area of FMail
+* Workaround for display problems with italic text. This is caused by an OS/2
+  bug.
+* Some attributes of nicknames were not properly loaded from the INI file.
+  Thank you IBM for these crappy APIs!
++ Support for BBToss
+* Crash with overly long (i.e. corrupted) CHRS kludge line.
+
+
+Version 1.16:
+
+# Increased max. length of keyboard macros to 1023 characters.
+* Secondary windows didn't handle individual (non-system-wide) border widths.
+* Wrong error message during startup when AREAS.INI is empty.
++ Support for "Include" statement in SQUISH.CFG. Now also supports ParToss.
+* Nickname dialog was closed after using the "?" button.
+* Echo manager crashing when having a lot of areas.
+* Hang when copying messages from the thread list.
+* Possible redraw problems in message list of large areas.
+# Read all AKAs from FMAIL.CFG.
+* Fixed problems with strange characters in nodelists.
+# Improved performance of nodelist browser.
+* Finally fixed window-position-saving bug (hopefully...)
+# Changed codepage support. This will change again in one of the next versions.
++ Message viewer now also supports /italic/ text.
+
+
+Version 1.15:
+
+# Search options in request dialog are now saved.
++ The DLLs for reading tosser configuration files are now loaded dynamically.
+     + Only one DLL is loaded and only when it's actually needed
+     + Adding new DLLs is as easy as copying them to the FleetStreet directory
+  FleetStreet looks for the DLLs in the working directory, so make sure the
+  DLLs can be found there!
+* FleetCom was not properly linked, causing SYS0192.
+# The progress indicator is now displayed in the status line. You can stop the
+  background processing by pressing ESC or by double clicking on the progress
+  indicator.
++ The area scan can be stopped by pressing ESC.
+# Another workaround for IMail 1.75's bugs.
+# All attributes can be selected for a nickname.
+# All attributes can be selected for an area.
+# The script folder is sorted alphabetically
+* Removed 32000 line limit for file lists.
+* switching sender name in the thread list only worked in compact view.
+# Area descriptions are read from TerMail configuration.
++ When pressing ENTER in an empty TO field, the nickname list is opened and
+  you can select a nickname.
+* High water mark in Squish areas was not properly reset when changing messages.
+* New messages in JAM areas had incorrect IDs.
+* Messages in JAM areas may have not been deleted 100%.
+# Re-enabled editing of sender name and address, which also re-enables a bug.
+  You've wanted it that way!
+* Possible repaint problem when highlighted phrase is at the beginning of a
+  line.
+* Memory leak in file requester.
+* Fixed date display for years >= 2000
+* Seconds in timestamps were incorrect
++ Opened windows can be selected in the setup.
+# New MSGAPI32.DLL. Please read the README.ENG file.
+# New highlighting algorithm.
+* Possible crash after deleting an echo from the echo manager.
+* Long echo lists (>64K) were not properly saved. This fix requires that you
+  extract the areas for all your uplinks again.
+# Carbon Copy List folder is sorted.
+# New algorithm for regular expressions in the "Find" dialog. Please read the
+  User's Guide for details.
+* Problems with saved nicknames.
+# Different attribute selection for direct file requests.
+* Incorrect addresses for areas if Fastecho is used and if there are gaps in
+  AKA list.
+
+
+Version 1.14:
+
+# When copying or moving messages, FleetStreet now asks if the copies are to
+  be resent.
++ The current view is displayed in the bookmarks window.
++ "Select all" and "Select none" in the bookmarks window.
++ FleetStreet maintains a list of the last 10 texts in the "Find" dialog.
+* Possible crash when using fuzzy search.
++ Support for IMail 1.75
++ Support for NewsWave
+* TerMail could not be selected as tosser.
++ Possibility to look up the other lines for a given node address in the
+  file request dialog.
+* Wildcards (*, ?) were not recognized as valid file name characters.
+# Reduced memory requirements when displaying large file lists.
+# Accelerated "Select All" function in file request dialog.
+# Removed size limitation when searching for text in file lists.
++ %E usable in Crosspost template
+# Only the quote character selected in the message template is now recognized
+  when quoting messages. This reduces mis-quotes by a fair amount, but may
+  make the feature less useful in areas where varying quote characters are
+  used.
+* Some special characters were not recognized as quote initials.
+# Empty template elements no longer cause empty lines in the text.
++ Highlighting can be temporarily enabled or disabled with the context menu of
+  the message window.
++ You can temporarily switch to a monospaced version of the current font with
+  the context menu of the message window.
+* Unable to change message longer than 64K (MLE control strikes again!)
+* Possible crash after removing an echo from the echomanager.
+* Search text was required when searching for unsent messages.
++ Compact display mode for thread list, threads having the same subject line
+  are combined to pseudo-threads.
++ Added "Configure toolbar" to main menu for easier access.
+# Changed handling of JAM areas again. Scanning JAM areas should be faster
+  again.
+  More details about how JAM areas are handled by FleetStreet will appear in the
+  next version's "User's Guide".
+* Quoting an empty message didn't work correctly.
+# FleetCom now uses FLTRUN.DLL, so make sure it can be found in the LIBPATH.
+* File request dialog could be opened twice

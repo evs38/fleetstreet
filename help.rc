@@ -1,0 +1,1547 @@
+/* HELP.RC */
+#include "help.h"
+
+/*--------------------------------------------------------------*\
+ *  Help table definition                                       *
+\*--------------------------------------------------------------*/
+HELPTABLE   FLEET_HELP_TABLE
+{
+   HELPITEM  ID_WINDOW,           SUBTABLE_MAIN,            PANEL_MAIN
+   HELPITEM  IDD_SETUPOPTIONS,    SUBTABLE_SETUP,           PANEL_SETUP
+   HELPITEM  IDD_REPLY,           SUBTABLE_REPLY,           PANEL_REPLY
+   HELPITEM  IDD_ATTRIB,          SUBTABLE_ATTRIB,          PANEL_ATTRIB
+   HELPITEM  IDD_FINDTEXT,        SUBTABLE_FIND,            PANEL_FIND
+   HELPITEM  IDD_NEWUSER,         SUBTABLE_SU_NEWUSER,      PANEL_SU_NEWUSER
+   HELPITEM  IDD_ALREADYHAVEAREA, SUBTABLE_HAVEAREA,        PANEL_HAVEAREA
+   HELPITEM  IDD_AREALIST,        SUBTABLE_AREALIST,        PANEL_AREALIST
+   HELPITEM  IDD_MSGLIST,         SUBTABLE_MSGLIST,         PANEL_MSGLIST
+   HELPITEM  IDD_HELPABOUT,       SUBTABLE_ABOUTDLG,        PANEL_ABOUTDLG
+   HELPITEM  IDD_AREASETTINGS,    SUBTABLE_AREASETTINGS,    PANEL_AREASETTINGS
+   HELPITEM  IDD_DELETEAREA,      SUBTABLE_DELETEAREA,      PANEL_DELETEAREA
+   HELPITEM  IDD_KLUDGEINFO,      SUBTABLE_KLUDGEINFO,      PANEL_KLUDGEINFO
+   HELPITEM  IDD_NEWADDRESS,      SUBTABLE_SU_NEWADDRESS,   PANEL_SU_NEWADDRESS
+   HELPITEM  IDD_DELUNAME,        SUBTABLE_DELUNAME,        PANEL_DELUNAME
+   HELPITEM  IDD_DELADDRESS,      SUBTABLE_DELADDRESS,      PANEL_DELADDRESS
+   HELPITEM  IDD_DELNICKNAME,     SUBTABLE_DELNICKNAME,     PANEL_DELNICKNAME
+   HELPITEM  IDD_REQUESTER,       SUBTABLE_REQUESTER,       PANEL_REQUESTER
+   HELPITEM  IDD_REPLYLIST,       SUBTABLE_REPLYLIST,       PANEL_REPLYLIST
+   HELPITEM  IDD_DUPAREAS,        SUBTABLE_DUPAREAS,        PANEL_DUPAREAS
+   HELPITEM  IDD_ERRORINIFILE,    SUBTABLE_ERRORINIFILE,    PANEL_ERRORINIFILE
+   HELPITEM  IDD_NOINIFILE,       SUBTABLE_NOINIFILE,       PANEL_NOINIFILE
+   HELPITEM  IDD_OLDINIFILE,      SUBTABLE_OLDINIFILE,      PANEL_OLDINIFILE
+   HELPITEM  IDD_CURRENTNAMEADDR, SUBTABLE_CURRENTNAME,     PANEL_CURRENTNAME
+   HELPITEM  IDD_DELETE,          SUBTABLE_DELETE,          PANEL_DELETE
+   HELPITEM  IDD_BEENSENT,        SUBTABLE_BEENSENT,        PANEL_BEENSENT
+   HELPITEM  IDD_DISCARD,         SUBTABLE_DISCARD,         PANEL_DISCARD
+   HELPITEM  IDD_EXITNOSAVE,      SUBTABLE_EXITNOSAVE,      PANEL_EXITNOSAVE
+   HELPITEM  IDD_INFOMISSING,     SUBTABLE_INFOMISSING,     PANEL_INFOMISSING
+   HELPITEM  IDD_TOOLONG,         SUBTABLE_TOOLONG,         PANEL_TOOLONG
+   HELPITEM  IDD_ERRORMSGSAVE,    SUBTABLE_ERRORMSGSAVE,    PANEL_ERRORMSGSAVE
+   HELPITEM  IDD_FINDPROGRESS,    SUBTABLE_FINDPROGRESS,    PANEL_FINDPROGRESS
+   HELPITEM  IDD_FINDRESULTS,     SUBTABLE_FINDRESULTS,     PANEL_FINDRESULTS
+   HELPITEM  IDD_THREADLIST,      SUBTABLE_THREADLIST,      PANEL_THREADLIST
+   HELPITEM  IDD_ERRORLOAD,       SUBTABLE_ERRORLOAD,       PANEL_ERRORLOAD
+   HELPITEM  IDD_INVALIDFILE,     SUBTABLE_INVALIDFILE,     PANEL_INVALIDFILE
+   HELPITEM  IDD_FILEDLG,         SUBTABLE_FILEDLG,         PANEL_FILEDLG
+   HELPITEM  IDD_EXPORTFILE,      SUBTABLE_EXPORTFILE,      PANEL_EXPORTFILE
+   HELPITEM  IDD_CCFOLDER,        SUBTABLE_CCLISTSETUP,     PANEL_CCLISTSETUP
+   HELPITEM  IDD_CCLIST,          SUBTABLE_CCLIST,          PANEL_CCLIST
+   HELPITEM  IDD_CCLISTENTRY,     SUBTABLE_CCLISTENTRY,     PANEL_CCLISTENTRY
+   HELPITEM  IDD_DELCCLIST,       SUBTABLE_DELCCLIST,       PANEL_DELCCLIST
+   HELPITEM  IDD_DELCCENTRY,      SUBTABLE_DELCCENTRY,      PANEL_DELCCENTRY
+   HELPITEM  IDD_TEMPLATE,        SUBTABLE_TEMPLATE,        PANEL_TEMPLATE
+   HELPITEM  IDD_CCLISTSELECT,    SUBTABLE_CCLISTSELECT,    PANEL_CCLISTSELECT
+   HELPITEM  IDD_ERRORSAVE,       SUBTABLE_ERRORSAVE,       PANEL_ERRORSAVE
+   HELPITEM  IDD_INVALIDFILENAME, SUBTABLE_INVALIDFILENAME, PANEL_INVALIDFILENAME
+   HELPITEM  IDD_RESEND,          SUBTABLE_RESEND,          PANEL_RESEND
+   HELPITEM  IDD_NICKENTRY,       SUBTABLE_NICKENTRY,       PANEL_NICKENTRY
+   HELPITEM  IDD_HAVENICKNAME,    SUBTABLE_HAVENICKNAME,    PANEL_HAVENICKNAME
+   HELPITEM  IDD_SQUISHBASEPARAM, SUBTABLE_SQPARAMS,        PANEL_SQPARAMS
+   HELPITEM  IDD_LOOKUP,          SUBTABLE_LOOKUP,          PANEL_LOOKUP
+   HELPITEM  IDD_LOOKUPMEM,       SUBTABLE_LOOKUPMEM,       PANEL_LOOKUPMEM
+   HELPITEM  IDD_IDXOPENERR,      SUBTABLE_IDXOPENERR,      PANEL_IDXOPENERR
+   HELPITEM  IDD_DATOPENERR,      SUBTABLE_DATOPENERR,      PANEL_DATOPENERR
+   HELPITEM  IDD_IDXREADERR,      SUBTABLE_IDXREADERR,      PANEL_IDXREADERR
+   HELPITEM  IDD_DATREADERR,      SUBTABLE_DATREADERR,      PANEL_DATREADERR
+   HELPITEM  IDD_ERRREADSQPARAM,  SUBTABLE_ERRREADSQPARAM,  PANEL_ERRREADSQPARAM
+   HELPITEM  IDD_ERRWRITESQPARAM, SUBTABLE_ERRWRITESQPARAM, PANEL_ERRWRITESQPARAM
+   HELPITEM  IDD_SQPARAMVALUES,   SUBTABLE_SQPARAMVALUES,   PANEL_SQPARAMVALUES
+   HELPITEM  IDD_LOOKUPHANDLE,    SUBTABLE_LOOKUPHANDLE,    PANEL_LOOKUPHANDLE
+   HELPITEM  IDD_NICKPROMPT,      SUBTABLE_NICKPROMPT,      PANEL_NICKPROMPT
+   HELPITEM  IDD_DOMAINENTRY,     SUBTABLE_DOMAINENTRY,     PANEL_DOMAINENTRY
+   HELPITEM  IDD_HAVEDOMAIN,      SUBTABLE_HAVEDOMAIN,      PANEL_HAVEDOMAIN
+   HELPITEM  IDD_DELDOMAIN,       SUBTABLE_DELDOMAIN,       PANEL_DELDOMAIN
+   HELPITEM  IDD_FALSEREGISTER,   SUBTABLE_FALSEREGISTER,   PANEL_FALSEREGISTER
+   HELPITEM  IDD_RENUMBER,        SUBTABLE_RENUMBER,        PANEL_RENUMBER
+   HELPITEM  IDD_ATTACHSTAT,      SUBTABLE_ATTACHSTAT,      PANEL_ATTACHSTAT
+   HELPITEM  IDD_NEXTAREA,        SUBTABLE_NEXTAREA,        PANEL_NEXTAREA
+   HELPITEM  IDD_NONEXTAREA,      SUBTABLE_NONEXTAREA,      PANEL_NONEXTAREA
+   HELPITEM  IDD_AREALISTSETTINGS,SUBTABLE_AREALISTSETT,    PANEL_AREALISTSETT
+   HELPITEM  IDD_WORKERROR,       SUBTABLE_WORKERROR,       PANEL_WORKERROR
+   HELPITEM  IDD_LOCKERROR,       SUBTABLE_LOCKERROR,       PANEL_LOCKERROR
+   HELPITEM  IDD_BCDELERROR,      SUBTABLE_BCDELERROR,      PANEL_BCDELERROR
+   HELPITEM  IDD_IMPORTCCLIST,    SUBTABLE_IMPORTCCLIST,    PANEL_IMPORTCCLIST
+   HELPITEM  IDD_MLISTSETTINGS,   SUBTABLE_MLISTSETT,       PANEL_MLISTSETT
+   HELPITEM  IDD_TPLFOLDER,       SUBTABLE_TPLFOLDER,       PANEL_TPLFOLDER
+   HELPITEM  IDD_DELTEMPLATE,     SUBTABLE_DELTEMPLATE,     PANEL_DELTEMPLATE
+   HELPITEM  IDD_NOCCLIST,        SUBTABLE_NOCCLIST,        PANEL_NOCCLIST
+   HELPITEM  IDD_NOCCENTRIES,     SUBTABLE_NOCCENTRIES,     PANEL_NOCCENTRIES
+   HELPITEM  IDD_MODQUICKCC,      SUBTABLE_MODQUICKCC,      PANEL_MODQUICKCC
+   HELPITEM  IDD_THRLISTSETTINGS, SUBTABLE_THRLISTSETTINGS, PANEL_THRLISTSETTINGS
+   HELPITEM  IDD_DOINGWORK,       SUBTABLE_DOINGWORK,       PANEL_DOINGWORK
+   HELPITEM  IDD_REPLACENICK,     SUBTABLE_REPLACENICK,     PANEL_REPLACENICK
+   HELPITEM  IDD_CATCHUP,         SUBTABLE_CATCHUP,         PANEL_CATCHUP
+   HELPITEM  IDD_RXFOLDER,        SUBTABLE_RXFOLDER,        PANEL_RXFOLDER
+   HELPITEM  IDD_RXSETTINGS,      SUBTABLE_RXSETTINGS,      PANEL_RXSETTINGS
+   HELPITEM  IDD_RXMONITOR,       SUBTABLE_RXMONITOR,       PANEL_RXMONITOR
+   HELPITEM  IDD_DELSCRIPT,       SUBTABLE_DELSCRIPT,       PANEL_DELSCRIPT
+   HELPITEM  IDD_REXXERROR,       SUBTABLE_REXXERROR,       PANEL_REXXERROR
+   HELPITEM  IDD_RXFOLDERSETTINGS, SUBTABLE_RXFSETTINGS,    PANEL_RXHOOKS
+   HELPITEM  IDD_PERSMAILOPT,     SUBTABLE_PERSMAILOPT,     PANEL_PERSMAILOPT
+   HELPITEM  IDD_FINDNOPARTS,     SUBTABLE_FINDNOPARTS,     PANEL_FINDNOPARTS
+   HELPITEM  IDD_FINDNOAREAS,     SUBTABLE_FINDNOAREAS,     PANEL_FINDNOAREAS
+   HELPITEM  IDD_FINDNOTEXT,      SUBTABLE_FINDNOTEXT,      PANEL_FINDNOTEXT
+   HELPITEM  IDD_NOTTHERE,        SUBTABLE_NOTTHERE,        PANEL_NOTTHERE
+   HELPITEM  IDD_NLBROWSER,       SUBTABLE_NLBROWSER,       PANEL_NLBROWSER
+   HELPITEM  IDD_ETOSSERROR,      SUBTABLE_ETOSSERROR,      PANEL_ETOSSERROR
+   HELPITEM  IDD_NOAREATAG,       SUBTABLE_NOAREATAG,       PANEL_NOAREATAG
+   HELPITEM  IDD_NOPATHFILE,      SUBTABLE_NOPATHFILE,      PANEL_NOPATHFILE
+   HELPITEM  IDD_NICKNAMES,       SUBTABLE_NICKNAMES,       PANEL_SU_NICKNAMES
+   HELPITEM  IDD_ECHOMANAGER,     SUBTABLE_ECHOMANAGER,     PANEL_ECHOMANAGER
+   HELPITEM  IDD_ECHOMGRSETTINGS, SUBTABLE_ECHOMGRSETTINGS, PANEL_EMS_UPLINKS
+   HELPITEM  IDD_NOUPLINKAREAS,   SUBTABLE_NOUPLINKAREAS,   PANEL_NOUPLINKAREAS
+   HELPITEM  IDD_NOACTIONS,       SUBTABLE_NOACTIONS,       PANEL_NOACTIONS
+   HELPITEM  IDD_DOEXTRACT,       SUBTABLE_DOEXTRACT,       PANEL_DOEXTRACT
+   HELPITEM  IDD_EM_DLLLOAD,      SUBTABLE_EM_DLLLOAD,      PANEL_EM_DLLLOAD
+   HELPITEM  IDD_EM_DLLVER,       SUBTABLE_EM_DLLVER,       PANEL_EM_DLLVER
+   HELPITEM  IDD_EM_DLLFUNC,      SUBTABLE_EM_DLLFUNC,      PANEL_EM_DLLFUNC
+   HELPITEM  IDD_EM_DLLINT,       SUBTABLE_EM_DLLINT,       PANEL_EM_DLLINT
+   HELPITEM  IDD_EM_CFGNOTF,      SUBTABLE_EM_CFGNOTF,      PANEL_EM_CFGNOTF
+   HELPITEM  IDD_EM_INIT,         SUBTABLE_EM_INIT,         PANEL_EM_INIT
+   HELPITEM  IDD_EM_CFGREAD,      SUBTABLE_EM_CFGREAD,      PANEL_EM_CFGREAD
+   HELPITEM  IDD_EM_CFGWRITE,     SUBTABLE_EM_CFGWRITE,     PANEL_EM_CFGWRITE
+   HELPITEM  IDD_EM_CFGFORMAT,    SUBTABLE_EM_CFGFORMAT,    PANEL_EM_CFGFORMAT
+   HELPITEM  IDD_EM_CFGLINKED,    SUBTABLE_EM_CFGLINKED,    PANEL_EM_CFGLINKED
+   HELPITEM  IDD_EM_CFGUNLINKED,  SUBTABLE_EM_CFGUNLINKED,  PANEL_EM_CFGUNLINKED
+   HELPITEM  IDD_UPLINK,          SUBTABLE_UPLINK,          PANEL_UPLINK
+   HELPITEM  IDD_EM_NOPASS,       SUBTABLE_EM_NOPASS,       PANEL_EM_NOPASS
+   HELPITEM  IDD_DELUPLINK,       SUBTABLE_DELUPLINK,       PANEL_DELUPLINK
+   HELPITEM  IDD_INITERROR,       SUBTABLE_INITERROR,       PANEL_INITERROR
+   HELPITEM  IDD_EM_APPENDAREAS,  SUBTABLE_EM_APPENDAREAS,  PANEL_EM_APPENDAREAS
+   HELPITEM  IDD_SEARCH,          SUBTABLE_SEARCH,          PANEL_SEARCH
+   HELPITEM  IDD_PRINTSETUP,      SUBTABLE_PRINTSETUP,      PANEL_PRINTSETUP
+   HELPITEM  IDD_TOOLBARCONFIG,   SUBTABLE_TOOLBARCONFIG,   PANEL_TOOLBARCONFIG
+   HELPITEM  IDD_REQ_ADDLIST,     SUBTABLE_REQ_ADDLIST,     PANEL_REQ_ADDLIST
+   HELPITEM  IDD_REQ_DELLIST,     SUBTABLE_REQ_DELLIST,     PANEL_REQ_DELLIST
+   HELPITEM  IDD_REQ_ADDFILE,     SUBTABLE_REQ_ADDFILE,     PANEL_REQ_ADDFILE
+   HELPITEM  IDD_REQ_SETPASS,     SUBTABLE_REQ_SETPASS,     PANEL_REQ_SETPASS
+   HELPITEM  IDD_REQ_ERROR,       SUBTABLE_REQ_ERROR,       PANEL_REQ_ERROR
+   HELPITEM  IDD_CFGDLLERROR,     SUBTABLE_CFGDLLERROR,     PANEL_CFGDLLERROR
+}
+
+/*--------------------------------------------------------------*\
+ *  Main window subtable, includes menu item help               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_MAIN
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDM_FILE,                   PANEL_MENUFILE
+   HELPSUBITEM     IDM_EXIT,                   PANEL_MENUEXIT
+   HELPSUBITEM     IDM_FILEIMPORT,             PANEL_MENUIMPORTFILE
+   HELPSUBITEM     IDM_FILEEXPORT,             PANEL_MENUEXPORTFILE
+   HELPSUBITEM     IDM_FILEECHOTOSS,           PANEL_MENUFILEECHOTOSS
+   HELPSUBITEM     IDM_FILEPRINT,              PANEL_MENUFILEPRINT
+   HELPSUBITEM     IDM_FILESHELL,              PANEL_MENUFILESHELL
+   HELPSUBITEM     IDM_FILEPRINTSETUP,         PANEL_MENUFILEPRINTSETUP
+
+   HELPSUBITEM     IDM_EDIT,                   PANEL_MENUEDIT
+   HELPSUBITEM     IDM_EDITCUT,                PANEL_MENUEDITCUT
+   HELPSUBITEM     IDM_EDITCOPY,               PANEL_MENUEDITCOPY
+   HELPSUBITEM     IDM_EDITPASTE,              PANEL_MENUEDITPASTE
+   HELPSUBITEM     IDM_EDITCLEAR,              PANEL_MENUEDITCLEAR
+   HELPSUBITEM     IDM_EDITUNDO,               PANEL_MENUEDITUNDO
+   HELPSUBITEM     IDM_EDITDELLINE,            PANEL_MENUEDITDELLINE
+   HELPSUBITEM     IDM_EDITSEARCH,             PANEL_MENUEDITSEARCH
+
+   HELPSUBITEM     IDM_MESSAGE,                PANEL_MENUMESSAGE
+   HELPSUBITEM     IDM_MSGMOVE,                PANEL_MENUMSGMOVE
+   HELPSUBITEM     IDM_MSGCOPY,                PANEL_MENUMSGCOPY
+   HELPSUBITEM     IDM_MSGFORWARD,             PANEL_MENUMSGFORWARD
+   HELPSUBITEM     IDM_MSGXPOST,               PANEL_MENUMSGXPOST
+   HELPSUBITEM     IDM_MSGREQUEST,             PANEL_MENUMSGREQUEST
+   HELPSUBITEM     IDM_MSGCCOPY,               PANEL_MENUMSGCCOPY
+   HELPSUBITEM     IDM_MSGNEW,                 PANEL_MENUMSGNEW
+   HELPSUBITEM     IDM_MSGCHANGE,              PANEL_MENUMSGCHANGE
+   HELPSUBITEM     IDM_MSGREPLY,               PANEL_MENUMSGREPLY
+   HELPSUBITEM     IDM_MSGDELETE,              PANEL_MENUMSGDELETE
+   HELPSUBITEM     IDM_MSGFIND,                PANEL_MENUMSGFIND
+   HELPSUBITEM     IDM_MSGMARK,                PANEL_MENUMSGMARK
+   HELPSUBITEM     IDM_MSGBCAST,               PANEL_MENUMSGBCAST
+   HELPSUBITEM     IDM_MSGBCDELETE,            PANEL_MENUMSGBCDELETE
+   HELPSUBITEM     IDM_MSGBCMODIFY,            PANEL_MENUMSGBCMODIFY
+   HELPSUBITEM     IDM_MSGQUICKCC,             PANEL_MENUMSGQUICKCC
+   HELPSUBITEM     IDM_MSGMARKMSG,             PANEL_MENUMSGMARKMSG
+   HELPSUBITEM     IDM_MSGUNMARKMSG,           PANEL_MENUMSGUNMARKMSG
+
+   HELPSUBITEM     IDM_SPECIAL,                PANEL_MENUSPECIAL
+   HELPSUBITEM     IDM_SPCADDTONICK,           PANEL_MENUSPCADDTONICK
+   HELPSUBITEM     IDM_SPCADDTOCC,             PANEL_MENUSPCADDTOCC
+   HELPSUBITEM     IDM_SPCBROWSER,             PANEL_MENUSPCBROWSER
+
+   HELPSUBITEM     IDM_REXX,                   PANEL_MENUREXX
+   HELPSUBITEM     IDM_RXSCRIPTS,              PANEL_MENURXSCRIPTS
+   HELPSUBITEM     IDM_RXQUICK1,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK2,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK3,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK4,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK5,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK6,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK7,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK8,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK9,               PANEL_MENURXQUICK
+   HELPSUBITEM     IDM_RXQUICK10,              PANEL_MENURXQUICK
+
+   HELPSUBITEM     IDM_OPTIONS,                PANEL_MENUOPTIONS
+   HELPSUBITEM     IDM_OPCONFIG,               PANEL_MENUOPTIONSCFG
+   HELPSUBITEM     IDM_OPSAVE,                 PANEL_MENUOPTIONSSAVE
+   HELPSUBITEM     IDM_OPNAMEADDR,             PANEL_MENUOPTIONSNAME
+   HELPSUBITEM     IDM_OPCCLISTS,              PANEL_MENUOPTIONSCCL
+   HELPSUBITEM     IDM_OPTEMPLATE,             PANEL_MENUOPTIONSTEMPL
+   HELPSUBITEM     IDM_OPNICKNAMES,            PANEL_MENUOPTIONSNICK
+   HELPSUBITEM     IDM_OPECHOMAN,              PANEL_MENUOPTIONSECHO
+   HELPSUBITEM     IDM_OPADDAREAS,             PANEL_MENUOPTIONSADDAR
+
+   HELPSUBITEM     IDM_HELP,                   PANEL_MENUHELP
+   HELPSUBITEM     IDM_HELPKEYS,               PANEL_MENUHELPKEYS
+   HELPSUBITEM     IDM_HELPABOUT,              PANEL_MENUHELPABOUT
+   HELPSUBITEM     IDM_HELPGENERAL,            PANEL_MENUHELPGENERAL
+   HELPSUBITEM     IDM_HELPINDEX,              PANEL_MENUHELPINDEX
+   HELPSUBITEM     IDM_HELPUSING,              PANEL_MENUHELPUSING
+
+
+   HELPSUBITEM     IDM_WINDOWS,                PANEL_MENUWINDOWS
+   HELPSUBITEM     IDM_WINKLUDGES,             PANEL_MENUWINKLUDGES
+   HELPSUBITEM     IDM_WINTHREADS,             PANEL_MENUWINTHREADS
+   HELPSUBITEM     IDM_WINRESULTS,             PANEL_MENUWINRESULTS
+   HELPSUBITEM     IDM_WINAREAS,               PANEL_MENUWINAREAS
+   HELPSUBITEM     IDM_WINMSGLIST,             PANEL_MENUWINMSGS
+}
+
+/*--------------------------------------------------------------*\
+ *  Setup-Dialog                                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_SETUP
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_USERNAMES+2,            PANEL_SU_USER
+   HELPSUBITEM     IDD_USERNAMES+3,            PANEL_SU_USER
+   HELPSUBITEM     IDD_USERNAMES+4,            PANEL_SU_USER
+   HELPSUBITEM     IDD_USERNAMES+5,            PANEL_SU_USER
+   HELPSUBITEM     IDD_USERNAMES+6,            PANEL_SU_USER
+   HELPSUBITEM     IDD_USERNAMES+7,            PANEL_SU_USER
+
+   HELPSUBITEM     IDD_ADDRESSES+2,            PANEL_SU_ADDRESSES
+   HELPSUBITEM     IDD_ADDRESSES+3,            PANEL_SU_ADDRESSES
+   HELPSUBITEM     IDD_ADDRESSES+4,            PANEL_SU_ADDRESSES
+   HELPSUBITEM     IDD_ADDRESSES+5,            PANEL_SU_ADDRESSES
+   HELPSUBITEM     IDD_ADDRESSES+6,            PANEL_SU_ADDRESSES
+   HELPSUBITEM     IDD_ADDRESSES+7,            PANEL_SU_ADDRESSES
+
+   HELPSUBITEM     IDD_DEFAULTORIGIN+2,        PANEL_SU_ORIGIN
+   HELPSUBITEM     IDD_DEFAULTORIGIN+3,        PANEL_SU_ORIGIN
+
+   HELPSUBITEM     IDD_MACROS1+2,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS1+3,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS1+4,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS1+5,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS1+6,              PANEL_SU_MACROS
+
+   HELPSUBITEM     IDD_MACROS2+2,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS2+3,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS2+4,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS2+5,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS2+6,              PANEL_SU_MACROS
+
+   HELPSUBITEM     IDD_MACROS3+2,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS3+3,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS3+4,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS3+5,              PANEL_SU_MACROS
+   HELPSUBITEM     IDD_MACROS3+6,              PANEL_SU_MACROS
+
+   HELPSUBITEM     IDD_REGISTER+2,             PANEL_SU_REGISTER
+   HELPSUBITEM     IDD_REGISTER+3,             PANEL_SU_REGISTER
+   HELPSUBITEM     IDD_REGISTER+4,             PANEL_SU_REGISTER
+   HELPSUBITEM     IDD_REGISTER+6,             PANEL_SU_REGISTER
+
+   HELPSUBITEM     IDD_DOMAINS+2,              PANEL_SU_DOMAINS
+   HELPSUBITEM     IDD_DOMAINS+3,              PANEL_SU_DOMAINS
+   HELPSUBITEM     IDD_DOMAINS+4,              PANEL_SU_DOMAINS
+   HELPSUBITEM     IDD_DOMAINS+5,              PANEL_SU_DOMAINS
+   HELPSUBITEM     IDD_DOMAINS+6,              PANEL_SU_DOMAINS
+
+   HELPSUBITEM     IDD_MODEMTYPES+2,           PANEL_SU_MODEMTYPES
+   HELPSUBITEM     IDD_MODEMTYPES+3,           PANEL_SU_MODEMTYPES
+   HELPSUBITEM     IDD_MODEMTYPES+4,           PANEL_SU_MODEMTYPES
+   HELPSUBITEM     IDD_MODEMTYPES+5,           PANEL_SU_MODEMTYPES
+   HELPSUBITEM     IDD_MODEMTYPES+7,           PANEL_SU_MODEMTYPES
+   HELPSUBITEM     IDD_MODEMTYPES+8,           PANEL_SU_MODEMTYPES
+
+   HELPSUBITEM     IDD_SQUISHOPTIONS+2,        PANEL_SU_SQUISH
+   HELPSUBITEM     IDD_SQUISHOPTIONS+3,        PANEL_SU_SQUISH
+   HELPSUBITEM     IDD_SQUISHOPTIONS+5,        PANEL_SU_SQUISH
+   HELPSUBITEM     IDD_SQUISHOPTIONS+7,        PANEL_SU_SQUISH
+   HELPSUBITEM     IDD_SQUISHOPTIONS+8,        PANEL_SU_SQUISH
+
+   HELPSUBITEM     IDD_TOSSERPATHS+1,          PANEL_SU_TOSSERPATHS
+   HELPSUBITEM     IDD_TOSSERPATHS+3,          PANEL_SU_TOSSERPATHS
+   HELPSUBITEM     IDD_TOSSERPATHS+4,          PANEL_SU_TOSSERPATHS
+   HELPSUBITEM     IDD_TOSSERPATHS+6,          PANEL_SU_TOSSERPATHS
+   HELPSUBITEM     IDD_TOSSERPATHS+9,          PANEL_SU_TOSSERPATHS
+   HELPSUBITEM     IDD_TOSSERPATHS+12,         PANEL_SU_TOSSERPATHS
+
+   HELPSUBITEM     IDD_MSGOPT+1,               PANEL_SU_OPTIONS
+   HELPSUBITEM     IDD_MSGOPT+3,               PANEL_SU_OPTIONS
+   HELPSUBITEM     IDD_MSGOPT+4,               PANEL_SU_OPTIONS
+   HELPSUBITEM     IDD_MSGOPT+5,               PANEL_SU_OPTIONS
+   HELPSUBITEM     IDD_MSGOPT+6,               PANEL_SU_OPTIONS
+   HELPSUBITEM     IDD_MSGOPT+7,               PANEL_SU_OPTIONS
+   HELPSUBITEM     IDD_MSGOPT+8,               PANEL_SU_OPTIONS
+   HELPSUBITEM     IDD_MSGOPT+10,              PANEL_SU_OPTIONS
+   HELPSUBITEM     IDD_MSGOPT+13,              PANEL_SU_OPTIONS
+
+   HELPSUBITEM     IDD_STARTUP+1,              PANEL_SU_STARTUP
+   HELPSUBITEM     IDD_STARTUP+3,              PANEL_SU_STARTUP
+   HELPSUBITEM     IDD_STARTUP+4,              PANEL_SU_STARTUP
+   HELPSUBITEM     IDD_STARTUP+5,              PANEL_SU_STARTUP
+
+   HELPSUBITEM     IDD_EDITOROPT+1,            PANEL_SU_EDITOROPT
+   HELPSUBITEM     IDD_EDITOROPT+4,            PANEL_SU_EDITOROPT
+   HELPSUBITEM     IDD_EDITOROPT+5,            PANEL_SU_EDITOROPT
+   HELPSUBITEM     IDD_EDITOROPT+12,           PANEL_SU_EDITOROPT
+   HELPSUBITEM     IDD_EDITOROPT+13,           PANEL_SU_EDITOROPT
+   HELPSUBITEM     IDD_EDITOROPT+14,           PANEL_SU_EDITOROPT
+
+   HELPSUBITEM     IDD_DRIVEREMAP+1,           PANEL_SU_DRIVEREMAP
+   HELPSUBITEM     IDD_DRIVEREMAP+5,           PANEL_SU_DRIVEREMAP
+   HELPSUBITEM     IDD_DRIVEREMAP+6,           PANEL_SU_DRIVEREMAP
+
+   HELPSUBITEM     IDD_SAFETY+2,               PANEL_SU_SAFETY
+   HELPSUBITEM     IDD_SAFETY+3,               PANEL_SU_SAFETY
+   HELPSUBITEM     IDD_SAFETY+4,               PANEL_SU_SAFETY
+   HELPSUBITEM     IDD_SAFETY+5,               PANEL_SU_SAFETY
+   HELPSUBITEM     IDD_SAFETY+6,               PANEL_SU_SAFETY
+   HELPSUBITEM     IDD_SAFETY+7,               PANEL_SU_SAFETY
+   HELPSUBITEM     IDD_SAFETY+8,               PANEL_SU_SAFETY
+
+   HELPSUBITEM     IDD_SU_OPENWIN+1,           PANEL_SU_OPENWIN
+   HELPSUBITEM     IDD_SU_OPENWIN+3,           PANEL_SU_OPENWIN
+   HELPSUBITEM     IDD_SU_OPENWIN+4,           PANEL_SU_OPENWIN
+   HELPSUBITEM     IDD_SU_OPENWIN+5,           PANEL_SU_OPENWIN
+   HELPSUBITEM     IDD_SU_OPENWIN+6,           PANEL_SU_OPENWIN
+   HELPSUBITEM     IDD_SU_OPENWIN+7,           PANEL_SU_OPENWIN
+}
+
+/*--------------------------------------------------------------*\
+ *  Reply-Dialog                                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_REPLY
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                     PANEL_REPLY
+}
+
+/*--------------------------------------------------------------*\
+ * Attribut-Dialog                                              *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ATTRIB
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                     PANEL_ATTRIB
+}
+
+/*--------------------------------------------------------------*\
+ *  Find-Dialog                                                 *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_FIND
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                     PANEL_FIND
+}
+
+/*--------------------------------------------------------------*\
+ *  Neuer-User-Dialog                                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_SU_NEWUSER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                     PANEL_SU_NEWUSER
+}
+
+/*--------------------------------------------------------------*\
+ *  Area schon vorhanden                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_HAVEAREA
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                     PANEL_HAVEAREA
+}
+
+/*--------------------------------------------------------------*\
+ *  Arealiste                                                   *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_AREALIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                     PANEL_AREALIST
+}
+
+/*--------------------------------------------------------------*\
+ *  Message-Liste                                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_MSGLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                     PANEL_MSGLIST
+}
+
+/*--------------------------------------------------------------*\
+ *  About-Dialog                                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ABOUTDLG
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                     PANEL_ABOUTDLG
+}
+
+/*--------------------------------------------------------------*\
+ *  Filedialog                                                  *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_FILEDLG
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_HELP_PB,                     PANEL_FILEDLG
+}
+
+/*--------------------------------------------------------------*\
+ *  Area-Settings                                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_AREASETTINGS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_AS_GENERAL+3,                PANEL_AS_GENERAL
+   HELPSUBITEM     IDD_AS_GENERAL+5,                PANEL_AS_GENERAL
+   HELPSUBITEM     IDD_AS_GENERAL+9,                PANEL_AS_GENERAL
+   HELPSUBITEM     IDD_AS_GENERAL+10,               PANEL_AS_GENERAL
+   HELPSUBITEM     IDD_AS_GENERAL+12,               PANEL_AS_GENERAL
+   HELPSUBITEM     IDD_AS_GENERAL+14,               PANEL_AS_GENERAL
+   HELPSUBITEM     CBID_EDIT,                       PANEL_AS_GENERAL
+   HELPSUBITEM     CBID_LIST,                       PANEL_AS_GENERAL
+
+   HELPSUBITEM     IDD_AS_MSGBASE+2,                PANEL_AS_MSGBASE
+   HELPSUBITEM     IDD_AS_MSGBASE+3,                PANEL_AS_MSGBASE
+   HELPSUBITEM     IDD_AS_MSGBASE+4,                PANEL_AS_MSGBASE
+   HELPSUBITEM     IDD_AS_MSGBASE+6,                PANEL_AS_MSGBASE
+   HELPSUBITEM     IDD_AS_MSGBASE+7,                PANEL_AS_MSGBASE
+   HELPSUBITEM     IDD_AS_MSGBASE+9,                PANEL_AS_MSGBASE
+   HELPSUBITEM     IDD_AS_MSGBASE+10,               PANEL_AS_MSGBASE
+   HELPSUBITEM     IDD_AS_MSGBASE+11,               PANEL_AS_MSGBASE
+   HELPSUBITEM     IDD_AS_MSGBASE+12,               PANEL_AS_MSGBASE
+
+   HELPSUBITEM     IDD_AS_ATTRIB+2,                 PANEL_AS_ATTRIB
+   HELPSUBITEM     IDD_AS_ATTRIB+3,                 PANEL_AS_ATTRIB
+   HELPSUBITEM     IDD_AS_ATTRIB+8,                 PANEL_AS_ATTRIB
+   HELPSUBITEM     IDD_AS_ATTRIB+9,                 PANEL_AS_ATTRIB
+   HELPSUBITEM     IDD_AS_ATTRIB+10,                PANEL_AS_ATTRIB
+   HELPSUBITEM     IDD_AS_ATTRIB+11,                PANEL_AS_ATTRIB
+}
+
+/*--------------------------------------------------------------*\
+ *  Area loeschen                                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELETEAREA
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                          PANEL_DELETEAREA
+}
+
+/*--------------------------------------------------------------*\
+ *  Anzeigefenster Kludgelines                                  *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_KLUDGEINFO
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_KLUDGEINFO,                  PANEL_KLUDGEINFO
+}
+
+/*--------------------------------------------------------------*\
+ *  Neue Adresse                                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_SU_NEWADDRESS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_SU_NEWADDRESS
+}
+
+/*--------------------------------------------------------------*\
+ *  Username loeschen                                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELUNAME
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELUNAME
+}
+
+/*--------------------------------------------------------------*\
+ *  Adresse loeschen                                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELADDRESS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELADDRESS
+}
+
+/*--------------------------------------------------------------*\
+ *  Nickname loeschen                                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELNICKNAME
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELNICKNAME
+}
+
+/*--------------------------------------------------------------*\
+ *  Request-Dialog                                              *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_REQUESTER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REQUESTER
+}
+
+/*--------------------------------------------------------------*\
+ *  Reply-List-Dialog                                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_REPLYLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REPLYLIST
+}
+
+/*--------------------------------------------------------------*\
+ *  Doppelte Areas                                              *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DUPAREAS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DUPAREAS
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler beim Lesen des Profile                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ERRORINIFILE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ERRORINIFILE
+}
+
+/*--------------------------------------------------------------*\
+ *  Kein INI-File                                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NOINIFILE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NOINIFILE
+}
+
+/*--------------------------------------------------------------*\
+ *  Altes INI-File                                              *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_OLDINIFILE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_OLDINIFILE
+}
+
+/*--------------------------------------------------------------*\
+ *  Wechsel v. Name und Adresse                                 *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_CURRENTNAME
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_CURRENTNAME
+}
+
+/*--------------------------------------------------------------*\
+ *  Message loeschen                                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELETE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELETE
+}
+
+/*--------------------------------------------------------------*\
+ *  Message ist schon gesendet                                  *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_BEENSENT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_BEENSENT
+}
+
+/*--------------------------------------------------------------*\
+ *  Message-Edit abbrechen                                      *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DISCARD
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DISCARD
+}
+
+/*--------------------------------------------------------------*\
+ *  Programmende waehrend des Editierens                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_EXITNOSAVE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EXITNOSAVE
+}
+
+/*--------------------------------------------------------------*\
+ *  Header-Infos nicht vollstaendig                             *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_INFOMISSING
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_INFOMISSING
+}
+
+/*--------------------------------------------------------------*\
+ *  Message-Text zu lang                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_TOOLONG
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_TOOLONG
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler beim Speichern der Message                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ERRORMSGSAVE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ERRORMSGSAVE
+}
+
+/*--------------------------------------------------------------*\
+ *  Find-Progress-Dialog                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_FINDPROGRESS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_FINDPROGRESS
+}
+
+/*--------------------------------------------------------------*\
+ *  Suchergebnis-Dialog                                         *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_FINDRESULTS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_FINDRESULTS
+}
+
+/*--------------------------------------------------------------*\
+ *  Thread-Liste                                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_THREADLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_THREADLIST
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler beim Fileimport                                      *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ERRORLOAD
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ERRORLOAD
+}
+
+/*--------------------------------------------------------------*\
+ *  Falscher Filename beim Import                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_INVALIDFILE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_INVALIDFILE
+}
+
+/*--------------------------------------------------------------*\
+ *  Message exportieren                                         *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_EXPORTFILE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EXPORTFILE
+}
+
+/*--------------------------------------------------------------*\
+ *  Message-Template                                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_TEMPLATE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_TE_QUOTE+2,               PANEL_TE_QUOTE
+   HELPSUBITEM     IDD_TE_QUOTE+3,               PANEL_TE_QUOTE
+   HELPSUBITEM     IDD_TE_QUOTE+4,               PANEL_TE_QUOTE
+   HELPSUBITEM     IDD_TE_QUOTE+6,               PANEL_TE_QUOTE
+   HELPSUBITEM     IDD_TE_QUOTE+9,               PANEL_TE_QUOTE
+   HELPSUBITEM     IDD_TE_QUOTE+11,              PANEL_TE_QUOTE
+
+   HELPSUBITEM     IDD_TE_HEADER+2,              PANEL_TE_HEADER
+   HELPSUBITEM     IDD_TE_HEADER+3,              PANEL_TE_HEADER
+   HELPSUBITEM     IDD_TE_HEADER+5,              PANEL_TE_HEADER
+
+   HELPSUBITEM     IDD_TE_FOOTER+2,              PANEL_TE_FOOTER
+   HELPSUBITEM     IDD_TE_FOOTER+3,              PANEL_TE_FOOTER
+
+   HELPSUBITEM     IDD_TE_REPLY+2,               PANEL_TE_REPLY
+   HELPSUBITEM     IDD_TE_REPLY+3,               PANEL_TE_REPLY
+
+   HELPSUBITEM     IDD_TE_DAREA+2,               PANEL_TE_DAREA
+   HELPSUBITEM     IDD_TE_DAREA+3,               PANEL_TE_DAREA
+
+   HELPSUBITEM     IDD_TE_FORWARD+2,             PANEL_TE_FORWARD
+   HELPSUBITEM     IDD_TE_FORWARD+3,             PANEL_TE_FORWARD
+
+   HELPSUBITEM     IDD_TE_FORWARDFOOTER+2,       PANEL_TE_FORWARDFOOTER
+   HELPSUBITEM     IDD_TE_FORWARDFOOTER+3,       PANEL_TE_FORWARDFOOTER
+
+   HELPSUBITEM     IDD_TE_FORWARDORDER+3,        PANEL_TE_FORWARDORDER
+   HELPSUBITEM     IDD_TE_FORWARDORDER+4,        PANEL_TE_FORWARDORDER
+
+   HELPSUBITEM     IDD_TE_XPOST+2,               PANEL_TE_XPOST
+   HELPSUBITEM     IDD_TE_XPOST+3,               PANEL_TE_XPOST
+
+   HELPSUBITEM     IDD_TE_CCOPY+2,               PANEL_TE_CCOPY
+   HELPSUBITEM     IDD_TE_CCOPY+3,               PANEL_TE_CCOPY
+
+   HELPSUBITEM     IDD_TE_ORIGIN+1,              PANEL_TE_ORIGIN
+   HELPSUBITEM     IDD_TE_ORIGIN+3,              PANEL_TE_ORIGIN
+   HELPSUBITEM     IDD_TE_ORIGIN+5,              PANEL_TE_ORIGIN
+   HELPSUBITEM     IDD_TE_ORIGIN+6,              PANEL_TE_ORIGIN
+   HELPSUBITEM     IDD_TE_ORIGIN+7,              PANEL_TE_ORIGIN
+}
+
+/*--------------------------------------------------------------*\
+ *  CC-Listen-Setup                                             *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_CCLISTSETUP
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_CCLISTSETUP
+}
+
+/*--------------------------------------------------------------*\
+ *  CC-Liste                                                    *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_CCLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_CCLIST
+}
+
+/*--------------------------------------------------------------*\
+ *  CC-Listen-Eintrag                                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_CCLISTENTRY
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_CCLISTENTRY
+}
+
+/*--------------------------------------------------------------*\
+ *  CC-Liste loeschen                                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELCCLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELCCLIST
+}
+
+/*--------------------------------------------------------------*\
+ *  CC-Listen-Eintrag loeschen                                  *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELCCENTRY
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELCCENTRY
+}
+
+/*--------------------------------------------------------------*\
+ *  CC-Liste auswaehlen                                         *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_CCLISTSELECT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_CCLISTSELECT
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler beim Export                                          *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ERRORSAVE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ERRORSAVE
+}
+
+/*--------------------------------------------------------------*\
+ *  Ungueltiger Filename                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_INVALIDFILENAME
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_INVALIDFILENAME
+}
+
+/*--------------------------------------------------------------*\
+ *  Message nochmal senden                                      *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_RESEND
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_RESEND
+}
+
+/*--------------------------------------------------------------*\
+ *  Nickname-Eintrag                                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NICKENTRY
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NICKENTRY
+}
+
+/*--------------------------------------------------------------*\
+ *  Nickname-Eintrag doppelt                                    *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_HAVENICKNAME
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_HAVENICKNAME
+}
+
+/*--------------------------------------------------------------*\
+ *  Squish-Parameter                                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_SQPARAMS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_SQPARAMS
+}
+
+/*--------------------------------------------------------------*\
+ *  Nodelist-Auswahl-Dialog                                     *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_LOOKUP
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_LOOKUP
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler oeffnen Index                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_IDXOPENERR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_IDXOPENERR
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler lesen   Index                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_IDXREADERR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_IDXREADERR
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler oeffnen Daten                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DATOPENERR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DATOPENERR
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler lesen   Daten                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DATREADERR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DATREADERR
+}
+
+/*--------------------------------------------------------------*\
+ *  Kein Speicher f. Nodelist-Lookup                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_LOOKUPMEM
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_LOOKUPMEM
+}
+
+/*--------------------------------------------------------------*\
+ *  Falsches Handle bei Nodelist-Lookup                         *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_LOOKUPHANDLE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_LOOKUPHANDLE
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler beim Lesen der Squish-Parameter                      *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ERRREADSQPARAM
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ERRREADSQPARAM
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler beim Schreiben der Squish-Parameter                  *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ERRWRITESQPARAM
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ERRWRITESQPARAM
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehlerhafte Squish-Parameter                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_SQPARAMVALUES
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_SQPARAMVALUES
+}
+
+/*--------------------------------------------------------------*\
+ *  Nickname-Prompt                                             *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NICKPROMPT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NICKPROMPT
+}
+
+/*--------------------------------------------------------------*\
+ *  Domain-Eintrag                                              *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DOMAINENTRY
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DOMAINENTRY
+}
+
+/*--------------------------------------------------------------*\
+ *  Domain loeschen                                             *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELDOMAIN
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELDOMAIN
+}
+
+/*--------------------------------------------------------------*\
+ *  Domain vorhanden                                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_HAVEDOMAIN
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_HAVEDOMAIN
+}
+
+/*--------------------------------------------------------------*\
+ *  Registrierungscode falsch                                   *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_FALSEREGISTER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_FALSEREGISTER
+}
+
+/*--------------------------------------------------------------*\
+ *  Area-Renumber                                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_RENUMBER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_RENUMBER
+}
+
+/*--------------------------------------------------------------*\
+ *  File-Attach-Pruefung                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ATTACHSTAT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ATTACHSTAT
+}
+
+/*--------------------------------------------------------------*\
+ *  Wechsel naechste Area                                       *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NEXTAREA
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NEXTAREA
+}
+
+/*--------------------------------------------------------------*\
+ *  Keine   naechste Area                                       *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NONEXTAREA
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NONEXTAREA
+}
+
+/*--------------------------------------------------------------*\
+ *  Area List Settings                                          *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_AREALISTSETT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_AL_SETTINGS_VIEW+1,       PANEL_ALS_VIEW
+   HELPSUBITEM     IDD_AL_SETTINGS_VIEW+3,       PANEL_ALS_VIEW
+   HELPSUBITEM     IDD_AL_SETTINGS_VIEW+4,       PANEL_ALS_VIEW
+   HELPSUBITEM     IDD_AL_SETTINGS_VIEW+5,       PANEL_ALS_VIEW
+   HELPSUBITEM     IDD_AL_SETTINGS_VIEW+7,       PANEL_ALS_VIEW
+   HELPSUBITEM     IDD_AL_SETTINGS_VIEW+8,       PANEL_ALS_VIEW
+
+   HELPSUBITEM     IDD_AL_SETTINGS_COLORS+1,     PANEL_ALS_COLORS
+   HELPSUBITEM     IDD_AL_SETTINGS_COLORS+3,     PANEL_ALS_COLORS
+   HELPSUBITEM     IDD_AL_SETTINGS_COLORS+4,     PANEL_ALS_COLORS
+   HELPSUBITEM     1,                            PANEL_ALS_COLORS
+   HELPSUBITEM     2,                            PANEL_ALS_COLORS
+
+}
+
+/*--------------------------------------------------------------*\
+ *  Fehler beim Bearbeiten von Messages                         *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_WORKERROR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_WORKERROR
+}
+
+/*--------------------------------------------------------------*\
+ *  Lock-Error                                                  *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_LOCKERROR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_LOCKERROR
+}
+
+/*--------------------------------------------------------------*\
+ *  Broadcast-delete Error                                      *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_BCDELERROR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_BCDELERROR
+}
+
+/*--------------------------------------------------------------*\
+ *  Import von CC-Listen                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_IMPORTCCLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_IMPORTCCLIST
+}
+
+/*--------------------------------------------------------------*\
+ *  Message List Settings                                       *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_MLISTSETT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_MLISTSETTINGS+1,          PANEL_MLS_COLORS
+
+   HELPSUBITEM     IDD_ML_SETTINGS_COLORS+1,     PANEL_MLS_COLORS
+   HELPSUBITEM     IDD_ML_SETTINGS_COLORS+3,     PANEL_MLS_COLORS
+   HELPSUBITEM     IDD_ML_SETTINGS_COLORS+4,     PANEL_MLS_COLORS
+   HELPSUBITEM     1,                            PANEL_MLS_COLORS
+   HELPSUBITEM     2,                            PANEL_MLS_COLORS
+}
+
+/*--------------------------------------------------------------*\
+ *  Templates-Folder                                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_TPLFOLDER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_TPLFOLDER
+}
+
+/*--------------------------------------------------------------*\
+ *  Template loeschen                                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELTEMPLATE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELTEMPLATE
+}
+
+/*--------------------------------------------------------------*\
+ *  CC-Liste nicht mehr vorhanden                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NOCCLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NOCCLIST
+}
+
+/*--------------------------------------------------------------*\
+ *  keine Eintraege in CC-Liste                                 *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NOCCENTRIES
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NOCCENTRIES
+}
+
+/*--------------------------------------------------------------*\
+ *  Quick-CC-Liste aendern                                      *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_MODQUICKCC
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_MODQUICKCC
+}
+
+/*--------------------------------------------------------------*\
+ *  Threadlist-Settings-Notebook                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_THRLISTSETTINGS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_THREADSETUP+3,          PANEL_SU_THREADS
+   HELPSUBITEM     IDD_THREADSETUP+4,          PANEL_SU_THREADS
+   HELPSUBITEM     IDD_THREADSETUP+5,          PANEL_SU_THREADS
+   HELPSUBITEM     IDD_THREADSETUP+6,          PANEL_SU_THREADS
+   HELPSUBITEM     IDD_THREADSETUP+7,          PANEL_SU_THREADS
+   HELPSUBITEM     IDD_THREADSETUP+8,          PANEL_SU_THREADS
+
+   HELPSUBITEM     IDD_THRLISTCOLORS+1,        PANEL_THRLISTCOLORS
+   HELPSUBITEM     IDD_THRLISTCOLORS+3,        PANEL_THRLISTCOLORS
+   HELPSUBITEM     IDD_THRLISTCOLORS+4,        PANEL_THRLISTCOLORS
+   HELPSUBITEM     1,                          PANEL_THRLISTCOLORS
+   HELPSUBITEM     2,                          PANEL_THRLISTCOLORS
+}
+
+/*--------------------------------------------------------------*\
+ *  Bearbeitung im Gange                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DOINGWORK
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DOINGWORK
+}
+
+/*--------------------------------------------------------------*\
+ *  Nickname ersetzen                                           *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_REPLACENICK
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REPLACENICK
+}
+
+/*--------------------------------------------------------------*\
+ *  Aufholen                                                    *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_CATCHUP
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_CATCHUP
+}
+
+/*--------------------------------------------------------------*\
+ *  Rexx-Folder                                                 *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_RXFOLDER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_RXFOLDER
+}
+
+/*--------------------------------------------------------------*\
+ *  Rexx-Settings                                               *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_RXSETTINGS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_RXSET_GENERAL+3,          PANEL_RXSETTINGS_GEN
+   HELPSUBITEM     IDD_RXSET_GENERAL+5,          PANEL_RXSETTINGS_GEN
+   HELPSUBITEM     IDD_RXSET_GENERAL+6,          PANEL_RXSETTINGS_GEN
+   HELPSUBITEM     IDD_RXSET_GENERAL+7,          PANEL_RXSETTINGS_GEN
+   HELPSUBITEM     IDD_RXSET_GENERAL+1,          PANEL_RXSETTINGS_GEN
+
+   HELPSUBITEM     IDD_RXSET_MONITOR+1,          PANEL_RXSETTINGS_MONI
+   HELPSUBITEM     IDD_RXSET_MONITOR+2,          PANEL_RXSETTINGS_MONI
+   HELPSUBITEM     IDD_RXSET_MONITOR+3,          PANEL_RXSETTINGS_MONI
+   HELPSUBITEM     IDD_RXSET_MONITOR+4,          PANEL_RXSETTINGS_MONI
+}
+
+/*--------------------------------------------------------------*\
+ *  Script loeschen                                             *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DELSCRIPT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELSCRIPT
+}
+
+/*--------------------------------------------------------------*\
+ *  Rexx-Fehler                                                 *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_REXXERROR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REXXERROR
+}
+
+/*--------------------------------------------------------------*\
+ *  Rexx-Monitor                                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_RXMONITOR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_RXMONITOR
+}
+
+/*--------------------------------------------------------------*\
+ *  Rexx-Folder-Settings                                        *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_RXFSETTINGS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_RXHOOKS+2,                PANEL_RXHOOKS
+   HELPSUBITEM     IDD_RXHOOKS+4,                PANEL_RXHOOKS
+   HELPSUBITEM     IDD_RXHOOKS+5,                PANEL_RXHOOKS
+   HELPSUBITEM     CBID_EDIT,                    PANEL_RXHOOKS
+   HELPSUBITEM     CBID_LIST,                    PANEL_RXHOOKS
+}
+
+/*--------------------------------------------------------------*\
+ *  Personal Mail Optionen                                      *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_PERSMAILOPT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_PERSMAILOPT
+}
+
+/*--------------------------------------------------------------*\
+ *  Find Message-Teile                                          *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_FINDNOPARTS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_FINDNOPARTS
+}
+
+/*--------------------------------------------------------------*\
+ *  Find Areas                                                  *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_FINDNOAREAS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_FINDNOAREAS
+}
+
+/*--------------------------------------------------------------*\
+ *  Find Text                                                   *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_FINDNOTEXT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_FINDNOTEXT
+}
+
+/*--------------------------------------------------------------*\
+ *  Message nicht mehr vorhanden                                *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NOTTHERE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NOTTHERE
+}
+
+/*--------------------------------------------------------------*\
+ *  Nodelist-Browser                                            *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NLBROWSER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NLBROWSER
+}
+
+/*--------------------------------------------------------------*\
+ *  Echotoss-Fehler                                             *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_ETOSSERROR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ETOSSERROR
+}
+
+/*--------------------------------------------------------------*\
+ *  Keine Area                                                  *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NOAREATAG
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NOAREATAG
+}
+
+/*--------------------------------------------------------------*\
+ *  Keine Pfadname                                              *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NOPATHFILE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NOPATHFILE
+}
+
+/*--------------------------------------------------------------*\
+ *  Nickname-Setup                                              *
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_NICKNAMES
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_SU_NICKNAMES
+}
+
+HELPSUBTABLE SUBTABLE_ECHOMANAGER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_ECHOMANAGER
+}
+
+HELPSUBTABLE SUBTABLE_ECHOMGRSETTINGS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_EMS_UPLINKS+1,            PANEL_EMS_UPLINKS
+   HELPSUBITEM     IDD_EMS_UPLINKS+3,            PANEL_EMS_UPLINKS
+   HELPSUBITEM     IDD_EMS_UPLINKS+4,            PANEL_EMS_UPLINKS
+   HELPSUBITEM     IDD_EMS_UPLINKS+7,            PANEL_EMS_UPLINKS
+
+   HELPSUBITEM     IDD_EMS_EXTDLL+2,             PANEL_EMS_EXTDLL
+   HELPSUBITEM     IDD_EMS_EXTDLL+3,             PANEL_EMS_EXTDLL
+   HELPSUBITEM     IDD_EMS_EXTDLL+4,             PANEL_EMS_EXTDLL
+   HELPSUBITEM     IDD_EMS_EXTDLL+5,             PANEL_EMS_EXTDLL
+}
+
+HELPSUBTABLE SUBTABLE_NOUPLINKAREAS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NOUPLINKAREAS
+}
+
+HELPSUBTABLE SUBTABLE_NOACTIONS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_NOACTIONS
+}
+
+HELPSUBTABLE SUBTABLE_DOEXTRACT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DOEXTRACT
+}
+
+HELPSUBTABLE SUBTABLE_EM_DLLLOAD
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_DLLLOAD
+}
+
+HELPSUBTABLE SUBTABLE_EM_DLLVER
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_DLLVER
+}
+
+HELPSUBTABLE SUBTABLE_EM_DLLFUNC
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_DLLFUNC
+}
+
+HELPSUBTABLE SUBTABLE_EM_DLLINT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_DLLINT
+}
+
+HELPSUBTABLE SUBTABLE_EM_CFGNOTF
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_CFGNOTF
+}
+
+HELPSUBTABLE SUBTABLE_EM_INIT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_INIT
+}
+
+HELPSUBTABLE SUBTABLE_EM_CFGREAD
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_CFGREAD
+}
+
+HELPSUBTABLE SUBTABLE_EM_CFGWRITE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_CFGWRITE
+}
+
+HELPSUBTABLE SUBTABLE_EM_CFGFORMAT
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_CFGFORMAT
+}
+
+HELPSUBTABLE SUBTABLE_EM_CFGLINKED
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_CFGLINKED
+}
+
+HELPSUBTABLE SUBTABLE_EM_CFGUNLINKED
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_CFGUNLINKED
+}
+
+HELPSUBTABLE SUBTABLE_UPLINK
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_UPLINK
+}
+
+HELPSUBTABLE SUBTABLE_EM_NOPASS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_NOPASS
+}
+
+HELPSUBTABLE SUBTABLE_DELUPLINK
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_DELUPLINK
+}
+
+HELPSUBTABLE SUBTABLE_INITERROR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_INITERROR
+}
+
+HELPSUBTABLE SUBTABLE_EM_APPENDAREAS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_EM_APPENDAREAS
+}
+
+HELPSUBTABLE SUBTABLE_SEARCH
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_SEARCH
+}
+
+HELPSUBTABLE SUBTABLE_PRINTSETUP
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     IDD_PRINTSETUP+1,             PANEL_PRINTSETUP
+
+   HELPSUBITEM     IDD_PS_LIST+2,                PANEL_PS_LIST
+   HELPSUBITEM     IDD_PS_LIST+3,                PANEL_PS_LIST
+   HELPSUBITEM     IDD_PS_LIST+4,                PANEL_PS_LIST
+
+   HELPSUBITEM     IDD_PS_BORDERS+3,             PANEL_PS_BORDERS
+   HELPSUBITEM     IDD_PS_BORDERS+5,             PANEL_PS_BORDERS
+   HELPSUBITEM     IDD_PS_BORDERS+6,             PANEL_PS_BORDERS
+   HELPSUBITEM     IDD_PS_BORDERS+7,             PANEL_PS_BORDERS
+   HELPSUBITEM     IDD_PS_BORDERS+8,             PANEL_PS_BORDERS
+
+   HELPSUBITEM     IDD_PS_FONTS+3,               PANEL_PS_FONTS
+   HELPSUBITEM     IDD_PS_FONTS+4,               PANEL_PS_FONTS
+   HELPSUBITEM     IDD_PS_FONTS+5,               PANEL_PS_FONTS
+
+   HELPSUBITEM     IDD_PS_OUTPUT+1,              PANEL_PS_OUTPUT
+   HELPSUBITEM     IDD_PS_OUTPUT+2,              PANEL_PS_OUTPUT
+   HELPSUBITEM     IDD_PS_OUTPUT+3,              PANEL_PS_OUTPUT
+   HELPSUBITEM     IDD_PS_OUTPUT+4,              PANEL_PS_OUTPUT
+   HELPSUBITEM     IDD_PS_OUTPUT+5,              PANEL_PS_OUTPUT
+}
+
+HELPSUBTABLE SUBTABLE_TOOLBARCONFIG
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_TOOLBARCONFIG
+}
+
+HELPSUBTABLE SUBTABLE_REQ_ADDLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REQ_ADDLIST
+}
+
+HELPSUBTABLE SUBTABLE_REQ_ADDFILE
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REQ_ADDFILE
+}
+
+HELPSUBTABLE SUBTABLE_REQ_DELLIST
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REQ_DELLIST
+}
+
+HELPSUBTABLE SUBTABLE_REQ_SETPASS
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REQ_SETPASS
+}
+
+HELPSUBTABLE SUBTABLE_REQ_ERROR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_REQ_ERROR
+}
+
+HELPSUBTABLE SUBTABLE_CFGDLLERROR
+SUBITEMSIZE     2
+{
+   HELPSUBITEM     DID_OK,                       PANEL_CFGDLLERROR
+}
+

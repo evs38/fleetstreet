@@ -1,0 +1,32 @@
+/* INSTALL.RC */
+#include <os2.h>
+#include "install.h"
+
+ICON   IDIC_MAIN   "resources\\install.ico"
+BITMAP IDBM_MAIN   "resources\\logo2.bmp"
+
+STRINGTABLE
+BEGIN
+IDST_MSG_CREATEDIR         "The directory could not be created."
+IDST_MSG_FILEWRITEERR      "The file could not be created in the destination directory."
+IDST_MSG_FILREADERR        "An error occured while reading the source file."
+IDST_MSG_NOFIL             "The file INSTALL.FIL was not found."
+IDST_MSG_FILERROR          "The file INSTALL.FIL is invalid."
+IDST_MSG_READMENOTFOUND    "The README file was not found."
+IDST_MSG_NODIRENTERED      "You have not entered a destination directory."
+IDST_MSG_NOLANGSELECTED    "You have not selected a language."
+
+IDST_STATUS_READFILES      "Reading Install File..."
+IDST_STATUS_READREADME     "Read the ""ReadMe"" file first"
+IDST_STATUS_COPYING        "Installing file ""%s""..."
+IDST_STATUS_CREATEDIR      "Creating directory ""%s""..."
+IDST_STATUS_COPYLANG       "Installing language files..."
+IDST_STATUS_CREATEOBJ      "Creating WPS objects..."
+IDST_STATUS_DONE           "Done"
+IDST_STATUS_DOINSTALL      "Select language, enter destination directory and install."
+IDST_STATUS_INSTALLABORTED "The installation process was aborted."
+IDST_STATUS_SCRIPTS        "Installing Rexx scripts..."
+IDST_STATUS_OBSFILES       "Deleting obsolete files..."
+END
+
+RCINCLUDE "install\INSTALL.DLG"

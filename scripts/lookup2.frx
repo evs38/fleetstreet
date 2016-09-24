@@ -1,0 +1,39 @@
+/****************************************************************************/
+/*                      FleetStreet example script                          */
+/*                                                                          */
+/*                              LOOKUP2.FRX                                 */
+/*                                                                          */
+/* LOOKUP2.FRX performs nodelist lookups.                                   */
+/*                                                                          */
+/* This example script demonstrates how to use the nodelist lookup          */
+/* functions of the FleetStreet Rexx environment. It reads the nodelist     */
+/* information of the sender of the current message and displays the        */
+/* data.                                                                    */
+/****************************************************************************/
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+if FSLookupName(FleetMsg.Header.From, 'NodeData') = 'OK' then
+do i= 1 to NodeData.0
+   say 'Entry #'||i
+   say ''
+   say 'Address: ' NodeData.i.Address
+   say 'Name:    ' NodeData.i.Name
+   say 'System:  ' NodeData.i.System
+   say 'Phone:   ' NodeData.i.Phone
+   say 'Location:' NodeData.i.Location
+   say 'Password:' NodeData.i.Password
+   say 'Modem:   ' NodeData.i.Modem
+   say 'Baud:    ' NodeData.i.Baud
+   say 'UserCost:' NodeData.i.UserCost
+   say 'CallCost:' NodeData.i.CallCost
+   say 'Flags:   ' NodeData.i.Flags
+   say ''
+end
+else
+   say 'Node not found'
+
+exit
+

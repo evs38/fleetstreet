@@ -1,0 +1,802 @@
+/* Deutsche Language Resourcen */
+
+#include <os2.h>
+#include "..\..\dialogids.h"
+#include "..\..\resids.h"
+#include "..\..\setupdlg.h"
+#include "..\..\areasettings.h"
+
+MENU IDM_MENU
+BEGIN
+  SUBMENU "~Datei", IDM_FILE
+  BEGIN
+    MENUITEM "Datei ~Importieren...\tStrg-I", IDM_FILEIMPORT
+    MENUITEM "Datei ~Exportieren...\tStrg-X", IDM_FILEEXPORT
+    MENUITEM SEPARATOR
+    MENUITEM "Echo~toss schreiben", IDM_FILEECHOTOSS
+    MENUITEM SEPARATOR
+    MENUITEM "Kommando-~Shell starten", IDM_FILESHELL
+    MENUITEM SEPARATOR
+    MENUITEM "~Drucken\tShift-Druck", IDM_FILEPRINT
+    MENUITEM "Drucker ei~nrichten...", IDM_FILEPRINTSETUP
+    MENUITEM SEPARATOR
+    MENUITEM "~Programmende\tAlt-X", IDM_EXIT
+  END
+  SUBMENU "~Editieren", IDM_EDIT
+  BEGIN
+    MENUITEM "~Widerrufen\tAlt-Back", IDM_EDITUNDO
+    MENUITEM SEPARATOR
+    MENUITEM "~Ausschneiden\tShift-Entf", IDM_EDITCUT
+    MENUITEM "~Kopieren\tStrg-Einfg", IDM_EDITCOPY
+    MENUITEM "~EinfÅgen\tShift-Einfg", IDM_EDITPASTE
+    MENUITEM SEPARATOR
+    MENUITEM "~Lîschen\tEntf", IDM_EDITCLEAR
+    MENUITEM SEPARATOR
+    MENUITEM "~Zeile lîschen\tStrg-Y", IDM_EDITDELLINE
+    MENUITEM SEPARATOR
+    MENUITEM "~Suchen...",             IDM_EDITSEARCH
+  END
+  SUBMENU "~Message", IDM_MESSAGE
+  BEGIN
+    MENUITEM "Message versc~hieben...\tStrg-M",  IDM_MSGMOVE
+    MENUITEM "Message ~kopieren...\tStrg-C",     IDM_MSGCOPY
+    MENUITEM "Message ~weiterleiten...\tStrg-F", IDM_MSGFORWARD
+    MENUITEM SEPARATOR
+    MENUITEM "~Neue Message\tEinfg", IDM_MSGNEW
+    MENUITEM "~éndern\tStrg-E",      IDM_MSGCHANGE
+    MENUITEM "~Antworten...",        IDM_MSGREPLY
+    MENUITEM "~Lîschen\tEntf",       IDM_MSGDELETE
+    MENUITEM "S~uchen...\tStrg-I",   IDM_MSGFIND
+    MENUITEM SEPARATOR
+    SUBMENU  "~Broadcast", IDM_MSGBCAST
+    BEGIN
+      MENUITEM "~Lîschen", IDM_MSGBCDELETE
+      MENUITEM "é~ndern",  IDM_MSGBCMODIFY
+    END
+    MENUITEM SEPARATOR
+    MENUITEM "Message ~markieren",   IDM_MSGMARKMSG
+    MENUITEM "Message ~demarkieren", IDM_MSGUNMARKMSG
+  END
+  SUBMENU "S~pezial", IDM_SPECIAL
+  BEGIN
+    MENUITEM "Message Cro~ssposten...\tStrg-X",  IDM_MSGXPOST
+    MENUITEM "Files ~requesten...\tStrg-Q",      IDM_MSGREQUEST
+    MENUITEM SEPARATOR
+    MENUITEM "~Verteiler verwenden...\tStrg-C",  IDM_MSGCCOPY
+    MENUITEM "Sch~nellverteiler...",             IDM_MSGQUICKCC
+    MENUITEM SEPARATOR
+    MENUITEM "~Aufholen...\tStrg-P",      IDM_MSGMARK
+    MENUITEM SEPARATOR
+    MENUITEM "Als ~Kurzname aufnehmen...\tStrg-O",   IDM_SPCADDTONICK
+    MENUITEM "In Ver~teilerliste aufnehmen...\tStrg-Z", IDM_SPCADDTOCC
+    MENUITEM SEPARATOR
+    MENUITEM "Nodelist-~Browser...\tStrg-W",            IDM_SPCBROWSER
+  END
+  SUBMENU "~Rexx", IDM_REXX
+  BEGIN
+    MENUITEM "~Skripts", IDM_RXSCRIPTS
+    MENUITEM SEPARATOR
+  END
+  SUBMENU "~Setup", IDM_OPTIONS
+  BEGIN
+    MENUITEM "~Optionen...", IDM_OPCONFIG
+    MENUITEM "Message-Sch~ablonen...", IDM_OPTEMPLATE
+    MENUITEM "~Verteilerlisten...", IDM_OPCCLISTS
+    MENUITEM "~Kurznamen...",       IDM_OPNICKNAMES
+    MENUITEM "~Toolbar konfigurieren...", IDM_TB_ADD
+    MENUITEM SEPARATOR
+    MENUITEM "~Echo-Manager...",      IDM_OPECHOMAN
+    MENUITEM "Areas e~xtrahieren",    IDM_OPADDAREAS
+    MENUITEM SEPARATOR
+    MENUITEM "Aktueller ~Name/Adresse...\tStrg-D", IDM_OPNAMEADDR
+    MENUITEM SEPARATOR
+    MENUITEM "Optionen ~speichern", IDM_OPSAVE
+  END
+  SUBMENU "~Fenster", IDM_WINDOWS
+  BEGIN
+    MENUITEM "~Kludgelines\tStrg-K",   IDM_WINKLUDGES
+    MENUITEM "~Themenliste\tStrg-T",    IDM_WINTHREADS
+    MENUITEM "~Messageliste\tStrg-L",   IDM_WINMSGLIST
+    MENUITEM "~Arealiste\tStrg-A",      IDM_WINAREAS
+    MENUITEM "M~erker\tStrg-B",         IDM_WINRESULTS
+  END
+  SUBMENU "~Hilfe", IDM_HELP
+  BEGIN
+    MENUITEM "Hilfe~index",                IDM_HELPINDEX
+    MENUITEM "~Allgemeine Hilfe\tF1",      IDM_HELPGENERAL
+    MENUITEM "In~haltsverzeichnis",        IDM_HELPCONTENTS
+    MENUITEM "~Benutzung der Hilfe",       IDM_HELPUSING
+    MENUITEM "Hilfe fÅr ~Tasten\tStrg-F1", IDM_HELPKEYS
+    MENUITEM SEPARATOR
+    MENUITEM "~Produktinformation",        IDM_HELPABOUT
+  END
+END
+
+MENU IDM_AREAPOPUP
+BEGIN
+  MENUITEM "~Einstellungen...",    IDM_AP_SETTINGS
+  MENUITEM SEPARATOR
+  MENUITEM "~Umnumerieren...",    IDM_AP_RENUMBER
+  MENUITEM "Squish-~Parameter...", IDM_AP_SQPARAMS
+  MENUITEM "Au~fholen",            IDM_AP_CATCHUP
+  MENUITEM "~Scannen",             IDM_AP_SCAN
+  MENUITEM SEPARATOR
+  MENUITEM "E~rstellen...",        IDM_AP_CREATE
+  MENUITEM "~Lîschen",             IDM_AP_DELETE
+END
+
+MENU IDM_SAREAPOPUP
+BEGIN
+  MENUITEM "~Einstellungen Arealiste...", IDM_SAP_SETTINGS
+  MENUITEM SEPARATOR
+  MENUITEM "E~rstellen...",           IDM_SAP_CREATE
+  MENUITEM "~Scannen aller Areas",    IDM_SAP_SCANALL
+  MENUITEM SEPARATOR
+  MENUITEM "~Vordergrund",            IDM_SAP_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fenster", 1
+END
+
+MENU IDM_FOLDERPOPUP
+BEGIN
+  MENUITEM "ô~ffnen",         IDM_FP_OPEN
+  MENUITEM SEPARATOR
+  SUBMENU  "~Sortieren",      IDM_FP_SORT
+  BEGIN
+    MENUITEM "~unsortiert",   IDM_FP_SORT_NONE
+    MENUITEM "nach N~ame",    IDM_FP_SORT_NAME
+    MENUITEM "nach ~neuen Messages", IDM_FP_SORT_UNR
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "automatisch S~cannen",        IDM_FP_SCAN
+  MENUITEM SEPARATOR
+  MENUITEM "E~rstellen...",   IDM_FP_CREATE
+  MENUITEM "~Lîschen",        IDM_FP_DELETE
+END
+
+MENU IDM_SFOLDERPOPUP
+BEGIN
+  SUBMENU "~Icons",          IDM_SFP_ICONS
+  BEGIN
+    MENUITEM "~Gro·",        IDM_SFP_ICONS_LARGE
+    MENUITEM "~Klein",       IDM_SFP_ICONS_SMALL
+    MENUITEM "K~eine",       IDM_SFP_ICONS_NONE
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "E~rstellen...",  IDM_SFP_CREATE
+END
+
+MENU IDM_MSGLISTPOPUP
+BEGIN
+  MENUITEM "~Lîschen",        IDM_MP_DELETE
+  MENUITEM "~Exportieren...", IDM_MP_EXPORT
+  MENUITEM "~Drucken",        IDM_MP_PRINT
+  MENUITEM SEPARATOR
+  MENUITEM "~Kopieren...",    IDM_MP_COPY
+  MENUITEM "~Verschieben...", IDM_MP_MOVE
+  MENUITEM SEPARATOR
+  SUBMENU  "~AuswÑhlen",      IDM_MP_SELECT
+  BEGIN
+     MENUITEM "~Alle\tStrg-/",        IDM_MP_SELECTALL
+     MENUITEM "~Keine\tStrg-\\",      IDM_MP_SELECTNONE
+  END
+END
+
+MENU IDM_SMLISTPOPUP
+BEGIN
+  MENUITEM "~Einstellungen Messageliste...", IDM_SMP_SETTINGS
+  MENUITEM SEPARATOR
+  MENUITEM "~Vordergrund", IDM_SMP_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fenster", 1
+END
+
+MENU IDM_EDITPOPUP
+BEGIN
+  MENUITEM "~Widerrufen",  IDM_EP_UNDO
+  MENUITEM SEPARATOR
+  MENUITEM "~Ausschneiden",  IDM_EP_CUT
+  MENUITEM "~Kopieren",      IDM_EP_COPY
+  MENUITEM "~EinfÅgen",      IDM_EP_PASTE
+  MENUITEM SEPARATOR
+  MENUITEM "~Lîschen",       IDM_EP_CLEAR
+  MENUITEM SEPARATOR
+  MENUITEM "~Zeile lîschen", IDM_EP_DELLINE
+  MENUITEM SEPARATOR
+  MENUITEM "~Hervorhebungen\tCtrl-H", IDM_EP_HIGHLIGHT
+  MENUITEM "~Monospaced\tCtrl-J",    IDM_EP_MONO
+END
+
+MENU IDM_TPLF_POPUP
+BEGIN
+  MENUITEM "ô~ffnen",    IDM_TPLF_OPEN
+  MENUITEM SEPARATOR
+  MENUITEM "E~rstellen", IDM_TPLF_CREATE
+  MENUITEM "~Kopieren",  IDM_TPLF_COPY
+  MENUITEM SEPARATOR
+  MENUITEM "~Lîschen",   IDM_TPLF_DELETE
+END
+
+MENU IDM_TPLF_POPUP2
+BEGIN
+  MENUITEM "E~rstellen", IDM_TPLF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Vordergrund", IDM_TPLF_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fenster", 1
+END
+
+MENU IDM_TL_POPUP
+BEGIN
+  MENUITEM "~Einstellungen",  IDM_TLP_SETTINGS
+  MENUITEM SEPARATOR
+  SUBMENU  "~Ansicht",      IDM_TLP_VIEW
+  BEGIN
+    MENUITEM "~Alle Threads",     IDM_TLP_VIEWALL
+    MENUITEM "~Ungelesene Threads",  IDM_TLP_VIEWTHR
+    MENUITEM "Ungelesene ~Messages", IDM_TLP_VIEWUNR
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "A~bsendername",  IDM_TLP_SENDER
+  MENUITEM "~Vordergrund",      IDM_TLP_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "A~ktualisieren",     IDM_TLP_REFRESH
+  MENUITEM SEPARATOR
+  MENUITEM "Au~fholen",         IDM_TLP_CATCHUP
+  MENUITEM SEPARATOR
+  MENUITEM "~Fenster", 1
+END
+
+MENU IDM_TH_POPUP
+BEGIN
+  MENUITEM "~Lîschen",               IDM_THP_DELETE
+  MENUITEM SEPARATOR
+  MENUITEM "~Verschieben...",           IDM_THP_MOVE
+  MENUITEM "~Kopieren...",              IDM_THP_COPY
+  MENUITEM SEPARATOR
+  MENUITEM "~Exportieren...",           IDM_THP_EXPORT
+  MENUITEM "~Drucken",               IDM_THP_PRINT
+  MENUITEM SEPARATOR
+  MENUITEM "Als ~gelesen markieren", IDM_THP_MARK
+  MENUITEM "~Aufklappen",            IDM_THP_EXPAND
+END
+
+MENU IDM_CCF_POPUP
+BEGIN
+  MENUITEM "ô~ffnen",        IDM_CCF_OPEN
+  MENUITEM SEPARATOR
+  MENUITEM "E~rstellen",     IDM_CCF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Lîschen",       IDM_CCF_DELETE
+END
+
+MENU IDM_CCF_POPUP2
+BEGIN
+  MENUITEM "~Erstellen", IDM_CCF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Vordergrund", IDM_CCF_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fenster", 1
+END
+
+MENU IDM_RXF_POPUP
+BEGIN
+  SUBMENU  "ô~ffnen", IDM_RXF_OPEN
+  BEGIN
+    MENUITEM "~Einstellungen", IDM_RXF_OPEN_SET
+    MENUITEM "~AusfÅhren",     IDM_RXF_OPEN_SCR
+    MENUITEM "E~ditor",        IDM_RXF_OPEN_EDIT
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "E~rstellen", IDM_RXF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Lîschen",   IDM_RXF_DELETE
+END
+
+MENU IDM_RXF_POPUP2
+BEGIN
+  MENUITEM "~Einstellungen", IDM_RXF_SETTINGS
+  MENUITEM SEPARATOR
+  MENUITEM "E~rstellen",     IDM_RXF_CREATE
+  MENUITEM SEPARATOR
+  MENUITEM "~Vordergrund",   IDM_RXF_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fenster", 1
+END
+
+MENU IDM_BM_POPUP
+BEGIN
+  MENUITEM "~Lîschen",        IDM_BMP_DELETE
+  MENUITEM SEPARATOR
+  MENUITEM "~Exportieren...", IDM_BMP_EXPORT
+  MENUITEM "~Drucken",        IDM_BMP_PRINT
+  MENUITEM SEPARATOR
+  MENUITEM "~Verschieben...", IDM_BMP_MOVE
+  MENUITEM "~Kopieren...",    IDM_BMP_COPY
+  MENUITEM SEPARATOR
+  MENUITEM "E~ntfernen",      IDM_BMP_REMOVE
+  MENUITEM SEPARATOR
+  SUBMENU  "~AuswÑhlen",      IDM_BMP_SELECT
+  BEGIN
+     MENUITEM "~Alle\tStrg-/",        IDM_BMP_SELECTALL
+     MENUITEM "~Keine\tStrg-\\",      IDM_BMP_SELECTNONE
+  END
+END
+
+MENU IDM_BMF_POPUP
+BEGIN
+  SUBMENU "~Ansicht",              IDM_BMFP_VIEW
+  BEGIN
+     MENUITEM "~Suchergebnisse",   IDM_BMFP_VIEW_FIND
+     MENUITEM "~Persînliche Messages", IDM_BMFP_VIEW_PERS
+     MENUITEM "~Markierte Messages",  IDM_BMFP_VIEW_MARK
+     MENUITEM "~Unversandte Messages",  IDM_BMFP_VIEW_UNSENT
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "~Inhalt speichern",    IDM_BMFP_SAVE
+  MENUITEM SEPARATOR
+  MENUITEM "~Vordergrund",       IDM_BMFP_FGROUND
+  MENUITEM SEPARATOR
+  MENUITEM "~Fenster",    1
+END
+
+MENU IDM_TB_POPUP
+BEGIN
+  SUBMENU "~Position",     IDM_TB_POSITION
+  BEGIN
+     MENUITEM "~Oben",     IDM_TB_TOP
+     MENUITEM "~Unten",    IDM_TB_BOTTOM
+     MENUITEM "~Links",    IDM_TB_LEFT
+     MENUITEM "~Rechts",   IDM_TB_RIGHT
+  END
+  MENUITEM SEPARATOR
+  MENUITEM "~Kleine Buttons", IDM_TB_SMALL
+  MENUITEM "Ko~nfigurieren...", IDM_TB_ADD
+END
+
+MENU IDM_EMF_POPUP
+BEGIN
+   MENUITEM "~Einstellungen", IDM_EMF_SETTINGS
+   SUBMENU "~Uplink", IDM_EMF_UPLINK
+   BEGIN
+   /* leer */
+   END
+   MENUITEM SEPARATOR
+   MENUITEM "~Liste erneuern", IDM_EMF_REFRESH
+   MENUITEM SEPARATOR
+   MENUITEM "~Passiv setzen", IDM_EMF_PAUSE
+   MENUITEM "~Aktiv setzen", IDM_EMF_RESUME
+   MENUITEM SEPARATOR
+   MENUITEM "Aktion ~zurÅcksetzen", IDM_EMF_RESET
+END
+
+MENU IDM_EM_POPUP
+BEGIN
+   MENUITEM "Echo ~bestellen", IDM_EM_LINK
+   MENUITEM "Echo ~abbestellen", IDM_EM_UNLINK
+   MENUITEM "Echo ~rescannen", IDM_EM_RESCAN
+   MENUITEM SEPARATOR
+   MENUITEM "Aktion ~zurÅcksetzen", IDM_EM_RESET
+   MENUITEM "~Entfernen",       IDM_EM_REMOVE
+END
+
+STRINGTABLE
+BEGIN
+IDST_HLP_NEXTMSG      "Zur nÑchsten Message"
+IDST_HLP_PREVMSG      "Zur vorherigen Message"
+IDST_HLP_NEXTREPLY    "Zur nÑchsten Antwort"
+IDST_HLP_PREVREPLY    "Zur vorherigen Antwort"
+IDST_HLP_FIRSTMSG     "Zur ersten Message in der Area"
+IDST_HLP_LASTMSG      "Zur letzten Message in der Area"
+IDST_HLP_FIND         "Text suchen"
+IDST_HLP_MSGTREE      "Themen-Liste"
+IDST_HLP_NEWMSG       "Neue Message schreiben"
+IDST_HLP_REPLY        "Antworten"
+IDST_HLP_IMPORT       "ASCII-Datei importieren"
+IDST_HLP_EXPORT       "Message in ASCII-Datei schreiben"
+IDST_HLP_DELMSG       "Message lîschen"
+IDST_HLP_EDITMSG      "Message Ñndern"
+IDST_HLP_AREA         "Andere Message-Area"
+IDST_HLP_MSGLIST      "Message-Liste"
+IDST_HLP_PRINTMSG     "Message drucken"
+IDST_HLP_SHOWKLUDGES  "Kludge-Lines und SEEN-BYs anzeigen"
+IDST_HLP_OK           "Message speichern"
+IDST_HLP_CANCEL       "Message nicht speichern"
+IDST_HLP_CHANGEATTR   "Message-Attribute Ñndern"
+IDST_HLP_FI_FILE      "Operationen mit Dateien"
+IDST_HLP_FI_IMPORT    "Textdatei in Editor importieren"
+IDST_HLP_FI_EXPORT    "Message in Textdatei exportieren"
+IDST_HLP_FI_ECHOTOSS  "Echotoss.Log-Datei sofort schreiben"
+IDST_HLP_FI_EXIT      "FleetStreet beenden"
+IDST_HLP_ED_EDIT      "Operationen zur Manipulation des Messagetextes"
+IDST_HLP_ED_UNDO      "Letzte Operation rÅckgÑngig machen"
+IDST_HLP_ED_CUT       "Auswahl ins Clipboard kopieren und Auswahl lîschen"
+IDST_HLP_ED_COPY      "Auswahl ins Clipboard kopieren"
+IDST_HLP_ED_PASTE     "Inhalt des Clipboards an momentaner Position einfÅgen"
+IDST_HLP_ED_CLEAR     "Auswahl lîschen"
+IDST_HLP_ED_CLRLINE   "Aktuelle Zeile lîschen"
+IDST_HLP_MS_MESSAGE   "Operationen zur Behandlung von Messages"
+IDST_HLP_MS_MOVE      "Aktuelle Message in andere Area verschieben"
+IDST_HLP_MS_XPOST     "Message in mehr als einer Area Speichern"
+IDST_HLP_MS_REQ       "Dateien in der aktuellen Message requesten"
+IDST_HLP_MS_CCOPY     "Message an mehr als einen EmpfÑnger schicken"
+IDST_HLP_MS_MARK      "Alle Messages als ""gelesen"" markieren"
+IDST_HLP_SU_SETUP     "Einstellungen von FleetStreet"
+IDST_HLP_SU_OPTIONS   "Allgemeine Einstellungen von FleetStreet"
+IDST_HLP_SU_TEMPL     "Einstellungen der Message-Schablone"
+IDST_HLP_SU_CCLIST    "Verteilerlisten und deren Inhalt"
+IDST_HLP_SU_NAMEAD    "Aktuellen Namen und/oder Adresse wechseln"
+IDST_HLP_SU_SAVE      "Einstellungen speichern"
+IDST_HLP_WI_WINDOWS   "Zu den Fenstern von FleetStreet umschalten"
+IDST_HLP_WI_KLUDGE    "Zum Kludgeline-Fenster umschalten"
+IDST_HLP_WI_THREAD    "Zur Themenliste umschalten"
+IDST_HLP_WI_RESULTS   "Zum Merkerfenster umschalten"
+IDST_HLP_HE_HELP      "Hilfesystem von FleetStreet"
+IDST_HLP_HE_INDEX     "Hilfeindex"
+IDST_HLP_HE_USING     "Hilfe zur Benutzung der Onlinehilfe"
+IDST_HLP_HE_KEYS      "Liste der Tastenkombinationen von FleetStreet"
+IDST_HLP_HE_ABOUT     "Informationen zum Programm"
+IDST_HLP_HE_GENERAL   "Allgemeine Hilfe zu FleetStreet"
+IDST_HLP_FI_PRINT     "Aktuelle Message drucken"
+IDST_HLP_MS_FIND      "Text in einer Message suchen"
+IDST_HLP_MS_DELETE    "Aktuelle Message lîschen"
+IDST_HLP_MS_REPLY     "Auf aktuelle Message antworten"
+IDST_HLP_MS_CHANGE    "Aktuelle Message Ñndern"
+IDST_HLP_MS_NEW       "Neue Message schreiben"
+IDST_HLP_FI_SHELL     "Kommandozeilen-Shell starten"
+IDST_HLP_HOMEMSG      "Zum alten Lastread springen"
+IDST_HLP_NEXTAREA     "Zur nÑchsten Area mit ungelesener Post"
+IDST_HLP_MS_COPY      "Aktuelle Message in andere Area kopieren"
+IDST_HLP_MS_FORWARD   "Aktuelle Message in anderer Area weiterleiten"
+IDST_HLP_WI_AREAS     "Zur Arealiste umschalten"
+IDST_HLP_WI_MLIST     "Zur Messageliste umschalten"
+IDST_HLP_HE_CONTENTS  "Inhaltsverzeichnis der Onlinehilfe"
+IDST_HLP_MS_BCAST     "Broadcast-Funktionen"
+IDST_HLP_MS_BCDELETE  "Broadcast-lîschen dieser Message"
+IDST_HLP_MS_BCMODIFY  "Broadcast-Ñndern dieser Message"
+IDST_HLP_SP_SPECIAL   "Spezialfunktionen"
+IDST_HLP_MS_QUICKCC   "Message an mehr als einen EmpfÑnger schicken"
+IDST_HLP_REXX         "Rexx-UnterstÅtzung"
+IDST_HLP_RXSCRIPTS    "Rexx-Skripts"
+IDST_HLP_ADDTONICK    "Absender der aktuellen Message zur Liste der Kurznamen hinzufÅgen"
+IDST_HLP_ADDTOCC      "Absender der aktuellen Message zu einer Verteilerliste hinzufÅgen"
+IDST_HLP_MARKMSG      "Aktuelle Message markieren"
+IDST_HLP_UNMARKMSG    "Markierung der aktuellen Message aufheben"
+IDST_HLP_SPCBROWSER   "Inhalt der Nodelisten anzeigen"
+IDST_HLP_OPNICKNAMES  "Liste der Kurznamen îffenen"
+IDST_HLP_OPECHOMAN    "Echos vom Uplink bestellen"
+IDST_HLP_OPADDAREAS   "Area-Liste des Uplinks aus der aktuellen Message extrahieren"
+IDST_HLP_ED_SEARCH    "In der aktuellen Message nach Text suchen"
+IDST_HLP_FI_PRINTSETUP "Drucker auswÑhlen und Optionen einstellen"
+IDST_HLP_TB_ADD       "Buttons zu Toolbar hinzufÅgen oder aus Toolbar entfernen"
+
+IDST_TAB_USER          "Namen"
+IDST_TAB_ADDRESSES     "Adressen"
+IDST_TAB_DEFORIGIN     "Origin"
+IDST_TAB_DOMAINS       "Domains"
+IDST_TAB_MODEMTYPES    "Modem-Typen"
+IDST_TAB_MACROS        "Makros 1"
+IDST_TAB_MACROS2       "Makros 2"
+IDST_TAB_MACROS3       "Makros 3"
+IDST_TAB_MSGOPT        "Optionen"
+IDST_TAB_STARTUP       "Startarea"
+IDST_TAB_EDITOROPT     "Editor"
+IDST_TAB_REGISTER      "Registrierung"
+IDST_TAB_SQUISHOPT     "Tosser"
+IDST_TAB_DRIVEREMAP    "Umsetzung"
+IDST_TAB_SAFETY        "Sicherheit"
+IDST_TAB_TOSSERPATHS   "Pfade"
+IDST_TAB_SU_OPENWIN    "Fenster"
+
+IDST_TAB_AS_GENERAL    "Allgemein"
+IDST_TAB_AS_MSGBASE    "Message-Base"
+IDST_TAB_AS_ATTRIB     "Attribute"
+
+IDST_TAB_QUOTE         "Zitat"
+IDST_TAB_HEADER        "Kopf"
+IDST_TAB_FOOTER        "Fu·"
+IDST_TAB_REPLY         "Antwort"
+IDST_TAB_DAREA         "Andere Area"
+IDST_TAB_FORWARD       "Weiterleiten"
+IDST_TAB_XPOST         "Crosspost"
+IDST_TAB_CCOPY         "Verteiler"
+IDST_TAB_FORWARDFOOTER "Weiterleiten, Fu·"
+IDST_TAB_FORWARDORDER  "Reihenfolge"
+IDST_TAB_ORIGIN        "Origin"
+
+IDST_TAB_AL_VIEW       "Ansicht"
+IDST_TAB_AL_SORT       "Sortierung"
+IDST_TAB_AL_COLORS     "Farben"
+
+IDST_TAB_RXGENERAL     "Allgemein"
+IDST_TAB_RXMONITOR     "Monitor"
+IDST_TAB_RXHOOKS       "Hooks"
+
+IDST_TAB_THREADS       "Ansicht"
+IDST_TAB_THREADCOLORS  "Farben"
+
+IDST_TAB_DLLEXT        "Erweiterungs-DLL"
+IDST_TAB_UPLINKS       "Uplinks"
+
+IDST_TAB_PS_LIST       "Drucker"
+IDST_TAB_PS_BORDERS    "RÑnder"
+IDST_TAB_PS_FONTS      "Fonts"
+IDST_TAB_PS_OUTPUT     "Ausgabe"
+
+IDST_MSG_DELETE        "Achtung! Wollen Sie diese Message wirklich lîschen?"
+IDST_MSG_CANCEL        "Wollen Sie diese Message wirklich verwerfen?"
+IDST_MSG_NORMALEXIT    "FleetStreet wirklich beenden?"
+IDST_MSG_EXITNOSAVE    "Message wurde nicht gespeichert. FleetStreet wirklich beenden?"
+IDST_MSG_BEENSENT      "Message wurde schon gesendet oder ist keine lokale Message. Message Ñndern?"
+IDST_MSG_ERRORLOAD     "Beim Laden der Datei ist ein Fehler aufgetreten"
+IDST_MSG_INVALIDFILE   "Kann Datei nicht laden"
+IDST_MSG_INVALIDFILENAME "Kann Datei nicht schreiben"
+IDST_MSG_EMPTYFILE     "Die Datei ist leer"
+IDST_MSG_ERRORSAVE     "Bei Speichern der Datei ist ein Fehler aufgetreten"
+IDST_MSG_ERRORAREA     "Die Area konnte nicht geîffnet werden"
+IDST_MSG_NOTFOUND      "Der Text wurde in der Area nicht gefunden"
+IDST_MSG_FALSEADDRESS  "Die angegebene Adresse ist nicht gÅltig"
+IDST_MSG_FALSEREGISTER "Der Registrierungscode ist nicht gÅltig!"
+IDST_MSG_DUPAREAS      "Die Tosser-Konfigurationsdatei enthÑlt Areas, die schon "
+                       "lokal definiert sind."
+IDST_MSG_NODELISTNF    "Die Nodelisten-Indexdatei wurde nicht gefunden"
+IDST_MSG_ERRREADINGCFG "Ein Fehler beim Lesen von %s ist aufgetreten"
+IDST_MSG_ERRORINIFILE  "Ein Fehler beim Lesen der Konfigurationsdatei ist aufgetreten"
+IDST_MSG_NOINIFILE     "Es gibt keine INI-Datei. Defaults werden verwendet"
+IDST_MSG_OLDINIFILE    "Die INI-Datei wurde von einer inkompatiblen "
+                       "Version von FleetStreet erzeugt. Defaults werden verwendet"
+IDST_MSG_ALREADYHAVEAREA "Es gibt bereits eine Area mit dieser Kennung"
+IDST_MSG_NOHELP        "Der Help-Manager konnte nicht initialisiert werden. Dies passiert "
+                       "in der Regel durch eine fehlender HLP-Datei. Hilfe ist "
+                       "nicht verfÅgbar."
+IDST_MSG_DELAREA       "Wollen Sie diese Area wirklich lîschen?"
+IDST_MSG_DELADDRESS    "Wollen Sie diese Adresse wirklich lîschen?"
+IDST_MSG_DELUNAME      "Wollen Sie diesen Namen wirklich lîschen?"
+IDST_MSG_DELNICKNAME   "Wollen Sie diesen Kurznamen wirklich lîschen?"
+IDST_MSG_INFOMISSING   "Sie haben nicht alle nîtigen Felder in dieser Message "
+                       "ausgefÅllt"
+IDST_MSG_TEXTTOOLONG   "Die Message ist zu lang. Fasse Dich kurz und probier's nochmal."
+IDST_MSG_ERRORMSGSAVE  "Beim Speichern der Message ist ein Fehler aufgetreten."
+IDST_MSG_DELCCLIST     "Wollen Sie diese Verteilerliste wirklich lîschen?"
+IDST_MSG_DELCCENTRY    "Wollen Sie diesen Eintrag wirklich lîschen?"
+IDST_MSG_RESEND        "Message nochmal versenden?"
+IDST_MSG_HAVENICKNAME  "Der Kurzname ist bereits vorhanden"
+IDST_MSG_LOOKUPMEM     "Nicht genug Speicher"
+IDST_MSG_IDXOPENERR    "Die Index-Datei fÅr Domain '%s' konnte nicht geîffnet werden"
+IDST_MSG_DATOPENERR    "Die Daten-Datei fÅr Domain '%s' konnte nicht geîffnet werden"
+IDST_MSG_IDXREADERR    "Fehler beim Lesen der Index-Datei fÅr Domain '%s'"
+IDST_MSG_DATREADERR    "Fehler beim Lesen der Daten-Datei fÅr Domain '%s'"
+IDST_MSG_ERRREADSQPARAM "Kann Squish-Parameter nicht lesen"
+IDST_MSG_ERRWRITESQPARAM "Kann Squish-Parameter nicht schreiben"
+IDST_MSG_SQPARAMVALUES "Die Squish-Parameter sind nicht korrekt"
+IDST_MSG_LOOKUPHANDLE  "Das Such-Handle fÅr die Nodelist-Suche ist nicht gÅltig. Bitte melden sie dies den Autoren"
+IDST_MSG_DELDOMAIN     "Wollen Sie dieses Domain wirklich lîschen?"
+IDST_MSG_HAVEDOMAIN    "Es gibt bereits ein Domain mit diesem Namen"
+IDST_MSG_NEXTAREA      "Zur nÑchsten Area mit ungelesenen Messages?"
+IDST_MSG_NONEXTAREA    "Es gibt keine weitere gescannte Area mit ungelesenen Messages"
+IDST_MSG_WORKERROR     "Fehler beim Bearbeiten der ausgewÑhlten Messages"
+IDST_MSG_LOCKERROR     "Diese Aktion kann nicht ausgefÅhrt werden, da die Area momentan "
+                       "in Verwendung ist."
+IDST_MSG_BCDELERROR    "Die Broadcast-Message konnte nicht erzeugt werden"
+IDST_MSG_DELTEMPLATE   "Wollen Sie diese Schablone wirklich lîschen?"
+IDST_MSG_NOCCLIST      "Die Verteilerliste existiert nicht mehr. WÑhlen Sie eine "
+                       "andere Liste aus."
+IDST_MSG_DELSCRIPT     "Wollen Sie dieses Skript wirklich lîschen?"
+IDST_MSG_NOCCENTRIES   "Die Verteilerliste enthÑlt keine EintrÑge. Bearbeiten Sie die "
+                       "Liste nochmals."
+IDST_MSG_MODQUICKCC    "Wollen Sie die bestehende Liste Ñndern?"
+IDST_MSG_DOINGWORK     "Bearbeitung ist bereits im Gange. Bitte warten Sie, bis diese "
+                       "beendet ist."
+IDST_MSG_REPLACENICK   "Dieser Kurzname existiert bereits. Soll die alte Definition "
+                       "ersetzt werden?"
+IDST_MSG_CATCHUP       "Wollen Sie wirklich die Funktion ""Aufholen"" ausfÅhren?"
+IDST_MSG_FINDNOPARTS   "Sie haben keinen Teil der Message ausgewÑhlt"
+IDST_MSG_FINDNOAREAS   "Sie haben keine Areas ausgewÑhlt"
+IDST_MSG_FINDNOTEXT    "Sie haben keinen Text eingegeben"
+IDST_MSG_NOTTHERE      "Die Message oder Area existiert nicht mehr"
+IDST_MSG_ETOSSERROR    "Fehler beim Schreiben der Echotoss.Log-Datei"
+IDST_MSG_NOAREATAG     "Sie haben keinen Area-Tag angegeben."
+IDST_MSG_NOPATHFILE    "Sie haben keinen Pfadnamen fÅr die Area angegeben."
+
+IDST_MSG_NOUPLINKAREAS "In der Message wurden keine Areas gefunden."
+IDST_MSG_NOACTIONS     "Es wurde keine Aktion mit einer Area ausgefÅhrt."
+IDST_MSG_DOEXTRACT     "Wollen Sie wirklich die Areas aus der Message extrahieren?"
+IDST_MSG_EM_DLLLOAD    "Die DLL konnte nicht geladen werden."
+IDST_MSG_EM_DLLVER     "Die DLL kann nicht mit dieser FleetStreet-Version verwendet werden."
+IDST_MSG_EM_DLLFUNC    "Die DLL ist keine Erweiterungs-DLL."
+IDST_MSG_EM_DLLINT     "In der DLL ist ein interner Fehler aufgetreten."
+IDST_MSG_EM_CFGNOTF    "Die Konfigurationsdatei wurde nicht gefunden."
+IDST_MSG_EM_INIT       "Die Parameter der Erweiterungs-DLL sind nicht initialisiert. Konfigurieren Sie die DLL neu."
+IDST_MSG_EM_CFGREAD    "Beim Lesen der Konfigurationsdatei trat ein Fehler auf."
+IDST_MSG_EM_CFGWRITE   "Beim Schreiben der Konfigurationsdatei trat ein Fehler auf."
+IDST_MSG_EM_CFGFORMAT  "Das Format oder die Version der Konfigurations-Datei wird nicht von der Erweiterungs-DLL unterstÅtzt."
+IDST_MSG_EM_CFGLINKED  "Ein zu bestellendes Echo war bereits eingetragen."
+IDST_MSG_EM_CFGUNLINKED "Ein abzubestellendes Echo war nicht eingetragen."
+IDST_MSG_EM_NOPASS     "Der Name oder das Passwort fÅr den Uplink fehlen."
+IDST_MSG_DELUPLINK     "Wollen Sie diesen Uplink wirklich lîschen?"
+
+IDST_MSG_INITBASE      "Fehler beim Lesen der Konfigurationsdatei:\x0d\x0a%s."
+IDST_MSG_INITBASE+1    "Die Datei wurde nicht gefunden oder konnte nicht "
+                       "geîffnet werden"
+IDST_MSG_INITBASE+2    "Lesefehler"
+IDST_MSG_INITBASE+3    "Unbekannte Version der Konfigurationsdatei"
+IDST_MSG_INITBASE+4    "Fehler in allgemeinen Konfigurationsdaten"
+IDST_MSG_INITBASE+5    "Fehler in Area-Definition"
+IDST_MSG_INITBASE+6    "Keine Areas in der Datei definiert"
+IDST_MSG_APPENDAREAS   "Uplink existiert bereits. Echoliste dieser Message anhÑngen?"
+IDST_MSG_REGONLY       "Diese Funktion steht nur in der registrierten Version zur VerfÅgung."
+IDST_MSG_REQ_NOTF      "Die File-Liste wurde nicht gefunden, oder der Zugriff war nicht mîglich."
+IDST_MSG_REQ_READERR   "Beim Lesen der File-Liste ist ein Fehler aufgetreten."
+IDST_MSG_REQ_DELLIST   "Wollen Sie die Liste wirklich lîschen?"
+
+IDST_MSG_CFGDLLBASE    "Fehler beim Laden der CFG-DLL:\x0d\x0a%s."
+IDST_MSG_CFGDLLBASE+1  "DLL kann nicht geladen werden"
+IDST_MSG_CFGDLLBASE+2  "Funktion in der DLL fehlt"
+IDST_MSG_CFGDLLBASE+3  "Falsche DLL-Version"
+IDST_MSG_CFGDLLBASE+4  "Nicht unterstÅtzter Tosser"
+
+IDST_RX_NEWSCRIPT      "Neues Skript"
+IDST_RX_NOHOOK         "<keines>"
+IDST_RX_ACCEL          "\tStrg-"
+
+IDST_AL_AREADESC       "Area"
+IDST_AL_UNREAD         "neu"
+IDST_AL_TOTAL          "gesamt"
+IDST_AL_DELETE         "Area lîschen"
+IDST_AL_DEFAULT        "Default"
+IDST_AL_NEWFOLDER      "Neuer Ordner"
+
+IDST_FD_AREA           "Area"
+IDST_FD_NUMBER         "Nr."
+IDST_FD_FROM           "Von"
+IDST_FD_SUBJECT        "Thema"
+
+IDST_TITLE_DISCARD     "Message verwerfen"
+IDST_TITLE_MARKALL     "Alle Messages markieren"
+IDST_TITLE_DELETE      "Message(s) lîschen"
+IDST_TITLE_BEENSENT    "Message Ñndern"
+IDST_TITLE_CANCEL      "Message verwerfen"
+IDST_TITLE_DELUNAME    "Name lîschen"
+IDST_TITLE_DELADDRESS  "Adresse lîschen"
+IDST_TITLE_DELNICKNAME "Kurzname lîschen"
+IDST_TITLE_DELCCLIST   "Verteilerliste lîschen"
+IDST_TITLE_DELCCENTRY  "Eintrag lîschen"
+IDST_TITLE_RESEND      "Message speichern"
+IDST_TITLE_DELDOMAIN   "Domain lîschen"
+IDST_TITLE_NEXTAREA    "Zur nÑchsten Area"
+IDST_TITLE_BCDELERROR  "Broadcast-Lîschen"
+IDST_TITLE_AL_COPY     "Ziel-Area fÅr 'Kopieren'"
+IDST_TITLE_AL_MOVE     "Ziel-Area fÅr 'Verschieben'"
+IDST_TITLE_AL_FORWARD  "Ziel-Area fÅr 'Weiterleiten'"
+IDST_TITLE_AL_XPOST    "Ziel-Areas fÅr 'Crossposten'"
+IDST_TITLE_AL_REPLY    "Ziel-Area fÅr 'Antworten'"
+IDST_TITLE_DELTEMPLATE "Schablone lîschen"
+IDST_TITLE_DELSCRIPT   "Skript lîschen"
+IDST_TITLE_MODQUICKCC  "Schnellverteiler"
+IDST_TITLE_REPLACENICK "Kurznamen ersetzen"
+IDST_TITLE_CATCHUP     "Aufholen"
+IDST_TITLE_DOEXTRACT   "Areas extrahieren"
+IDST_TITLE_DELUPLINK   "Uplink lîschen"
+IDST_TITLE_ATTACHFILES "Dateien anhÑngen"
+IDST_TITLE_REGONLY     "Nur in registrierter Version"
+IDST_TITLE_REQ_DELLIST "File-Liste lîschen"
+
+IDST_FORMAT_SCANNING   "Scanne %s ..."
+IDST_FORMAT_RANGE      "%lu von %lu"
+IDST_FORMAT_REG        "registriert fÅr: %s"
+
+IDST_MW_NOAREA         "* keine Areas *"
+IDST_MW_AREA           "Area:"
+IDST_MW_FROM           "Von:"
+IDST_MW_TO             "An:"
+IDST_MW_SUBJ           "Thema:"
+IDST_MW_ATTRIB         "Attrib:"
+
+IDST_ML_WORKING        "Arbeite..."
+IDST_ML_UNREAD         "Themen mit ungelesenen Messages"
+IDST_ML_ALLTHREADS     "Alle Themen"
+IDST_ML_UNREADONLY     "Ungelesene Messages"
+IDST_ML_NUMBER         "Msg.Nr."
+IDST_ML_FROM           "Von"
+IDST_ML_TO             "An"
+IDST_ML_SUBJECT        "Thema"
+IDST_ML_UNREADBT       "Ungelesene Messages"
+IDST_ML_ALLMSGBT       "Alle Messages"
+IDST_ML_NOSUBJ         "* Kein Thema *"
+IDST_ML_DATEWRITTEN    "Erstelldatum"
+
+IDST_CC_NAME           "Username"
+IDST_CC_ADDRESS        "Adresse"
+IDST_CC_SHOW           "Name im CC-Text anzeigen"
+IDST_CC_YES            "Ja"
+IDST_CC_NO             "Nein"
+IDST_CC_NEWNAME        "Neue Verteilerliste"
+IDST_CC_QUICKCC        "Schnellverteiler"
+
+IDST_TPL_HEADER        "Hallo %Z!\x0d\x0a"
+IDST_TPL_FOOTER        "\x0d\x0a\x0d\x0aServus, %I!\x0d\x0a"
+IDST_TPL_REPLY         "Antwort auf eine Message von %F an %T:\x0d\x0a"
+IDST_TPL_DAREA         "* Antwort auf Message in %A"
+IDST_TPL_FORWARD       "======================================================\x0d\x0a"
+                       "* Original in Area %A\x0d\x0a"
+                       "* Original von %F %J\x0d\x0a"
+                       "* Original an %T %R\x0d\x0a"
+                       "* Original Åber ""%S""\x0d\x0a"
+                       "======================================================\x0d\x0a\x0d\x0a"
+IDST_TPL_XPOST         "* Crossposted in %A"
+IDST_TPL_CCOPY         "* Verteiler: %C"
+IDST_TPL_FORWARDFOOTER "\x0d\x0a==================== Ende des Forward ====================\x0d\x0a"
+IDST_TPL_DEFNAME       "Default"
+IDST_TPL_NEWNAME       "Neue Schablone"
+IDST_TPL_ALLSYN        "Alle"
+
+IDST_NOT_XPDESELECT    "Crossposting abgebrochen"
+IDST_NOT_CCDESELECT    "Carbon Copy abgebrochen"
+IDST_NOT_MOVED         "Message erfolgreich verschoben"
+IDST_NOT_COPIED        "Message erfolgreich kopiert"
+IDST_NOT_REQUESTED     "Request-Message(s) erfolgreich erzeugt"
+IDST_NOT_EXPORTED      "Message erfolgreich exportiert"
+IDST_NOT_MARKALL       "Markiere Messages, bitte warten"
+IDST_NOT_PRINTED       "Message erfolgreich gedruckt"
+IDST_NOT_EXTRACTED     "Die Areas wurden erfolgreich extrahiert"
+IDST_NOT_STRINGNOTFOUND "Der Suchtext wurde in der Message nicht gefunden"
+
+IDST_NICK_NICKNAME     "Kurzname"
+IDST_NICK_REALNAME     "Echter Name"
+IDST_NICK_ADDRESS      "Adresse"
+
+IDST_RENUM_STAGE1      "Links anpassen..."
+IDST_RENUM_STAGE2      "Umnumerieren..."
+
+IDST_AP_TITLE          "Einstellungen fÅr Area %s"
+IDST_AP_EMPTYTITLE     "Einstellungen"
+IDST_AP_CANCEL         "Area-Einstellungen ~verwerfen"
+
+IDST_LU_SYSOP          "Sysop"
+IDST_LU_ADDRESS        "Adresse"
+IDST_LU_SYSTEM         "System-Name"
+IDST_LU_LOCATION       "Ort"
+IDST_LU_PHONE          "Tel.-Nr."
+IDST_LU_MODEM          "Modem-Typ"
+IDST_LU_BAUD           "Baudrate"
+IDST_LU_CALLCOST       "Anruf-Kosten"
+IDST_LU_USERCOST       "Message-Kosten"
+IDST_LU_FLAGS          "Attribute"
+IDST_LU_TITLE          "Adressen fÅr: "
+
+IDST_ATT_TITLEFILE     "Datei"
+IDST_ATT_TITLESIZE     "Grî·e"
+IDST_ATT_TITLESTATUS   "Status"
+IDST_ATT_OK            "OK"
+IDST_ATT_NOTF          "* nicht gefunden *"
+
+IDST_BRS_NODESTPL      "%d Nodes"
+IDST_BRS_NAMESTPL      "%d Sysop-Namen"
+IDST_BRS_ZONETPL       "Zone %d"
+IDST_BRS_NETTPL        "Netz %d"
+IDST_BRS_OTHERNAME     "Sonstige"
+IDST_BRS_WORKING       "Arbeite, bitte warten..."
+
+IDST_EM_ECHO           "Echo-Name"
+IDST_EM_STATUS         "Status"
+IDST_EM_ACTION         "Aktion"
+IDST_EM_LINKED         "bestellt"
+IDST_EM_UNLINKED       "nicht bestellt"
+IDST_EM_LINK           "Echo bestellen"
+IDST_EM_UNLINK         "Echo abbestellen"
+IDST_EM_RESCAN         "Echo rescannen"
+IDST_EM_REFRESH        "Liste erneuern"
+IDST_EM_PAUSE          "Alle Echos auf passiv setzen"
+IDST_EM_RESUME         "Alle Echos auf aktiv setzen"
+
+IDST_MT_BIT            "Bit Nr."
+IDST_MT_BYTE           "Typ Nr."
+IDST_MT_DESC           "Bezeichnung"
+
+IDST_TBC_DISP          "Dargestellte Buttons"
+IDST_TBC_AVAIL         "VerfÅgbare Buttons"
+IDST_TBC_SEPARATOR     "----------"
+
+END
+
+RCINCLUDE "languages\german\main.dlg"

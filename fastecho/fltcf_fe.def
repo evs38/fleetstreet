@@ -1,0 +1,9 @@
+LIBRARY FLTCF_FE INITINSTANCE TERMINSTANCE
+DESCRIPTION '@#FSD:1.27#@ FleetStreet Fastecho CFG'
+PROTMODE
+DATA MULTIPLE NONSHARED
+EXPORTS
+  QueryFormatID   @1
+  QueryFormatName @2
+  ReadFastechoCfg @3
+  QueryVer        @4

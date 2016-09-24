@@ -1,0 +1,630 @@
+.im languages\help.names
+.***************************************************************************
+.***************************************************************************
+.*    FLTSTRT.IPF, Helpfile fuer Fleet Street                              *
+.***************************************************************************
+.***************************************************************************
+:userdoc.
+:docprof toc=1234.
+
+.***************************************************************************
+.* Help-Panels des Hauptfensters                                           *
+.***************************************************************************
+
+:h1 res=&PANEL_MAIN..FleetStreet
+:p.
+:lines align=center.
+Willkommen bei
+
+:font facename='Tms Rmn' size=24x18.:color fc=red.
+FleetStreet 1.27.1
+:font facename=default size=0x0.:color fc=default.
+:elines.
+:p.
+FleetStreet ist ein FTS-kompatibler Nachrichten-Editor fr OS/2 2.x PM.
+FleetStreet kann *.MSG-, Squish- und JAM-Message-Bases bearbeiten.
+:p.
+Themen&colon.
+:ul.
+:li.:link reftype=launch object='view.exe' data='FLTSTRT.INF'.Benutzeranleitung:elink.
+:eul.
+:i1 id=squish.Squish(tm)
+
+.****************************************************************
+.* Hilfe fuer Tasten
+.****************************************************************
+
+:h1 res=&PANEL_KEYS..Hilfe fr Tasten
+:p.Es gibt einige Tastenkombinationen, die davon abh„ngen, ob Sie gerade
+Nachrichten lesen oder schreiben.
+:ul.
+:li.:link reftype=hd refid=genkeys.Generell verfgbare Tasten:elink.
+:li.:link reftype=hd refid=readkeys.Tastenkombinationen beim Lesen:elink.
+:li.:link reftype=hd refid=editkeys.Tastenkombinationen beim Schreiben:elink.
+:eul.
+
+:h2 id=genkeys.Generell verfgbare Tasten
+:p.Die folgenden Tastenkombinationen sind generell verfgbar&colon.
+:parml compact tsize=20 break=none.
+:pt.Alt-X
+:pd.FleetStreet beenden
+:pt.F1
+:pd.Hilfe
+:pt.Ctrl-F1
+:pd.Hilfe zur Tastaturbelegung
+:pt.Ctrl-D
+:pd.Wechseln des aktuellen Namens und der Adresse
+:pt.Ctrl-W
+:pd.Nodelist-Browser ”ffnen
+:pt.Ctrl-K
+:pd.Kludge-Lines anzeigen
+:eparml.
+
+:h2 id=readkeys.Tastenkombinationen beim Lesen von Nachrichten
+:p.Folgende Tastenkombinationen sind verfgbar&colon.
+:parml compact tsize=20 break=none.
+:pt.Ctrl-R
+:pd.Antwort an den Absender schreiben
+:pt.Ctrl-Shift-R
+:pd.Antwort an den Absender schreiben, Zeilen nicht zusammenziehen
+:pt.Ctrl-N
+:pd.Antwort an den Absender, allerdings in einer anderen Area
+:pt.Ctrl-Shift-N
+:pd.Antwort an den Absender, allerdings in einer anderen Area, Zeilen nicht zusammenziehen
+:pt.Ctrl-E
+:pd.Message „ndern
+:pt.Ctrl-A
+:pd.Area ausw„hlen
+:pt.Ctrl-B
+:pd.Merker-Fenster ”ffnen
+:pt.Ctrl-L
+:pd.Messageliste
+:pt.Shift-Druck
+:pd.Message ausdrucken
+:pt.Ctrl-T
+:pd.Themen-Liste
+:pt.Ctrl-M
+:pd.Message verschieben
+:pt.Ctrl-C
+:pd.Message kopieren
+:pt.Ctrl-F
+:pd.Message weiterleiten
+:pt.Ctrl-Q
+:pd.Dateien requesten
+:pt.Ctrl-X
+:pd.Message exportieren
+:pt.Ins
+:pd.Neue Message eingeben
+:pt.Del
+:pd.Message l”schen
+:pt.Ctrl-I
+:pd.Message suchen
+:pt.Ctrl-O
+:pd.Absender der aktuellen Message zur Liste der Kurznamen hinzufgen
+:pt.Ctrl-Z
+:pd.Absender der aktuellen Message zu einer Verteilerliste hinzufgen
+:pt.Cursor left
+:pd.Vorherige Message anzeigen
+:pt.Cursor right
+:pd.N„chste Message anzeigen
+:pt.Ctrl-Cursor left
+:pd.Zur vorherigen Antwort springen
+:pt.Ctrl-Cursor right
+:pd.Zur n„chsten Antwort springen
+:pt.Ctrl-Home
+:pd.Zur ersten Message dieser Area springen
+:pt.Ctrl-End
+:pd.Zur letzten Message dieser Area springen
+:pt.Shift-Home
+:pd.Zum alten Lastread springen
+:pt.Shift-Right
+:pd.Zur n„chsten Area springen, die gescannt ist und neue Messages enth„lt
+:pt.SPACE
+:pd.Aktuelle Message markieren/demarkieren
+:pt.Ctrl-P
+:pd.Alle Messages als "gelesen" markieren
+:pt.Ctrl-J
+:pd.Zwischen prim„rem und alternativem Font umschalten
+:pt.Ctrl-J
+:pd.Hervorhebungen ein/ausschalten.
+:eparml.
+
+:h2 id=editkeys.Tastenkombinationen beim Schreiben
+:p.Folgende Tastenkombinationen sind verfgbar&colon.
+:parml compact tsize=20 break=none.
+:pt.Ctrl-Y, Ctrl-Backspace
+:pd.Aktuelle Zeile l”schen
+:pt.Alt-Backspace
+:pd.Letzte nderung rckg„ngig machen
+:pt.Ctrl-S
+:pd.Message speichern
+:pt.Ctrl-I
+:pd.Datei importieren
+:pt.Ctrl-X
+:pd.Message in mehrere Areas schicken
+:pt.Ctrl-C
+:pd.Kopien an Andere verschicken
+:pt.F2...F12
+:pd.Tastenmakro ausfhren
+:pt.Esc
+:pd.Eingabe abbrechen
+:pt.Ctrl-A, Ctrl-Shift-F
+:pd.Attribute der Message „ndern
+:pt.Ctrl-Shift-K
+:pd."Kill/Sent"-Attribut umschalten
+:pt.Ctrl-Shift-C
+:pd."Crash"-Attribut umschalten
+:pt.Ctrl-Shift-A
+:pd."File attached"-Attribut umschalten
+:pt.Ctrl-Shift-R
+:pd."File request"-Attribut umschalten
+:pt.Ctrl-Shift-P
+:pd."Private"-Attribut umschalten
+:pt.Ctrl-Shift-H
+:pd."Hold"-Attribut umschalten
+:pt.Ctrl-Shift-D
+:pd."Direct"-Attribut umschalten
+:pt.Ctrl-J
+:pd.Zwischen prim„rem und alternativem Font umschalten
+:eparml.
+
+.***************************************************************************
+.* Help-Panels des Menues                                                  *
+.***************************************************************************
+
+.im languages\german\menu.ips
+
+.***************************************************************************
+.* Setup                                                                   *
+.***************************************************************************
+.im languages\german\setup.ips
+
+.im languages\german\psetup.ips
+
+.im languages\german\echoman.ips
+
+.***************************************************************************
+.* Template-Setup                                                          *
+.***************************************************************************
+.im languages\german\template.ips
+
+.***************************************************************************
+.* Carbon-Copy-Listen                                                      *
+.***************************************************************************
+.im languages\german\ccopy.ips
+
+.***************************************************************************
+.* Help-Panels der Dialoge                                                 *
+.***************************************************************************
+
+:h1.Dialoge
+
+.***************************************************************************
+.* Message-Attribute                                                       *
+.***************************************************************************
+
+:h2 id=attrib res=&PANEL_ATTRIB..Attribute
+:p.Setzen Sie die Attribute fr diese Message.
+:p.Message-Attribute im Detail&colon.
+:parml.
+:pt.:hp2.Privat:ehp2.
+:pd.Setzen Sie dieses Attribut wenn Ihre Message privater Natur ist, d.h. nur der
+Empf„nger der Message soll sie lesen. Beachte: Dieses Attribut ist nur fr
+Netmail von Bedeutung. In den meisten Echomail-Areas sind private Messages nicht
+erlaubt. Wenn Sie dort das Privat-Attribut verwenden wird trotzdem jeder die
+Message lesen k”nnen.
+:pt.:hp2.Crash:ehp2.
+:pd.Die Message wird direkt zum adressierten System geschickt, d.h. sie wird nicht
+ber den eigenen Uplink geroutet. Der Mailer wird falls m”glich rausrufen und versuchen,
+die Message zuzustellen.
+:pt.:hp2.Empfangen:ehp2.
+:pd.Die Message ist eine pers”nliche Message und wurde bereits gelesen.
+:pt.:hp2.Gesendet:ehp2.
+:pd.Die Message wurde an den Uplink geschickt.
+:pt.:hp2.File angeh„ngt:ehp2.
+:pd.Die Themenzeile enth„lt den Namen einer Datei, die an den Empf„nger zusammen
+mit der Message geschickt werden soll. Kombinieren Sie dieses Attribut immer
+mit dem "Crash"-Attribut. Die meisten Systeme routen ein File nicht.
+:pt.:hp2.Im Transit:ehp2.
+:pd.Die Message ist nicht an Ihr System adressiert und stammt auch nicht aus Ihrem
+System. Sie wird an ein anderes System weitergeschickt. Lassen Sie dieses Attribut am
+Besten so wie es ist.
+:pt.:hp2.Verwaist:ehp2.
+:pd.Die Zieladresse ist unbekannt oder das Zielsystem ist als "Hold" oder "Down" in
+der Nodeliste eingetragen. Lassen Sie dieses Attribut am Besten so wie es ist.
+:pt.:hp2.L”schen nach Senden:ehp2.
+:pd.Die Message wird vom Tosser nach dem Packen gel”scht.
+:pt.:hp2.Lokal:ehp2.
+:pd.Die Message wurde lokal eingegeben, d.h. also von Ihnen.
+:pt.:hp2.Hold:ehp2.
+:pd.Die Message wird nicht gesendet
+:pt.:hp2.File Request:ehp2.
+:pd.Die Themenzeile besteht aus Dateinamen von Dateien, die vom Zielsystem
+requestet werden sollen. Der Tosser/Packer erzeugt daraus ein Request-File, wenn die Messages
+gepackt werden. Verwenden Sie dieses Attribut nur in Netmail-Areas.
+:pt.:hp2.Einschreiben:ehp2.
+:pd.Zeigt an, daá Sie eine Ankunftsbest„tigung vom Empf„nger haben wollen.
+:pt.:hp2.Rckschein:ehp2.
+:pd.Diese Message ist eine solche Ankunftsbest„tigung.
+:pt.:hp2.Audit Request:ehp2.
+:pd.Dieses Attribut wird von SEAdog verwendet. Lassen Sie dieses Attribut
+am Besten so wie es ist.
+:pt.:hp2.File Update Request:ehp2.
+:pd.Wie File-Request, nur, daá die Dateien nur bertragen werden, falls sie neuer
+sind als die, die Sie bereits haben.
+:pt.:hp2.Archivieren n. Senden:ehp2.
+:pd.Die Message wird vom Tosser nach dem Packen in eine andere Area geschoben.
+:pt.:hp2.Direkt:ehp2.
+:pd.Die Message wird direkt an an Empf„nger geschickt (nicht geroutet).
+:pt.:hp2.Datei abschneiden:ehp2.
+:pd.Angeh„ngte Dateien werden nach dem Senden abgeschnitten (L„nge wird auf 0 gesetzt).
+:pt.:hp2.Datei l”schen:ehp2.
+:pd.Angeh„ngte Dateien werden nach dem Senden gel”scht.
+:pt.:hp2.Immediate:ehp2.
+:pd.Die Message wird direkt an an Empf„nger geschickt (nicht geroutet). Sie wird
+so bald wie m”glich gesendet.
+:pt.:hp2.Gate-Routing:ehp2.
+:pd.Die Message wird ber einen Gateway-Node geroutet.
+:pt.:hp2.Abholen erzwingen:ehp2.
+:pd.Abholen erzwingen
+:pt.:hp2.Hub-Routing:ehp2.
+:pd.Die Message wird ber Ihren Hub-Node geroutet.
+:pt.:hp2.Behalten:ehp2.
+:pd.Die Message wird beim Packen der Area nicht gel”scht. :hp2.Achtung&colon.:ehp2.
+Funktioniert nicht mit SqPack!
+:pt.:hp2.Monospaced:ehp2.
+:pd.Message soll beim Lesen in einer nicht-proportionalen Schrift dargestellt
+werden.
+:eparml.
+:i1 id=message.Message
+:i2 refid=message.Attribute
+
+
+:h2 res=&PANEL_REPLY..Reply
+:p.Sie k”nnen entweder dem Absender der Message, oder dem Empf„nger antworten (auch
+"Followup Reply" genannt).
+:parml.
+:pt.:hp2.Antworten auf Absender:ehp2.
+:pd.Antwort auf den Absender der Message
+:pt.:hp2.Antworten auf Empf„nger:ehp2.
+:pd.Antwort auf den Empf„nger der Message
+:pt.:hp2.Antworten auf Original-Absender:ehp2.
+:pd.Antwort auf den Absender der weitergeleiteten Message. Diese Option steht
+nur bei weitergeleiteten Messages zur Verfgung.
+:pt.:hp2.Zeilen nicht zusammenziehen:ehp2.
+:pd.Zeilen werden beim Zitat nicht zusammengezogen. Dies ist ntzlich, wenn
+breite Tabellen oder Aufz„hlungen zitiert werden, oder wenn Zeilen, die schon
+Zitate sind, nicht zusammengezogen werden sollen.
+:pt.:hp2.In anderer Area antworten:ehp2.
+:pd.Die neue Message wird in einer anderen Area gespeichert, z.B. in einer Netmail-
+Area.
+:pt.:hp2.Antwort ohne Zitat:ehp2.
+:pd.Die Antwort soll keine Zitate enthalten.
+:eparml.
+
+.im languages\german\find.ips
+
+.im languages\german\area.ips
+
+.* ****************************** Message liste ******************************
+:h2 id=msglist res=&PANEL_MSGLIST..Messageliste
+:p.
+Die Messageliste zeigt alle Messages in der Area an. Die Messages werden
+in der gleichen Reihenfolge dargestellt, wie sie in der Messagebase
+stehen.
+:p.
+Der eigene Name wird jeweils in einer anderen Farbe dargestellt. Gelesene und
+ungelesene
+Messages haben eine Messagenummer in unterschiedlicher Farbe. Die jeweilige Farbe
+kann im Einstellungs-Notebook der Messageliste eingestellt werden.
+:p.
+Sie k”nnen mehrere Messages mit der Maus oder mit der Tastatur ausw„hlen
+und manipulieren. Manipulationsm”glichkeiten sind&colon.
+:ul compact.
+:li.L”schen
+:li.Kopieren
+:li.Verschieben
+:li.Drucken
+:li.Exportieren
+:eul.
+
+:h3 hide nosearch res=&PANEL_MLISTSETT..Ooops
+:p.Empty panel, should not happen. Please tell us!
+
+:h3 res=&PANEL_MLS_COLORS..Farben
+:p.Sie k”nnen unterschiedliche Farben fr die verschiedenen Felder w„hlen.
+:p.W„hlen Sie die Grundfarbe mit dem Farbkreis aus. Die aktuelle Farbe wird mit
+einem Fadenkreuz markiert.
+:p.Stellen Sie die Helligkeit der Farbe mit dem Slider rechts neben dem
+Farbkreis ein.
+
+:h2 res=&PANEL_ABOUTDLG..Information
+:p.FleetStreet wurde von Harry Herrmannsd”rfer and Michael Hohner entwickelt.
+
+
+:h2 res=&PANEL_FILEDLG..File-Dialog
+:p.W„hlen Sie eine Datei aus und drcken Sie :hp2.OK:ehp2.
+
+
+:h2 res=&PANEL_KLUDGEINFO..Zus„tzliche Message-Informationen
+:p.Dieses Fenster enth„lt alle Kludge-Lines und SEEN-BYs der aktuellen
+Message. Sie k”nnen den Inhalt ins Clipboard kopieren.
+:p.Drcken Sie :hp2.Schlieáen:ehp2., um das Fenster zu schlieáen.
+:p.Drcken Sie :hp2.Kopieren:ehp2., um den markierten Text ins Clipboard
+zu kopieren. Wenn kein Text markiert ist, wird der gesamte Inhalt ins Clipboard
+kopiert.
+:p.Sie k”nnen dieses Fenster beim Lesen offenlassen. Es wird automatisch
+aufgefrischt, wenn Sie zu einer anderen Message schalten.
+:p.Klicken Sie auf :hp2.Im Vordergrund halten:ehp2., um dieses Fenster immer
+ber dem FleetStreet-Hauptfenster zu halten.
+
+.im languages\german\request.ips
+
+:h2 res=&PANEL_REPLYLIST..Zur Antwort
+:p.Es gibt mehr als eine Antwort zu dieser Message. Die Antworten sind mit ihrer
+Messagenummer und dem Namen des Absenders aufgelistet. W„hlen Sie die Message
+aus, die Sie lesen wollen und drcken Sie :hp2.OK:ehp2. Drcken Sie :hp2.Abbrechen:ehp2.,
+wenn Sie keine dieser Messages lesen wollen.
+
+:h2 hide res=&PANEL_ERRORINIFILE..Fehler beim Lesen der Einstellungen
+:p.Beim Lesen der Einstellungen passierte ein Fehler. Dies k”nnte durch einen
+Disk-Lesefehler verursacht sein (also schreibgeschtzes Medium, keine Zugriffsrechte
+usw.
+:p.FleetStreet verwendet die Default-Werte, also "ohne Setup".
+
+:h2 hide res=&PANEL_NOINIFILE..Keine Einstellungen
+:p.Die gespeicherten Einstellungen konnten nicht gefunden werden, oder die
+Einstellungen sind nicht gltig. Die Datei FLTSTRT.INI muá sich im gleichen
+Verzeichnis wie FLTSTRT.EXE befinden.
+:p.Falls Sie FleetStreet zum ersten Mal gestartet haben, fahren Sie mit der
+Einrichtung von FleetStreet fort. Die Einstellungen werden gespeichert, wenn
+Sie FleetStreet verlassen.
+
+:h2 hide res=&PANEL_OLDINIFILE..Alte Einstellungen
+:p.Die Einstellungen wurden von einer „lteren Version von FleetStreet
+gespeichert. Die Einstellungen in FLTSTRT.INI k”nnen mit dieser Version
+nicht verwendet werden. Eine neue Datei wird erzeugt, wenn Sie FleetStreet
+verlassen.
+:p.Drcken Sie :hp2.Abbrechen:ehp2., um FleetStreet ohne nderung
+zu beenden.
+
+
+:h2 hide res=&PANEL_DELETE..Message l”schen
+:p.Sie wollen gerade die aktuelle Message l”schen. Gel”schte Messages
+k”nnen nicht wiederhergestellt werden.
+:p.Drcken Sie :hp2.JA:ehp2., um die Message zu l”schen, drcken Sie
+:hp2.Nein:ehp2., wenn Sie die Message behalten wollen.
+
+:h2 hide res=&PANEL_BEENSENT..Message editieren
+:p.Die Message wurde vom Tosser bereits verarbeitet und zur Zieladresse geschickt.
+Die gesendete Message wird durch die nderungen nicht berhrt. Lesen Sie in der
+Dokumentation des Tossers nach, wie man einen Rescan der Area durchfhrt.
+:p.Falls die Message nicht lokal ist, bekommen Ihre Downlinks evtl. ver„nderte
+Messages, was in den meisten F„llen nicht erwnscht ist.
+:p.Drcken Sie :hp2.Ja:ehp2., wenn Sie die Message trotzdem ver„ndern wollen,
+drcken Sie :hp2.Nein:ehp2., wenn Sie die Message nicht ver„ndern wollen.
+
+:h2 hide res=&PANEL_DISCARD..Message verwerfen
+:p.Wenn Sie :hp2.Ja:ehp2. drcken, wird die Message, die Sie geschrieben haben, nicht
+gespeichert. Der Message-Text geht verloren.
+:p.Drcken Sie :hp2.Nein:ehp2., wenn Sie mit dem Schreiben fortfahren wollen.
+
+:h2 hide res=&PANEL_EXITNOSAVE..Message verwerfen
+:p.Sie wollen gerade FleetStreet verlassen, haben aber die Message, die Sie
+gerade schreiben, noch nicht gespeichert. Wenn Sie FleetStreet verlassen, wird
+Ihre Message nicht gespeichert. Der Message-Text geht verloren.
+:p.Drcken Sie :hp2.Nein:ehp2., wenn Sie mit dem Schreiben fortfahren wollen.
+:p.Drcken Sie :hp2.Ja:ehp2., wenn Sie FleetStreet verlassen wollen.
+
+:h2 hide res=&PANEL_INFOMISSING..Ungltige Headerdaten
+:p.Ihre Message muá mindestens folgendes enthalten&colon.
+:ul.
+:li.Name und Adresse des Empf„ngers
+:li.Text in der Themen-Zeile
+:eul.
+:p.Wenn eines davon fehlt, kann die Message nicht gespeichert werden.
+
+:h2 hide res=&PANEL_TOOLONG..Message-Text zu lang
+:p.Die Message ist l„nger als die eingestellte Split-Gr”áe. Es ist nicht
+m”glich, die Message beim ndern nochmals zu splitten.
+
+:h2 hide res=&PANEL_ERRORMSGSAVE..Fehler beim Speichern der Message
+:p.Beim Speichern der Message ist ein Fehler aufgetreten. Dies wird meistens
+durch Disk-Fehler verursacht, z.B. Zugriffsverletzungen, schreibgeschtzte
+Medien oder zu wenig Plattenplatz.
+:p.Sie k”nnen versuchen, das Problem zu l”sen und noch einmal versuchen, die
+Message zu speichern. Wenn das Problem nicht gel”st werden kann, mssen
+Sie das Editieren abbrechen.
+
+:h2 res=&PANEL_CURRENTNAME..Aktueller Name &amp. Adresse
+:p.W„hlen Sie einen Namen und/oder eine Adresse aus und drcken Sie :hp2.OK:ehp2..
+Die aktuelle Adresse wird in der rechten unteren Ecke des Hauptfensters angezeigt.
+:p.Wenn Sie mehr Namen und Adressen haben wollen, gehen Sie in den Setup und
+fgen Sie mehr Namen und Adressen hinzu.
+:p.Wenn Sie den voreingestellten Namen und Adresse fr eine bestimmte Area
+„ndern wollen, ”ffnen Sie die Area-Liste, klicken Sie mit der rechten
+Maustaste auf die Area, klicken Sie auf "Einstellungen", w„hlen Sie einen
+anderen Namen und/oder eine andere Adresse aus und schlieáen Sie die Einstellungen
+wieder.
+
+.im languages\german\thlist.ips
+
+:h2 hide res=&PANEL_INVALIDFILE..Kann Datei nicht laden
+:p.FleetStreet kann aus einem der folgenden Grnde die angegebene Datei nicht
+laden&colon.
+:ul.
+:li.Die Datei existiert nicht
+:li.Sie haben keine Zugriffsrechte auf die Datei
+:li.Der Dateiname ist der Name eines Verzeichnisses oder eines Ger„tes, aber nicht
+einer Datei
+:eul.
+
+:h2 hide res=&PANEL_ERRORLOAD..Fehler beim Lesen der Datei
+:p.W„hren des Ladens ist ein Lesefehler aufgetreten. Die Datei wurde nicht
+importiert.
+
+:h2 res=&PANEL_EXPORTFILE..Datei exportieren
+:p.W„hlen Sie ein Zielverzeichnis aus und geben Sie einen Dateinamen an.
+:parml.
+:pt.:hp2.mit Kopf:ehp2.
+:pd.W„hlen Sie diese Option, um den Message-Kopf mit abzuspeichern. Wenn Sie
+diese Option nicht w„hlen, wird nur der Message-Text gespeichert.
+:pt.:hp2.Trennlinie:ehp2.
+:pd.W„hlen Sie diese Option, um eine Trennlinie nach jeder exportierten Message
+anzuh„ngen.
+:pt.:hp2.anh„ngen:ehp2.
+:pd.Die Message wird an die Datei angeh„ngt, falls diese bereits existiert.
+:pt.:hp2.berschreiben:ehp2.
+:pd.Eine existierende Datei wird berschrieben.
+:eparml.
+
+:h2 hide res=&PANEL_ERRORSAVE..Fehler beim Speichern
+:p.FleetStreet konnte aus einem der folgenden Grnde die Datei nicht schreiben&colon.
+:ul.
+:li.Das Laufwerk oder der Pfad existiert nicht
+:li.Sie haben auf die Datei oder das Verzeichnis keine Zugriffsrechte
+:eul.
+
+:h2 hide res=&PANEL_INVALIDFILENAME..Ungltiger Dateiname
+:p.FleetStreet konnte die Datei aus einem der folgenden Grnde nicht schreiben&colon.
+:ul.
+:li.Der Dateiname enth„lt Zeichen, die in Dateinamen nicht erlaubt sind
+:li.Der Dateiname ist reserviert
+:eul.
+
+:h2 hide res=&PANEL_RESEND..Message nochmal schicken
+:p.Die Message, die Sie ver„ndert haben, wurde schon einmal abgeschickt.
+Drcken Sie :hp2.Ja:ehp2., wenn Sie die ver„nderte Message nochmal verschicken
+wollen. Drcken Sie :hp2.Nein:ehp2., falls Sie die Message nicht verschicken wollen.
+
+.***************************************************************************
+.* Nodelist-Lookup                                                         *
+.***************************************************************************
+
+:h2 hide res=&PANEL_LOOKUPMEM..Nicht genug Speicher
+:p.Die Nodelisten-Suche konnte nicht durchgefhrt werden, weil nicht genug Speicher
+vorhanden ist.
+:p.Trotzdem seltsamer Fehler!
+
+:h2 hide res=&PANEL_IDXOPENERR..Fehler beim ™ffnen der Indexdatei
+:p.Die Nodelisten-Index-Datei konnte nicht ge”ffnet werden. Dies hat in der Regel
+eine der folgenden Ursachen&colon.
+:ul.
+:li.Die Index-Datei existiert nicht
+:li.Der Pfad/Dateiname ist nicht korrekt
+:li.Sie haben keine Zugriffsrechte fr die Datei
+:li.Ein anderes Programm verwendet die Datei exklusiv
+:eul.
+:p.Beheben Sie den Fehler und probieren Sie es nochmal.
+
+:h2 hide res=&PANEL_DATOPENERR..Fehler beim ™ffnen der Daten-Datei
+:p.Die Nodelisten-Daten-Datei konnte nicht ge”ffnet werden. Dies hat in der Regel
+eine der folgenden Ursachen&colon.
+:ul.
+:li.Die Daten-Datei existiert nicht
+:li.Der Pfad/Dateiname ist nicht korrekt
+:li.Sie haben keine Zugriffsrechte fr die Datei
+:li.Ein anderes Programm verwendet die Datei exklusiv
+:eul.
+:p.Beheben Sie den Fehler und probieren Sie es nochmal.
+
+:h2 hide res=&PANEL_IDXREADERR..Fehler beim Lesen der Index-Datei
+:p.Beim Lesen der Index-Datei ist ein Fehler aufgetreten. Dies hat in der Regel
+eine der folgenden Ursachen&colon.
+:ul.
+:li.Ein anderes Programm verwendet die Datei exklusiv
+:li.Die Datei ist defekt
+:eul.
+:p.Beheben Sie den Fehler und probieren Sie es nochmal.
+
+:h2 hide res=&PANEL_DATREADERR..Fehler beim Lesen der Daten-Datei
+:p.Beim Lesen der Daten-Datei ist ein Fehler aufgetreten. Dies hat in der Regel
+eine der folgenden Ursachen&colon.
+:ul.
+:li.Ein anderes Programm verwendet die Datei exklusiv
+:li.Die Datei ist defekt
+:eul.
+:p.Beheben Sie den Fehler und probieren Sie es nochmal.
+
+:h2 res=&PANEL_LOOKUP..Nodelisten-Suche
+:p.Es wurde mehr als eine Adresse fr den Benutzer gefunden. W„hlen Sie
+eine Adresse aus der Liste aus.
+:p.Zun„chst wird eine kurze Zusammenfassung der gefundenen Eintr„ge angezeigt.
+Sie k”nnen die kompletten Nodelisten-Eintr„ge anschauen, indem Sie
+:hp2.Kurz:ehp2. deaktivieren.
+
+.im languages\german\browser.ips
+
+:h2 res=&PANEL_ATTACHSTAT..Angeh„ngte Dateien
+:p.Es werden die Dateien angezeigt, die sie an die Message angeh„ngt haben.
+Es werden Dateiname und Dateigr”áe angezeigt.
+:p.Falls eine Datei nicht existiert,
+wird im Statusfeld "* nicht gefunden *" angezeigt. Korrigieren Sie dann den
+Dateinamen im Themenfeld.
+
+:h2 hide res=&PANEL_NEXTAREA..Zur n„chsten Area
+:p.Falls Sie in die n„chste Area mit ungelesenen Messages wechseln wollen, drcken
+Sie :hp2.Ja:ehp2.. Drcken Sie :hp2.Nein:ehp2., um in dieser Area zu bleiben.
+
+:h2 hide res=&PANEL_NONEXTAREA..Keine n„chste Area
+:p.FleetStreet hat keine Area gefunden, die gescannt ist und ungelesene Messages
+enth„lt. Sie k”nnnen versuchen, die Areas neu zu scannen.
+
+:h2 hide res=&PANEL_WORKERROR..Fehler beim&dot.&dot.&dot.
+:p.W„hrend FleetStreet die ausgew„hlten Messages bearbeitet hat, ist ein Fehler
+aufgetreten. Dies kann verschiedene Ursachen haben&colon.
+:ul compact.
+:li.Die Message wurde in der Message-Base nicht gefunden. Ein anderer
+Prozess k”nnte sie vorher gel”scht haben.
+:li.Die Message-Base ist besch„digt.
+:li.Ein Lese- oder Schreibfehler ist aufgetreten.
+:li.Ein Schreiben auf die Platte ist nicht m”glich, da die Datei oder
+das Medium nicht beschreibbar ist.
+:eul.
+:p.
+Drcken Sie :hp2.Abbrechen:ehp2., um die Bearbeitung der markierten Messages
+abzubrechen.
+:p.
+Drcken Sie :hp2.Wiederholen:ehp2., um die letzte Aktion zu wiederholen. Dies
+kann nicht in allen Situationen Abhilfe schaffen!
+:p.
+Drcken Sie :hp2.šbergehen:ehp2., um den Fehler zu ignorieren und mit der n„chsten
+Message fortzufahren.
+
+:h2 hide res=&PANEL_LOCKERROR..Kann Aktion nicht ausfhren
+:p.Die Aktion, die Sie gew„hlt haben, kann nicht mit der ausgew„hlten Area
+durchgefhrt werden, da diese zu Zeit in Verwendung ist. Sie k”nnen eine
+Area nicht umnumerieren oder ihre Einstellungen „ndern, wenn Sie momentan
+ge”ffnet ist. Schalten Sie zuerst ein eine andere Area um und versuchen Sie es
+nochmal.
+
+:h2 hide res=&PANEL_BCDELERROR..Fehler beim Broadcast-l”schen
+:p.Die Message, die fr das Broadcast-l”schen notwendig ist, konnte nicht
+erzeugt werden. šberprfen Sie die Message-Base und versuchen Sie es nochmal.
+
+:h2 hide res=&PANEL_ETOSSERROR..Fehler beim Schreiben der Echotoss.Log
+:p.Beim Schreiben der Echotoss.Log-Datei ist ein Fehler aufgetreten.
+Dies kann verschiedene Ursachen haben&colon.
+:ul compact.
+:li.Die Datei oder die Platte ist schreibgeschtzt.
+:li.Eine andere Anwendung verwendet die Datei exklusiv.
+:li.Der Dateiname enth„lt Zeichen, die fr das Dateisystem nicht erlaubt sind.
+:li.Sie haben ein nicht existierendes Laufwerk oder Verzeichnis angegeben.
+:li.Sie haben nur einen Verzeichnisnamen, nicht einen vollst„ndigen Pfad-
+und Dateinamen angegeben.
+:li.Die Platte ist voll.
+:eul.
+:p.Prfen Sie die Platten und das FleetStreet-Setup und probieren Sie es nochmal.
+
+:h2 hide res=&PANEL_INITERROR..Fehler beim Lesen der Konfigurationsdatei
+:p.Beim Lesen der Tosser-Konfigurationsdatei ist ein Fehler aufgetreten.
+:p.Wenn diese Meldung beim Programmstart angezeigt wird und Sie trotzdem
+fortfahren, k”nnen Daten verloren gehen (z.B. Area-Einstellungen). Es
+wird deshalb empfohlen, FleetStreet durch Drcken des :hp2.Abbrechen:ehp2.-Buttons
+zu beenden. Beheben Sie den Fehler und starten Sie dann FleetStreet neu.
+Wenn Sie das Problem nicht sofort beheben k”nnen, erstellen Sie vorher eine
+Sicherheitskopie der INI-Dateien von FleetStreet.
+
+.im languages\german\rexx.ips
+
+:euserdoc.

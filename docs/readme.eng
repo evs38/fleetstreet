@@ -1,0 +1,150 @@
+                        README for FleetStreet 1.26
+
+Contents:
+
+           1. FleetStreet requirements
+           2. New install and upgrading from an earlier version
+           3. Support
+              3.1 Fidonet Echomail
+              3.2 Fidonet Netmail
+              3.3 Postal mail
+              3.4 Internet
+           4. Known bugs and problems
+           5. Additional Rexx scripts
+           6. Mailing list
+           7. Additional programs
+
+
+1. FleetStreet requirements
+============================
+
+Hardware: PC, running under OS/2 (386DX, 6 MB)
+          about 1.5 MB disk space plus message base
+          VGA
+
+Software: OS/2 2.x/3.x (2.0 not testet, but should work)
+
+Tested software enviromnents:
+          OS/2 2.1 (various languages)
+          OS/2 2.11 (2.1 with Service Pack)
+          OS/2 2.99 (WARP II)
+          OS/2 Warp 3.0
+          OS/2 Warp Connect (Peer To Peer)
+          ZipStream 1.03 (message base in compressed directory)
+          LAN Server 4.0 Entry/Advanced
+          WARP Server Advanced
+          WARP "Merlin" (Beta)
+          Warp 4.0
+
+
+2. New install and upgrading from an earlier version
+====================================================
+
+#  IMPORTANT: This version again comes with a new MSGAPI32.DLL. It's the
+#             version shipped with Maximus 3.0 and fixes several problems.
+#             Please delete all instances of the old MSGAPI32.DLL and replace
+#             it with the new version.
+
+a) Make backup copies of the *.INI files in the FleetStreet directory.
+b) Unpack in its own directory.
+c) Run INSTALL.EXE.
+d) Follow the instructions of the installation program.
+e) Close installation program.
+
+If you installed FleetStreet for the first time:
+
+f) Read the User's Guide!
+g) Start FleetStreet (FLTSTRT.EXE). The setup notebook and the online help
+   will open up automagically.
+h) Enter at least one user name.
+i) Change to the "Tosser" page.
+j) Choose the tosser you're using from the list. Read in your tosser's
+   configuration file. Adresses and origin line will be read from there. Check
+   on the "addresses" page.
+k) Adjust rest of setup according to your needs.
+l) To be sure to save options after modification.
+
+
+3. Support
+==========
+
+###########################################################################
+#                                                                         #
+# Official FleetStreet homepage:                                          #
+#                                                                         #
+#  http://www.kaneff.de/~mike/fleetstreet                                 #
+#                                                                         #
+###########################################################################
+
+3.1 Fidonet Echomail
+
+There is a Fido echo at 2:2490/1050, FLEETBETA. FLEETBETA is a german
+language echo. Please write a netmail to Robert Gloeckner (2:2490/1050)
+if you want to carry the echo. You get a list of other nodes connected to
+this echo to make distribution cheaper. This echo may be routed without
+restrictions, but please inform us about connected nodes...
+
+
+3.2 Fidonet Netmail
+
+Further support via netmail at
+
+        Michael Hohner  2:2490/1050.17@fidonet
+        Michael Hohner  81:499/617.17@os2net
+
+
+3.3 Postal mail
+
+     Michael Hohner
+     Juvenellstr. 26
+     D-90419 NÅrnberg
+     Germany
+
+
+No phone-calls please!!!
+
+3.4 Internet
+
+Michael Hohner can be reached as miho@n-online.de.
+
+
+4. Known bugs and problems
+==========================
+
+See PROBLEMS.TXT for a list of known problems.
+
+
+5. Additional Rexx scripts
+==========================
+
+TJSCRIPT.ZIP
+LAUNCHP.ZIP
+
+These archives contain additional Rexx scripts, written by Thomas Jachmann.
+The documentation is in German.
+
+PGPFRX97.ZIP
+
+Scripts for using PGP from within FleetStreet, written by Andreas Sahlbach.
+
+
+7. Mailing list
+===============
+
+Interested users can get on a mailing list. Whenever there is a new version,
+bug fix or other important information, I will send mail to all participants.
+
+Mail can be sent via Internet only. Please send a short message if you want
+to be on the list.
+
+ATTENTION: The mailing list is no longer sent to Fidonet addresses.
+
+
+9. Additional programs
+======================
+
+This archive comes with an alternative echo manager extension DLL for Squish.
+The file name is SAC11.RAR. The author is Holger Pfrommer 2:246/1806.1.
+
+
+10/01/2000

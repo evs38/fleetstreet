@@ -1,0 +1,201 @@
+Hello!
+
+Here're the instructions for the translation. If you are already familiar with
+Resource Files or IPF Files, you will know most of what's said here. Please
+read this file anyway.
+
+
+Files in the archive:
+=====================
+
+*.IPS:  Sources for the online help
+*.IPF:  Sources for the User's Guide
+*.DLG:  Dialogs
+*.RC:   Other language resources
+
+These are pure ASCII files. You can use any text editor. Please don't use
+an editor that places control characters in the text!
+
+
+IPS/IPF files:
+==============
+
+IPS/IPF files are translated by the help compiler. They contain
+
+   - the help texts
+   - formatting information for marking chapters, hyperlinks etc.
+
+The most important aspect is that you _only_ change the help texts and leave
+control information unchanged (otherwise the compiler will stumble over it).
+So you need to know to tell control information from help text
+
+Cutout:
+
+============================================================================
+.****************************************************************
+.* Hilfe fuer Tasten
+.****************************************************************
+
+:h1 res=&PANEL_KEYS..Help for keys
+:p.You can use different key combinations depending on if you're reading
+or editing messages.
+:ul.
+:li.:link reftype=hd refid=genkeys.Keys generally available:elink.
+:li.:link reftype=hd refid=readkeys.Keys only available when reading messages:elink.
+:li.:link reftype=hd refid=editkeys.Keys only available when editing messages:elink.
+:eul.
+============================================================================
+
+ - All lines starting with ".*" are comments. Please leave them that way so that
+   even I can navigate through the translated files.
+ - Special characters somtimes appear as "&name.", e.g. "&sqbul.". In general,
+   all words starting with "&" and ending with "." are special characters.
+   Please don't translate them.
+ - If you need to use a colon (":"), write it as "&colon.". If you need to
+   use "&", write it as "&amp.".
+ - Control information starts with ":" and ends with ".", e.g.
+   ":li." in the example. Sometimes the instructions have parameters, making
+   them longer, e.g. ":link reftype=hd refid=genkeys.". In this case, the word
+   "genkeys" is part of the control information and must not be translated.
+ - There are no nested instructions, so it won't get more complicated than
+   the examples above :-)
+
+Complete example:
+
+:li.&sqbul. :link reftype=hd refid=editkeys.Tastenkombinationen beim Schreiben:elink.
+++++******* ++++++++++++++++++++++++++++++++##################################+++++++
+
++ control information
+* special characters
+# help text
+
+OK?
+
+
+DLG file:
+=========
+
+The DLG file containes the dialog templates. Again, you must separate text from
+instructions.
+
+Cutout:
+
+============================================================================
+DLGTEMPLATE IDD_DOMAINS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Dialog Title", IDD_DOMAINS, 12, 6, 224, 130, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        GROUPBOX        "Domains", 6941, 5, 24, 210, 102, NOT WS_GROUP
+        LISTBOX         6943, 11, 29, 106, 86, LS_NOADJUSTPOS | WS_GROUP
+        PUSHBUTTON      "~HinzufÅgen", 6944, 134, 85, 60, 14, WS_GROUP
+        PUSHBUTTON      "~éndern", 6945, 134, 64, 60, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "~Lîschen", 6946, 134, 44, 60, 14, NOT WS_TABSTOP
+        PUSHBUTTON      "Hilfe", 6942, 5, 5, 210, 14, BS_HELP |
+                        BS_NOPOINTERFOCUS | WS_GROUP
+    END
+END
+============================================================================
+
+In general, text is bracketed by ("). The only exception is
+
+    DIALOG  "Dialog Title", IDD_DOMAINS, 12, 6, 224, 130, NOT FS_DLGBORDER
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+
+In this example, "Dialog Title" is text that appears in the dialog, but
+"10.Helv" is just a font name and must not be translated.
+
+The tilde (~) has a special meaning:
+
+   a) the letter following the tilde is underlined
+   b) the user can select the dialog element by pressing this key
+
+The underlined letters in each dialog must be unique so that b) actually
+works. So whenever a tilde appears in the text, please do add a tilde somewhere
+in the translation.
+
+The translated text shouldn't be much longer than the original text. However,
+I will adjust the dialogs again, so minor deviations aren't a problem.
+
+
+RC file:
+========
+
+The RC file contains all other language dependend resources, i.e. menus,
+other text strings etc.
+
+For example, a menu looks like this:
+
+
+============================================================================
+  SUBMENU "~Setup", IDM_OPTIONS
+  BEGIN
+    MENUITEM "~Optionen...", IDM_OPCONFIG
+    MENUITEM "Message-Sch~ablonen...", IDM_OPTEMPLATE
+    MENUITEM "~Verteilerlisten...", IDM_OPCCLISTS
+    MENUITEM SEPARATOR
+    MENUITEM "Aktueller ~Name/Adresse...\tStrg-D", IDM_OPNAMEADDR
+    MENUITEM SEPARATOR
+    MENUITEM "Optionen ~speichern", IDM_OPSAVE
+  END
+============================================================================
+
+The tilde symbol appears again. This time it must be unique per menu or per
+sub-menu. Text is bracketed with (") again.
+
+A "\t" separates menu text from keyboard accelerator.
+
+When a "..." is in the text, please also add a "..." in your translation.
+
+Please try to keep the translation somewhat uniform, i.e. always use the same
+translation for an english word, e.g. "Settings".
+
+String resources are
+
+============================================================================
+IDST_MSG_WORKERROR     "Fehler beim Bearbeiten der ausgewÑhlten Messages"
+IDST_MSG_LOCKERROR     "Diese Aktion kann nicht ausgefÅhrt werden, da die Area "
+                       "momentan in Verwendung ist."
+IDST_TPL_HEADER        "Hallo %Z!\x0d\x0a"
+============================================================================
+
+Long text can be written as several lines. Just end the first line with (") and
+start the next line with (").
+
+for example
+
+   "long "
+   "text"
+
+is equivalent to
+
+   "long text"
+
+Please note the space character at the end of the first part!
+
+"\x0d" or "\x0a" are special characters, please leave them that way.
+
+
+
+That was the technical part. Now for the coordination:
+
+When I write new texts etc., I do it in the german and english version. I then
+copy the english version to the other languages, marking the new parts with
+"@@". I then send you the _complete_ language files. That means for you:
+
+
+ - after sending a translation to me, please don't modify your files, because
+   your changes will be overwritten when I send back files with new text.
+   Only if we avoid to apply changes in parallel, we can eliminate that
+   danger.
+ - You can of course send half-complete versions, but please say that they
+   aren't complete yet. I then won't do any changes on the files.
+
+
+Well, I think the whole procedure is clear now.
+
+
+I wish you a successful translation!
+
+Bye, Michael.
+

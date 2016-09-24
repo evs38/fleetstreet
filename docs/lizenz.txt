@@ -1,0 +1,26 @@
+                           Nutzungsbedingungen
+
+
+Die folgenden Nutzungsrechte beziehen sich auf das Programm "FleetStreet" in
+ausfhrbarer Version und dessen Quelldateien.
+
+1. Die Verwendung der ausfhrbaren Version ist fr alle Zwecke kostenlos.
+   Sie darf frei verteilt werden. Ein Verkauf des Programms ist nicht
+   gestattet. Fr die Verteilung darf eine Kostenerstattung verlangt werden,
+   jedoch nicht mehr als EUR 2 (anteilig).
+2. Die Quelldateien drfen verwendet werden zur Weiterentwicklung und
+   Ver„nderung des Programms fr eigene Zwecke und zum Zweck der
+   Wiederver”ffentlichung unter Einr„umung der gleichen Nutzungsrechte.
+3. Die Quelldateien drfen nicht (auch nicht teilweise) zur Nutzung in
+   anderen Programmen entnommen werden.
+4. Bei Einsendung einer ver„nderten oder neuen Quelldatei best„tigt der
+   Einsender, daá er der Inhaber aller Rechte an den nderungen und den
+   neuen Quelldateien ist und stimmt deren Ver”ffentlichung mit Einr„umung
+   dieser Nutzungsrechte zu.
+
+Anmerkung: Ziel dieser Nutzungsrechte ist es, daá niemand unverdienten
+finanziellen Nutzen aus der Ver”ffentlichung der Quelldateien ziehen kann
+und gleichzeitig bei Weiterentwicklung der Quelldateien die
+Nutzungsm”glichkeiten nicht eingeschr„nkt werden.
+
+Nrnberg, 25.04.1999

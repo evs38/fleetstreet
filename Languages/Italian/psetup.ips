@@ -1,0 +1,43 @@
+.***************************************************************************
+.* Printer-Setup                                                           *
+.***************************************************************************
+
+:h1 res=&PANEL_PRINTSETUP..Setup
+:p.
+:p.Bisogna selezionare una pagina&colon.
+:sl compact.
+:li.:link reftype=hd res=&PANEL_PS_LIST..Stampante:elink.
+:li.:link reftype=hd res=&PANEL_PS_BORDERS..Margini:elink.
+:li.:link reftype=hd res=&PANEL_PS_FONTS..Fonts:elink.
+:li.:link reftype=hd res=&PANEL_PS_OUTPUT..Output:elink.
+:esl.
+
+:h2 res=&PANEL_PS_LIST..Stampante
+:p.
+Bisogna selezionare dalla lista una stampante alla quale FleetStreet
+diriger… l'output.
+:p.
+Per impostare ulteriori opzioni per un printjob bisogna fare un click doppio su una
+stampante oppure premere :hp2.Configura:ehp2..
+
+:h2 res=&PANEL_PS_BORDERS..Margini
+:p.
+Bisogna impostare i margini per la stampante. E possibile impostare la distanza
+dal margine a sinistra, a destra, in alto e in basso.
+
+:h2 res=&PANEL_PS_FONTS..Fonts
+:p.
+Bisogna impostare i fonts con cui avviene la stampatura. I fonts per lo header
+e il testo del messaggio possono essere impostati separatamente.
+:p.
+E' possibile selezionare un font nuovo selezionando un font dalla tavolozza
+dei font e trascinandolo sul campo desiderato. Con un click doppio su un campo
+diventa possibile impostare il font via dialogo font.
+
+:h2 res=&PANEL_PS_OUTPUT..Output
+:p.
+Bisogna impostare quali parti del messaggio verranno stampate.
+:p.
+Con l'impostazione :hp2.Numero pagina:ehp2., sulla seconda e le ulteriori pagine
+verr… stampata una linea di titolo con un numero di pagina.
+

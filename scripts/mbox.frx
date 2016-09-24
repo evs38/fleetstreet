@@ -1,0 +1,24 @@
+/****************************************************************************/
+/*                      FleetStreet example script                          */
+/*                                                                          */
+/*                               MBOX.FRX                                   */
+/*                                                                          */
+/* MBOX.FRX displays a PM message box.                                      */
+/*                                                                          */
+/* This example script demonstrates                                         */
+/* a) that you can still use other Rexx extension DLLs like REXXUTIL        */
+/* b) that the RexxUtil function "RxMessageBox" can be used under           */
+/*    FleetStreet                                                           */
+/****************************************************************************/
+/* ATTENTION: If you modify this script, please make a copy and make the    */
+/*            modifications in the copy. The install program overwrites     */
+/*            these scripts and your changes may otherwise be lost.         */
+/****************************************************************************/
+
+/* load the function */
+call RxFuncAdd 'RxMessageBox', 'RexxUtil', 'RxMessageBox'
+
+/* open message box */
+call RxMessageBox 'This is a sample message box', 'sample message',,
+                  'OK', 'EXCLAMATION'
+exit

@@ -1,0 +1,226 @@
+                            Struktur der INI-Files
+
+
+Application     Key             Inhalt/Wert
+==============================================
+Colors          Windowcol       Farben, Struktur WINDOWCOLORS
+EchoMan         Param           Bin„r, DLL-Parameter
+                FPos            Bin„r, WINPOS
+                FFore           Integer, Vordergrundfarbe
+                FBack           Integer, Hintergrundfarbe
+                FFont           String, Font
+                SPos            Bin„r, WINPOS
+Echotoss        Options         Bin„r, Echotoss-Optionen
+                Pathname        String, Pfadname des Echotoss-Files
+Export          Options         ULONG
+                Path            String, letzter Pfad
+FileLists       #1              Bin„r, Format: FileName\0Address\0Desc\0
+                #2               "
+                ...
+Find            Text            Bin„r, Texte, text\0text\0...\0
+                Parts           ULONG
+                Method          ULONG
+                Areas           ULONG
+                Fuzz            Integer
+                SelAreas        String, ausgew„hlte Areas
+                PersMail        PERSMAILOPT
+Fonts           Windowfonts     Fonts, Struktur WINDOWFONTS
+Macros          M01             String, Makro 1
+                M02                "     "    2
+                M03
+                ...
+                M11
+Mark            <Area-Tag>      MARKERITEMs, Markierungen der Area
+                <Area-Tag>      MARKERITEMs, Markierungen der Area
+                ...
+NLBrowse        Pos             Fensterposition, Struktur WINPOS
+                Mode            Integer-String, letzter Modus
+                Domain          String, letzter Domain
+                Split           Integer-String, Position der Unterteilung
+                Icons           Integer-String, Icons oder nicht
+Nodelist        Options         2 Bytes, Nodelist-Type
+                Modem           Modem-Typen, Form: Typ\0Typ\0...Typ\0\0
+                ModemB          Modem-Typen (Byte-Type), Form: xTyp\0xTyp\0...xTyp\0\0, x = 1..255 (byte)
+Options         Reg             Registrier-Opt., Struktur REGISTEROPT
+                General         allg. Optionen, Struktur GENERALOPT
+                Misc            restl. Opt., Struktur MISCOPTIONS
+                Lookup          Lookup-Optionen, Struktur LOOKUPOPTIONS
+                Results         Find-Results-Optionen, Struktur RESULTSOPTIONS
+                Arealist        Area-List-Settings, Struktur AREALISTOPTIONS
+                Msglist         Message-List-Settings, Struktur MSGLISTOPTIONS
+                Remap           String, Drive-Remapping
+                Threadlist      Threadlisten-Settings, Struktur THREADLISTOPTIONS
+                Hooks           Hook-Settings, Struktur REXXHOOKS
+Paths           Import          String, Pfadname letzter Import
+                Squish          String, Pfadname Squish.Cfg
+Positions       Windowpos       Fensterpositionen, Struktur WINDOWPOSITIONS
+Print           Pos             Bin„r, WINPOS, Dialog-Position
+                Output          Bin„r, ULONG, Output
+                Borders         Bin„r, 4* UCHAR
+                HeaderFont      String, Header-Font
+                TextFont        String, Text-Font
+                Queue           String, letzte Queue
+                DData           Bin„r, DRIVDATA
+Request         Area            String, Default-Area f. Requests
+                Direct          Bin„r, BOOL, Flag f. Direct-REQ
+                Attrib          Bin„r, ULONG, Attribute
+                RPos            Bin„r, WINPOS, Requester-Pos
+                LPos            Bin„r, WINPOS, ListAddPos
+                FPos            Bin„r, WINPOS, FileAddPos
+                PPos            Bin„r, WINPOS, PasswordPos
+                SPos            Bin„r, WINPOS, SearchPos
+                LFore           Bin„r, LONG, Vordergrund Liste
+                LBack           Bin„r, LONG, Hintergrund Liste
+                LFont           String, Font Liste
+                Search          String, letzter Suchstring
+                SearchF         Bin„r, ULONG, Suchflags
+Search          Pos             Bin„r, WINPOS
+                Text            String, Suchtext
+                Options         Bin„r, ULONG, Optionen
+Toolbar         Pos             Integer, Toolbar-Position
+                Small           Integer, kleine Icons
+                CPos            WINPOS, Position des Konfig-Fensters
+                LFore, LBack,
+                 RFore, RBack   LONG, Farben
+                LFont, RFont    String, Fonts
+                Config          Bin„r, Array von BUTTONCONFIG-Structs
+                                Sonderfall: Wenn nur 1 Byte gespeichert, dann
+                                            ist die Toolbar leer.
+Uplinks         #xxx            Bin„r, Uplink, Format: Adresse\0eigene Adresse\0Name\0Password\0
+                +xxx yy1        String, Areas\0
+                +xxx yy2        String, Areas\0
+                ...
+                #zzz
+                ...
+User            Addresses       Adressen, char-Array
+                Names           Namen, char-Array
+                Origin          String
+Version         ProgVersion     Version des Programms
+                IniVersion      Version der INI-Struktur
+Windows         Open            Integer, offene Fenster
+                FOpen           Integer, ”ffnen erzwingen
+                FClose          Integer, Schlieáen erzwingen
+
+
+                                    AREAS.INI
+
+Application     Key             Inhalt/Wert
+==============================================
+<Area-Tag>
+<Area-Tag>      Desc            Beschreibung, String
+...             Address         Adresse, String
+                Name            User-Name, String
+                Origin          Origin, String
+                Path            Pfadname, String
+                Template        ULONG, Template-ID
+                Folder          Integer, Folder-ID
+                Format          USHORT, Area-Format
+                Attrib          ULONG, Default-Attribute (ATTRIB_*)
+                Options         ULONG, restliche Optionen
+                Type            USHORT, Area-Typ
+
+
+                                    CCLISTS.INI
+
+Application     Key             Inhalt/Wert
+==============================================
+Folder          Pos             Folder-Position, Struktur WINPOS
+                Flags           Flags, ULONG
+<List-ID dez>   Pos             Listen-Position, Struktur WINPOS
+                Flags           Flags, ULONG
+                Name            Listen-Name, String
+                #1              Eintraege, Format "Name\0Adresse\0<Flags hex>\0ErsteZeile\0"
+                #2
+                #3
+                ...
+<List-ID dez>
+...
+
+                                   DOMAINS.INI
+
+Application     Key             Inhalt/Wert
+==============================================
+<Domain-Name>   Index           Index-File, String
+                Data            Daten-File, String
+<Domain-Name>
+...
+
+                                   TEMPL.INI
+
+Application     Key             Inhalt/Wert
+==============================================
+Pos             Pos             Folder-Position, Struktur WINPOS
+                Flags           Flags, ULONG
+<Temp.-ID dez.> Linelen         SHORT
+                Joinlen         SHORT
+                UseInitials     BOOL
+                ForwardOrder    BOOL
+                Random          BOOL
+                Name            String
+                Header          String
+                Footer          String
+                Reply           String
+                DArea           String
+                Forward         String
+                XPost           String
+                Origin          String
+                OriginFile      String
+                AllSyn          String
+                Pos             Notebook-Position, Struktur WINPOS
+                QChar           CHAR, Quote-Zeichen
+<Temp.-ID dez.> ...
+...
+
+                                    SCRIPTS.INI
+
+Application     Key             Inhalt/Wert
+==============================================
+Folder          Pos             Folder-Position, Struktur WINPOS
+                Flags           Flags, ULONG
+#<ID dez.>      SettP           Settings-Position, Struktur WINPOS
+                MonP            Monitor-Position, Struktur WINPOS
+                Name            String, Script-Name
+                File            String, File-Name
+                Flags           ULONG, Flags
+#<ID dez.>      ...
+...
+
+                                   TOOLBAR.INI
+
+Application     Key             Inhalt/Wert
+==============================================
+Options         BorderX         String, Rahmenbreite X
+                BorderY         String, Rahmenbreite Y
+                Spacing         String, Abstand zwischen Buttons
+                Extra           String, Extra-Abstand bei Spacer-Item
+#<Nr. dez.>     Cmd             String, Command-ID
+                Bmp             String, Bitmap-ID
+                Flags           String, Flags
+                Params          Binaer, optionale Parameter
+#<Nr. dez.>     ...
+...
+
+                                   NICKN.INI
+
+Application     Key             Inhalt/Wert
+==============================================
+#List           Pos             Folder-Position, Struktur WINPOS
+<Nickname>      Name            String, Username
+                Address         String, Adresse
+                Subj            String, Themenzeile
+                First           String, erste Zeile
+                Attrib          Integer, Msg-Attribute
+                Flags           Integer, Nickname-Flags
+                Comment         String, Kommentar
+
+                                   FOLDERS.INI
+
+Application     Key             Inhalt/Wert
+==============================================
+#<id>           Title           String, Titel
+                Parent          Integer
+                Flags           Integer
+Folder          Last            Integer
+                High            Integer
+                Flags           Integer
+                Split           Integer

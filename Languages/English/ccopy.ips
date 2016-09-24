@@ -1,0 +1,104 @@
+.***************************************************************************
+.* Carbon-Copy-Listen                                                      *
+.***************************************************************************
+
+:h1.Carbon Copy Lists
+:p.Topics&colon.
+:p.:link reftype=hd refid=ccsetup.Carbon copy list folder:elink.
+:p.:link reftype=hd refid=cclist.Carbon copy list:elink.
+:p.:link reftype=hd refid=ccentry.Carbon copy list entry:elink.
+:p.:link reftype=hd refid=ccselect.Select carbon copy list:elink.
+
+:h2 id=ccsetup res=&PANEL_CCLISTSETUP..Carbon copy list folder
+:p.The carbon copy list folder contains all carbon copy lists.
+:p.You can
+:ul compact.
+:li.Open,
+:li.Create, or
+:li.Delete
+:eul.
+:p.a list by selecting the appropriate menu items from the context menu
+of a list.
+:p.You can delete a list by dragging it to the shredder as well.
+:p.
+Change the name of a list by clicking on the icon while holding down
+the ALT key.
+
+
+:h2 id=cclist res=&PANEL_CCLIST..Carbon copy list
+:p.The entries in the selected carbon copy list are displayed. You may add new entries,
+change entries or delete entries.
+:parml.
+:pt.:hp2.Add:ehp2.
+:pd.Add a new entry to the list.
+:pt.:hp2.Change:ehp2.
+:pd.Modify the selected entry. You may also double click on the entry to change it.
+:pt.:hp2.Delete:ehp2.
+:pd.Delete the selected entry. You can delete entries by dragging them to the
+shredder as well.
+:pt.:hp2.Import:ehp2.
+:pd.Import names and addresses from a text file.
+:eparml.
+:p.You can copy or move entries between CC lists by opening two lists and drag
+an entry from one list to another. Hold down the CTRL-Key to copy entries instead
+of moving them.
+:p.
+:artwork align=center name='movecc.bmp'.
+
+:h2 id=ccentry res=&PANEL_CCLISTENTRY..Carbon copy list entry
+:p.Enter a new entry or change an existing entry.
+:parml.
+:pt.:hp2.Name:ehp2.
+:pd.Username of the addresse. You may also use a predefined nickname here. Enter
+the nickname and press :hp2.TAB:ehp2.. The nickname will be replaced by the real
+name, and the address of the user will be inserted into the address field.
+:pt.:hp2.Address:ehp2.
+:pd.Network address of the addressee.
+:pt.:hp2.?:ehp2.
+:pd.Lookup address of the addressee in the nodelist.
+:pt.:hp2.First line:ehp2.
+:pd.The first line of the message text. You can specify the Internet address
+of the recipient here ("TO: xxx") if you send the message to a gateway.
+:pt.:hp2.Show name in CC lines:ehp2.
+:pd.Specify whether the name of this user should appear in the list of names that
+is added to your message if you use a message template.
+:eparml.
+
+:h2 id=ccselect res=&PANEL_CCLISTSELECT..Select carbon copy list
+:p.Select one of the predefined carbon copy lists. Press :hp2.OK:ehp2. to confirm
+your selection. Press :hp2.CANCEL:ehp2. if you don't want to use a carbon copy list.
+
+:h2 res=&PANEL_IMPORTCCLIST..Import
+:p.Select the file that you want to import.
+:parml.
+:pt.:hp2.Default for "show names":ehp2.
+:pd.Set the default value of the field "show names". This default value is
+used for all imported entries.
+:eparml.
+
+:h2 hide res=&PANEL_DELCCLIST..Delete carbon copy list
+:p.Press :hp2.YES:ehp2. if you want to delete the selected carbon copy list. Press
+:hp2.NO:ehp2. if you like to keep it.
+
+:h2 hide res=&PANEL_DELCCENTRY..Delete carbon copy entry
+:p.Press :hp2.YES:ehp2. if you want to remove the selected entry from the list.
+Press :hp2.NO:ehp2. if you like to keep it.
+
+:h2 hide res=&PANEL_NOCCLIST..Carbon copy list no longer exists
+:p.The carbon copy list that you've selected was deleted before you've saved
+the message. The message can not be saved with this carbon copy list.
+:p.You can either send the message to a single recipient, select a
+different carbon copy list, or discard the whole message.
+
+:h2 hide res=&PANEL_NOCCENTRIES..Save message
+:p.The Quick carbon copy list is currently active. However, the list does not
+contain any entry, i.e. FleetStreet has no recipient to send the message to.
+:p.Add entries to the list or switch off the quick carbon copy list.
+
+:h2 hide res=&PANEL_MODQUICKCC..Quick carbon copy
+:p.The Quick carbon copy list is currently active and you've selected the menu item
+a second time.
+:p.Press :hp2.Yes:ehp2. to modify the existing list.
+:p.Press :hp2.No:ehp2. to switch of quick carbon copy.
+:p.Press :hp2.Cancel:ehp2. to continue editing the message.
+
