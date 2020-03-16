@@ -1,0 +1,253 @@
+                     Squish MsgAPI - 32-bit Port
+                     ---------------------------
+
+
+Latest update: 1995-06-07
+
+See Addendum for latest info.
+
+
+Preface
+-------
+
+This archive contains various files which will enable you to recompile
+Scott J. Dudley's MsgAPI routines with a 32-bit compiler under OS/2 2.1
+(OS/2 2.0 wasn't tested, but should it should work too).
+
+These files arose from Paul Edwards' yearning for a 32-bit port of the
+MsgAPI library which he believed would lift certain restrictions in
+processing capacity.
+
+In their present state, these patches have been tested to the point of
+compiling - nothing more;  the whole aim of this minimal port was to get the
+MsgAPI library compiling (at any cost) - making it *work* is an exercise
+left to the dear reader...
+
+In no way should any of the binaries produced by these patches be used or
+construed as being "official replacements" for the current 16-bit MSGAPI.DLL
+library, or the 32-bit release of MsgAPI by Scott J. Dudley;  these
+files are being made available for "the curious", those experienced folk who
+know what they're doing, and *should* know better...
+
+
+Legal Stuff
+-----------
+
+All the original MsgAPI code (which you can find in an archive called
+MSGAPI0.LZH in the same place you found this one) is:
+
+        Copyright (C) 1991 by Scott J. Dudley.  All rights reserved.
+
+Further:
+
+        "Squish", "SquishMail" and "Maximus" are trademarks of
+        Scott J. Dudley.
+
+All the alterations (including new makefiles) are hereby donated to the
+public domain, for the free use of all in whichever way is deemed fit.
+
+
+Supported Compilers
+-------------------
+
+This archive contains patches that have been tested under OS/2 2.1 using
+the following compilers and tools:
+
+        Borland C++ 1.5{1}
+        Turbo Librarian 4.00
+        Borland MAKE 3.6
+
+        GNU C Compiler 2.6.3
+        EMX 0.9a Archive Managers (ar and emxomfar)
+        Dennis Vadura's DMAKE 3.80, PL 1{1}
+        GNU Make 3.70{2}
+
+        IBM C Set++ 2.0
+        IBM Library Manager 1.1
+        IBM/Microsoft NMAKE 2.1
+        
+        Watcom C++ 10.0b
+        WLIB
+        WMAKE
+
+{1}  Doesn't work well in passing arguments to shell - ends up passing
+     arguments to called application instead, so "rm" (or "erase" as the
+     case may be) may complain about an invalid parameter "2>/dev/nul".
+     GNU Make doesn't have this problem and lets the shell (CMD.EXE)
+     handle this parameter which redirects stderr to the NUL device.
+
+     Otherwise, handles fine.
+
+{2}  Doesn't like OMF format ".obj" extensions - never ever.
+
+Creation of a DLL is only supported for the EMX development system;  all
+others (including EMX) have to suffice with a traditional static link
+library.
+
+I have only worked with the EMX port;  to save me time and disk space, Paul
+Edwards worked on the Borland C++ and IBM C Set++ ports (or rather, sent
+comments/suggestions back to me for code changes).
+
+There is absolutely no need for an assembler of any kind as none of the
+original assembler modules are used.  All above three targets assume a
+"flat" (linear) memory model.
+
+
+Archive Contents
+----------------
+
+This archive contains five subdirectories which correspond to the nested
+archives in Scott's original MSGAPI0.LZH release:
+
+        src             Patches to MsgAPI source code and new makefiles
+        include         Patches to header files
+        lib             (empty)
+        os2             Patch for OS/2 module definition file
+        sample          Patch for one of the MsgAPI sample programs
+
+To discourage people from taking this archive and blindly using the "all-new
+32-bit" dynamic or static link libraries, there are *no* such libraries
+included - compile them yourself or go without.
+
+Each "patch" consists of three files:
+
+        *               Pre-patched file - ready to compile
+        *.old           Original file from MSGAPI0.LZH
+        *.patch         New-style context diffs
+
+The suggested means for installing the complete source code is to first
+unpack MSGAPI0.LZH, then further unpack each of the nested archives into
+a subdirectory named after the archive from which it was formed - much
+like this archive.  For example:
+
+        f:/msgapi               MSGAPI.DOC and README.1ST
+        f:/msgapi/include       Contents of INCLUDE.LZH
+        f:/msgapi/lib           Contents of LIB.LZH
+        f:/msgapi/os2           Contents of OS2.LZH
+        f:/msgapi/sample        Contents of SAMPLE.LZH
+        f:/msgapi/src           Contents of SRC.LZH
+
+Now, unpack this archive over the same directory structure, automatically
+placing the pre-patched files into the correct directories.
+
+The original makefile is not used at all - we supply our own:
+
+        makefile.bcc    Borland C++     static library
+        makefile.dll    EMX/GCC         dynamic link library
+        makefile.emx    EMX/GCC         static library
+        makefile.ibm    IBM C Set++     static library
+
+See the list earlier for the tested compilers/tools.
+
+There exists a small bug in one of the samples included in MSGAPI0 - in
+particular, in SQCONVER.  A patch is provided should you wish to use it.
+
+
+Compiling MsgAPI32
+------------------
+
+Make ./src the current working directory, then invoke your make utility,
+calling the required makefile (see above) - for example:
+
+                        dmake -f makefile.emx
+                        make -f makefile.dll
+                                ...
+
+If you have been following the same directory structure as outlined above,
+the makefile will find all the necessary header files - otherwise, you will
+have to make slight changes to the makefile first.
+
+Should you so desire, make any other changes to the makefile (optimisations,
+whatever).
+
+When compiling, ensure you are using native "ISO C" mode, *not* "C++" mode.
+
+The DLL target also creates an import library, whilst the EMX target results
+in both Unix and OMF format libraries being produced (.a and .lib).  For
+the calling convention (Pascal vs. C), see the patches for your compiler.
+
+
+Linking MsgAPI32
+----------------
+
+When in Rome, do as the Romans do - link with either the static or import
+library as is the usual fashion for your compiler.  One point you may wish
+to note - when linking with the EMX development system, if you receive
+some linkage errors, try linking *twice* (ie., "-lmsgapi -lmsgapi" on the
+one command line) to resolve all references.
+
+If you experience an unresolved symbol (Paul indicates this may occur with
+Borland C++), such as DosSleep, try linking in the DOSCALLS.LIB library
+(found in your \OS2 directory) if the function isn't already in your API
+library (and if it is, then try linking with that instead).
+
+When compiling your own application (for linking/use with this port of
+MsgAPI), remember to define OS_2, __386__ and __FLAT__ if they are not
+already defined.
+
+
+Thanks...
+---------
+
+Paul Edwards            3:711/934@fidonet       Documentation comments
+                                                Patches for structure packing
+
+Craig Morrison          1:201/60@fidonet        Patches for ./src/ffind.c
+
+
+Contact Addresses
+-----------------
+
+Complaints:     /dev/null
+
+Money:          David J. N. Begley (3:711/934.4@fidonet, 3:712/515.3@fidonet)
+                david@harpo.nepean.uws.edu.au
+                dbegley@st.nepean.uws.edu.au
+
+:-)
+
+April 15, 1994
+
+
+Addendum
+--------
+
+Paul Edwards has made the following changes:  
+
+All files required to recompile the MSGAPI libraries are
+now included in this archive.
+
+There is a MSGAPIC.LIB which has been compiled with CSET.
+There is a MSGAPIB.LIB which has been compiled with BCC.
+There is a MSGAPIW.LIB which has been compiled with Watcom.
+There is a MSGAPIE.LIB which has been compiled with GNU/EMX.
+
+__386__, OS_2 and __FLAT__ are always defined, so that
+you don't have to add these defines in your own compile
+commands.
+
+Circumvented the need to include doscalls.lib explicitly 
+when linking with the Borland-made library.
+
+
+To actually use this for your own applications, the minimum
+you need to do is copy the include\*.h files somewhere, 
+and copy the (say) msgapib.lib to a msgapi.lib, and then
+#include <msgapi.h> in your own programs, making sure the
+*.h files are in your include search path, and then link
+with msgapi.lib.
+
+A bug was found with the writing of the index files for large
+messagebases.
+
+A bug was found when converting UID to msg #.
+
+A bug was found using the SQDEV200 version for DOS, and I decided
+to make this archive support DOS as well, so now it comes compiled
+for Borland, so that I can use it in MSGED/SQ.  MSGAPID.LIB is
+the DOS version for Borland.
+
+Then I wanted to compile it under Watcom for DOS, so I created
+MAKEFILE.W16, and after a lot of effort got it to work too.
+MSGAPIW6.LIB contains the watcom stuff.  Now there is also a
+MSGAPIT.LIB which was compiled with TC++ 1.0 for DOS.

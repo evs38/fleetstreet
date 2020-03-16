@@ -1,0 +1,72 @@
+#############################################################################
+##        MsgAPI Makefile for EMX 0.8h (GCC 2.5.8) under OS/2 2.11         ##
+#############################################################################
+
+# This makefile only creates a library for static linking, not a 32-bit DLL.
+# The initial compile creates Unix-style object and library files, then
+# uses one of the EMX utilities to convert the library file to OMF format
+# (for use with LINK386).
+
+# The whole 32-bit port of MsgAPI to EMX and OS/2 compiles, and has
+# undergone minimal testing, but do *not* assume it is free of bugs.
+
+# Tested with Dennis Vadura's DMAKE Version 3.80 Patch Level 1, and
+# GNU Make Version 3.70.  The assumed shell is \OS2\CMD.EXE.
+
+# This port was tested by David Begley (david@harpo.nepean.uws.edu.au).
+
+CC=	gcc -s 
+CFLAGS=	-Wall
+CDEFS=	-DOS_2 -D__FLAT__ -D__386__ 
+COPT=	-O4 \
+	# -fomit-frame-pointer -fstrength-reduce -funroll-loops # -m486
+
+# I=	.
+I=	../include
+# TARGET=	em_mapif.lib
+TARGET=	msgapi.lib
+# RM=	erase
+RM=	rm -f
+
+OBJS=	1stchar.o msgapi.o api_sdm.o api_sq.o cvtdate.o \
+	date2bin.o dosdate.o fexist.o ffind.o flush.o \
+	months.o parsenn.o qksort.o strftim.o stristr.o \
+	strocpy.o trail.o weekday.o
+
+
+# Thunderbirds are go!
+
+
+.c.o:
+	$(CC) $(CFLAGS) $(CDEFS) $(COPT) -I$(I) -c $<
+
+$(TARGET):	msgapi.a
+	emxomf -sl msgapi.a
+
+msgapi.a:	$(OBJS)
+	ar ruv $@ $(OBJS)
+
+clean:
+	$(RM) msgapi.a msgapi.lib $(TARGET) $(OBJS) 2>/dev/nul
+
+
+# Dependencies taken from SJD's generic makefile.
+
+1stchar.o:	1stchar.c
+msgapi.o:	msgapi.c
+api_sdm.o:	api_sdm.c
+api_sq.o:	api_sq.c
+cvtdate.o:	cvtdate.c
+date2bin.o:	date2bin.c
+dosdate.o:	dosdate.c
+fexist.o:	fexist.c
+ffind.o:	ffind.c
+flush.o:	flush.c
+months.o:	months.c
+parsenn.o:	parsenn.c
+qksort.o:	qksort.c
+strftim.o:	strftim.c
+stristr.o:	stristr.c
+strocpy.o:	strocpy.c
+trail.o:	trail.c
+weekday.o:	weekday.c

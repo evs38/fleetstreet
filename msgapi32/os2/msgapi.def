@@ -1,0 +1,24 @@
+LIBRARY msgapi   INITINSTANCE
+
+DESCRIPTION "MSGAPI (c) 1991 Scott J. Dudley"
+
+HEAPSIZE  0
+STACKSIZE 32768
+PROTMODE
+DATA MULTIPLE
+
+EXPORTS
+        MsgOpenArea             @1
+        MsgOpenApi              @2
+        MsgValidate             @3
+        MsgCloseApi             @4
+        ConvertControlInfo      @5
+        CopyToControlBuf        @6
+        CvtCtrlToKludge         @7
+        GetCtrlToken            @8
+        NumKludges              @9
+        RemoveFromCtrl          @10
+        SquishSetMaxMsg         @11
+        WriteZPInfo             @12
+        msgapierr               @13      ; this is a variable, not a function!
+        SquishHash              @14
